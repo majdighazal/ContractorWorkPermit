@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Property Contractors / Vendors Permit to Work - Events</title>
 <!-- v11 aligned frames: PDF evidence/internal layout aligned and fonts improved -->
-<!-- vNext: latest build with Furniture Delivery task and #e74c3c bilingual optional Others guidance note with black font. -->
+<!-- vNext: responsive Arabic navigation stability fix for main page and exported HTML. -->
 <style>
   :root{
     --conrad-gold:#b9985a;
@@ -1629,6 +1629,270 @@ body.lang-ar .editor-floating-toolbar{direction:rtl}
   .signature-canvas-wrap,#signatureCanvas{height:190px!important;min-height:190px!important;}
 }
 
+
+
+/* Final phone fixes: work-period width, direct date picker, and attachment preview close */
+.work-period-row,
+.work-period-row > div,
+.work-period-shell,
+.work-period-card{
+  min-width:0 !important;
+  max-width:100% !important;
+  box-sizing:border-box !important;
+}
+.work-period-row{overflow:hidden !important;}
+.smart-datetime-input{
+  display:block !important;
+  width:100% !important;
+  min-width:0 !important;
+  max-width:100% !important;
+  box-sizing:border-box !important;
+}
+.attachment-preview-modal-card{position:relative !important;}
+.attachment-preview-close-x{
+  position:absolute;
+  top:12px;
+  right:12px;
+  width:40px;
+  height:40px;
+  border:0;
+  border-radius:999px;
+  background:#101b2f;
+  color:#ffffff;
+  font-size:24px;
+  line-height:1;
+  font-weight:950;
+  cursor:pointer;
+  display:grid;
+  place-items:center;
+  box-shadow:0 8px 20px rgba(16,27,47,.22);
+  z-index:8;
+}
+.attachment-preview-close-x:hover,
+.attachment-preview-close-x:focus-visible{
+  background:#e74c3c;
+  outline:none;
+}
+body.lang-ar .attachment-preview-close-x{right:auto;left:12px;}
+@media screen and (max-width:760px){
+  .work-period-row{
+    padding:10px !important;
+    border-radius:16px !important;
+  }
+  .work-period-row > label{
+    margin-bottom:6px !important;
+  }
+  .work-period-row > div{
+    width:100% !important;
+    overflow:hidden !important;
+  }
+  .work-period-shell{
+    width:100% !important;
+    grid-template-columns:1fr !important;
+    gap:8px !important;
+  }
+  .work-period-card{
+    width:100% !important;
+    overflow:hidden !important;
+    padding:10px !important;
+    border-radius:15px !important;
+  }
+  .work-period-card-head{
+    margin-bottom:7px !important;
+  }
+  .smart-datetime-input{
+    min-height:48px !important;
+    font-size:14px !important;
+    letter-spacing:0 !important;
+    padding:8px 7px !important;
+    overflow:hidden !important;
+    -webkit-appearance:auto !important;
+    appearance:auto !important;
+  }
+  .smart-datetime-input::-webkit-date-and-time-value{
+    text-align:left;
+    min-width:0;
+  }
+  body.lang-ar #request .smart-datetime-input::-webkit-date-and-time-value{
+    text-align:left;
+  }
+  .attachment-preview-modal-card{
+    display:flex !important;
+    flex-direction:column !important;
+    width:calc(100vw - 16px) !important;
+    max-width:calc(100vw - 16px) !important;
+    max-height:calc(100dvh - 16px) !important;
+    padding:14px !important;
+    overflow:hidden !important;
+    border-radius:18px !important;
+  }
+  .attachment-preview-modal-card h3{
+    padding-right:48px !important;
+    min-height:42px !important;
+    display:flex !important;
+    align-items:center !important;
+  }
+  body.lang-ar .attachment-preview-modal-card h3{
+    padding-right:0 !important;
+    padding-left:48px !important;
+  }
+  .attachment-preview-close-x{
+    position:absolute !important;
+    top:10px !important;
+    right:10px !important;
+    width:42px !important;
+    height:42px !important;
+    font-size:25px !important;
+    z-index:20 !important;
+  }
+  body.lang-ar .attachment-preview-close-x{right:auto !important;left:10px !important;}
+  .attachment-preview-meta{
+    flex:0 0 auto !important;
+    font-size:11.5px !important;
+    line-height:1.35 !important;
+    padding:9px 10px !important;
+  }
+  .attachment-preview-body{
+    flex:1 1 auto !important;
+    min-height:210px !important;
+    max-height:none !important;
+    overflow:auto !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+  .attachment-preview-body iframe,
+  .attachment-preview-body object,
+  .attachment-preview-body embed{
+    height:100% !important;
+    min-height:48vh !important;
+  }
+  .attachment-preview-actions{
+    position:sticky !important;
+    bottom:0 !important;
+    flex:0 0 auto !important;
+    display:grid !important;
+    grid-template-columns:1fr 1fr !important;
+    gap:8px !important;
+    margin-top:10px !important;
+    padding-top:10px !important;
+    background:linear-gradient(180deg,rgba(255,255,255,.72),#ffffff 42%) !important;
+  }
+  .attachment-preview-actions .btn{
+    min-height:44px !important;
+    width:100% !important;
+  }
+  .attachment-preview-actions .btn:nth-child(3){
+    grid-column:1 / -1 !important;
+    order:-1 !important;
+    background:#101b2f !important;
+    color:#ffffff !important;
+    border-color:#101b2f !important;
+    font-size:14px !important;
+  }
+}
+@media screen and (max-width:380px){
+  .smart-datetime-input{
+    font-size:13.2px !important;
+    padding-left:6px !important;
+    padding-right:6px !important;
+  }
+  .work-period-card-head b{font-size:11px !important;}
+}
+
+
+/* Final fix: stable Arabic step navigation on main page and exported HTML */
+html[dir="rtl"],
+body.lang-ar{
+  overflow-x:hidden !important;
+}
+body.lang-ar .layout,
+body.lang-ar form,
+body.lang-ar .section,
+body.lang-ar .section-body,
+body.lang-ar .toolbar,
+body.lang-ar .wizard-bottom-nav{
+  min-width:0 !important;
+  max-width:100% !important;
+  box-sizing:border-box !important;
+}
+body.lang-ar .tabs.process-flow{
+  direction:rtl !important;
+  min-width:0 !important;
+  max-width:100% !important;
+  overflow-x:auto !important;
+  overflow-y:hidden !important;
+  scrollbar-width:thin;
+}
+body.lang-ar .tabs.process-flow .tab-btn{
+  margin:0 !important;
+  min-width:0 !important;
+}
+body.lang-ar .tabs.process-flow .tab-btn::after{
+  display:none !important;
+}
+body.lang-ar .tabs.process-flow .tab-btn span:last-child{
+  min-width:0 !important;
+  overflow-wrap:anywhere !important;
+}
+.wizard-bottom-nav{
+  display:grid !important;
+  grid-template-columns:minmax(132px,auto) minmax(0,1fr) minmax(132px,auto) !important;
+  align-items:center !important;
+  direction:ltr !important;
+}
+.wizard-bottom-nav #prevStepBtn{
+  grid-column:1 !important;
+  grid-row:1 !important;
+}
+.wizard-bottom-nav #wizardStepLabel{
+  grid-column:2 !important;
+  grid-row:1 !important;
+  min-width:0 !important;
+  overflow-wrap:anywhere !important;
+}
+.wizard-bottom-nav #nextStepBtn{
+  grid-column:3 !important;
+  grid-row:1 !important;
+}
+body.lang-ar .wizard-bottom-nav{
+  direction:ltr !important;
+}
+body.lang-ar .wizard-bottom-nav #wizardStepLabel{
+  direction:rtl !important;
+  text-align:center !important;
+}
+body.lang-ar .wizard-bottom-nav .btn{
+  white-space:normal !important;
+}
+@media screen and (min-width:761px){
+  body.lang-ar .tabs.process-flow{
+    gap:10px !important;
+    padding-inline:4px !important;
+  }
+}
+@media screen and (max-width:760px){
+  body.lang-ar .tabs.process-flow{
+    direction:rtl !important;
+    overflow:visible !important;
+  }
+  body.lang-ar .tabs.process-flow .tab-btn{
+    width:100% !important;
+    text-align:right !important;
+  }
+  .wizard-bottom-nav,
+  body.lang-ar .wizard-bottom-nav{
+    grid-template-columns:1fr !important;
+    direction:ltr !important;
+  }
+  .wizard-bottom-nav #wizardStepLabel,
+  .wizard-bottom-nav #prevStepBtn,
+  .wizard-bottom-nav #nextStepBtn{
+    grid-column:1 !important;
+  }
+  .wizard-bottom-nav #wizardStepLabel{grid-row:1 !important;}
+  .wizard-bottom-nav #prevStepBtn{grid-row:2 !important;}
+  .wizard-bottom-nav #nextStepBtn{grid-row:3 !important;}
+}
+
 </style>
 </head>
 <body class="">
@@ -1685,11 +1949,11 @@ body.lang-ar .editor-floating-toolbar{direction:rtl}
       </div>
       <div class="status-card">
         <label>Fast Navigation</label>
-        <a href="#request" onclick="openTab('request')">Request Information</a>
-        <a href="#safety" onclick="openTab('safety')">Safety Assessment</a>
-        <a href="#work" onclick="openTab('work')">Documents &amp; Tasks</a>
-        <a href="#rules" onclick="openTab('rules')">Safety Regulations</a>
-        <a href="#approval" onclick="openTab('approval')">Agreement &amp; Signature</a>
+        <a href="#request" onclick="return openTab('request',{scroll:true})">Request Information</a>
+        <a href="#safety" onclick="return openTab('safety',{scroll:true})">Safety Assessment</a>
+        <a href="#work" onclick="return openTab('work',{scroll:true})">Documents &amp; Tasks</a>
+        <a href="#rules" onclick="return openTab('rules',{scroll:true})">Safety Regulations</a>
+        <a href="#approval" onclick="return openTab('approval',{scroll:true})">Agreement &amp; Signature</a>
         <button class="fast-attachment-btn" type="button" onclick="openFastAttachmentManager()">View Attachment <span id="fastAttachmentCountBadge">1</span></button>
       </div>
       <p class="hint">Internal Use is intentionally hidden on the web screen and appears only in the generated PDF report.</p>
@@ -1821,9 +2085,9 @@ body.lang-ar .editor-floating-toolbar{direction:rtl}
       </section>
 
       <div class="wizard-bottom-nav no-print">
-        <button class="btn primary" id="prevStepBtn" type="button" onclick="openPreviousStep()" disabled="">Previous</button>
+        <button class="btn primary" id="prevStepBtn" type="button" onclick="return openPreviousStep()" disabled="" aria-label="Previous">Previous</button>
         <div class="wizard-step-label" id="wizardStepLabel">Step 1 of 5 — Request</div>
-        <button class="btn primary" id="nextStepBtn" type="button" onclick="openNextStep()">Next</button>
+        <button class="btn primary" id="nextStepBtn" type="button" onclick="return openNextStep()" aria-label="Next">Next</button>
       </div>
     </form>
   </div>
@@ -1834,11 +2098,11 @@ body.lang-ar .editor-floating-toolbar{direction:rtl}
 <script type="application/json" id="permitExportDataSeed">{
   "meta": {
     "reportType": "Contractors / Vendors Permit to Work - Events",
-    "savedAt": "2026-06-06T09:38:08.552Z",
+    "savedAt": "2026-06-06T12:40:07.037Z",
     "version": "Property corporate v11"
   },
   "fields": {
-    "requestDate": "06/Jun/2026",
+    "requestDate": "07/Jun/2026",
     "propertyName": "Conrad Abu Dhabi Etihad Towers",
     "applicantName": "Majdi",
     "companyName": "Skill",
@@ -2263,11 +2527,11 @@ body.lang-ar .editor-floating-toolbar{direction:rtl}
 
 
 <div class="modal" id="fastAttachmentModal"><div class="modal-card fast-attachment-modal-card"><h3>View Attachments</h3><p class="hint">Open or remove uploaded attachments directly from Fast Navigation. Deleted files are removed from the web form, browser draft, and the generated PDF report.</p><div class="fast-attachment-toolbar"><button class="btn primary" type="button" onclick="triggerAttachmentUpload()">Add Attachment</button><button class="btn secondary" type="button" onclick="closeFastAttachmentManager()">Close</button></div><div id="fastAttachmentList" class="attachment-list"><div class="attachment-item"><div><b>NONE RETURNABLE PASS OUT.pdf</b><small>application/pdf · 222.9 KB</small></div><div class="attachment-actions"><button class="attachment-view" type="button" onclick="viewPermitAttachment(0)">View File</button><button class="attachment-remove" type="button" onclick="removePermitAttachment(0)">Delete</button></div></div></div></div></div>
-<div class="modal" id="attachmentPreviewModal"><div class="modal-card attachment-preview-modal-card"><h3 id="attachmentPreviewTitle">Attachment Viewer</h3><div id="attachmentPreviewMeta" class="attachment-preview-meta">No attachment selected.</div><div id="attachmentPreviewBody" class="attachment-preview-body"><div class="attachment-preview-card"><div class="file-icon">?</div><b>No attachment selected</b><p>Select an uploaded file to preview it here.</p></div></div><div class="attachment-preview-actions"><button class="btn secondary" type="button" onclick="openActiveAttachmentInNewTab()">Open</button><button class="btn secondary" type="button" onclick="downloadActiveAttachment()">Download</button><button class="btn primary" type="button" onclick="closeAttachmentPreview()">Close</button></div></div></div>
+<div class="modal" id="attachmentPreviewModal"><div class="modal-card attachment-preview-modal-card"><button class="attachment-preview-close-x" type="button" aria-label="Close preview" onclick="closeAttachmentPreview()">×</button><h3 id="attachmentPreviewTitle">Attachment Viewer</h3><div id="attachmentPreviewMeta" class="attachment-preview-meta">No attachment selected.</div><div id="attachmentPreviewBody" class="attachment-preview-body"><div class="attachment-preview-card"><div class="file-icon">?</div><b>No attachment selected</b><p>Select an uploaded file to preview it here.</p></div></div><div class="attachment-preview-actions"><button class="btn secondary" type="button" onclick="openActiveAttachmentInNewTab()">Open</button><button class="btn secondary" type="button" onclick="downloadActiveAttachment()">Download</button><button class="btn primary" type="button" onclick="closeAttachmentPreview()">Close</button></div></div></div>
 <div class="modal" id="validationModal"><div class="modal-card validation-modal-card"><h3>Missing Mandatory Information</h3><p>Please complete the following items before generating the PDF report.</p><ul class="missing-list" id="validationMissingList"></ul><div class="actions"><button class="btn primary" type="button" onclick="focusFirstMissing()">Review Missing Fields</button><button class="btn secondary" type="button" onclick="closeValidationModal()">Close</button></div></div></div>
 <div class="modal" id="browserDraftModal"><div class="modal-card browser-draft-modal-card"><h3>Draft Saved On Browser</h3><div class="browser-draft-message">All data entered here is processed entirely within your current browser and is never stored, transmitted, or saved to any external server or database. Nothing leaves your device.</div><div class="actions"><button class="btn green-confirm" type="button" onclick="closeBrowserDraftModal()">OK</button></div></div></div>
 <div class="modal" id="clearModal"><div class="modal-card clear-modal-card"><h3>Clear this permit form?</h3><p>This will remove all entered data, browser draft, signature, and uploaded attachments from this browser.</p><div class="actions"><button class="btn clear-warn" onclick="resetFormConfirmed()">Yes, Clear Form</button><button class="btn secondary" onclick="closeClearModal()">Cancel</button></div></div></div>
-<div class="toast" id="toast">Recovered saved browser draft.</div>
+<div class="toast show" id="toast">تم استرجاع مسودة محفوظة من المتصفح.</div>
 
 <script>
 const requirements=[
@@ -2674,7 +2938,8 @@ function init(){
    el.addEventListener('change',handler);
  });
  document.querySelectorAll('.date-input,.datetime-input').forEach(el=>el.addEventListener('blur',()=>{el.value=el.classList.contains('datetime-input')?normaliseDateTimeText(el.value):normaliseDateText(el.value); updateStatus(); autoSaveDraft();}));
- document.querySelectorAll('.tab-btn').forEach(btn=>btn.addEventListener('click',()=>openTab(btn.dataset.tab)));
+ document.querySelectorAll('.tab-btn[data-tab]').forEach(btn=>btn.addEventListener('click',(ev)=>{ev.preventDefault(); openTab(btn.dataset.tab,{scroll:true});}));
+ document.querySelectorAll('.side-panel a[href^="#"]').forEach(a=>a.addEventListener('click',(ev)=>{ev.preventDefault(); const id=(a.getAttribute('href')||'').replace('#',''); openTab(id,{scroll:true}); return false;}));
  setDefaultDates();
  setupSignatureCanvas();
  const declarationBox=document.querySelector('[name="declarationAccepted"]');
@@ -2724,39 +2989,64 @@ function refreshSelectedStates(){
 }
 const permitSteps=['request','safety','work','rules','approval'];
 const permitStepNames={request:'Request',safety:'Scope Score',work:'Documents & Tasks',rules:'Regulations',approval:'Agreement'};
-function openTab(id){
+function getActiveStepId(){
+ return document.querySelector('.section.active')?.id || 'request';
+}
+function safeScrollToActiveStep(){
+ const active=document.querySelector('.section.active');
+ if(!active) return;
+ const scroller=document.scrollingElement || document.documentElement;
+ const top=Math.max(0,active.getBoundingClientRect().top + window.pageYOffset - 14);
+ try{window.scrollTo({top, left:0, behavior:'smooth'});}catch(e){window.scrollTo(0,top);}
+ setTimeout(()=>{try{scroller.scrollLeft=0; document.body.scrollLeft=0; document.documentElement.scrollLeft=0;}catch(e){}},80);
+}
+function openTab(id,opts={}){
  if(!permitSteps.includes(id)) id='request';
- document.querySelectorAll('.section').forEach(s=>s.classList.toggle('active',s.id===id));
- document.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active',b.dataset.tab===id));
+ const activeBefore=getActiveStepId();
+ document.querySelectorAll('form > .section').forEach(s=>{
+   const isActive=s.id===id;
+   s.classList.toggle('active',isActive);
+   s.setAttribute('aria-hidden',isActive?'false':'true');
+ });
+ document.querySelectorAll('.tab-btn[data-tab]').forEach(b=>b.classList.toggle('active',b.dataset.tab===id));
+ document.body?.setAttribute('data-active-step',id);
  updateWizardNavigation(id);
- if(id==='approval') setTimeout(resizeSignatureCanvas,60);
+ if(id==='approval') setTimeout(resizeSignatureCanvas,80);
+ requestAnimationFrame(()=>{
+   try{document.querySelector('.tabs.process-flow .tab-btn.active')?.scrollIntoView({behavior:'smooth',block:'nearest',inline:'nearest'});}catch(e){}
+   if(opts.scroll || activeBefore!==id) safeScrollToActiveStep();
+ });
+ return false;
 }
 function updateWizardNavigation(id){
- const activeId=id || document.querySelector('.section.active')?.id || 'request';
+ const activeId=id || getActiveStepId();
  const idx=Math.max(0,permitSteps.indexOf(activeId));
  const prev=document.getElementById('prevStepBtn');
  const next=document.getElementById('nextStepBtn');
  const label=document.getElementById('wizardStepLabel');
- if(prev) prev.disabled=idx===0;
+ if(prev){
+   prev.disabled=idx===0;
+   prev.textContent=langText('Previous');
+   prev.setAttribute('aria-label',currentLanguage==='ar'?'السابق':'Previous');
+ }
  if(next){
    const nextText=idx===permitSteps.length-1?'Back to Request':'Next';
    next.textContent=langText(nextText);
+   next.setAttribute('aria-label',langText(nextText));
  }
  if(label){
    label.textContent=currentLanguage==='ar'?`الخطوة ${idx+1} من ${permitSteps.length} — ${langStepName(activeId)}`:`Step ${idx+1} of ${permitSteps.length} — ${permitStepNames[activeId] || 'Request'}`;
  }
 }
 function openNextStep(){
- const activeId=document.querySelector('.section.active')?.id || 'request';
+ const activeId=getActiveStepId();
  const idx=Math.max(0,permitSteps.indexOf(activeId));
- openTab(permitSteps[idx+1] || 'request');
- document.querySelector('.section.active')?.scrollIntoView({behavior:'smooth',block:'start'});
+ return openTab(permitSteps[idx+1] || 'request',{scroll:true});
 }
 function openPreviousStep(){
- const activeId=document.querySelector('.section.active')?.id || 'request';
+ const activeId=getActiveStepId();
  const idx=Math.max(0,permitSteps.indexOf(activeId));
- openTab(permitSteps[Math.max(0,idx-1)] || 'request');
- document.querySelector('.section.active')?.scrollIntoView({behavior:'smooth',block:'start'});
+ return openTab(permitSteps[Math.max(0,idx-1)] || 'request',{scroll:true});
 }
 function collect(){syncAllDateTimeCombos(); updateOtherTaskState(); const propEl=document.querySelector('[name="propertyName"]'); if(propEl){propEl.readOnly=true;} syncPropertyNameReferences(); const data={meta:{reportType:'Contractors / Vendors Permit to Work - Events',savedAt:new Date().toISOString(),version:'Property corporate v11'},fields:{},requirements:[],documents:documents.map((d,i)=>({sn:i+1,name:d})),tasks:[]};
  new FormData(document.getElementById('permitForm')).forEach((v,k)=>data.fields[k]=v);
@@ -2901,12 +3191,46 @@ function formatNativePickerValue(v,mode){
 }
 function openDatePicker(el,mode){
  activePickerTarget=el; activePickerMode=mode;
+ if(mode==='date'){
+   openNativeDateOnlyPicker(el);
+   return;
+ }
  const modal=document.getElementById('datePickerModal'), input=document.getElementById('pickerNative');
  document.getElementById('pickerTitle').textContent=mode==='datetime'?'Select Date & Time':'Select Date';
  document.getElementById('pickerHint').textContent=mode==='datetime'?'Selected value will be displayed as dd/mmm/yyyy hh:mm AM/PM.':'Selected value will be displayed as dd/mmm/yyyy.';
  input.type=mode==='datetime'?'datetime-local':'date';
  input.value=toNativeValueFromDisplay(el.value,mode) || (mode==='datetime'?new Date().toISOString().slice(0,16):new Date().toISOString().slice(0,10));
  modal.classList.add('show'); setTimeout(()=>{input.focus(); if(input.showPicker) input.showPicker();},120);
+}
+function openNativeDateOnlyPicker(el){
+ const native=document.createElement('input');
+ native.type='date';
+ native.value=toNativeValueFromDisplay(el.value,'date') || new Date().toISOString().slice(0,10);
+ native.setAttribute('aria-label','Select date');
+ native.style.cssText='position:fixed;left:50%;top:50%;width:2px;height:2px;opacity:.01;z-index:999999;background:#fff;border:0;padding:0;margin:0;';
+ document.body.appendChild(native);
+ let finished=false;
+ const finish=(apply)=>{
+   if(finished)return;
+   finished=true;
+   if(apply && native.value){
+     el.value=formatNativePickerValue(native.value,'date');
+     el.closest('.required-missing')?.classList.remove('required-missing');
+     restoreFieldState(el);
+     updateStatus();
+     autoSaveDraft();
+   }
+   setTimeout(()=>native.remove(),80);
+ };
+ native.addEventListener('change',()=>finish(true),{once:true});
+ native.addEventListener('blur',()=>setTimeout(()=>finish(false),300),{once:true});
+ native.focus({preventScroll:true});
+ try{
+   if(native.showPicker) native.showPicker();
+   else native.click();
+ }catch(err){
+   native.click();
+ }
 }
 function applyDatePicker(){
  const input=document.getElementById('pickerNative');
