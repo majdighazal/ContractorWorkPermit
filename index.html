@@ -1464,6 +1464,171 @@ body.lang-ar .editor-floating-toolbar{direction:rtl}
 .signature-canvas-wrap{height:320px!important}
 #signatureCanvas{width:100%!important;height:320px!important;image-rendering:auto}
 
+
+
+/* Final responsive design hardening for PC + phone + exported standalone HTML */
+@media screen{
+  html,body{width:100%;max-width:100%;overflow-x:hidden;}
+  img,canvas,iframe,object,embed,video,table{max-width:100%;}
+  .app-shell,.hero,.toolbar,.layout,form,.section,.section-body,.request-stack,.work-panel,.declaration-card,.attachment-panel,.wizard-bottom-nav{min-width:0;max-width:100%;}
+  .btn,.tab-btn,.mini-btn,.upload-btn,.attachment-view,.attachment-remove,.fast-attachment-btn{touch-action:manipulation;-webkit-tap-highlight-color:transparent;}
+  input,select,textarea,button{max-width:100%;}
+  textarea{overflow:auto;}
+  .section{overflow:hidden;}
+  .section-body{min-width:0;}
+  .table-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .score-table{min-width:720px;}
+  .check-grid{grid-template-columns:repeat(auto-fit,minmax(235px,1fr));align-items:stretch;}
+  #taskList .check-item{min-width:0;word-break:break-word;overflow-wrap:anywhere;}
+  .doc-info li,.rules li,.declaration-list li,.info-box p,.work-intro,.hint{overflow-wrap:anywhere;}
+  .attachment-item{min-width:0;}
+  .attachment-item > div:first-child{min-width:0;overflow-wrap:anywhere;}
+}
+
+@media screen and (min-width:981px) and (max-width:1180px){
+  .app-shell{padding:18px;}
+  .layout{grid-template-columns:245px minmax(0,1fr);gap:14px;}
+  .side-panel{top:84px;padding:13px;}
+  .toolbar{padding:14px;gap:12px;}
+  .tabs.process-flow .tab-btn{padding:0 12px;font-size:12px;}
+  .editor-master-controls .btn{padding:10px 12px;font-size:12px;}
+  .info-row{grid-template-columns:220px minmax(0,1fr);}
+  body.lang-ar .info-row{grid-template-columns:220px minmax(0,1fr);}
+  .work-period-shell{grid-template-columns:1fr 1fr;}
+}
+
+@media screen and (max-width:980px){
+  .app-shell{padding:16px;}
+  .hero{grid-template-columns:1fr!important;gap:16px;border-radius:24px;padding:22px;}
+  .hero h1{font-size:clamp(24px,6vw,36px);}
+  .hero p{font-size:14px;}
+  .toolbar{position:static!important;display:grid!important;grid-template-columns:1fr;gap:12px;min-height:0;padding:14px;}
+  .tabs.process-flow{width:100%;max-width:100%;display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;padding:6px 4px 10px;}
+  .tabs.process-flow .tab-btn{scroll-snap-align:start;}
+  .toolbar .actions,.editor-master-controls{width:100%;justify-content:stretch!important;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px!important;}
+  .toolbar .actions .btn,.editor-master-controls .btn{width:100%;min-width:0!important;padding:11px 8px!important;}
+  .layout{display:block!important;}
+  .side-panel{position:static!important;margin-bottom:14px;}
+  form{width:100%;}
+  .section-header{align-items:flex-start;}
+  .info-row{grid-template-columns:210px minmax(0,1fr);}
+  body.lang-ar .info-row{grid-template-columns:210px minmax(0,1fr);}
+  .work-period-shell{grid-template-columns:1fr 1fr;}
+  .signature-canvas-wrap,#signatureCanvas{height:280px!important;}
+}
+
+@media screen and (max-width:760px){
+  body{font-size:15px;line-height:1.45;}
+  .app-shell{padding:12px;}
+  .hero{border-radius:22px;padding:18px;}
+  .brand-mark{font-size:22px;letter-spacing:4px;}
+  .brand-sub{font-size:12px;letter-spacing:2px;}
+  .metric-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:8px;}
+  .metric{padding:10px 8px;border-radius:14px;}
+  .metric b{font-size:19px;}
+  .metric span{font-size:10.5px;}
+  .toolbar{border-radius:18px;margin:12px 0;padding:12px;}
+  .tabs.process-flow{display:grid!important;grid-template-columns:1fr 1fr;gap:8px!important;overflow:visible!important;padding:0!important;}
+  .tabs.process-flow .tab-btn{width:100%!important;margin:0!important;min-height:44px;height:auto;padding:10px 8px!important;justify-content:flex-start;white-space:normal;text-align:left;line-height:1.2;}
+  .tabs.process-flow .tab-btn::after{display:none!important;}
+  .tabs.process-flow .tab-btn .step-no{flex:0 0 22px;}
+  .toolbar .actions,.editor-master-controls{grid-template-columns:1fr 1fr!important;}
+  .toolbar .actions .btn,.editor-master-controls .btn{min-height:44px;font-size:12px!important;}
+  .editor-floating-toolbar{grid-template-columns:1fr 1fr!important;margin:10px 0 12px;padding:10px;border-radius:16px;}
+  .side-panel{padding:12px;border-radius:18px;}
+  .status-card{padding:12px;border-radius:14px;}
+  .section{border-radius:20px;margin-bottom:14px;}
+  .section-header{display:block!important;padding:15px 16px;text-align:left;}
+  .section-header h2{font-size:18px!important;line-height:1.2;margin-bottom:4px;}
+  .section-header small{display:block;font-size:11px;line-height:1.35;}
+  .section-body{padding:14px;}
+  .request-stack{gap:10px;}
+  .info-row,.info-row.split,body.lang-ar .info-row{grid-template-columns:1fr!important;gap:8px;padding:12px;border-radius:16px;}
+  .info-row label{font-size:11.5px;line-height:1.25;}
+  input,select,textarea{font-size:16px!important;min-height:46px;padding:10px 11px;}
+  textarea{min-height:92px;}
+  .date-hint,.missing-note,.hint{font-size:11.5px;line-height:1.35;}
+  .work-period-shell{grid-template-columns:1fr!important;gap:10px;}
+  .work-period-card{padding:12px;border-radius:16px;}
+  .work-period-card-head b{font-size:12px;}
+  .smart-datetime-input{min-height:50px!important;font-size:16px!important;}
+  .work-panel{padding:12px;border-radius:18px;}
+  .work-panel-head{display:block;}
+  .work-panel-head b{font-size:13px;}
+  .work-panel-head span{font-size:11.5px;line-height:1.4;display:block;margin-top:3px;}
+  .doc-info li{padding:11px 12px 11px 44px;border-radius:14px;font-size:13px;line-height:1.45;}
+  body.lang-ar .doc-info li{padding:11px 44px 11px 12px;}
+  .check-grid,#taskList{grid-template-columns:1fr!important;gap:9px;}
+  #taskList .check-item{min-height:56px!important;padding:12px!important;font-size:14px!important;line-height:1.35!important;align-items:center;}
+  #taskList .check-item input[type="checkbox"]{width:20px!important;height:20px!important;flex:0 0 20px;}
+  .other-task-wrap{padding:12px!important;border-radius:16px!important;}
+  .other-task-note{font-size:13px!important;line-height:1.45!important;padding:11px 12px!important;border-radius:12px!important;}
+  .rules{columns:1!important;font-size:13px;line-height:1.45;}
+  .info-box{border-radius:14px;padding:12px;}
+  .declaration-card{padding:12px;border-radius:18px;}
+  .declaration-list{gap:8px;}
+  .declaration-list li{font-size:13px;line-height:1.45;padding:10px 10px 10px 38px;}
+  body.lang-ar .declaration-list li{padding:10px 38px 10px 10px;}
+  .grid{grid-template-columns:1fr!important;gap:10px;}
+  .field,.field.half,.field.wide,.field.small,.field.full{grid-column:1/-1!important;}
+  .signature-frame{min-height:0!important;padding:12px;border-radius:16px;}
+  .signature-canvas-wrap,#signatureCanvas{height:240px!important;min-height:240px!important;}
+  .signature-actions{display:grid!important;grid-template-columns:1fr 1fr!important;gap:8px!important;}
+  .signature-actions .signature-upload-btn,.signature-actions .signature-clear-btn{width:100%!important;max-width:none!important;min-width:0!important;}
+  .attachment-panel{padding:12px;border-radius:18px;}
+  .attachment-panel-title{display:grid;grid-template-columns:1fr;gap:8px;}
+  .attachment-panel-title .btn{width:100%;}
+  .attachment-item{display:grid!important;grid-template-columns:1fr;align-items:start;gap:8px;}
+  .attachment-actions{display:grid;grid-template-columns:1fr 1fr;width:100%;gap:8px;}
+  .attachment-actions .attachment-view,.attachment-actions .attachment-remove{width:100%;}
+  .wizard-bottom-nav{display:grid!important;grid-template-columns:1fr;gap:8px;padding:12px;border-radius:18px;}
+  .wizard-bottom-nav .btn{width:100%;min-width:0;min-height:44px;}
+  .wizard-bottom-nav .wizard-step-label{order:-1;font-size:12px;line-height:1.35;}
+  .modal{padding:12px;align-items:flex-start;overflow:auto;}
+  .modal-card{width:100%!important;max-width:calc(100vw - 24px)!important;max-height:none;border-radius:18px;padding:16px;}
+  .attachment-preview-modal-card,.fast-attachment-modal-card,.crop-modal-card,.content-editor-card{width:calc(100vw - 24px)!important;max-width:calc(100vw - 24px)!important;max-height:calc(100vh - 24px)!important;}
+  .attachment-preview-body{min-height:260px;max-height:56vh;}
+  .attachment-preview-actions{display:grid!important;grid-template-columns:1fr 1fr;gap:8px;}
+  .attachment-preview-actions .btn{width:100%;min-width:0;}
+  body.lang-ar .section-header{text-align:right!important;}
+  body.lang-ar .tabs.process-flow .tab-btn{text-align:right;justify-content:flex-start;}
+  body.lang-ar #work #taskList .check-item{font-size:17px!important;min-height:64px!important;padding:14px 16px!important;}
+  body.lang-ar .other-task-note{font-size:15px!important;line-height:1.65!important;}
+}
+
+@media screen and (max-width:480px){
+  .app-shell{padding:10px;}
+  .hero{padding:16px;border-radius:18px;}
+  .metric-grid{grid-template-columns:1fr!important;}
+  .toolbar .actions,.editor-master-controls,.editor-floating-toolbar{grid-template-columns:1fr!important;}
+  .tabs.process-flow{grid-template-columns:1fr!important;}
+  .tab-btn,.btn{width:100%;}
+  .section-header{padding:13px 14px;}
+  .section-body{padding:12px;}
+  .info-row{padding:11px;}
+  .work-period-card{padding:10px;}
+  input[type="datetime-local"]{letter-spacing:0;font-size:15px!important;}
+  .doc-info li{font-size:12.5px;}
+  #taskList .check-item{font-size:13.5px!important;}
+  body.lang-ar #work #taskList .check-item{font-size:16px!important;}
+  .signature-canvas-wrap,#signatureCanvas{height:210px!important;min-height:210px!important;}
+  .signature-actions{grid-template-columns:1fr!important;}
+  .attachment-actions,.attachment-preview-actions{grid-template-columns:1fr!important;}
+  .approval-table{font-size:12px;}
+  .toast{left:10px;right:10px;bottom:10px;text-align:center;}
+}
+
+@media screen and (max-width:360px){
+  .app-shell{padding:8px;}
+  .brand-mark{font-size:19px;letter-spacing:3px;}
+  .hero h1{font-size:23px;}
+  .section-header h2{font-size:16px!important;}
+  .btn,.tab-btn{font-size:11.5px!important;}
+  input,select,textarea{font-size:15.5px!important;}
+  .other-task-note{font-size:12.5px!important;}
+  .signature-canvas-wrap,#signatureCanvas{height:190px!important;min-height:190px!important;}
+}
+
 </style>
 </head>
 <body class="">
@@ -1479,17 +1644,17 @@ body.lang-ar .editor-floating-toolbar{direction:rtl}
       <b>Permit Dashboard</b>
       <div class="metric-grid">
         <div class="metric"><b id="heroScore">70</b><span>Safety Score</span></div>
-        <div class="metric"><b id="heroPercent">96%</b><span>Form Completion</span></div>
-        <div class="metric"><b id="heroTasks">0</b><span>Safe Tasks</span></div>
+        <div class="metric"><b id="heroPercent">100%</b><span>Form Completion</span></div>
+        <div class="metric"><b id="heroTasks">2</b><span>Safe Tasks</span></div>
       </div>
     </div>
   </header>
 
   <div class="toolbar no-print">
     <div class="tabs process-flow" aria-label="Permit process steps">
-      <button class="tab-btn" type="button" data-tab="request"><span class="step-no">1</span><span>Request</span></button>
+      <button class="tab-btn active" type="button" data-tab="request"><span class="step-no">1</span><span>Request</span></button>
       <button class="tab-btn" type="button" data-tab="safety"><span class="step-no">2</span><span>Scope Score</span></button>
-      <button class="tab-btn active" type="button" data-tab="work"><span class="step-no">3</span><span>Documents &amp; Tasks</span></button>
+      <button class="tab-btn" type="button" data-tab="work"><span class="step-no">3</span><span>Documents &amp; Tasks</span></button>
       <button class="tab-btn" type="button" data-tab="rules"><span class="step-no">4</span><span>Regulations</span></button>
       <button class="tab-btn" type="button" data-tab="approval"><span class="step-no">5</span><span>Agreement</span></button>
       <button class="tab-btn attachment-tab" type="button" onclick="triggerAttachmentUpload()"><span class="step-no">+</span><span>Add Attachment</span><span id="attachmentCountBadge" style="display: inline-flex;">1</span></button>
@@ -1538,7 +1703,7 @@ body.lang-ar .editor-floating-toolbar{direction:rtl}
         <div class="report-meta"><span>CAD-OSHMS-015-F01</span><span>Date: 01/10/2020</span><span>REV 01</span></div>
       </div>
 
-      <section class="section" id="request">
+      <section class="section active" id="request">
         <div class="section-header"><h2>Permit Request Information</h2><small>CAD-OSHMS-015-F01 | REV 01</small></div>
         <div class="section-body">
           <div class="request-stack">
@@ -1568,7 +1733,7 @@ body.lang-ar .editor-floating-toolbar{direction:rtl}
         </div>
       </section>
 
-      <section class="section active" id="work">
+      <section class="section" id="work">
         <div class="section-header"><h2>Required Documents &amp; Safe Work Description</h2><small>Documents required 7 business days before work</small></div>
         <div class="section-body">
           <p class="work-intro">Review the required documents, then select every task that will be performed. Use <b>Others</b> for any task not listed.</p>
@@ -1578,7 +1743,7 @@ body.lang-ar .editor-floating-toolbar{direction:rtl}
           </div>
           <div class="work-panel">
             <div class="work-panel-head"><div><b>Safe Work Description / Task to Perform</b><br><span>Select all applicable work activities.</span></div></div>
-            <div class="check-grid" id="taskList"><label class="check-item "><input type="checkbox" name="task_0" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Working on the roof</label><label class="check-item "><input type="checkbox" name="task_1" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Spray painting</label><label class="check-item "><input type="checkbox" name="task_2" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Window cleaning</label><label class="check-item "><input type="checkbox" name="task_3" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Working in confined spaces</label><label class="check-item "><input type="checkbox" name="task_4" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Electrical Work</label><label class="check-item "><input type="checkbox" name="task_5" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Welding or abrasive cutting</label><label class="check-item "><input type="checkbox" name="task_6" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Demolishing</label><label class="check-item "><input type="checkbox" name="task_7" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Erecting scaffolding</label><label class="check-item "><input type="checkbox" name="task_8" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Using chemicals</label><label class="check-item "><input type="checkbox" name="task_9" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Working at heights</label><label class="check-item "><input type="checkbox" name="task_10" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Access to high voltage workstation</label><label class="check-item "><input type="checkbox" name="task_11" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Hot work</label><label class="check-item "><input type="checkbox" name="task_12" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Build a Stage</label><label class="check-item "><input type="checkbox" name="task_13" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Install Digital Screen</label><label class="check-item "><input type="checkbox" name="task_14" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Light installation</label><label class="check-item "><input type="checkbox" name="task_15" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Furniture Delivery / Placement</label><label class="check-item other-task-option"><input type="checkbox" name="task_16" data-other-task="true" onchange="handleTaskSelectionChange(this)"> Others</label></div>
+            <div class="check-grid" id="taskList"><label class="check-item "><input type="checkbox" name="task_0" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Working on the roof</label><label class="check-item "><input type="checkbox" name="task_1" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Spray painting</label><label class="check-item "><input type="checkbox" name="task_2" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Window cleaning</label><label class="check-item "><input type="checkbox" name="task_3" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Working in confined spaces</label><label class="check-item "><input type="checkbox" name="task_4" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Electrical Work</label><label class="check-item "><input type="checkbox" name="task_5" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Welding or abrasive cutting</label><label class="check-item "><input type="checkbox" name="task_6" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Demolishing</label><label class="check-item "><input type="checkbox" name="task_7" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Erecting scaffolding</label><label class="check-item checked"><input type="checkbox" name="task_8" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Using chemicals</label><label class="check-item "><input type="checkbox" name="task_9" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Working at heights</label><label class="check-item "><input type="checkbox" name="task_10" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Access to high voltage workstation</label><label class="check-item "><input type="checkbox" name="task_11" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Hot work</label><label class="check-item "><input type="checkbox" name="task_12" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Build a Stage</label><label class="check-item "><input type="checkbox" name="task_13" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Install Digital Screen</label><label class="check-item "><input type="checkbox" name="task_14" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Light installation</label><label class="check-item checked"><input type="checkbox" name="task_15" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Furniture Delivery / Placement</label><label class="check-item other-task-option"><input type="checkbox" name="task_16" data-other-task="true" onchange="handleTaskSelectionChange(this)"> Others</label></div>
             <div class="task-missing-note">Please select at least one Safe Work Description task.</div>
             <div class="field full other-task-wrap disabled" id="otherTaskWrap"><label>Other Task Details</label><input name="otherTask" placeholder="Describe the other task" disabled=""><div class="other-task-note" data-other-task-note="" style="display: block;">
                 <span class="note-en">Note: If the contractor selects Others, fill Other Task Details only if extra clarification is necessary. This field is optional.</span>
@@ -1656,8 +1821,8 @@ body.lang-ar .editor-floating-toolbar{direction:rtl}
       </section>
 
       <div class="wizard-bottom-nav no-print">
-        <button class="btn primary" id="prevStepBtn" type="button" onclick="openPreviousStep()">Previous</button>
-        <div class="wizard-step-label" id="wizardStepLabel">Step 3 of 5 — Documents &amp; Tasks</div>
+        <button class="btn primary" id="prevStepBtn" type="button" onclick="openPreviousStep()" disabled="">Previous</button>
+        <div class="wizard-step-label" id="wizardStepLabel">Step 1 of 5 — Request</div>
         <button class="btn primary" id="nextStepBtn" type="button" onclick="openNextStep()">Next</button>
       </div>
     </form>
@@ -1669,7 +1834,7 @@ body.lang-ar .editor-floating-toolbar{direction:rtl}
 <script type="application/json" id="permitExportDataSeed">{
   "meta": {
     "reportType": "Contractors / Vendors Permit to Work - Events",
-    "savedAt": "2026-06-06T07:48:56.499Z",
+    "savedAt": "2026-06-06T09:38:08.552Z",
     "version": "Property corporate v11"
   },
   "fields": {
@@ -1704,6 +1869,8 @@ body.lang-ar .editor-floating-toolbar{direction:rtl}
     "answer_8": "No",
     "score_9": "10",
     "answer_9": "Yes",
+    "task_8": true,
+    "task_15": true,
     "rulesAccepted": true,
     "declarationAccepted": true,
     "authorizedName": "majdi ghazal",
@@ -1717,14 +1884,12 @@ body.lang-ar .editor-floating-toolbar{direction:rtl}
     "task_5": false,
     "task_6": false,
     "task_7": false,
-    "task_8": false,
     "task_9": false,
     "task_10": false,
     "task_11": false,
     "task_12": false,
     "task_13": false,
     "task_14": false,
-    "task_15": false,
     "task_16": false
   },
   "requirements": [
@@ -1852,7 +2017,7 @@ body.lang-ar .editor-floating-toolbar{direction:rtl}
     },
     {
       "name": "Using chemicals",
-      "selected": false
+      "selected": true
     },
     {
       "name": "Working at heights",
@@ -1880,7 +2045,7 @@ body.lang-ar .editor-floating-toolbar{direction:rtl}
     },
     {
       "name": "Furniture Delivery / Placement",
-      "selected": false
+      "selected": true
     },
     {
       "name": "Others",
@@ -2102,7 +2267,7 @@ body.lang-ar .editor-floating-toolbar{direction:rtl}
 <div class="modal" id="validationModal"><div class="modal-card validation-modal-card"><h3>Missing Mandatory Information</h3><p>Please complete the following items before generating the PDF report.</p><ul class="missing-list" id="validationMissingList"></ul><div class="actions"><button class="btn primary" type="button" onclick="focusFirstMissing()">Review Missing Fields</button><button class="btn secondary" type="button" onclick="closeValidationModal()">Close</button></div></div></div>
 <div class="modal" id="browserDraftModal"><div class="modal-card browser-draft-modal-card"><h3>Draft Saved On Browser</h3><div class="browser-draft-message">All data entered here is processed entirely within your current browser and is never stored, transmitted, or saved to any external server or database. Nothing leaves your device.</div><div class="actions"><button class="btn green-confirm" type="button" onclick="closeBrowserDraftModal()">OK</button></div></div></div>
 <div class="modal" id="clearModal"><div class="modal-card clear-modal-card"><h3>Clear this permit form?</h3><p>This will remove all entered data, browser draft, signature, and uploaded attachments from this browser.</p><div class="actions"><button class="btn clear-warn" onclick="resetFormConfirmed()">Yes, Clear Form</button><button class="btn secondary" onclick="closeClearModal()">Cancel</button></div></div></div>
-<div class="toast" id="toast">تم استرجاع مسودة محفوظة من المتصفح.</div>
+<div class="toast" id="toast">Recovered saved browser draft.</div>
 
 <script>
 const requirements=[
