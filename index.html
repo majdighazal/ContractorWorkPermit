@@ -543,9 +543,20 @@
   }
 }
 
+/* Arabic task cards: keep the checkbox rail aligned with the English layout. */
+@media(max-width:760px){
+  body.lang-ar #taskList .check-item{
+    grid-template-columns:32px minmax(0,1fr) !important;
+    text-align:right !important;
+  }
+  body.lang-ar #taskList .check-item input[type="checkbox"]{
+    grid-column:1 !important;
+  }
+}
+
 </style>
 </head>
-<body>
+<body data-navigation-ready="true">
 <div class="app-shell">
   <header class="hero">
     <div>
@@ -609,7 +620,7 @@
       <p class="hint">Internal Use is intentionally hidden on the web screen and appears only in the generated PDF report.</p>
     </aside>
 
-    <form id="permitForm" autocomplete="on">
+    <form id="permitForm" autocomplete="on" data-events-ready="true">
       <div class="print-only brand-print">
         <div class="logo">CONRAD ABU DHABI ETIHAD TOWERS</div>
         <div class="sub">PERMIT TO WORK REQUEST</div>
@@ -629,7 +640,7 @@
             <div class="info-row"><label>Mobile Number</label><div><input name="mobile" type="tel" required=""><div class="missing-note">Required field</div></div></div>
             <div class="info-row"><label>Number of Staff to do the Job</label><div><input name="staffCount" type="number" min="0" required=""><div class="missing-note">Required field</div></div></div>
             <div class="info-row"><label>Setup Location</label><div><input name="location" placeholder="Ballroom / venue / floor" required=""><div class="missing-note">Required field</div></div></div>
-            <div class="info-row work-period-row"><label>Access / Exit Date &amp; Time</label><div><input type="hidden" name="accessDateTime" class="datetime-input" required="" value=""><input type="hidden" name="exitDateTime" class="datetime-input" required="" value=""><div class="work-period-shell"><div class="work-period-card"><div class="work-period-card-head"><b>Access starts</b></div><input type="datetime-local" class="smart-datetime-input" data-datetime-native="accessDateTime" aria-label="Access date and time" oninput="syncDateTimeCombo('accessDateTime')" onchange="syncDateTimeCombo('accessDateTime')"></div><div class="work-period-card"><div class="work-period-card-head"><b>Exit ends</b></div><input type="datetime-local" class="smart-datetime-input" data-datetime-native="exitDateTime" aria-label="Exit date and time" oninput="syncDateTimeCombo('exitDateTime')" onchange="syncDateTimeCombo('exitDateTime')"></div></div><div class="date-hint">Select access and exit date/time directly in one smart field for each item.</div><div class="missing-note">Required field</div></div></div>
+            <div class="info-row work-period-row"><label>Access / Exit Date &amp; Time</label><div><input type="hidden" name="accessDateTime" class="datetime-input" required="" value=""><input type="hidden" name="exitDateTime" class="datetime-input" required="" value=""><div class="work-period-shell"><div class="work-period-card"><div class="work-period-card-head"><b>Access starts</b></div><input type="datetime-local" class="smart-datetime-input" data-datetime-native="accessDateTime" aria-label="Access date and time"></div><div class="work-period-card"><div class="work-period-card-head"><b>Exit ends</b></div><input type="datetime-local" class="smart-datetime-input" data-datetime-native="exitDateTime" aria-label="Exit date and time"></div></div><div class="date-hint">Select access and exit date/time directly in one smart field for each item.</div><div class="missing-note">Required field</div></div></div>
             <div class="info-row"><label>Scope / Work Description</label><div><textarea name="scope" required="" placeholder="Briefly describe the work, setup activity, equipment, and contractor scope."></textarea><div class="missing-note">Required field</div></div></div>
           </div>
         </div>
@@ -640,7 +651,7 @@
         <div class="section-body table-wrap">
           <table class="score-table">
             <thead><tr><th>SN#</th><th>Requirements</th><th>Rating</th><th>Score</th><th>Applicant to Select</th></tr></thead>
-            <tbody id="requirementRows"><tr><td class="sn">1.</td><td class="mobile-question-cell">Do you have Approved Occupational Health and Safety Management System in place? (OSHAD / ISO 45001:2008).</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_0" value="0"></td><td class="answer"><select name="answer_0" onchange="syncScore(0,this.value)"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">2.</td><td class="mobile-question-cell">Has a Health &amp; Safety policy been developed?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_1" value="0"></td><td class="answer"><select name="answer_1" onchange="syncScore(1,this.value)"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">3.</td><td class="mobile-question-cell">Do you have a dedicated Health &amp; Safety Person available?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_2" value="0"></td><td class="answer"><select name="answer_2" onchange="syncScore(2,this.value)"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">4.</td><td class="mobile-question-cell">Do you have valid adequate company public liability insurance?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_3" value="0"></td><td class="answer"><select name="answer_3" onchange="syncScore(3,this.value)"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">5.</td><td class="mobile-question-cell">Is there any training plan available for your staff for all activities that you perform?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_4" value="0"></td><td class="answer"><select name="answer_4" onchange="syncScore(4,this.value)"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">6.</td><td class="mobile-question-cell">Do you have procedures in place to handle emergencies on site?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_5" value="0"></td><td class="answer"><select name="answer_5" onchange="syncScore(5,this.value)"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">7.</td><td class="mobile-question-cell">Do you report and record incidents / accidents?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_6" value="0"></td><td class="answer"><select name="answer_6" onchange="syncScore(6,this.value)"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">8.</td><td class="mobile-question-cell">Will you provide all necessary PPEs and other welfare facilities on site?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_7" value="0"></td><td class="answer"><select name="answer_7" onchange="syncScore(7,this.value)"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">9.</td><td class="mobile-question-cell">Is there any work from our scope of work being subcontracted? If yes, are they competent to fulfill the health and safety requirements?</td><td class="rating">N/A</td><td class="score"><input type="number" readonly="" name="score_8" value="0"></td><td class="answer"><select name="answer_8" onchange="syncScore(8,this.value)"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">10.</td><td class="mobile-question-cell">Do you have third party inspection certificate / license for all equipment used in our site?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_9" value="0"></td><td class="answer"><select name="answer_9" onchange="syncScore(9,this.value)"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr></tbody>
+            <tbody id="requirementRows"><tr><td class="sn">1.</td><td class="mobile-question-cell">Do you have Approved Occupational Health and Safety Management System in place? (OSHAD / ISO 45001:2008).</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_0" value="0"></td><td class="answer"><select name="answer_0"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">2.</td><td class="mobile-question-cell">Has a Health &amp; Safety policy been developed?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_1" value="0"></td><td class="answer"><select name="answer_1"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">3.</td><td class="mobile-question-cell">Do you have a dedicated Health &amp; Safety Person available?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_2" value="0"></td><td class="answer"><select name="answer_2"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">4.</td><td class="mobile-question-cell">Do you have valid adequate company public liability insurance?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_3" value="0"></td><td class="answer"><select name="answer_3"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">5.</td><td class="mobile-question-cell">Is there any training plan available for your staff for all activities that you perform?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_4" value="0"></td><td class="answer"><select name="answer_4"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">6.</td><td class="mobile-question-cell">Do you have procedures in place to handle emergencies on site?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_5" value="0"></td><td class="answer"><select name="answer_5"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">7.</td><td class="mobile-question-cell">Do you report and record incidents / accidents?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_6" value="0"></td><td class="answer"><select name="answer_6"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">8.</td><td class="mobile-question-cell">Will you provide all necessary PPEs and other welfare facilities on site?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_7" value="0"></td><td class="answer"><select name="answer_7"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">9.</td><td class="mobile-question-cell">Is there any work from our scope of work being subcontracted? If yes, are they competent to fulfill the health and safety requirements?</td><td class="rating">N/A</td><td class="score"><input type="number" readonly="" name="score_8" value="0"></td><td class="answer"><select name="answer_8"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">10.</td><td class="mobile-question-cell">Do you have third party inspection certificate / license for all equipment used in our site?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_9" value="0"></td><td class="answer"><select name="answer_9"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr></tbody>
             <tfoot><tr><td colspan="2"><b>Total Score</b></td><td><b id="safetyMaxScoreCell">90</b></td><td><input id="totalScore" readonly=""></td><td><span id="assessmentBadge" class="pill bad">Not Ready</span></td></tr></tfoot>
           </table>
           <p class="hint">Score fields are locked. Select Yes / No / N/A and the report calculates the score automatically.</p>
@@ -657,7 +668,7 @@
           </div>
           <div class="work-panel">
             <div class="work-panel-head"><div><b>Safe Work Description / Task to Perform</b><br><span>Select all applicable work activities.</span></div></div>
-            <div class="check-grid" id="taskList"><label class="check-item "><input type="checkbox" name="task_0" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Working on the roof</label><label class="check-item "><input type="checkbox" name="task_1" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Spray painting</label><label class="check-item "><input type="checkbox" name="task_2" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Window cleaning</label><label class="check-item "><input type="checkbox" name="task_3" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Working in confined spaces</label><label class="check-item "><input type="checkbox" name="task_4" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Electrical Work</label><label class="check-item "><input type="checkbox" name="task_5" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Welding or abrasive cutting</label><label class="check-item "><input type="checkbox" name="task_6" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Demolishing</label><label class="check-item "><input type="checkbox" name="task_7" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Erecting scaffolding</label><label class="check-item "><input type="checkbox" name="task_8" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Using chemicals</label><label class="check-item "><input type="checkbox" name="task_9" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Working at heights</label><label class="check-item "><input type="checkbox" name="task_10" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Access to high voltage workstation</label><label class="check-item "><input type="checkbox" name="task_11" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Hot work</label><label class="check-item "><input type="checkbox" name="task_12" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Build a Stage</label><label class="check-item "><input type="checkbox" name="task_13" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Install Digital Screen</label><label class="check-item "><input type="checkbox" name="task_14" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Light installation</label><label class="check-item "><input type="checkbox" name="task_15" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Furniture Delivery / Placement</label><label class="check-item other-task-option"><input type="checkbox" name="task_16" data-other-task="true" onchange="handleTaskSelectionChange(this)"> Others</label></div>
+            <div class="check-grid" id="taskList"><label class="check-item "><input type="checkbox" name="task_0" data-other-task="false"> Working on the roof</label><label class="check-item "><input type="checkbox" name="task_1" data-other-task="false"> Spray painting</label><label class="check-item "><input type="checkbox" name="task_2" data-other-task="false"> Window cleaning</label><label class="check-item "><input type="checkbox" name="task_3" data-other-task="false"> Working in confined spaces</label><label class="check-item "><input type="checkbox" name="task_4" data-other-task="false"> Electrical Work</label><label class="check-item "><input type="checkbox" name="task_5" data-other-task="false"> Welding or abrasive cutting</label><label class="check-item "><input type="checkbox" name="task_6" data-other-task="false"> Demolishing</label><label class="check-item "><input type="checkbox" name="task_7" data-other-task="false"> Erecting scaffolding</label><label class="check-item "><input type="checkbox" name="task_8" data-other-task="false"> Using chemicals</label><label class="check-item "><input type="checkbox" name="task_9" data-other-task="false"> Working at heights</label><label class="check-item "><input type="checkbox" name="task_10" data-other-task="false"> Access to high voltage workstation</label><label class="check-item "><input type="checkbox" name="task_11" data-other-task="false"> Hot work</label><label class="check-item "><input type="checkbox" name="task_12" data-other-task="false"> Build a Stage</label><label class="check-item "><input type="checkbox" name="task_13" data-other-task="false"> Install Digital Screen</label><label class="check-item "><input type="checkbox" name="task_14" data-other-task="false"> Light installation</label><label class="check-item "><input type="checkbox" name="task_15" data-other-task="false"> Furniture Delivery / Placement</label><label class="check-item other-task-option"><input type="checkbox" name="task_16" data-other-task="true"> Others</label></div>
             <div class="task-missing-note">Please select at least one Safe Work Description task.</div>
             <div class="field full other-task-wrap disabled" id="otherTaskWrap"><label>Other Task Details</label><input name="otherTask" placeholder="Describe the other task" disabled=""><div class="other-task-note" data-other-task-note="" style="display: block;">
                 <span class="note-en">Note: If the contractor selects Others, fill Other Task Details only if extra clarification is necessary. This field is optional.</span>
@@ -747,7 +758,7 @@
 <script type="application/json" id="permitExportDataSeed">{
   "meta": {
     "reportType": "Contractors / Vendors Permit to Work - Events",
-    "savedAt": "2026-06-06T14:42:31.857Z",
+    "savedAt": "2026-06-06T14:56:11.101Z",
     "version": "Property corporate v11"
   },
   "fields": {
@@ -1172,7 +1183,7 @@
 <div class="modal" id="validationModal"><div class="modal-card validation-modal-card"><h3>Missing Mandatory Information</h3><p>Please complete the following items before generating the PDF report.</p><ul class="missing-list" id="validationMissingList"></ul><div class="actions"><button class="btn primary" type="button" onclick="focusFirstMissing()">Review Missing Fields</button><button class="btn secondary" type="button" onclick="closeValidationModal()">Close</button></div></div></div>
 <div class="modal" id="browserDraftModal"><div class="modal-card browser-draft-modal-card"><h3>Draft Saved On Browser</h3><div class="browser-draft-message">All data entered here is processed entirely within your current browser and is never stored, transmitted, or saved to any external server or database. Nothing leaves your device.</div><div class="actions"><button class="btn green-confirm" type="button" onclick="closeBrowserDraftModal()">OK</button></div></div></div>
 <div class="modal" id="clearModal"><div class="modal-card clear-modal-card"><h3>Clear this permit form?</h3><p>This will remove all entered data, browser draft, signature, and uploaded attachments from this browser.</p><div class="actions"><button class="btn clear-warn" onclick="resetFormConfirmed()">Yes, Clear Form</button><button class="btn secondary" onclick="closeClearModal()">Cancel</button></div></div></div>
-<div class="toast" id="toast">Recovered saved browser draft.</div>
+<div class="toast show" id="toast">Recovered saved browser draft.</div>
 
 <script>
 const requirements=[
@@ -1318,6 +1329,8 @@ function langStatus(en){return currentLanguage==='ar'?(AR_STATUS[en]||en):en;}
 function langStepName(id){return currentLanguage==='ar'?(AR_STEP_NAMES[id]||permitStepNames[id]||''):(permitStepNames[id]||'');}
 
 function escapeHtmlText(v){return String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
+const $=(selector,scope=document)=>scope.querySelector(selector);
+const $$=(selector,scope=document)=>Array.from(scope.querySelectorAll(selector));
 function isRemovedPermitDocument(v){return /\bphoto\s*id\b/i.test(String(v||''));}
 function isRemovedPermitTask(v){return /^(asbestos\s+work|abrasive\s+blasting|trenching)$/i.test(String(v||'').trim());}
 function getMaxSafetyScore(){return requirements.reduce((sum,r)=>sum+(Number(r[1])>0?Number(r[1]):0),0)||90;}
@@ -1383,11 +1396,11 @@ function applyPermitContentConfig(cfg){
 }
 function applySavedPermitContent(){try{const seed=document.getElementById('permitContentConfigSeed')?.textContent?.trim(); if(seed)applyPermitContentConfig(JSON.parse(seed));}catch(e){console.warn('Permit content config ignored',e);}}
 function renderDynamicPermitContent(){
- const rows=document.getElementById('requirementRows'); if(rows){rows.innerHTML=requirements.map((r,i)=>`<tr><td class="sn">${i+1}.</td><td class="mobile-question-cell">${escapeHtmlText(r[0])}</td><td class="rating">${Number(r[1])||'N/A'}</td><td class="score"><input type="number" readonly name="score_${i}" value="0"></td><td class="answer"><select name="answer_${i}" onchange="syncScore(${i},this.value)"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr>`).join('');}
+ const rows=document.getElementById('requirementRows'); if(rows){rows.innerHTML=requirements.map((r,i)=>`<tr><td class="sn">${i+1}.</td><td class="mobile-question-cell">${escapeHtmlText(r[0])}</td><td class="rating">${Number(r[1])||'N/A'}</td><td class="score"><input type="number" readonly name="score_${i}" value="0"></td><td class="answer"><select name="answer_${i}"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr>`).join('');}
  const maxCell=document.getElementById('safetyMaxScoreCell'); if(maxCell)maxCell.textContent=getMaxSafetyScore();
  const dl=document.getElementById('documentList'); if(dl)dl.innerHTML=documents.map(d=>`<li>${escapeHtmlText(d)}</li>`).join('');
  ensureOthersTask();
- const tl=document.getElementById('taskList'); if(tl)tl.innerHTML=tasks.map((t,i)=>{const other=isOthersTaskName(t); return `<label class="check-item ${other?'other-task-option':''}"><input type="checkbox" name="task_${i}" data-other-task="${other?'true':'false'}" onchange="handleTaskSelectionChange(this)"> ${escapeHtmlText(t)}</label>`;}).join('');
+ const tl=document.getElementById('taskList'); if(tl)tl.innerHTML=tasks.map((t,i)=>{const other=isOthersTaskName(t); return `<label class="check-item ${other?'other-task-option':''}"><input type="checkbox" name="task_${i}" data-other-task="${other?'true':'false'}"> ${escapeHtmlText(t)}</label>`;}).join('');
  updateOtherTaskState();
  const sd=document.getElementById('securityDepositText'); if(sd)sd.textContent=securityDepositText;
  const vi=document.getElementById('venueInspectionText'); if(vi)vi.textContent=venueInspectionText;
@@ -1532,7 +1545,8 @@ function syncDateTimeCombo(targetName){
  if(hidden.value) hidden.closest('.required-missing')?.classList.remove('required-missing');
  restoreFieldState(hidden);
 }
-function syncAllDateTimeCombos(){['accessDateTime','exitDateTime'].forEach(syncDateTimeCombo);}
+const permitDateTimeFields=['accessDateTime','exitDateTime'];
+function syncAllDateTimeCombos(){permitDateTimeFields.forEach(syncDateTimeCombo);}
 function hydrateDateTimeCombo(targetName){
  const hidden=document.querySelector(`[name="${targetName}"]`);
  const {nativeEl,dateEl,timeEl}=getDateTimeNativeParts(targetName);
@@ -1543,18 +1557,53 @@ function hydrateDateTimeCombo(targetName){
  if(native){const [d,t='']=native.split('T'); dateEl.value=d||''; timeEl.value=t||'';}
  else{dateEl.value=''; timeEl.value='';}
 }
-function hydrateDateTimeCombos(){['accessDateTime','exitDateTime'].forEach(hydrateDateTimeCombo);}
+function hydrateDateTimeCombos(){permitDateTimeFields.forEach(hydrateDateTimeCombo);}
+function handleFormValueChange(el){
+ if(!el) return;
+ if(el.matches('[data-datetime-native]')) syncDateTimeCombo(el.dataset.datetimeNative);
+ if(el.matches('select[name^="answer_"]')){
+   const index=Number(String(el.name).replace('answer_',''));
+   if(Number.isInteger(index)) syncScore(index,el.value);
+   autoSaveDraft();
+   return;
+ }
+ if(el.type==='checkbox' && el.closest('#taskList')) handleTaskSelectionChange(el);
+ else restoreFieldState(el);
+ updateStatus();
+ autoSaveDraft();
+}
+function wireFormEvents(){
+ const form=document.getElementById('permitForm');
+ if(!form || form.dataset.eventsReady==='true') return;
+ form.dataset.eventsReady='true';
+ form.addEventListener('input',ev=>handleFormValueChange(ev.target));
+ form.addEventListener('change',ev=>handleFormValueChange(ev.target));
+ form.addEventListener('blur',ev=>{
+   const el=ev.target;
+   if(!el?.matches?.('.date-input,.datetime-input')) return;
+   el.value=el.classList.contains('datetime-input')?normaliseDateTimeText(el.value):normaliseDateText(el.value);
+   updateStatus();
+   autoSaveDraft();
+ },true);
+}
+function wireNavigationEvents(){
+ if(document.body?.dataset.navigationReady==='true') return;
+ if(document.body) document.body.dataset.navigationReady='true';
+ document.addEventListener('click',ev=>{
+   const tab=ev.target.closest('.tab-btn[data-tab]');
+   if(tab){ev.preventDefault(); openTab(tab.dataset.tab,{scroll:true}); return;}
+   const sideLink=ev.target.closest('.side-panel a[href^="#"]');
+   if(sideLink){
+     ev.preventDefault();
+     openTab((sideLink.getAttribute('href')||'').slice(1),{scroll:true});
+   }
+ });
+}
 function init(){
  applySavedPermitContent();
  renderDynamicPermitContent();
- document.querySelectorAll('input,select,textarea').forEach(el=>{
-   const handler=()=>{restoreFieldState(el); updateStatus(); autoSaveDraft();};
-   el.addEventListener('input',handler);
-   el.addEventListener('change',handler);
- });
- document.querySelectorAll('.date-input,.datetime-input').forEach(el=>el.addEventListener('blur',()=>{el.value=el.classList.contains('datetime-input')?normaliseDateTimeText(el.value):normaliseDateText(el.value); updateStatus(); autoSaveDraft();}));
- document.querySelectorAll('.tab-btn[data-tab]').forEach(btn=>btn.addEventListener('click',(ev)=>{ev.preventDefault(); openTab(btn.dataset.tab,{scroll:true});}));
- document.querySelectorAll('.side-panel a[href^="#"]').forEach(a=>a.addEventListener('click',(ev)=>{ev.preventDefault(); const id=(a.getAttribute('href')||'').replace('#',''); openTab(id,{scroll:true}); return false;}));
+ wireFormEvents();
+ wireNavigationEvents();
  setDefaultDates();
  setupSignatureCanvas();
  const declarationBox=document.querySelector('[name="declarationAccepted"]');
@@ -1699,16 +1748,12 @@ function calculateFormCompletion(data){
    'requestDate','applicantName','companyName','supervisor','mobile','staffCount','location','accessDateTime','exitDateTime','scope',
    'rulesAccepted','declarationAccepted','authorizedName','signatureDate','signatureData'
  ];
- let completed=0;
- let total=requiredUserFields.length + requirements.length + 1; // +1 for at least one selected safe-work task
- requiredUserFields.forEach(name=>{
-   const value=data.fields[name];
-   if(value===true || (typeof value==='string' && value.trim()!=='')) completed++;
- });
- data.requirements.forEach(r=>{
-   if(String(r.answer||'').trim()!=='') completed++;
- });
- if(data.tasks.some(t=>t.selected)) completed++;
+ const hasValue=value=>value===true || (typeof value==='string' && value.trim()!=='') || (typeof value==='number' && Number.isFinite(value));
+ const completedFields=requiredUserFields.filter(name=>hasValue(data.fields[name])).length;
+ const answeredRequirements=data.requirements.filter(r=>String(r.answer||'').trim()!=='').length;
+ const selectedTask=data.tasks.some(t=>t.selected) ? 1 : 0;
+ const completed=completedFields + answeredRequirements + selectedTask;
+ const total=requiredUserFields.length + requirements.length + 1; // +1 for at least one selected safe-work task
  return Math.max(0,Math.min(100,Math.round((completed/total)*100)));
 }
 function updateStatus(){
@@ -1716,7 +1761,7 @@ function updateStatus(){
  const data=collect();
  const total=data.requirements.reduce((a,b)=>a+(+b.score||0),0);
  const max=getMaxSafetyScore();
- const pct=Math.round((total/max)*100);
+ const pct=max?Math.round((total/max)*100):0;
  const taskCount=data.tasks.filter(t=>t.selected).length;
  const completion=calculateFormCompletion(data);
  document.getElementById('totalScore').value=total;
@@ -2098,6 +2143,9 @@ function openFastAttachmentManager(){
  document.getElementById('fastAttachmentModal')?.classList.add('show');
 }
 function closeFastAttachmentManager(){document.getElementById('fastAttachmentModal')?.classList.remove('show');}
+function renderAttachmentItems(removeLabel='Remove'){
+ return permitAttachments.map((a,i)=>`<div class="attachment-item"><div><b>${esc(a.name)}</b><small>${esc(a.type||'Unknown format')} &middot; ${formatFileSize(a.size)}</small></div><div class="attachment-actions"><button class="attachment-view" type="button" onclick="viewPermitAttachment(${i})">View File</button><button class="attachment-remove" type="button" onclick="removePermitAttachment(${i})">${removeLabel}</button></div></div>`).join('');
+}
 function renderFastAttachmentManager(){
  const list=document.getElementById('fastAttachmentList');
  if(!list) return;
@@ -2105,7 +2153,7 @@ function renderFastAttachmentManager(){
    list.innerHTML='<div class="attachment-empty">No attachments added. Click Add Attachment to upload files.</div>';
    return;
  }
- list.innerHTML=permitAttachments.map((a,i)=>`<div class="attachment-item"><div><b>${esc(a.name)}</b><small>${esc(a.type||'Unknown format')} · ${formatFileSize(a.size)}</small></div><div class="attachment-actions"><button class="attachment-view" type="button" onclick="viewPermitAttachment(${i})">View File</button><button class="attachment-remove" type="button" onclick="removePermitAttachment(${i})">Delete</button></div></div>`).join('');
+ list.innerHTML=renderAttachmentItems('Delete');
 }
 function renderAttachmentList(){
  const list=document.getElementById('attachmentList');
@@ -2116,7 +2164,7 @@ function renderAttachmentList(){
  if(list){
    if(!permitAttachments.length){list.innerHTML='<div class="attachment-empty">No attachments added.</div>';}
    else{
-     list.innerHTML=permitAttachments.map((a,i)=>`<div class="attachment-item"><div><b>${esc(a.name)}</b><small>${esc(a.type||'Unknown format')} · ${formatFileSize(a.size)}</small></div><div class="attachment-actions"><button class="attachment-view" type="button" onclick="viewPermitAttachment(${i})">View File</button><button class="attachment-remove" type="button" onclick="removePermitAttachment(${i})">Remove</button></div></div>`).join('');
+     list.innerHTML=renderAttachmentItems('Remove');
    }
  }
  renderFastAttachmentManager();
