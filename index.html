@@ -415,9 +415,137 @@
   }
 }
 
+
+
+/* Final touch response + teal checkbox visibility fix */
+:root{--teal-green:#008080;--teal-green-soft:#d9f4f1;--teal-green-line:#14a098;}
+.check-item input[type="checkbox"],
+.mandatory-row input[type="checkbox"],
+#taskList .check-item input[type="checkbox"]{
+  -webkit-appearance:none !important;
+  appearance:none !important;
+  width:22px !important;
+  height:22px !important;
+  min-width:22px !important;
+  min-height:22px !important;
+  flex:0 0 22px !important;
+  display:inline-grid !important;
+  place-items:center !important;
+  position:relative !important;
+  margin:0 !important;
+  padding:0 !important;
+  border:2.5px solid var(--teal-green) !important;
+  border-radius:6px !important;
+  background:#ffffff !important;
+  box-shadow:0 0 0 3px rgba(0,128,128,.10) !important;
+  cursor:pointer !important;
+  outline:none !important;
+  vertical-align:middle !important;
+}
+.check-item input[type="checkbox"]:checked,
+.mandatory-row input[type="checkbox"]:checked,
+#taskList .check-item input[type="checkbox"]:checked{
+  background:var(--teal-green) !important;
+  border-color:var(--teal-green) !important;
+  box-shadow:0 0 0 4px rgba(0,128,128,.16) !important;
+}
+.check-item input[type="checkbox"]:checked::after,
+.mandatory-row input[type="checkbox"]:checked::after,
+#taskList .check-item input[type="checkbox"]:checked::after{
+  content:"✓" !important;
+  color:#ffffff !important;
+  font-size:17px !important;
+  line-height:1 !important;
+  font-weight:950 !important;
+  position:absolute !important;
+  inset:0 !important;
+  display:grid !important;
+  place-items:center !important;
+}
+.check-item input[type="checkbox"]:focus-visible,
+.mandatory-row input[type="checkbox"]:focus-visible,
+#taskList .check-item input[type="checkbox"]:focus-visible{
+  box-shadow:0 0 0 5px rgba(0,128,128,.24) !important;
+}
+.check-item.checked,
+.check-item:has(input[type="checkbox"]:checked){
+  border-color:var(--teal-green-line) !important;
+  background:var(--teal-green-soft) !important;
+}
+#taskList .check-item.checked,
+#taskList .check-item:has(input[type="checkbox"]:checked){
+  border-color:var(--teal-green-line) !important;
+  background:var(--teal-green-soft) !important;
+  color:#064e4b !important;
+}
+.wizard-bottom-nav .btn,
+#prevStepBtn,
+#nextStepBtn{
+  min-height:54px !important;
+  padding:0 22px !important;
+  border-radius:16px !important;
+  font-size:15px !important;
+  font-weight:950 !important;
+  touch-action:manipulation !important;
+  -webkit-tap-highlight-color:rgba(0,128,128,.18) !important;
+  user-select:none !important;
+  position:relative !important;
+  z-index:5 !important;
+}
+#prevStepBtn:active,
+#nextStepBtn:active{
+  transform:scale(.985) !important;
+  filter:brightness(1.08) !important;
+}
+@media(max-width:760px){
+  body{padding-bottom:14px !important;}
+  .wizard-bottom-nav{
+    position:sticky !important;
+    bottom:8px !important;
+    z-index:60 !important;
+    padding:10px !important;
+    border:1px solid rgba(0,128,128,.24) !important;
+    background:rgba(255,255,255,.96) !important;
+    backdrop-filter:blur(12px) !important;
+    box-shadow:0 -10px 30px rgba(16,27,47,.16) !important;
+    overflow:visible !important;
+  }
+  .wizard-bottom-nav #prevStepBtn,
+  .wizard-bottom-nav #nextStepBtn{
+    width:100% !important;
+    min-height:58px !important;
+    font-size:16px !important;
+    letter-spacing:.01em !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+  }
+  .wizard-step-label{
+    font-size:13px !important;
+    line-height:1.35 !important;
+  }
+  #taskList .check-item{
+    grid-template-columns:32px minmax(0,1fr) !important;
+    border:1.8px solid #b9d8d5 !important;
+    padding:14px !important;
+  }
+  body.lang-ar #taskList .check-item{
+    grid-template-columns:minmax(0,1fr) 32px !important;
+  }
+  .check-item input[type="checkbox"],
+  .mandatory-row input[type="checkbox"],
+  #taskList .check-item input[type="checkbox"]{
+    width:24px !important;
+    height:24px !important;
+    min-width:24px !important;
+    min-height:24px !important;
+    flex-basis:24px !important;
+  }
+}
+
 </style>
 </head>
-<body data-active-step="request">
+<body>
 <div class="app-shell">
   <header class="hero">
     <div>
@@ -443,7 +571,7 @@
       <button class="tab-btn" type="button" data-tab="work"><span class="step-no">3</span><span>Documents &amp; Tasks</span></button>
       <button class="tab-btn" type="button" data-tab="rules"><span class="step-no">4</span><span>Regulations</span></button>
       <button class="tab-btn" type="button" data-tab="approval"><span class="step-no">5</span><span>Agreement</span></button>
-      <button class="tab-btn attachment-tab" type="button" onclick="triggerAttachmentUpload()"><span class="step-no">+</span><span>Add Attachment</span><span id="attachmentCountBadge" style="display: none;">0</span></button>
+      <button class="tab-btn attachment-tab" type="button" onclick="triggerAttachmentUpload()"><span class="step-no">+</span><span>Add Attachment</span><span id="attachmentCountBadge" style="display:none">0</span></button>
       <input id="attachmentFiles" class="no-print id-file-hidden" type="file" multiple="" onchange="loadPermitAttachments(event)">
     </div>
     <div class="actions editor-master-controls">
@@ -489,7 +617,7 @@
         <div class="report-meta"><span>CAD-OSHMS-015-F01</span><span>Date: 01/10/2020</span><span>REV 01</span></div>
       </div>
 
-      <section class="section active" id="request" aria-hidden="false">
+      <section class="section active" id="request">
         <div class="section-header"><h2>Permit Request Information</h2><small>CAD-OSHMS-015-F01 | REV 01</small></div>
         <div class="section-body">
           <div class="request-stack">
@@ -507,19 +635,19 @@
         </div>
       </section>
 
-      <section class="section" id="safety" aria-hidden="true">
+      <section class="section" id="safety">
         <div class="section-header"><h2>Contractor Safety Requirement Assessment</h2><small>Score is calculated automatically and read only</small></div>
         <div class="section-body table-wrap">
           <table class="score-table">
             <thead><tr><th>SN#</th><th>Requirements</th><th>Rating</th><th>Score</th><th>Applicant to Select</th></tr></thead>
-            <tbody id="requirementRows"><tr class=""><td class="sn">1.</td><td class="mobile-question-cell">Do you have Approved Occupational Health and Safety Management System in place? (OSHAD / ISO 45001:2008).</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_0" value="0"></td><td class="answer"><select name="answer_0" onchange="syncScore(0,this.value)"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr class=""><td class="sn">2.</td><td class="mobile-question-cell">Has a Health &amp; Safety policy been developed?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_1" value="0"></td><td class="answer"><select name="answer_1" onchange="syncScore(1,this.value)"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">3.</td><td class="mobile-question-cell">Do you have a dedicated Health &amp; Safety Person available?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_2" value="0"></td><td class="answer"><select name="answer_2" onchange="syncScore(2,this.value)"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr class=""><td class="sn">4.</td><td class="mobile-question-cell">Do you have valid adequate company public liability insurance?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_3" value="0"></td><td class="answer"><select name="answer_3" onchange="syncScore(3,this.value)"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr class=""><td class="sn">5.</td><td class="mobile-question-cell">Is there any training plan available for your staff for all activities that you perform?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_4" value="0"></td><td class="answer"><select name="answer_4" onchange="syncScore(4,this.value)"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr class=""><td class="sn">6.</td><td class="mobile-question-cell">Do you have procedures in place to handle emergencies on site?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_5" value="0"></td><td class="answer"><select name="answer_5" onchange="syncScore(5,this.value)"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr class=""><td class="sn">7.</td><td class="mobile-question-cell">Do you report and record incidents / accidents?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_6" value="0"></td><td class="answer"><select name="answer_6" onchange="syncScore(6,this.value)"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">8.</td><td class="mobile-question-cell">Will you provide all necessary PPEs and other welfare facilities on site?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_7" value="0"></td><td class="answer"><select name="answer_7" onchange="syncScore(7,this.value)"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">9.</td><td class="mobile-question-cell">Is there any work from our scope of work being subcontracted? If yes, are they competent to fulfill the health and safety requirements?</td><td class="rating">N/A</td><td class="score"><input type="number" readonly="" name="score_8" value="0"></td><td class="answer"><select name="answer_8" onchange="syncScore(8,this.value)"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr class=""><td class="sn">10.</td><td class="mobile-question-cell">Do you have third party inspection certificate / license for all equipment used in our site?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_9" value="0"></td><td class="answer"><select name="answer_9" onchange="syncScore(9,this.value)"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr></tbody>
+            <tbody id="requirementRows"><tr><td class="sn">1.</td><td class="mobile-question-cell">Do you have Approved Occupational Health and Safety Management System in place? (OSHAD / ISO 45001:2008).</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_0" value="0"></td><td class="answer"><select name="answer_0" onchange="syncScore(0,this.value)"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">2.</td><td class="mobile-question-cell">Has a Health &amp; Safety policy been developed?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_1" value="0"></td><td class="answer"><select name="answer_1" onchange="syncScore(1,this.value)"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">3.</td><td class="mobile-question-cell">Do you have a dedicated Health &amp; Safety Person available?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_2" value="0"></td><td class="answer"><select name="answer_2" onchange="syncScore(2,this.value)"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">4.</td><td class="mobile-question-cell">Do you have valid adequate company public liability insurance?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_3" value="0"></td><td class="answer"><select name="answer_3" onchange="syncScore(3,this.value)"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">5.</td><td class="mobile-question-cell">Is there any training plan available for your staff for all activities that you perform?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_4" value="0"></td><td class="answer"><select name="answer_4" onchange="syncScore(4,this.value)"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">6.</td><td class="mobile-question-cell">Do you have procedures in place to handle emergencies on site?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_5" value="0"></td><td class="answer"><select name="answer_5" onchange="syncScore(5,this.value)"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">7.</td><td class="mobile-question-cell">Do you report and record incidents / accidents?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_6" value="0"></td><td class="answer"><select name="answer_6" onchange="syncScore(6,this.value)"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">8.</td><td class="mobile-question-cell">Will you provide all necessary PPEs and other welfare facilities on site?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_7" value="0"></td><td class="answer"><select name="answer_7" onchange="syncScore(7,this.value)"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">9.</td><td class="mobile-question-cell">Is there any work from our scope of work being subcontracted? If yes, are they competent to fulfill the health and safety requirements?</td><td class="rating">N/A</td><td class="score"><input type="number" readonly="" name="score_8" value="0"></td><td class="answer"><select name="answer_8" onchange="syncScore(8,this.value)"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">10.</td><td class="mobile-question-cell">Do you have third party inspection certificate / license for all equipment used in our site?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_9" value="0"></td><td class="answer"><select name="answer_9" onchange="syncScore(9,this.value)"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr></tbody>
             <tfoot><tr><td colspan="2"><b>Total Score</b></td><td><b id="safetyMaxScoreCell">90</b></td><td><input id="totalScore" readonly=""></td><td><span id="assessmentBadge" class="pill bad">Not Ready</span></td></tr></tfoot>
           </table>
           <p class="hint">Score fields are locked. Select Yes / No / N/A and the report calculates the score automatically.</p>
         </div>
       </section>
 
-      <section class="section" id="work" aria-hidden="true">
+      <section class="section" id="work">
         <div class="section-header"><h2>Required Documents &amp; Safe Work Description</h2><small>Documents required 7 business days before work</small></div>
         <div class="section-body">
           <p class="work-intro">Review the required documents, then select every task that will be performed. Use <b>Others</b> for any task not listed.</p>
@@ -529,7 +657,7 @@
           </div>
           <div class="work-panel">
             <div class="work-panel-head"><div><b>Safe Work Description / Task to Perform</b><br><span>Select all applicable work activities.</span></div></div>
-            <div class="check-grid" id="taskList"><label class="check-item "><input type="checkbox" name="task_0" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Working on the roof</label><label class="check-item "><input type="checkbox" name="task_1" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Spray painting</label><label class="check-item "><input type="checkbox" name="task_2" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Window cleaning</label><label class="check-item "><input type="checkbox" name="task_3" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Working in confined spaces</label><label class="check-item "><input type="checkbox" name="task_4" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Electrical Work</label><label class="check-item "><input type="checkbox" name="task_5" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Welding or abrasive cutting</label><label class="check-item "><input type="checkbox" name="task_6" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Demolishing</label><label class="check-item "><input type="checkbox" name="task_7" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Erecting scaffolding</label><label class="check-item"><input type="checkbox" name="task_8" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Using chemicals</label><label class="check-item "><input type="checkbox" name="task_9" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Working at heights</label><label class="check-item "><input type="checkbox" name="task_10" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Access to high voltage workstation</label><label class="check-item "><input type="checkbox" name="task_11" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Hot work</label><label class="check-item "><input type="checkbox" name="task_12" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Build a Stage</label><label class="check-item "><input type="checkbox" name="task_13" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Install Digital Screen</label><label class="check-item "><input type="checkbox" name="task_14" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Light installation</label><label class="check-item"><input type="checkbox" name="task_15" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Furniture Delivery / Placement</label><label class="check-item other-task-option"><input type="checkbox" name="task_16" data-other-task="true" onchange="handleTaskSelectionChange(this)"> Others</label></div>
+            <div class="check-grid" id="taskList"><label class="check-item "><input type="checkbox" name="task_0" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Working on the roof</label><label class="check-item "><input type="checkbox" name="task_1" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Spray painting</label><label class="check-item "><input type="checkbox" name="task_2" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Window cleaning</label><label class="check-item "><input type="checkbox" name="task_3" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Working in confined spaces</label><label class="check-item "><input type="checkbox" name="task_4" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Electrical Work</label><label class="check-item "><input type="checkbox" name="task_5" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Welding or abrasive cutting</label><label class="check-item "><input type="checkbox" name="task_6" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Demolishing</label><label class="check-item "><input type="checkbox" name="task_7" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Erecting scaffolding</label><label class="check-item "><input type="checkbox" name="task_8" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Using chemicals</label><label class="check-item "><input type="checkbox" name="task_9" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Working at heights</label><label class="check-item "><input type="checkbox" name="task_10" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Access to high voltage workstation</label><label class="check-item "><input type="checkbox" name="task_11" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Hot work</label><label class="check-item "><input type="checkbox" name="task_12" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Build a Stage</label><label class="check-item "><input type="checkbox" name="task_13" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Install Digital Screen</label><label class="check-item "><input type="checkbox" name="task_14" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Light installation</label><label class="check-item "><input type="checkbox" name="task_15" data-other-task="false" onchange="handleTaskSelectionChange(this)"> Furniture Delivery / Placement</label><label class="check-item other-task-option"><input type="checkbox" name="task_16" data-other-task="true" onchange="handleTaskSelectionChange(this)"> Others</label></div>
             <div class="task-missing-note">Please select at least one Safe Work Description task.</div>
             <div class="field full other-task-wrap disabled" id="otherTaskWrap"><label>Other Task Details</label><input name="otherTask" placeholder="Describe the other task" disabled=""><div class="other-task-note" data-other-task-note="" style="display: block;">
                 <span class="note-en">Note: If the contractor selects Others, fill Other Task Details only if extra clarification is necessary. This field is optional.</span>
@@ -539,7 +667,7 @@
         </div>
       </section>
 
-      <section class="section" id="rules" aria-hidden="true">
+      <section class="section" id="rules">
         <div class="section-header"><h2>Security Deposit, Venue Inspection &amp; Safety Regulations</h2><small>Contractor must comply with all listed rules</small></div>
         <div class="section-body">
           <div class="info-box">
@@ -556,7 +684,7 @@
         </div>
       </section>
 
-      <section class="section" id="approval" aria-hidden="true">
+      <section class="section" id="approval">
         <div class="section-header"><h2>Declaration, Agreement &amp; Acceptance</h2><small>Final review before PDF generation</small></div>
         <div class="section-body">
           <div class="declaration-card">
@@ -607,9 +735,9 @@
       </section>
 
       <div class="wizard-bottom-nav no-print">
-        <button class="btn primary" id="prevStepBtn" type="button" onclick="return openPreviousStep()" disabled="" aria-label="Previous">Previous</button>
+        <button class="btn primary" id="prevStepBtn" type="button" onclick="return openPreviousStep()" disabled="" aria-label="Previous" data-touch-ready="true">Previous</button>
         <div class="wizard-step-label" id="wizardStepLabel">Step 1 of 5 — Request</div>
-        <button class="btn primary" id="nextStepBtn" type="button" onclick="return openNextStep()" aria-label="Next">Next</button>
+        <button class="btn primary" id="nextStepBtn" type="button" onclick="return openNextStep()" aria-label="Next" data-touch-ready="true">Next</button>
       </div>
     </form>
   </div>
@@ -619,7 +747,7 @@
 <script type="application/json" id="permitExportDataSeed">{
   "meta": {
     "reportType": "Contractors / Vendors Permit to Work - Events",
-    "savedAt": "2026-06-06T14:35:23.025Z",
+    "savedAt": "2026-06-06T14:42:31.857Z",
     "version": "Property corporate v11"
   },
   "fields": {
@@ -1044,7 +1172,7 @@
 <div class="modal" id="validationModal"><div class="modal-card validation-modal-card"><h3>Missing Mandatory Information</h3><p>Please complete the following items before generating the PDF report.</p><ul class="missing-list" id="validationMissingList"></ul><div class="actions"><button class="btn primary" type="button" onclick="focusFirstMissing()">Review Missing Fields</button><button class="btn secondary" type="button" onclick="closeValidationModal()">Close</button></div></div></div>
 <div class="modal" id="browserDraftModal"><div class="modal-card browser-draft-modal-card"><h3>Draft Saved On Browser</h3><div class="browser-draft-message">All data entered here is processed entirely within your current browser and is never stored, transmitted, or saved to any external server or database. Nothing leaves your device.</div><div class="actions"><button class="btn green-confirm" type="button" onclick="closeBrowserDraftModal()">OK</button></div></div></div>
 <div class="modal" id="clearModal"><div class="modal-card clear-modal-card"><h3>Clear this permit form?</h3><p>This will remove all entered data, browser draft, signature, and uploaded attachments from this browser.</p><div class="actions"><button class="btn clear-warn" onclick="resetFormConfirmed()">Yes, Clear Form</button><button class="btn secondary" onclick="closeClearModal()">Cancel</button></div></div></div>
-<div class="toast show" id="toast">Form cleared.</div>
+<div class="toast" id="toast">Recovered saved browser draft.</div>
 
 <script>
 const requirements=[
@@ -2567,6 +2695,43 @@ async function generatePDF(){
 }
 
 </script>
+
+
+<script>
+(function(){
+  function runStepButtonAction(id){
+    if(id==='nextStepBtn') return openNextStep();
+    if(id==='prevStepBtn') return openPreviousStep();
+    return false;
+  }
+  function wireResponsiveStepButtons(){
+    ['prevStepBtn','nextStepBtn'].forEach(function(id){
+      var btn=document.getElementById(id);
+      if(!btn || btn.dataset.touchReady==='true') return;
+      btn.dataset.touchReady='true';
+      btn.addEventListener('pointerup',function(ev){
+        if(btn.disabled) return;
+        if(ev.pointerType==='touch' || ev.pointerType==='pen'){
+          ev.preventDefault();
+          ev.stopPropagation();
+          runStepButtonAction(id);
+        }
+      },{passive:false});
+      btn.addEventListener('keydown',function(ev){
+        if(btn.disabled) return;
+        if(ev.key==='Enter' || ev.key===' '){
+          ev.preventDefault();
+          runStepButtonAction(id);
+        }
+      });
+    });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',wireResponsiveStepButtons);
+  else wireResponsiveStepButtons();
+  window.addEventListener('load',wireResponsiveStepButtons);
+})();
+</script>
+
 
 
 </body></html>
