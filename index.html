@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="ar" dir="ltr"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Property Contractors / Vendors Permit to Work - Events</title>
 <!-- v11 aligned frames: PDF evidence/internal layout aligned and fonts improved -->
 <style>
@@ -24,7 +23,7 @@
     --shadow:0 20px 55px rgba(16,27,47,.13);
   }
   *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
+  html{scroll-behavior:smooth;overflow-x:hidden;width:100%;max-width:100%}
   body{
     margin:0;
     font-family:Inter,"Segoe UI",Roboto,Arial,sans-serif;
@@ -33,8 +32,12 @@
       radial-gradient(circle at top left, rgba(185,152,90,.16), transparent 32%),
       linear-gradient(135deg,#f7f2e9 0%,#f8fafc 44%,#eef2f7 100%);
     line-height:1.45;
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
+    position:relative;
   }
-  .app-shell{max-width:1280px;margin:auto;padding:24px}
+  .app-shell{max-width:1280px;width:100%;margin:auto;padding:24px;overflow-x:hidden}
   .hero{
     background:linear-gradient(135deg,var(--navy),#203451 62%,#111827);
     color:#fff;border-radius:30px;padding:28px;box-shadow:var(--shadow);
@@ -62,12 +65,12 @@
   .btn.secondary{background:#fff;color:var(--navy);border:1px solid var(--line)}
   .btn.danger{background:#fee2e2;color:#991b1b;border:1px solid #fecaca}
   .btn:hover,.tab-btn:hover{transform:translateY(-1px);box-shadow:0 8px 18px rgba(0,0,0,.1)}
-  .layout{display:grid;grid-template-columns:285px 1fr;gap:18px;align-items:start}
+  .layout{display:grid;grid-template-columns:285px minmax(0,1fr);gap:18px;align-items:start;max-width:100%;min-width:0}
   .side-panel{position:sticky;top:92px;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px}
   .status-card{border-radius:16px;padding:15px;background:var(--conrad-champagne);border:1px solid #eadfc8;margin-bottom:12px}
   .progress{height:12px;background:#e5e7eb;border-radius:999px;overflow:hidden}.bar{height:100%;width:0;background:linear-gradient(90deg,var(--danger),var(--warning),var(--success));transition:.25s}
   .side-panel a{display:block;color:#334155;text-decoration:none;padding:8px 10px;border-radius:10px;font-weight:800;font-size:13px}.side-panel a:hover{background:#f1f5f9}
-  form{min-width:0}
+  form,.section,.section-body,.toolbar,.side-panel{min-width:0;max-width:100%}
   .section{display:none;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:18px;overflow:hidden}
   .section.active{display:block;animation:fade .24s ease}@keyframes fade{from{opacity:.3;transform:translateY(6px)}to{opacity:1;transform:none}}
   .section-header{background:linear-gradient(135deg,#fbf8f1,#fff);border-bottom:1px solid var(--line);padding:18px 20px;display:flex;justify-content:space-between;gap:12px;align-items:center}
@@ -744,7 +747,7 @@
     flex-direction:column;
     align-items:stretch;
     gap:8px;
-    overflow-x:visible;
+    overflow-x:hidden;
     width:100%;
   }
   .tabs.process-flow .tab-btn{
@@ -1258,6 +1261,10 @@ body.lang-ar #taskList .check-item{flex-direction:row;text-align:right}
 body.lang-ar .other-task-note{text-align:right}
 body.lang-ar .other-task-note .note-en{display:none}
 body.lang-ar .other-task-note .note-ar{display:inline}
+.work-period-shell{display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%;min-width:0}
+.work-period-card{min-width:0;padding:12px;border:1px solid #d7dde7;border-radius:18px;background:#fff;box-shadow:0 8px 20px rgba(15,23,42,.045)}
+.work-period-card-head{margin-bottom:8px;color:#101b2f;font-size:12px;text-transform:uppercase;font-weight:900}
+.smart-datetime-input{width:100%;min-width:0;max-width:100%;font-size:14px}
 .feedback-modal-card{max-width:560px;border-top:10px solid var(--conrad-gold);background:linear-gradient(180deg,#fffaf0 0%,#ffffff 72%);box-shadow:0 34px 90px rgba(16,27,47,.36)}
 .feedback-modal-card h3{margin:0 0 12px;color:var(--navy);font-size:22px;line-height:1.2}
 .feedback-message{padding:18px 18px;border:2px solid #d7c49a;border-radius:18px;background:#fff7df;color:#172033;font-size:16px;font-weight:900;line-height:1.55;box-shadow:0 12px 30px rgba(185,152,90,.18)}
@@ -1272,218 +1279,217 @@ body.lang-ar .feedback-modal-card{direction:rtl;text-align:right}
     line-height:1.45 !important;
     resize:vertical !important;
   }
+  .work-period-shell{grid-template-columns:1fr !important;gap:12px !important}
+  .work-period-card{width:100% !important;padding:12px !important}
+  .smart-datetime-input{min-height:52px !important;font-size:16px !important;text-align:center !important}
 }
 
 </style>
 </head>
-<body>
+<body dir="ltr" class="lang-ar" data-navigation-ready="true">
 <div class="app-shell">
   <header class="hero">
     <div>
-      <div class="brand-mark">PROPERTY</div>
-      <div class="brand-sub">Permit to Work Form</div>
-      <h1>Contractors Permit to Work</h1>
-      <p>Interactive permit form with browser draft saving, digital signature, ID upload, attachment support, and a property-branded A4 PDF report.</p>
+      <div class="brand-mark">المنشأة</div>
+      <div class="brand-sub">نموذج تصريح العمل</div>
+      <h1>تصريح عمل المقاولين</h1>
+      <p>نموذج تصريح عمل تفاعلي مع حفظ المسودة في المتصفح، توقيع إلكتروني، رفع الهوية، مرفقات، وتقرير PDF رسمي.</p>
     </div>
     <div class="hero-card">
-      <b>Permit Dashboard</b>
+      <b>لوحة التصريح</b>
       <div class="metric-grid">
-        <div class="metric"><b id="heroScore">0</b><span>Safety Score</span></div>
-        <div class="metric"><b id="heroPercent">0%</b><span>Form Completion</span></div>
-        <div class="metric"><b id="heroTasks">0</b><span>Safe Tasks</span></div>
+        <div class="metric"><b id="heroScore">0</b><span>درجة السلامة</span></div>
+        <div class="metric"><b id="heroPercent">19%</b><span>اكتمال النموذج</span></div>
+        <div class="metric"><b id="heroTasks">0</b><span>مهام العمل الآمنة</span></div>
       </div>
     </div>
   </header>
 
   <div class="toolbar no-print">
     <div class="tabs process-flow" aria-label="Permit process steps">
-      <button class="tab-btn active" type="button" data-tab="request"><span class="step-no">1</span><span>Request</span></button>
-      <button class="tab-btn" type="button" data-tab="safety"><span class="step-no">2</span><span>Scope Score</span></button>
-      <button class="tab-btn" type="button" data-tab="work"><span class="step-no">3</span><span>Documents & Tasks</span></button>
-      <button class="tab-btn" type="button" data-tab="rules"><span class="step-no">4</span><span>Regulations</span></button>
-      <button class="tab-btn" type="button" data-tab="approval"><span class="step-no">5</span><span>Agreement</span></button>
-      <button class="tab-btn attachment-tab" type="button" onclick="triggerAttachmentUpload()"><span class="step-no">+</span><span>Add Attachment</span><span id="attachmentCountBadge" style="display:none">0</span></button>
-      <input id="attachmentFiles" class="no-print id-file-hidden" type="file" multiple onchange="loadPermitAttachments(event)">
+      <button class="tab-btn active" type="button" data-tab="request"><span class="step-no">1</span><span>الطلب</span></button>
+      <button class="tab-btn" type="button" data-tab="safety"><span class="step-no">2</span><span>تقييم السلامة</span></button>
+      <button class="tab-btn" type="button" data-tab="work"><span class="step-no">3</span><span>المستندات والمهام</span></button>
+      <button class="tab-btn" type="button" data-tab="rules"><span class="step-no">4</span><span>التعليمات</span></button>
+      <button class="tab-btn" type="button" data-tab="approval"><span class="step-no">5</span><span>الإقرار</span></button>
+      <button class="tab-btn attachment-tab" type="button" onclick="triggerAttachmentUpload()"><span class="step-no">+</span><span>إضافة مرفق</span><span id="attachmentCountBadge" style="display: inline-flex;">1</span></button>
+      <input id="attachmentFiles" class="no-print id-file-hidden" type="file" multiple="" onchange="loadPermitAttachments(event)">
     </div>
     <div class="actions editor-master-controls">
-      <button class="btn primary" type="button" onclick="saveDraft()">Save Draft</button>
-      <button class="btn primary" type="button" onclick="generatePDF()">Generate PDF</button>
-      <button class="btn secondary language-toggle-btn" id="languageToggleBtn" type="button" onclick="toggleLanguage()">العربية</button>
-      <button class="btn secondary editor-control-btn" data-editor-control="true" type="button" onclick="openContentEditor()">Edit Sections</button>
-      <button class="btn secondary editor-control-btn" data-editor-control="true" type="button" onclick="exportCurrentHTML()">Export HTML</button>
-      <button class="btn danger" type="button" onclick="openClearModal()">Clear</button>
+      <button class="btn primary" type="button" onclick="saveDraft()">حفظ المسودة</button>
+      <button class="btn primary" type="button" onclick="generatePDF()">إنشاء PDF</button>
+      <button class="btn secondary language-toggle-btn" id="languageToggleBtn" type="button" onclick="toggleLanguage()">English</button>
+      
+      
+      <button class="btn danger" type="button" onclick="openClearModal()">مسح</button>
     </div>
   </div>
 
   <div class="editor-floating-toolbar no-print" data-editor-control="true">
-    <button class="btn secondary" type="button" onclick="openContentEditor()">Edit Sections</button>
-    <button class="btn secondary" type="button" onclick="exportCurrentHTML()">Export HTML</button>
+    
+    
   </div>
 
   <div class="layout">
     <aside class="side-panel no-print">
       <div class="status-card">
-        <label>Acceptance Score</label>
-        <div class="progress"><div class="bar" id="scoreBar"></div></div>
-        <p id="scoreText" class="hint">Minimum recommended acceptance: 60–70%.</p>
-        <span class="pill bad" id="scorePill">Not Ready</span>
+        <label>درجة القبول</label>
+        <div class="progress"><div class="bar" id="scoreBar" style="width: 0%;"></div></div>
+        <p id="scoreText" class="hint">الدرجة الحالية 0/90 (0%). التوجيه المطلوب: أعلى من 60–70%.</p>
+        <span class="pill bad" id="scorePill">غير جاهز</span>
       </div>
       <div class="status-card">
-        <label>Fast Navigation</label>
-        <a href="#request">Request Information</a>
-        <a href="#safety">Safety Assessment</a>
-        <a href="#work">Documents & Tasks</a>
-        <a href="#rules">Safety Regulations</a>
-        <a href="#approval">Agreement & Signature</a>
-        <button class="fast-attachment-btn" type="button" onclick="openFastAttachmentManager()">View Attachment <span id="fastAttachmentCountBadge">0</span></button>
+        <label>التنقل السريع</label>
+        <a href="#request">معلومات الطلب</a>
+        <a href="#safety">تقييم السلامة</a>
+        <a href="#work">المستندات والمهام</a>
+        <a href="#rules">تعليمات السلامة</a>
+        <a href="#approval">الإقرار والتوقيع</a>
+        <button class="fast-attachment-btn" type="button" onclick="openFastAttachmentManager()">عرض المرفقات <span id="fastAttachmentCountBadge">1</span></button>
       </div>
-      <p class="hint">Internal Use is intentionally hidden on the web screen and appears only in the generated PDF report.</p>
+      <p class="hint">قسم الاستخدام الداخلي مخفي من صفحة الويب ويظهر فقط في تقرير PDF.</p>
     </aside>
 
-    <form id="permitForm" autocomplete="on">
+    <form id="permitForm" autocomplete="on" data-events-ready="true">
       <div class="print-only brand-print">
-        <div class="logo">PROPERTY NAME</div>
+        <div class="logo">CONRAD ABU DHABI ETIHAD TOWERS</div>
         <div class="sub">PERMIT TO WORK REQUEST</div>
         <div class="title">Contractors / Vendors Permit to Work - Events</div>
         <div class="report-meta"><span>CAD-OSHMS-015-F01</span><span>Date: 01/10/2020</span><span>REV 01</span></div>
       </div>
 
       <section class="section active" id="request">
-        <div class="section-header"><h2>Permit Request Information</h2><small>CAD-OSHMS-015-F01 | REV 01</small></div>
+        <div class="section-header"><h2>معلومات طلب التصريح</h2><small>CAD-OSHMS-015-F01 | REV 01</small></div>
         <div class="section-body">
           <div class="request-stack">
-            <div class="info-row"><label>Work Permit Request Date</label><div><input name="requestDate" class="date-input picker-readonly" placeholder="dd/mmm/yyyy" required readonly onclick="openDatePicker(this,'date')"><div class="date-hint">Tap to select from calendar — format: dd/mmm/yyyy</div><div class="missing-note">Required field</div></div></div>
-            <div class="info-row"><label>Property Name</label><div><input name="propertyName" required readonly value="Conrad Abu Dhabi Etihad Towers" class="readonly-property"><div class="missing-note">Required field</div></div></div>
-            <div class="info-row"><label>Name of Applicant</label><div><input name="applicantName" required placeholder="Full name"><div class="missing-note">Required field</div></div></div>
-            <div class="info-row"><label>Company Name</label><div><input name="companyName" required><div class="missing-note">Required field</div></div></div>
-            <div class="info-row"><label>Contractor Supervisor on Site</label><div><input name="supervisor" required><div class="missing-note">Required field</div></div></div>
-            <div class="info-row"><label>Mobile Number</label><div><input name="mobile" type="tel" required><div class="missing-note">Required field</div></div></div>
-            <div class="info-row"><label>Number of Staff to do the Job</label><div><input name="staffCount" type="number" min="0" required><div class="missing-note">Required field</div></div></div>
-            <div class="info-row"><label>Setup Location</label><div><input name="location" placeholder="Ballroom / venue / floor" required><div class="missing-note">Required field</div></div></div>
-            <div class="info-row"><label>Access Date & Time</label><div><input name="accessDateTime" class="datetime-input picker-readonly" placeholder="dd/mmm/yyyy hh:mm AM" required readonly onclick="openDatePicker(this,'datetime')"><div class="date-hint">Tap to select access date and time</div><div class="missing-note">Required field</div></div></div>
-            <div class="info-row"><label>Exit Date & Time</label><div><input name="exitDateTime" class="datetime-input picker-readonly" placeholder="dd/mmm/yyyy hh:mm PM" required readonly onclick="openDatePicker(this,'datetime')"><div class="date-hint">Tap to select exit date and time</div><div class="missing-note">Required field</div></div></div>
-            <div class="info-row"><label>Scope / Work Description</label><div><textarea name="scope" required placeholder="Briefly describe the work, setup activity, equipment, and contractor scope."></textarea><div class="missing-note">Required field</div></div></div>
+            <div class="info-row"><label>تاريخ طلب تصريح العمل</label><div><input name="requestDate" class="date-input picker-readonly" placeholder="dd/mmm/yyyy" required="" readonly="" onclick="openDatePicker(this,'date')" data-picker-ready="true"><div class="date-hint">اضغط لاختيار التاريخ من التقويم — الصيغة: dd/mmm/yyyy</div><div class="missing-note">حقل إلزامي</div></div></div>
+            <div class="info-row"><label>اسم المنشأة</label><div><input name="propertyName" required="" readonly="readonly" value="Conrad Abu Dhabi Etihad Towers" class="readonly-property"><div class="missing-note">حقل إلزامي</div></div></div>
+            <div class="info-row"><label>اسم مقدم الطلب</label><div><input name="applicantName" required="" placeholder="الاسم الكامل"><div class="missing-note">حقل إلزامي</div></div></div>
+            <div class="info-row"><label>اسم الشركة</label><div><input name="companyName" required=""><div class="missing-note">حقل إلزامي</div></div></div>
+            <div class="info-row"><label>مشرف المقاول في الموقع</label><div><input name="supervisor" required=""><div class="missing-note">حقل إلزامي</div></div></div>
+            <div class="info-row"><label>رقم الهاتف المتحرك</label><div><input name="mobile" type="tel" required=""><div class="missing-note">حقل إلزامي</div></div></div>
+            <div class="info-row"><label>عدد العاملين لتنفيذ العمل</label><div><input name="staffCount" type="number" min="0" required=""><div class="missing-note">حقل إلزامي</div></div></div>
+            <div class="info-row"><label>موقع التجهيز</label><div><input name="location" placeholder="قاعة / موقع / طابق" required=""><div class="missing-note">حقل إلزامي</div></div></div>
+            <div class="info-row work-period-row"><label>تاريخ ووقت الدخول والخروج</label><div><input type="hidden" name="accessDateTime" class="datetime-input" required="" value=""><input type="hidden" name="exitDateTime" class="datetime-input" required="" value=""><div class="work-period-shell"><div class="work-period-card"><div class="work-period-card-head"><b>بداية الدخول</b></div><input type="datetime-local" class="smart-datetime-input" data-datetime-native="accessDateTime" aria-label="Access start date and time" data-native-picker-ready="true"></div><div class="work-period-card"><div class="work-period-card-head"><b>نهاية الخروج</b></div><input type="datetime-local" class="smart-datetime-input" data-datetime-native="exitDateTime" aria-label="Exit end date and time" data-native-picker-ready="true"></div></div><div class="date-hint">Tap once to select start and end date/time.</div><div class="missing-note">حقل إلزامي</div></div></div>
+            <div class="info-row"><label>نطاق / وصف العمل</label><div><textarea name="scope" required="" placeholder="اكتب وصفاً مختصراً للعمل، نشاط التجهيز، المعدات، ونطاق المقاول."></textarea><div class="missing-note">حقل إلزامي</div></div></div>
           </div>
         </div>
       </section>
 
       <section class="section" id="safety">
-        <div class="section-header"><h2>Contractor Safety Requirement Assessment</h2><small>Score is calculated automatically and read only</small></div>
+        <div class="section-header"><h2>تقييم متطلبات سلامة المقاول</h2><small>يتم احتساب الدرجة تلقائياً ولا يمكن تعديلها</small></div>
         <div class="section-body table-wrap">
           <table class="score-table">
-            <thead><tr><th>SN#</th><th>Requirements</th><th>Rating</th><th>Score</th><th>Applicant to Select</th></tr></thead>
-            <tbody id="requirementRows"></tbody>
-            <tfoot><tr><td colspan="2"><b>Total Score</b></td><td><b id="safetyMaxScoreCell">90</b></td><td><input id="totalScore" readonly></td><td><span id="assessmentBadge" class="pill bad">Not Ready</span></td></tr></tfoot>
+            <thead><tr><th>م</th><th>المتطلبات</th><th>التقييم</th><th>الدرجة</th><th>اختيار مقدم الطلب</th></tr></thead>
+            <tbody id="requirementRows"><tr><td class="sn">1.</td><td class="mobile-question-cell">هل لديكم نظام معتمد لإدارة الصحة والسلامة المهنية؟ (OSHAD / ISO 45001:2008).</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_0" value="0"></td><td class="answer"><select name="answer_0"><option value="">اختر</option><option>نعم</option><option>لا</option><option>غير منطبق</option></select></td></tr><tr><td class="sn">2.</td><td class="mobile-question-cell">هل تم إعداد سياسة للصحة والسلامة؟</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_1" value="0"></td><td class="answer"><select name="answer_1"><option value="">اختر</option><option>نعم</option><option>لا</option><option>غير منطبق</option></select></td></tr><tr><td class="sn">3.</td><td class="mobile-question-cell">هل يوجد مسؤول مخصص للصحة والسلامة؟</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_2" value="0"></td><td class="answer"><select name="answer_2"><option value="">اختر</option><option>نعم</option><option>لا</option><option>غير منطبق</option></select></td></tr><tr><td class="sn">4.</td><td class="mobile-question-cell">هل لدى الشركة تأمين مسؤولية عامة سارٍ وكافٍ؟</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_3" value="0"></td><td class="answer"><select name="answer_3"><option value="">اختر</option><option>نعم</option><option>لا</option><option>غير منطبق</option></select></td></tr><tr><td class="sn">5.</td><td class="mobile-question-cell">هل توجد خطة تدريب للعاملين لديكم لجميع الأنشطة التي تقومون بها؟</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_4" value="0"></td><td class="answer"><select name="answer_4"><option value="">اختر</option><option>نعم</option><option>لا</option><option>غير منطبق</option></select></td></tr><tr><td class="sn">6.</td><td class="mobile-question-cell">هل توجد إجراءات للتعامل مع حالات الطوارئ في الموقع؟</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_5" value="0"></td><td class="answer"><select name="answer_5"><option value="">اختر</option><option>نعم</option><option>لا</option><option>غير منطبق</option></select></td></tr><tr><td class="sn">7.</td><td class="mobile-question-cell">هل تقومون بالإبلاغ عن الحوادث / الإصابات وتسجيلها؟</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_6" value="0"></td><td class="answer"><select name="answer_6"><option value="">اختر</option><option>نعم</option><option>لا</option><option>غير منطبق</option></select></td></tr><tr><td class="sn">8.</td><td class="mobile-question-cell">هل ستوفرون جميع معدات الوقاية الشخصية اللازمة ومرافق الرعاية الأخرى في الموقع؟</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_7" value="0"></td><td class="answer"><select name="answer_7"><option value="">اختر</option><option>نعم</option><option>لا</option><option>غير منطبق</option></select></td></tr><tr><td class="sn">9.</td><td class="mobile-question-cell">هل سيتم إسناد أي جزء من نطاق العمل إلى مقاول من الباطن؟ إذا نعم، هل لديه الكفاءة لاستيفاء متطلبات الصحة والسلامة؟</td><td class="rating">غير منطبق</td><td class="score"><input type="number" readonly="" name="score_8" value="0"></td><td class="answer"><select name="answer_8"><option value="">اختر</option><option>نعم</option><option>لا</option><option>غير منطبق</option></select></td></tr><tr><td class="sn">10.</td><td class="mobile-question-cell">هل لديكم شهادة / ترخيص فحص من طرف ثالث لجميع المعدات المستخدمة في موقعنا؟</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_9" value="0"></td><td class="answer"><select name="answer_9"><option value="">اختر</option><option>نعم</option><option>لا</option><option>غير منطبق</option></select></td></tr></tbody>
+            <tfoot><tr><td colspan="2"><b>إجمالي الدرجة</b></td><td><b id="safetyMaxScoreCell">90</b></td><td><input id="totalScore" readonly=""></td><td><span id="assessmentBadge" class="pill bad">غير جاهز</span></td></tr></tfoot>
           </table>
-          <p class="hint">Score fields are locked. Select Yes / No / N/A and the report calculates the score automatically.</p>
+          <p class="hint">حقول الدرجة مقفلة. اختر نعم / لا / غير منطبق وسيتم احتساب الدرجة تلقائياً.</p>
         </div>
       </section>
 
       <section class="section" id="work">
-        <div class="section-header"><h2>Required Documents & Safe Work Description</h2><small>Documents required 7 business days before work</small></div>
+        <div class="section-header"><h2>المستندات المطلوبة ووصف العمل الآمن</h2><small>المستندات مطلوبة قبل العمل بـ 7 أيام عمل</small></div>
         <div class="section-body">
           <label>Required Documents — Information Only</label>
-          <ol class="doc-info" id="documentList"></ol>
+          <ol class="doc-info" id="documentList"><li>نسخة من الرخصة التجارية للشركة.</li><li>A copy of the Photo ID of the authorized person signing this Work Permit.</li><li>نسخة من منهجية العمل / إجراءات العمل الآمنة.</li><li>نسخة من تقييم المخاطر الخاص بموقع العمل.</li><li>نسخة من شهادات تدريب جميع العاملين الذين سيستخدمون معدات الموقع أو الرافعة أو المقص الهيدروليكي أو الرافعة الشوكية.</li></ol>
           <div class="field full" style="margin-top:16px"><label>Selected Task</label></div>
-          <div class="check-grid" id="taskList"></div>
-          <div class="task-missing-note">Please select at least one Safe Work Description task.</div>
-          <div class="grid" style="margin-top:14px"><div class="field full other-task-wrap disabled" id="otherTaskWrap"><label>Other Task Details</label><textarea name="otherTask" placeholder="Describe the other task" disabled></textarea><div class="other-task-note" data-other-task-note><span class="note-en">Note: If the contractor selects Others, fill Other Task Details only if extra clarification is necessary. This field is optional.</span><span class="note-ar">ملاحظة: إذا اختار المقاول أخرى، يرجى تعبئة تفاصيل المهمة الأخرى فقط إذا كانت هناك حاجة إلى توضيح إضافي. هذا الحقل اختياري.</span></div></div></div>
+          <div class="check-grid" id="taskList"><label class="check-item "><input type="checkbox" name="task_0" data-other-task="false"> العمل على السطح</label><label class="check-item "><input type="checkbox" name="task_1" data-other-task="false"> الرش بالطلاء</label><label class="check-item "><input type="checkbox" name="task_2" data-other-task="false"> تنظيف النوافذ</label><label class="check-item "><input type="checkbox" name="task_3" data-other-task="false"> العمل في الأماكن المغلقة</label><label class="check-item "><input type="checkbox" name="task_4" data-other-task="false"> أعمال كهربائية</label><label class="check-item "><input type="checkbox" name="task_5" data-other-task="false"> أعمال لحام</label><label class="check-item "><input type="checkbox" name="task_6" data-other-task="false"> الهدم</label><label class="check-item "><input type="checkbox" name="task_7" data-other-task="false"> تركيب السقالات</label><label class="check-item "><input type="checkbox" name="task_8" data-other-task="false"> استخدام المواد الكيميائية</label><label class="check-item "><input type="checkbox" name="task_9" data-other-task="false"> العمل على ارتفاعات</label><label class="check-item "><input type="checkbox" name="task_10" data-other-task="false"> الدخول إلى منطقة كهرباء الجهد العالي</label><label class="check-item "><input type="checkbox" name="task_11" data-other-task="false"> أعمال حرارية</label><label class="check-item "><input type="checkbox" name="task_12" data-other-task="false"> بناء منصة</label><label class="check-item "><input type="checkbox" name="task_13" data-other-task="false"> تركيب شاشات رقمية</label><label class="check-item "><input type="checkbox" name="task_14" data-other-task="false"> تركيب إضاءة</label><label class="check-item "><input type="checkbox" name="task_15" data-other-task="false"> توريد / وضع الأثاث</label><label class="check-item other-task-option"><input type="checkbox" name="task_16" data-other-task="true"> أخرى</label></div>
+          <div class="task-missing-note">يرجى اختيار مهمة واحدة على الأقل من وصف العمل الآمن.</div>
+          <div class="grid" style="margin-top:14px"><div class="field full other-task-wrap disabled" id="otherTaskWrap"><label>تفاصيل المهمة الأخرى</label><textarea name="otherTask" placeholder="صف المهمة الأخرى" disabled=""></textarea><div class="other-task-note" data-other-task-note="" style="display: block;"><span class="note-en">ملاحظة: إذا اختار المقاول أخرى، يرجى تعبئة تفاصيل المهمة الأخرى فقط إذا كانت هناك حاجة إلى توضيح إضافي. هذا الحقل اختياري.</span><span class="note-ar">ملاحظة: إذا اختار المقاول أخرى، يرجى تعبئة تفاصيل المهمة الأخرى فقط إذا كانت هناك حاجة إلى توضيح إضافي. هذا الحقل اختياري.</span></div></div></div>
         </div>
       </section>
 
       <section class="section" id="rules">
-        <div class="section-header"><h2>Security Deposit, Venue Inspection & Safety Regulations</h2><small>Contractor must comply with all listed rules</small></div>
+        <div class="section-header"><h2>التأمين، تفتيش الموقع وتعليمات السلامة</h2><small>يجب على المقاول الالتزام بجميع التعليمات المدرجة</small></div>
         <div class="section-body">
           <div class="info-box">
-            <h3>Security Deposit</h3>
-            <p id="securityDepositText">The Contractor/Vendor shall deposit <b>AED 10,000</b> as a security deposit upon signing the Work Permit. It protects against venue structure/equipment damage and is refundable within seven business days after the event ends, provided no damages occur.</p>
+            <h3>التأمين</h3>
+            <p id="securityDepositText">يلتزم المقاول / المورد بإيداع مبلغ 10,000 درهم كتأمين عند توقيع تصريح العمل. ويغطي هذا التأمين أي أضرار في هيكل الموقع أو المعدات، ويكون قابلاً للاسترداد خلال سبعة أيام عمل بعد انتهاء الفعالية بشرط عدم حدوث أي أضرار.</p>
           </div>
           <div class="info-box" style="margin-top:12px">
-            <h3>Venue Inspection</h3>
-            <p id="venueInspectionText">The Contractor shall inspect the event venue prior to commencing setup and report any unsatisfactory conditions in writing to Property Management. Failure to report makes the Contractor responsible for the venue condition.</p>
+            <h3>تفتيش الموقع</h3>
+            <p id="venueInspectionText">يجب على المقاول تفتيش موقع الفعالية قبل بدء التجهيز وإبلاغ إدارة المنشأة كتابياً بأي ملاحظات غير مرضية. عدم الإبلاغ يجعل المقاول مسؤولاً عن حالة الموقع.</p>
           </div>
-          <h3>Safety Regulations Must Be Followed</h3>
-          <ul class="rules" id="safetyRegulationsList">
-            <li>Valid photo ID is required to gain access from P1 security office.</li><li>All staff must enter and exit via the Security Entrance.</li><li>All personnel must have valid, job-specific experience.</li><li>Signed Work Permit must be brought to the premises as proof of access.</li><li>Required PPE must be worn.</li><li>Contractors must be reasonably dressed and meet property hygiene standards.</li><li>Certified helmet and harness must be worn above 1.8 meters.</li><li>Portable electrical equipment must use grounded approved plugs and sockets.</li><li>No work on live electrical distribution boards; power isolation must follow hotel lockout/tagout policy.</li><li>Cables must pass through cable ramps and avoid doorways.</li><li>Electrical loads must be within supply capacity and tested with the property engineer.</li><li>Marble floor and carpets must be protected during setup and breakdown.</li><li>Smoke/Haze machines are prohibited unless approved 48 hours prior.</li><li>Flammable materials must be fire-retardant treated with certificates submitted.</li><li>No excessively loud construction work unless permitted by Property Management.</li><li>Equipment must have up-to-date test certificates.</li><li>Contractors are responsible for their own equipment and tools.</li><li>No attachment to building fabric except designated venue hanging points.</li><li>Safe and environmentally friendly practices must be followed.</li><li>Smoking and alcohol consumption are forbidden except in designated areas.</li><li>Unsafe work may be suspended until corrected at contractor cost.</li><li>Work areas must be secured to protect guests and prevent unauthorized access.</li><li>Work areas must be clean and tidy.</li><li>Contractors and staff may not access public areas without written permission.</li><li class="critical">Emergency exit doors and escape routes must never be blocked or obstructed for any reason.</li><li>Proper protection is required if activities may damage hotel property.</li><li>Candles require Property Management approval in accordance with safety standards.</li><li>Loud or abusive language will not be tolerated.</li><li>After setup, garbage must be cleared off-site and the venue returned as received.</li><li>Non-compliance may result in work cessation, permit cancellation, cleaning fees, repair costs, and waste removal charges.</li>
-          </ul>
-          <label class="check-item mandatory-row" style="margin-top:14px"><input type="checkbox" name="rulesAccepted" required> I confirm that the contractor has reviewed and accepted the safety regulations.</label>
+          <h3>تعليمات السلامة الواجب اتباعها</h3>
+          <ul class="rules" id="safetyRegulationsList"><li class="">يلزم إبراز هوية شخصية سارية للدخول من مكتب أمن P1.</li><li class="">يجب على جميع العاملين الدخول والخروج عبر مدخل الأمن.</li><li class="">يجب أن يكون لدى جميع العاملين خبرة صالحة ومناسبة لطبيعة العمل.</li><li class="">يجب إحضار تصريح العمل الموقع إلى الموقع كدليل للسماح بالدخول.</li><li class="">يجب ارتداء معدات الوقاية الشخصية المطلوبة.</li><li class="">يجب أن يكون مظهر المقاولين مناسباً ومتوافقاً مع معايير النظافة في المنشأة.</li><li class="">يجب ارتداء خوذة وحزام أمان معتمدين عند العمل فوق ارتفاع 1.8 متر.</li><li class="">يجب استخدام مقابس ومآخذ كهربائية معتمدة ومؤرضة للمعدات الكهربائية المحمولة.</li><li class="">لا يسمح بالعمل على لوحات كهربائية حية؛ ويجب عزل الطاقة وفق سياسة القفل ووضع البطاقات بالفندق.</li><li class="">يجب تمرير الكابلات عبر حمايات الكابلات وتجنب المداخل.</li><li class="">يجب أن تكون الأحمال الكهربائية ضمن قدرة التغذية وأن يتم اختبارها مع مهندس المنشأة.</li><li class="">يجب حماية الأرضيات الرخامية والسجاد أثناء التجهيز والتفكيك.</li><li class="">تمنع أجهزة الدخان/الضباب ما لم تتم الموافقة عليها قبل 48 ساعة.</li><li class="">يجب معالجة المواد القابلة للاشتعال بمواد مقاومة للحريق مع تقديم الشهادات.</li><li class="">لا يسمح بأعمال إنشائية عالية الضوضاء إلا بموافقة إدارة المنشأة.</li><li class="">يجب أن تحتوي المعدات على شهادات فحص سارية.</li><li class="">المقاولون مسؤولون عن معداتهم وأدواتهم.</li><li class="">لا يسمح بالتثبيت على هيكل المبنى إلا في نقاط التعليق المعتمدة بالموقع.</li><li class="">يجب اتباع ممارسات آمنة وصديقة للبيئة.</li><li class="">يمنع التدخين وتناول الكحول إلا في الأماكن المخصصة.</li><li class="">يجوز إيقاف أي عمل غير آمن حتى يتم تصحيحه على نفقة المقاول.</li><li class="">يجب تأمين مناطق العمل لحماية الضيوف ومنع الدخول غير المصرح به.</li><li class="">يجب أن تكون مناطق العمل نظيفة ومرتبة.</li><li class="">لا يجوز للمقاولين والعاملين دخول المناطق العامة دون إذن خطي.</li><li class="critical">يمنع منعاً باتاً إغلاق أو عرقلة أبواب ومخارج الطوارئ لأي سبب.</li><li class="">يجب توفير الحماية المناسبة إذا كانت الأنشطة قد تسبب ضرراً لممتلكات الفندق.</li><li class="">تتطلب الشموع موافقة إدارة المنشأة وفق معايير السلامة.</li><li class="">لن يتم التسامح مع الصوت العالي أو الألفاظ المسيئة.</li><li class="">بعد التجهيز، يجب إزالة النفايات خارج الموقع وإعادة المكان كما تم استلامه.</li><li class="">قد يؤدي عدم الالتزام إلى إيقاف العمل أو إلغاء التصريح أو فرض رسوم تنظيف وإصلاح وإزالة نفايات.</li></ul>
+          <label class="check-item mandatory-row" style="margin-top:14px"><input type="checkbox" name="rulesAccepted" required=""> أؤكد أن المقاول قام بمراجعة تعليمات السلامة وقبولها.</label>
         </div>
       </section>
 
       <section class="section" id="approval">
-        <div class="section-header"><h2>Declaration, Agreement & Acceptance</h2><small>Final review before PDF generation</small></div>
+        <div class="section-header"><h2>الإقرار والاتفاق والقبول</h2><small>المراجعة النهائية قبل إصدار التقرير</small></div>
         <div class="section-body">
           <div class="declaration-card">
-            <h3>Legal Declaration, Agreement & Acceptance</h3>
+            <h3>الإقرار القانوني والاتفاق والقبول</h3>
             <ul class="declaration-list">
-              <li>I/We understand the obligations under <span class="property-name-ref" data-property-name>the Property</span> OSHAD Standards that are applicable to the work being undertaken and to the circumstances in which the contract will be performed.</li>
-              <li>I/We confirm that we have received a copy of, read, and understood the Contractors Induction training requirements, and will comply with the hotel safety rules and Contractor Management Procedure.</li>
-              <li>I/We confirm that the contractor, subcontractor, authorised signatory, supervisors, and personnel hold all certifications, licenses, competencies, and qualifications required by applicable legislation, regulations, and the work scope.</li>
-              <li>I/We will immediately cease work, make the workplace safe, and contact the <span class="property-name-ref" data-property-name>Property</span> Event Manager if I/we become aware of any danger to myself/ourselves, others, guests, staff, contractors, subcontractors, the venue, or property assets during the contract period.</li>
-              <li>I/We acknowledge and agree that any injury, illness, death, loss, or damage involving contractors, subcontractors, personnel, equipment, or the venue arising from contractor/subcontractor acts, omissions, defects, negligence, unsafe work practices, or non-compliance shall remain the full responsibility and liability of the contractor/subcontractor. The management of <span class="property-name-ref" data-property-name>the Property</span> shall not be liable for accidents, injuries, death, losses, or damages involving contractors or subcontractors to the fullest extent permitted by applicable law.</li>
-              <li>I/We agree that, in the event of any dispute between <span class="property-name-ref" data-property-name>the Property</span> and the contractor/subcontractor, all necessary procedures shall be taken in accordance with the laws of the United Arab Emirates, with jurisdiction before the competent courts of Abu Dhabi, UAE.</li>
-            </ul>
+              <li>أفهم / نفهم الالتزامات بموجب معايير <span class="property-name-ref" data-property-name="">Conrad Abu Dhabi Etihad Towers</span> OSHAD المطبقة على العمل المطلوب تنفيذه وعلى الظروف التي سيتم تنفيذ العقد فيها.</li>
+              <li>أؤكد / نؤكد أننا استلمنا نسخة من متطلبات تدريب تعريف المقاولين وقرأناها وفهمناها، وسنلتزم بقواعد السلامة في الفندق وإجراءات إدارة المقاولين.</li>
+              <li>أؤكد / نؤكد أن المقاول والمقاول من الباطن والمخول بالتوقيع والمشرفين والعاملين لديهم جميع الشهادات والتراخيص والكفاءات والمؤهلات المطلوبة بموجب التشريعات واللوائح ونطاق العمل.</li>
+              <li>أتعهد / نتعهد بإيقاف العمل فوراً، وجعل مكان العمل آمناً، والتواصل مع مدير الفعاليات في <span class="property-name-ref" data-property-name="">Conrad Abu Dhabi Etihad Towers</span> إذا علمت / علمنا بأي خطر على نفسي / أنفسنا أو الآخرين أو الضيوف أو العاملين أو المقاولين أو المقاولين من الباطن أو الموقع أو أصول المنشأة خلال مدة العقد.</li>
+              <li>أقر / نقر وأوافق / نوافق أن أي إصابة أو مرض أو وفاة أو فقدان أو ضرر يتعلق بالمقاولين أو المقاولين من الباطن أو العاملين أو المعدات أو الموقع وينشأ عن أفعال أو إهمال أو عيوب أو ممارسات عمل غير آمنة أو عدم التزام من المقاول / المقاول من الباطن، تبقى مسؤولية والتزاماً كاملاً على المقاول / المقاول من الباطن. ولا تتحمل إدارة <span class="property-name-ref" data-property-name="">Conrad Abu Dhabi Etihad Towers</span> أي مسؤولية عن الحوادث أو الإصابات أو الوفاة أو الخسائر أو الأضرار المتعلقة بالمقاولين أو المقاولين من الباطن إلى أقصى حد يسمح به القانون.</li>
+              <li>أوافق / نوافق أنه في حال وجود أي نزاع بين <span class="property-name-ref" data-property-name="">Conrad Abu Dhabi Etihad Towers</span> والمقاول / المقاول من الباطن، سيتم اتخاذ جميع الإجراءات اللازمة وفق قوانين دولة الإمارات العربية المتحدة، ويكون الاختصاص للمحاكم المختصة في أبوظبي، الإمارات العربية المتحدة.</li></ul>
           </div>
-          <label class="check-item mandatory-row declaration-acceptance"><input type="checkbox" name="declarationAccepted" required> I/We confirm that I/we have read, understood, accepted, and agree to be legally bound by the Declaration, Agreement & Acceptance terms above.</label>
+          <label class="check-item mandatory-row declaration-acceptance checked"><input type="checkbox" name="declarationAccepted" required=""> أؤكد / نؤكد أننا قرأنا وفهمنا وقبلنا ووافقنا على الالتزام القانوني ببنود الإقرار والاتفاق والقبول أعلاه.</label>
           <div class="grid" style="margin-top:16px">
-            <div class="field half"><label>Authorised Person Name</label><input name="authorizedName" required><div class="missing-note">Required field</div></div>
-            <div class="field half"><label>Date</label><input name="signatureDate" class="date-input picker-readonly" placeholder="dd/mmm/yyyy" required readonly onclick="openDatePicker(this,'date')"><div class="date-hint">Tap to select from calendar</div><div class="missing-note">Required field</div></div>
+            <div class="field half"><label>اسم الشخص المخول</label><input name="authorizedName" required=""><div class="missing-note">حقل إلزامي</div></div>
+            <div class="field half"><label>التاريخ</label><input name="signatureDate" class="date-input picker-readonly" placeholder="dd/mmm/yyyy" required="" readonly="" onclick="openDatePicker(this,'date')" data-picker-ready="true"><div class="date-hint">Tap to select from calendar</div><div class="missing-note">حقل إلزامي</div></div>
             <div class="field half">
-              <label>Authorized Signature</label>
+              <label>توقيع المخول</label>
               <div class="signature-frame signature-only-frame">
-                <div class="signature-canvas-wrap"><span>Draw authorised signature here or upload signature file</span><canvas id="signatureCanvas"></canvas></div><div class="missing-note">Authorised signature is required</div>
+                <div class="signature-canvas-wrap"><span>ارسم توقيع المخول هنا أو ارفع ملف التوقيع</span><canvas id="signatureCanvas" width="300" height="370" style="height: 185px;"></canvas></div><div class="missing-note">توقيع المخول إلزامي</div>
                 <div class="mini-actions signature-actions no-print">
                   <input id="signatureFile" class="no-print id-file-hidden" type="file" accept="image/*" onchange="loadSignatureFile(event)">
-                  <label class="upload-btn signature-upload-btn no-print" for="signatureFile">Browse Signature</label>
-                  <button class="mini-btn signature-clear-btn" type="button" onclick="clearSignature()">Clear Signature</button>
+                  <label class="upload-btn signature-upload-btn no-print" for="signatureFile">اختيار التوقيع</label>
+                  <button class="mini-btn signature-clear-btn" type="button" onclick="clearSignature()">مسح التوقيع</button>
                 </div>
-                <input type="hidden" name="signatureData" id="signatureData">
+                <input type="hidden" name="signatureData" id="signatureData" value="data:image/png;base64,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">
               </div>
             </div>
             <div class="field full">
-              <label>Authorised Signature ID</label>
+              <label>هوية الشخص المخول بالتوقيع</label>
               <div class="id-panel-frame">
                 <div class="id-upload-card" id="idFrontCard">
                   <div class="id-title">Authorised Signature ID - Front Side</div>
                   <div class="id-frame" id="idFrontPreview">Upload ID front side</div>
-                  <input id="idFrontFile" class="no-print id-file-hidden" type="file" accept="image/*" onchange="loadIdImage(event,'idFrontData','idFrontPreview')"><label class="upload-btn no-print" for="idFrontFile">Upload Front ID</label>
+                  <input id="idFrontFile" class="no-print id-file-hidden" type="file" accept="image/*" onchange="loadIdImage(event,'idFrontData','idFrontPreview')"><label class="upload-btn no-print" for="idFrontFile">رفع الهوية الأمامية</label>
                   <button class="remove-media-btn no-print" type="button" onclick="removeIdImage('idFrontData','idFrontPreview')">Remove</button>
-                  <input type="hidden" name="idFrontData" id="idFrontData"><div class="missing-note">ID front side is required</div>
+                  <input type="hidden" name="idFrontData" id="idFrontData" value=""><div class="missing-note">صورة الهوية الأمامية إلزامية</div>
                 </div>
                 <div class="id-upload-card" id="idBackCard">
                   <div class="id-title">Authorised Signature ID - Back Side</div>
                   <div class="id-frame" id="idBackPreview">Upload ID back side</div>
-                  <input id="idBackFile" class="no-print id-file-hidden" type="file" accept="image/*" onchange="loadIdImage(event,'idBackData','idBackPreview')"><label class="upload-btn no-print" for="idBackFile">Upload Back ID</label>
+                  <input id="idBackFile" class="no-print id-file-hidden" type="file" accept="image/*" onchange="loadIdImage(event,'idBackData','idBackPreview')"><label class="upload-btn no-print" for="idBackFile">رفع الهوية الخلفية</label>
                   <button class="remove-media-btn no-print" type="button" onclick="removeIdImage('idBackData','idBackPreview')">Remove</button>
-                  <input type="hidden" name="idBackData" id="idBackData"><div class="optional-note">Optional</div>
+                  <input type="hidden" name="idBackData" id="idBackData" value=""><div class="optional-note">اختياري</div>
                 </div>
               </div>
             </div>
           </div>
           <div class="attachment-panel no-print">
             <div class="attachment-panel-title">
-              <b>Attachments for PDF Report</b>
-              <button class="btn secondary" type="button" onclick="triggerAttachmentUpload()">Add Attachment</button>
+              <b>مرفقات تقرير PDF</b>
+              <button class="btn secondary" type="button" onclick="triggerAttachmentUpload()">إضافة مرفق</button>
             </div>
-            <div class="hint">Each uploaded attachment will be inserted as an attachment page in the PDF and also embedded as the original raw file. Image files show a visual preview; other formats show a clean file card with the original file embedded in the PDF.</div>
-            <div id="attachmentList" class="attachment-list"><div class="attachment-empty">No attachments added.</div></div>
+            <div class="hint">سيتم إدراج كل مرفق كصفحة ضمن تقرير PDF مع تضمين الملف الأصلي. تظهر الصور كمعاينة، وتظهر الملفات الأخرى كبطاقة ملف واضحة داخل PDF.</div>
+            <div id="attachmentList" class="attachment-list"><div class="attachment-item"><div><b>Screenshot 2026-05-21 183404.png</b><small>image/png · 5.2 KB</small></div><div class="attachment-actions"><button class="attachment-view" type="button" onclick="viewPermitAttachment(0)">View File</button><button class="attachment-remove" type="button" onclick="removePermitAttachment(0)">Remove</button></div></div></div>
           </div>
           <div class="hotel-internal">
-            <h3 style="text-align:center;margin:10px 0 5px">FOR HOTEL INTERNAL USE</h3>
-            <h3 style="text-align:center;margin:0 0 6px">VENUE APPROVAL OF WORK PERMIT / ACCESS PROVIDED BY</h3>
+            <h3 style="text-align:center;margin:10px 0 5px">لاستخدام الفندق الداخلي</h3>
+            <h3 style="text-align:center;margin:0 0 6px">اعتماد الموقع لتصريح العمل / توفير الدخول بواسطة</h3>
             <table class="approval-table">
-              <thead><tr><th>Event Manager Name</th><th>Date</th></tr></thead>
+              <thead><tr><th>اسم مدير الفعالية</th><th>التاريخ</th></tr></thead>
               <tbody><tr><td class="approval-cell"></td><td class="approval-cell"></td></tr></tbody>
             </table>
-            <p class="internal-fill-note">Name and Date are fillable in the generated PDF. Date field uses dd/mmm/yyyy format.</p>
+            <p class="internal-fill-note">يمكن تعبئة الاسم والتاريخ في ملف PDF الناتج. يستخدم التاريخ صيغة dd/mmm/yyyy.</p>
           </div>
         </div>
       </section>
 
       <div class="wizard-bottom-nav no-print">
-        <button class="btn primary" id="prevStepBtn" type="button">Previous</button>
-        <div class="wizard-step-label" id="wizardStepLabel">Step 1 of 5 — Request</div>
-        <button class="btn primary" id="nextStepBtn" type="button">Next</button>
+        <button class="btn primary" id="prevStepBtn" type="button" disabled="">السابق</button>
+        <div class="wizard-step-label" id="wizardStepLabel">الخطوة 1 من 5 — الطلب</div>
+        <button class="btn primary" id="nextStepBtn" type="button">التالي</button>
       </div>
     </form>
   </div>
@@ -1491,39 +1497,451 @@ body.lang-ar .feedback-modal-card{direction:rtl;text-align:right}
 
 
 
-<script id="permitContentConfigSeed" type="application/json"></script>
+<script type="application/json" id="permitExportDataSeed">{
+  "meta": {
+    "reportType": "Contractors / Vendors Permit to Work - Events",
+    "savedAt": "2026-06-06T17:00:40.487Z",
+    "version": "Property corporate v10"
+  },
+  "fields": {
+    "requestDate": "06/Jun/2026",
+    "propertyName": "Conrad Abu Dhabi Etihad Towers",
+    "applicantName": "",
+    "companyName": "a",
+    "supervisor": "",
+    "mobile": "",
+    "staffCount": "",
+    "location": "",
+    "accessDateTime": "",
+    "exitDateTime": "",
+    "scope": "",
+    "score_0": "0",
+    "answer_0": "",
+    "score_1": "0",
+    "answer_1": "",
+    "score_2": "0",
+    "answer_2": "",
+    "score_3": "0",
+    "answer_3": "",
+    "score_4": "0",
+    "answer_4": "",
+    "score_5": "0",
+    "answer_5": "",
+    "score_6": "0",
+    "answer_6": "",
+    "score_7": "0",
+    "answer_7": "",
+    "score_8": "0",
+    "answer_8": "",
+    "score_9": "0",
+    "answer_9": "",
+    "declarationAccepted": true,
+    "authorizedName": "",
+    "signatureDate": "06/Jun/2026",
+    "signatureData": "data:image/png;base64,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",
+    "idFrontData": "",
+    "idBackData": "",
+    "task_0": false,
+    "task_1": false,
+    "task_2": false,
+    "task_3": false,
+    "task_4": false,
+    "task_5": false,
+    "task_6": false,
+    "task_7": false,
+    "task_8": false,
+    "task_9": false,
+    "task_10": false,
+    "task_11": false,
+    "task_12": false,
+    "task_13": false,
+    "task_14": false,
+    "task_15": false,
+    "task_16": false,
+    "rulesAccepted": false
+  },
+  "requirements": [
+    {
+      "sn": 1,
+      "requirement": "Do you have Approved Occupational Health and Safety Management System in place? (OSHAD / ISO 45001:2008).",
+      "rating": 10,
+      "score": 0,
+      "answer": ""
+    },
+    {
+      "sn": 2,
+      "requirement": "Has a Health & Safety policy been developed?",
+      "rating": 10,
+      "score": 0,
+      "answer": ""
+    },
+    {
+      "sn": 3,
+      "requirement": "Do you have a dedicated Health & Safety Person available?",
+      "rating": 10,
+      "score": 0,
+      "answer": ""
+    },
+    {
+      "sn": 4,
+      "requirement": "Do you have valid adequate company public liability insurance?",
+      "rating": 10,
+      "score": 0,
+      "answer": ""
+    },
+    {
+      "sn": 5,
+      "requirement": "Is there any training plan available for your staff for all activities that you perform?",
+      "rating": 10,
+      "score": 0,
+      "answer": ""
+    },
+    {
+      "sn": 6,
+      "requirement": "Do you have procedures in place to handle emergencies on site?",
+      "rating": 10,
+      "score": 0,
+      "answer": ""
+    },
+    {
+      "sn": 7,
+      "requirement": "Do you report and record incidents / accidents?",
+      "rating": 10,
+      "score": 0,
+      "answer": ""
+    },
+    {
+      "sn": 8,
+      "requirement": "Will you provide all necessary PPEs and other welfare facilities on site?",
+      "rating": 10,
+      "score": 0,
+      "answer": ""
+    },
+    {
+      "sn": 9,
+      "requirement": "Is there any work from our scope of work being subcontracted? If yes, are they competent to fulfill the health and safety requirements?",
+      "rating": 0,
+      "score": 0,
+      "answer": ""
+    },
+    {
+      "sn": 10,
+      "requirement": "Do you have third party inspection certificate / license for all equipment used in our site?",
+      "rating": 10,
+      "score": 0,
+      "answer": ""
+    }
+  ],
+  "documents": [
+    {
+      "sn": 1,
+      "name": "A copy of the Company Trade License."
+    },
+    {
+      "sn": 2,
+      "name": "A copy of the Photo ID of the authorized person signing this Work Permit."
+    },
+    {
+      "sn": 3,
+      "name": "A copy of Method Statement / Safe Procedure of Work."
+    },
+    {
+      "sn": 4,
+      "name": "A copy of Site Specific Risk Assessment of Job."
+    },
+    {
+      "sn": 5,
+      "name": "A copy of training Certificates of all staff that will be using any site equipment, cherry picker, scissor lift, or forklift."
+    }
+  ],
+  "tasks": [
+    {
+      "name": "Working on the roof",
+      "selected": false
+    },
+    {
+      "name": "Spray painting",
+      "selected": false
+    },
+    {
+      "name": "Window cleaning",
+      "selected": false
+    },
+    {
+      "name": "Working in confined spaces",
+      "selected": false
+    },
+    {
+      "name": "Electrical Work",
+      "selected": false
+    },
+    {
+      "name": "Welding or abrasive cutting",
+      "selected": false
+    },
+    {
+      "name": "Demolishing",
+      "selected": false
+    },
+    {
+      "name": "Erecting scaffolding",
+      "selected": false
+    },
+    {
+      "name": "Using chemicals",
+      "selected": false
+    },
+    {
+      "name": "Working at heights",
+      "selected": false
+    },
+    {
+      "name": "Access to high voltage workstation",
+      "selected": false
+    },
+    {
+      "name": "Hot work",
+      "selected": false
+    },
+    {
+      "name": "Build a Stage",
+      "selected": false
+    },
+    {
+      "name": "Install Digital Screen",
+      "selected": false
+    },
+    {
+      "name": "Light installation",
+      "selected": false
+    },
+    {
+      "name": "Furniture Delivery / Placement",
+      "selected": false
+    },
+    {
+      "name": "Others",
+      "selected": false
+    }
+  ],
+  "attachments": [
+    {
+      "name": "Screenshot 2026-05-21 183404.png",
+      "type": "image/png",
+      "size": 5366,
+      "dataUrl": "data:image/png;base64,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",
+      "addedAt": "2026-06-06T17:00:25.687Z"
+    }
+  ]
+}</script><script id="permitContentConfigSeed" type="application/json">{
+  "propertyName": "Conrad Abu Dhabi Etihad Towers",
+  "requirements": [
+    [
+      "Do you have Approved Occupational Health and Safety Management System in place? (OSHAD / ISO 45001:2008).",
+      10
+    ],
+    [
+      "Has a Health & Safety policy been developed?",
+      10
+    ],
+    [
+      "Do you have a dedicated Health & Safety Person available?",
+      10
+    ],
+    [
+      "Do you have valid adequate company public liability insurance?",
+      10
+    ],
+    [
+      "Is there any training plan available for your staff for all activities that you perform?",
+      10
+    ],
+    [
+      "Do you have procedures in place to handle emergencies on site?",
+      10
+    ],
+    [
+      "Do you report and record incidents / accidents?",
+      10
+    ],
+    [
+      "Will you provide all necessary PPEs and other welfare facilities on site?",
+      10
+    ],
+    [
+      "Is there any work from our scope of work being subcontracted? If yes, are they competent to fulfill the health and safety requirements?",
+      0
+    ],
+    [
+      "Do you have third party inspection certificate / license for all equipment used in our site?",
+      10
+    ]
+  ],
+  "documents": [
+    "A copy of the Company Trade License.",
+    "A copy of the Photo ID of the authorized person signing this Work Permit.",
+    "A copy of Method Statement / Safe Procedure of Work.",
+    "A copy of Site Specific Risk Assessment of Job.",
+    "A copy of training Certificates of all staff that will be using any site equipment, cherry picker, scissor lift, or forklift."
+  ],
+  "tasks": [
+    "Working on the roof",
+    "Spray painting",
+    "Window cleaning",
+    "Working in confined spaces",
+    "Electrical Work",
+    "Welding or abrasive cutting",
+    "Demolishing",
+    "Erecting scaffolding",
+    "Using chemicals",
+    "Working at heights",
+    "Access to high voltage workstation",
+    "Hot work",
+    "Build a Stage",
+    "Install Digital Screen",
+    "Light installation",
+    "Furniture Delivery / Placement",
+    "Others"
+  ],
+  "securityDepositText": "The Contractor/Vendor shall deposit AED 10,000 as a security deposit upon signing the Work Permit. It protects against venue structure/equipment damage and is refundable within seven business days after the event ends, provided no damages occur.",
+  "venueInspectionText": "The Contractor shall inspect the event venue prior to commencing setup and report any unsatisfactory conditions in writing to Property Management. Failure to report makes the Contractor responsible for the venue condition.",
+  "safetyRegulations": [
+    {
+      "text": "Valid photo ID is required to gain access from P1 security office.",
+      "critical": false
+    },
+    {
+      "text": "All staff must enter and exit via the Security Entrance.",
+      "critical": false
+    },
+    {
+      "text": "All personnel must have valid, job-specific experience.",
+      "critical": false
+    },
+    {
+      "text": "Signed Work Permit must be brought to the premises as proof of access.",
+      "critical": false
+    },
+    {
+      "text": "Required PPE must be worn.",
+      "critical": false
+    },
+    {
+      "text": "Contractors must be reasonably dressed and meet property hygiene standards.",
+      "critical": false
+    },
+    {
+      "text": "Certified helmet and harness must be worn above 1.8 meters.",
+      "critical": false
+    },
+    {
+      "text": "Portable electrical equipment must use grounded approved plugs and sockets.",
+      "critical": false
+    },
+    {
+      "text": "No work on live electrical distribution boards; power isolation must follow hotel lockout/tagout policy.",
+      "critical": false
+    },
+    {
+      "text": "Cables must pass through cable ramps and avoid doorways.",
+      "critical": false
+    },
+    {
+      "text": "Electrical loads must be within supply capacity and tested with the property engineer.",
+      "critical": false
+    },
+    {
+      "text": "Marble floor and carpets must be protected during setup and breakdown.",
+      "critical": false
+    },
+    {
+      "text": "Smoke/Haze machines are prohibited unless approved 48 hours prior.",
+      "critical": false
+    },
+    {
+      "text": "Flammable materials must be fire-retardant treated with certificates submitted.",
+      "critical": false
+    },
+    {
+      "text": "No excessively loud construction work unless permitted by Property Management.",
+      "critical": false
+    },
+    {
+      "text": "Equipment must have up-to-date test certificates.",
+      "critical": false
+    },
+    {
+      "text": "Contractors are responsible for their own equipment and tools.",
+      "critical": false
+    },
+    {
+      "text": "No attachment to building fabric except designated venue hanging points.",
+      "critical": false
+    },
+    {
+      "text": "Safe and environmentally friendly practices must be followed.",
+      "critical": false
+    },
+    {
+      "text": "Smoking and alcohol consumption are forbidden except in designated areas.",
+      "critical": false
+    },
+    {
+      "text": "Unsafe work may be suspended until corrected at contractor cost.",
+      "critical": false
+    },
+    {
+      "text": "Work areas must be secured to protect guests and prevent unauthorized access.",
+      "critical": false
+    },
+    {
+      "text": "Work areas must be clean and tidy.",
+      "critical": false
+    },
+    {
+      "text": "Contractors and staff may not access public areas without written permission.",
+      "critical": false
+    },
+    {
+      "text": "Emergency exit doors and escape routes must never be blocked or obstructed for any reason.",
+      "critical": true
+    },
+    {
+      "text": "Proper protection is required if activities may damage hotel property.",
+      "critical": false
+    },
+    {
+      "text": "Candles require Property Management approval in accordance with safety standards.",
+      "critical": false
+    },
+    {
+      "text": "Loud or abusive language will not be tolerated.",
+      "critical": false
+    },
+    {
+      "text": "After setup, garbage must be cleared off-site and the venue returned as received.",
+      "critical": false
+    },
+    {
+      "text": "Non-compliance may result in work cessation, permit cancellation, cleaning fees, repair costs, and waste removal charges.",
+      "critical": false
+    }
+  ]
+}</script>
 
-<div class="modal" id="idCropModal"><div class="modal-card crop-modal-card"><h3>Crop ID Image</h3><p class="crop-help">Move and resize the highlighted frame to cover the ID card only, then apply the crop. This works for photos taken directly by camera or selected from the gallery.</p><div class="crop-stage" id="idCropStage"><img id="idCropImage" alt="ID image crop preview"><div class="crop-box" id="idCropBox"><span class="crop-grid-v1"></span><span class="crop-grid-v2"></span><span class="crop-handle nw" data-handle="nw"></span><span class="crop-handle ne" data-handle="ne"></span><span class="crop-handle sw" data-handle="sw"></span><span class="crop-handle se" data-handle="se"></span></div></div><div class="crop-toolbar"><div class="left"><button class="crop-small-btn" type="button" onclick="resetIdCropBox()">Reset Crop</button><button class="crop-small-btn" type="button" onclick="rotateIdCropImage()">Rotate 90°</button></div><div class="right"><button class="btn secondary" type="button" onclick="cancelIdCrop()">Cancel</button><button class="btn primary crop-primary-btn" id="applyIdCropBtn" type="button" onclick="applyIdCrop(event)">Apply Crop</button></div></div></div></div>
+<div class="modal" id="idCropModal"><div class="modal-card crop-modal-card"><h3>Crop ID Image</h3><p class="crop-help">Move and resize the highlighted frame to cover the ID card only, then apply the crop. This works for photos taken directly by camera or selected from the gallery.</p><div class="crop-stage" id="idCropStage"><img id="idCropImage" alt="ID image crop preview"><div class="crop-box" id="idCropBox"><span class="crop-grid-v1"></span><span class="crop-grid-v2"></span><span class="crop-handle nw" data-handle="nw"></span><span class="crop-handle ne" data-handle="ne"></span><span class="crop-handle sw" data-handle="sw"></span><span class="crop-handle se" data-handle="se"></span></div></div><div class="crop-toolbar"><div class="left"><button class="crop-small-btn" type="button" onclick="resetIdCropBox()">Reset Crop</button><button class="crop-small-btn" type="button" onclick="rotateIdCropImage()">Rotate 90°</button></div><div class="right"><button class="btn secondary" type="button" onclick="cancelIdCrop()">إلغاء</button><button class="btn primary crop-primary-btn" id="applyIdCropBtn" type="button" onclick="applyIdCrop(event)">Apply Crop</button></div></div></div></div>
 
-<div class="modal" id="datePickerModal"><div class="modal-card picker-modal-card"><h3 id="pickerTitle">Select Date</h3><input id="pickerNative" class="picker-control" type="date"><div class="hint-small" id="pickerHint">Selected value will be displayed as dd/mmm/yyyy.</div><div class="actions"><button class="btn primary" type="button" onclick="applyDatePicker()">Apply</button><button class="btn secondary" type="button" onclick="closeDatePicker()">Cancel</button></div></div></div>
+<div class="modal" id="datePickerModal"><div class="modal-card picker-modal-card"><h3 id="pickerTitle">Select Date</h3><input id="pickerNative" class="picker-control" type="date"><div class="hint-small" id="pickerHint">Selected value will be displayed as dd/mmm/yyyy.</div><div class="actions"><button class="btn primary" type="button" onclick="applyDatePicker()">Apply</button><button class="btn secondary" type="button" onclick="closeDatePicker()">إلغاء</button></div></div></div>
 
 
-<div class="modal" id="contentEditorModal"><div class="modal-card content-editor-card">
-  <h3>Editable Permit Content Manager</h3>
-  <p class="content-editor-intro">Edit or add the permit content below, then save it into this browser or export a new standalone HTML file with the updated content embedded.</p>
-  <div class="editor-grid">
-    <div class="editor-field full"><label>Property Name</label><div class="editor-hint">This name will be used in the form, declaration text, PDF header, and exported final HTML.</div><input id="editPropertyName" class="editor-input" type="text" placeholder="Property name"></div>
-    <div class="editor-field full"><label>Contractor Safety Requirement Assessment</label><div class="editor-hint">One item per line using: <b>Rating | Question</b>. Example: <b>10 | Do you have PPE?</b></div><textarea id="editRequirements" class="editor-textarea tall"></textarea></div>
-    <div class="editor-field"><label>Required Documents</label><div class="editor-hint">One document per line.</div><textarea id="editDocuments" class="editor-textarea"></textarea></div>
-    <div class="editor-field"><label>Safe Work Description / Tasks</label><div class="editor-hint">One task per line.</div><textarea id="editTasks" class="editor-textarea"></textarea></div>
-    <div class="editor-field full"><label>Security Deposit</label><textarea id="editSecurityDeposit" class="editor-textarea small"></textarea></div>
-    <div class="editor-field full"><label>Venue Inspection</label><textarea id="editVenueInspection" class="editor-textarea small"></textarea></div>
-    <div class="editor-field full"><label>Safety Regulations</label><div class="editor-hint">One rule per line. Start a line with <b>!</b> to mark it critical/red in PDF and web view.</div><textarea id="editRegulations" class="editor-textarea tall"></textarea></div>
-  </div>
-  <div class="editor-actions">
-    <button class="btn secondary" type="button" onclick="restoreDefaultPermitContent()">Restore Default</button>
-    <button class="btn secondary" type="button" onclick="closeContentEditor()">Cancel</button>
-    <button class="btn primary" type="button" onclick="saveContentEditor(false)">Save Changes</button>
-    <button class="btn primary" type="button" onclick="saveContentEditor(true)">Save & Export HTML</button>
-  </div>
-</div></div>
 
-<div class="modal" id="fastAttachmentModal"><div class="modal-card fast-attachment-modal-card"><h3>View Attachments</h3><p class="hint">Open or remove uploaded attachments directly from Fast Navigation. Deleted files are removed from the web form, browser draft, and the generated PDF report.</p><div class="fast-attachment-toolbar"><button class="btn primary" type="button" onclick="triggerAttachmentUpload()">Add Attachment</button><button class="btn secondary" type="button" onclick="closeFastAttachmentManager()">Close</button></div><div id="fastAttachmentList" class="attachment-list"><div class="attachment-empty">No attachments added.</div></div></div></div>
-<div class="modal" id="attachmentPreviewModal"><div class="modal-card attachment-preview-modal-card"><h3 id="attachmentPreviewTitle">Attachment Viewer</h3><div id="attachmentPreviewMeta" class="attachment-preview-meta">No attachment selected.</div><div id="attachmentPreviewBody" class="attachment-preview-body"><div class="attachment-preview-card"><div class="file-icon">?</div><b>No attachment selected</b><p>Select an uploaded file to preview it here.</p></div></div><div class="attachment-preview-actions"><button class="btn secondary" type="button" onclick="openActiveAttachmentInNewTab()">Open</button><button class="btn secondary" type="button" onclick="downloadActiveAttachment()">Download</button><button class="btn primary" type="button" onclick="closeAttachmentPreview()">Close</button></div></div></div>
-<div class="modal" id="validationModal"><div class="modal-card validation-modal-card"><h3>Missing Mandatory Information</h3><p>Please complete the following items before generating the PDF report.</p><ul class="missing-list" id="validationMissingList"></ul><div class="actions"><button class="btn primary" type="button" onclick="focusFirstMissing()">Review Missing Fields</button><button class="btn secondary" type="button" onclick="closeValidationModal()">Close</button></div></div></div>
-<div class="modal" id="browserDraftModal"><div class="modal-card browser-draft-modal-card"><h3>Draft Saved On Browser</h3><div class="browser-draft-message">All data entered here is processed entirely within your current browser and is never stored, transmitted, or saved to any external server or database. Nothing leaves your device.</div><div class="actions"><button class="btn green-confirm" type="button" onclick="closeBrowserDraftModal()">OK</button></div></div></div>
-<div class="modal" id="feedbackModal"><div class="modal-card feedback-modal-card"><h3 id="feedbackTitle">Notice</h3><div class="feedback-message" id="feedbackMessage">Message</div><div class="actions"><button class="btn primary" type="button" onclick="closeFeedbackModal()">OK</button></div></div></div>
-<div class="modal" id="clearModal"><div class="modal-card clear-modal-card"><h3>Clear this permit form?</h3><p>This will remove all entered data, browser draft, signature, and ID images from this browser.</p><div class="actions"><button class="btn clear-warn" onclick="resetFormConfirmed()">Yes, Clear Form</button><button class="btn secondary" onclick="closeClearModal()">Cancel</button></div></div></div>
+
+<div class="modal" id="fastAttachmentModal"><div class="modal-card fast-attachment-modal-card"><h3>عرض المرفقات</h3><p class="hint">افتح أو احذف المرفقات مباشرة من التنقل السريع. الملفات المحذوفة تزال من نموذج الويب والمسودة وتقرير PDF.</p><div class="fast-attachment-toolbar"><button class="btn primary" type="button" onclick="triggerAttachmentUpload()">إضافة مرفق</button><button class="btn secondary" type="button" onclick="closeFastAttachmentManager()">إغلاق</button></div><div id="fastAttachmentList" class="attachment-list"><div class="attachment-item"><div><b>Screenshot 2026-05-21 183404.png</b><small>image/png · 5.2 KB</small></div><div class="attachment-actions"><button class="attachment-view" type="button" onclick="viewPermitAttachment(0)">View File</button><button class="attachment-remove" type="button" onclick="removePermitAttachment(0)">Delete</button></div></div></div></div></div>
+<div class="modal" id="attachmentPreviewModal"><div class="modal-card attachment-preview-modal-card"><h3 id="attachmentPreviewTitle">عارض المرفقات</h3><div id="attachmentPreviewMeta" class="attachment-preview-meta">لم يتم اختيار مرفق.</div><div id="attachmentPreviewBody" class="attachment-preview-body"><div class="attachment-preview-card"><div class="file-icon">?</div><b>لم يتم اختيار مرفق</b><p>اختر ملفاً مرفوعاً لمعاينته هنا.</p></div></div><div class="attachment-preview-actions"><button class="btn secondary" type="button" onclick="openActiveAttachmentInNewTab()">فتح</button><button class="btn secondary" type="button" onclick="downloadActiveAttachment()">تنزيل</button><button class="btn primary" type="button" onclick="closeAttachmentPreview()">إغلاق</button></div></div></div>
+<div class="modal" id="validationModal"><div class="modal-card validation-modal-card"><h3>معلومات إلزامية ناقصة</h3><p>يرجى إكمال العناصر التالية قبل إصدار التقرير.</p><ul class="missing-list" id="validationMissingList"></ul><div class="actions"><button class="btn primary" type="button" onclick="focusFirstMissing()">مراجعة الحقول الناقصة</button><button class="btn secondary" type="button" onclick="closeValidationModal()">إغلاق</button></div></div></div>
+<div class="modal" id="browserDraftModal"><div class="modal-card browser-draft-modal-card"><h3>تم حفظ المسودة في المتصفح</h3><div class="browser-draft-message">جميع البيانات المدخلة تتم معالجتها داخل المتصفح الحالي فقط ولا يتم تخزينها أو نقلها أو حفظها على أي خادم أو قاعدة بيانات خارجية. لا يغادر أي شيء جهازك.</div><div class="actions"><button class="btn green-confirm" type="button" onclick="closeBrowserDraftModal()">موافق</button></div></div></div>
+<div class="modal" id="feedbackModal"><div class="modal-card feedback-modal-card"><h3 id="feedbackTitle">تنبيه</h3><div class="feedback-message" id="feedbackMessage">1 attachment added for PDF report.</div><div class="actions"><button class="btn primary" type="button" onclick="closeFeedbackModal()">موافق</button></div></div></div>
+<div class="modal" id="clearModal"><div class="modal-card clear-modal-card"><h3>مسح نموذج التصريح؟</h3><p>سيؤدي ذلك إلى حذف جميع البيانات المدخلة والمسودة والتوقيع وصور الهوية من هذا المتصفح.</p><div class="actions"><button class="btn clear-warn" onclick="resetFormConfirmed()">نعم، امسح النموذج</button><button class="btn secondary" onclick="closeClearModal()">إلغاء</button></div></div></div>
 <div class="toast" id="toast"></div>
 
 <script>
@@ -1695,11 +2113,20 @@ function openEnglishOnlyModal(){
  openFeedbackModal(isAr?copy.ar:copy.en,isAr?copy.arTitle:copy.enTitle,false);
 }
 function closeFeedbackModal(){clearTimeout(feedbackModalTimer);document.getElementById('feedbackModal')?.classList.remove('show');}
+function lockHorizontalScroll(){
+ try{
+   const root=document.scrollingElement || document.documentElement;
+   if(root) root.scrollLeft=0;
+   document.documentElement.scrollLeft=0;
+   if(document.body) document.body.scrollLeft=0;
+ }catch(e){}
+}
 function applyLanguage(lang=currentLanguage,opts={}){
  currentLanguage=(lang==='ar')?'ar':'en';
  if(opts.remember!==false) localStorage.setItem('permitLanguage',currentLanguage);
  document.documentElement.lang=currentLanguage==='ar'?'ar':'en';
- document.documentElement.dir=currentLanguage==='ar'?'rtl':'ltr';
+ document.documentElement.dir='ltr';
+ document.body?.setAttribute('dir','ltr');
  document.body?.classList.toggle('lang-ar',currentLanguage==='ar');
  const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode(node){
    const p=node.parentElement;
@@ -1716,6 +2143,8 @@ function applyLanguage(lang=currentLanguage,opts={}){
  if(btn) btn.textContent=currentLanguage==='ar'?'English':'العربية';
  if(typeof updateWizardNavigation==='function') updateWizardNavigation();
  if(typeof updateStatus==='function') updateStatus();
+ lockHorizontalScroll();
+ requestAnimationFrame(lockHorizontalScroll);
 }
 function toggleLanguage(){applyLanguage(currentLanguage==='ar'?'en':'ar');}
 function langText(en){return currentLanguage==='ar'?(AR_TEXT[en]||en):en;}
@@ -1779,7 +2208,7 @@ function applyPermitContentConfig(cfg){
  if(Array.isArray(cfg.safetyRegulations))safetyRegulations=cfg.safetyRegulations.map(r=>({text:String(r.text||r||'').trim(),critical:!!r.critical})).filter(r=>r.text);
  syncPropertyNameReferences();
 }
-function applySavedPermitContent(){try{const seed=document.getElementById('permitContentConfigSeed')?.textContent?.trim(); if(seed)applyPermitContentConfig(JSON.parse(seed)); const saved=localStorage.getItem('permitEditableContentV1'); if(saved)applyPermitContentConfig(JSON.parse(saved));}catch(e){console.warn('Permit content config ignored',e);}}
+function applySavedPermitContent(){try{const seed=document.getElementById('permitContentConfigSeed')?.textContent?.trim(); if(seed)applyPermitContentConfig(JSON.parse(seed));}catch(e){console.warn('Permit content config ignored',e);}}
 function renderDynamicPermitContent(){
  const rows=document.getElementById('requirementRows'); if(rows){rows.innerHTML=requirements.map((r,i)=>`<tr><td class="sn">${i+1}.</td><td class="mobile-question-cell">${escapeHtmlText(r[0])}</td><td class="rating">${Number(r[1])||'N/A'}</td><td class="score"><input type="number" readonly name="score_${i}" value="0"></td><td class="answer"><select name="answer_${i}"><option value="">Select</option><option>Yes</option><option>No</option><option>N/A</option></select></td></tr>`).join('');}
  const maxCell=document.getElementById('safetyMaxScoreCell'); if(maxCell)maxCell.textContent=getMaxSafetyScore();
@@ -1937,6 +2366,7 @@ function keepTypingEnglishOnly(el){
 function handleFormValueChange(el){
  if(!el) return;
  keepTypingEnglishOnly(el);
+ if(el.matches('[data-datetime-native]')) syncDateTimeCombo(el.dataset.datetimeNative);
  if(el.matches('select[name^="answer_"]')){
    const index=Number(String(el.name).replace('answer_',''));
    if(Number.isInteger(index)) syncScore(index,el.value);
@@ -1985,12 +2415,15 @@ function init(){
  renderDynamicPermitContent();
  wireFormEvents();
  wireNavigationEvents();
+ wirePickerReadonlyInputs();
  setDefaultDates();
  setupSignatureCanvas();
+ const declarationBox=document.querySelector('[name="declarationAccepted"]');
+ if(declarationBox) declarationBox.addEventListener('change',()=>handleDeclarationDate(declarationBox));
  const loadedExportedSeed=loadExportedFormSeed();
  if(!loadedExportedSeed){
    const saved=localStorage.getItem('eventPermitDraftV3');
-   if(saved){try{populate(JSON.parse(saved));showToast('Recovered saved browser draft.')}catch(e){}}
+   if(saved){try{populate(JSON.parse(saved));}catch(e){}}
  }
  const prop=document.querySelector('[name="propertyName"]');
  if(prop){prop.readOnly=true; prop.classList.add('readonly-property'); prop.addEventListener('input',syncPropertyNameReferences);}
@@ -2037,6 +2470,8 @@ function openTab(id){
  document.querySelectorAll('.section').forEach(s=>s.classList.toggle('active',s.id===id));
  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active',b.dataset.tab===id));
  updateWizardNavigation(id);
+ lockHorizontalScroll();
+ requestAnimationFrame(lockHorizontalScroll);
 }
 function updateWizardNavigation(id){
  const activeId=id || document.querySelector('.section.active')?.id || 'request';
@@ -2063,7 +2498,7 @@ function openPreviousStep(){
  openTab(permitSteps[Math.max(0,idx-1)] || 'request');
  document.querySelector('.section.active')?.scrollIntoView({behavior:'smooth',block:'start'});
 }
-function collect(){updateOtherTaskState(); const propEl=document.querySelector('[name="propertyName"]'); if(propEl){propEl.readOnly=true;} syncPropertyNameReferences(); const data={meta:{reportType:'Contractors / Vendors Permit to Work - Events',savedAt:new Date().toISOString(),version:'Property corporate v10'},fields:{},requirements:[],documents:documents.map((d,i)=>({sn:i+1,name:d})),tasks:[]};
+function collect(){syncAllDateTimeCombos(); updateOtherTaskState(); const propEl=document.querySelector('[name="propertyName"]'); if(propEl){propEl.readOnly=true;} syncPropertyNameReferences(); const data={meta:{reportType:'Contractors / Vendors Permit to Work - Events',savedAt:new Date().toISOString(),version:'Property corporate v10'},fields:{},requirements:[],documents:documents.map((d,i)=>({sn:i+1,name:d})),tasks:[]};
  new FormData(document.getElementById('permitForm')).forEach((v,k)=>data.fields[k]=v);
  document.querySelectorAll('#permitForm input[type="checkbox"]').forEach(c=>data.fields[c.name]=c.checked);
  data.fields.signatureData=document.getElementById('signatureData').value || '';
@@ -2075,6 +2510,7 @@ function collect(){updateOtherTaskState(); const propEl=document.querySelector('
  return data;
 }
 function populate(data){if(!data)return; const fields=data.fields||{}; Object.entries(fields).forEach(([k,v])=>{const el=document.querySelector(`[name="${CSS.escape(k)}"]`); if(!el)return; if(el.type==='checkbox')el.checked=!!v; else el.value=v;});
+ hydrateDateTimeCombos();
  (data.requirements||[]).forEach((r,i)=>{const s=document.querySelector(`[name="score_${i}"]`), a=document.querySelector(`[name="answer_${i}"]`); if(s)s.value=r.score??0; if(a)a.value=r.answer||'';});
  if(fields.signatureData){document.getElementById('signatureData').value=fields.signatureData; drawImageToSignature(fields.signatureData)}
  if(fields.idFrontData){document.getElementById('idFrontData').value=fields.idFrontData; renderIdImage(fields.idFrontData,'idFrontPreview')}
@@ -2140,6 +2576,19 @@ function showToast(msg){openFeedbackModal(msg,'Notice',false)}
 function pad2(n){return String(n).padStart(2,'0')}
 function monthShort(m){return ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][m]}
 function formatDateObj(d){return `${pad2(d.getDate())}/${monthShort(d.getMonth())}/${d.getFullYear()}`}
+function fillSignatureDateFromDeclaration(force=false){
+ const dec=document.querySelector('[name="declarationAccepted"]');
+ const dateEl=document.querySelector('[name="signatureDate"]');
+ if(dec?.checked && dateEl && (force || !String(dateEl.value||'').trim())){
+   dateEl.value=formatDateObj(new Date());
+   restoreFieldState(dateEl);
+ }
+}
+function handleDeclarationDate(el){
+ if(el?.checked) fillSignatureDateFromDeclaration(true);
+ updateStatus();
+ autoSaveDraft();
+}
 function normaliseDateText(v){
  if(!v)return ''; v=String(v).trim();
  const d1=new Date(v); if(!isNaN(d1.getTime()) && /\d{4}-\d{2}-\d{2}|T/.test(v)) return formatDateObj(d1);
@@ -2156,8 +2605,10 @@ function normaliseDateTimeText(v){
  return v;
 }
 function applyDateFormatting(){
+ syncAllDateTimeCombos();
  document.querySelectorAll('.date-input').forEach(el=>{el.value=normaliseDateText(el.value)});
  document.querySelectorAll('.datetime-input').forEach(el=>{el.value=normaliseDateTimeText(el.value)});
+ hydrateDateTimeCombos();
 }
 
 let activePickerTarget=null;
@@ -2184,6 +2635,27 @@ function formatNativePickerValue(v,mode){
  const [hh='0',mm='0']=timePart.split(':'); let h=+hh, ap=h>=12?'PM':'AM'; h=h%12||12;
  return `${pad2(d)}/${monthShort(m-1)}/${y} ${pad2(h)}:${pad2(+mm)} ${ap}`;
 }
+const permitDateTimeFields=['accessDateTime','exitDateTime'];
+function getDateTimeNativeParts(targetName){
+ return {
+   nativeEl:document.querySelector(`[data-datetime-native="${targetName}"]`),
+   hidden:document.querySelector(`[name="${targetName}"]`)
+ };
+}
+function syncDateTimeCombo(targetName){
+ const {nativeEl,hidden}=getDateTimeNativeParts(targetName);
+ if(!nativeEl || !hidden) return;
+ hidden.value=nativeEl.value?formatNativePickerValue(nativeEl.value,'datetime'):'';
+ if(hidden.value) hidden.closest('.required-missing')?.classList.remove('required-missing');
+ restoreFieldState(hidden);
+}
+function syncAllDateTimeCombos(){permitDateTimeFields.forEach(syncDateTimeCombo);}
+function hydrateDateTimeCombo(targetName){
+ const {nativeEl,hidden}=getDateTimeNativeParts(targetName);
+ if(!nativeEl || !hidden) return;
+ nativeEl.value=toNativeValueFromDisplay(hidden.value,'datetime') || '';
+}
+function hydrateDateTimeCombos(){permitDateTimeFields.forEach(hydrateDateTimeCombo);}
 function openDatePicker(el,mode){
  activePickerTarget=el; activePickerMode=mode;
  const modal=document.getElementById('datePickerModal'), input=document.getElementById('pickerNative');
@@ -2192,6 +2664,23 @@ function openDatePicker(el,mode){
  input.type=mode==='datetime'?'datetime-local':'date';
  input.value=toNativeValueFromDisplay(el.value,mode) || (mode==='datetime'?new Date().toISOString().slice(0,16):new Date().toISOString().slice(0,10));
  modal.classList.add('show'); setTimeout(()=>{input.focus(); if(input.showPicker) input.showPicker();},120);
+}
+function wirePickerReadonlyInputs(){
+ document.querySelectorAll('.picker-readonly').forEach(el=>{
+   if(el.dataset.pickerReady==='true') return;
+   el.dataset.pickerReady='true';
+   const mode=el.classList.contains('datetime-input')?'datetime':'date';
+   ['focus','pointerdown'].forEach(evt=>el.addEventListener(evt,ev=>{
+     ev.preventDefault();
+     openDatePicker(el,mode);
+   },{passive:false}));
+ });
+ document.querySelectorAll('.smart-datetime-input').forEach(el=>{
+   if(el.dataset.nativePickerReady==='true') return;
+   el.dataset.nativePickerReady='true';
+   el.addEventListener('pointerdown',()=>{try{setTimeout(()=>el.showPicker?.(),0);}catch(e){}});
+   el.addEventListener('focus',()=>{try{setTimeout(()=>el.showPicker?.(),0);}catch(e){}});
+ });
 }
 function applyDatePicker(){
  const input=document.getElementById('pickerNative');
@@ -3319,6 +3808,7 @@ async function generatePDF(){
 }
 
 </script>
-</body>
-</html>
 
+
+
+</body></html>
