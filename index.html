@@ -561,6 +561,35 @@
   }
 }
 
+
+/* Mobile repair: make task cards and Other Task Details reliably tappable/editable */
+#taskList .check-item{
+  -webkit-tap-highlight-color:rgba(0,128,128,.16);
+  touch-action:manipulation;
+  cursor:pointer;
+}
+#otherTaskWrap:not(.disabled) textarea[name="otherTask"]{
+  cursor:text !important;
+  background:#ffffff !important;
+  border-color:rgba(185,152,90,.72) !important;
+  -webkit-user-select:text !important;
+  user-select:text !important;
+  pointer-events:auto !important;
+}
+#otherTaskWrap.disabled textarea[name="otherTask"]{
+  pointer-events:none !important;
+}
+@media(max-width:760px){
+  #otherTaskWrap:not(.disabled){
+    border-color:rgba(0,128,128,.38) !important;
+    box-shadow:0 0 0 4px rgba(0,128,128,.08) !important;
+  }
+  #otherTaskWrap textarea[name="otherTask"]{
+    -webkit-appearance:none !important;
+    appearance:none !important;
+  }
+}
+
 </style>
 </head>
 <body class="" data-navigation-ready="true" data-active-step="request">
@@ -658,7 +687,7 @@
         <div class="section-body table-wrap">
           <table class="score-table">
             <thead><tr><th>SN#</th><th>Requirements</th><th>Rating</th><th>Score</th><th>Applicant to Select</th></tr></thead>
-            <tbody id="requirementRows"><tr><td class="sn">1.</td><td class="mobile-question-cell">Do you have Approved Occupational Health and Safety Management System in place? (OSHAD / ISO 45001:2008).</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_0" value="0"></td><td class="answer"><select name="answer_0"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">2.</td><td class="mobile-question-cell">Has a Health &amp; Safety policy been developed?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_1" value="0"></td><td class="answer"><select name="answer_1"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">3.</td><td class="mobile-question-cell">Do you have a dedicated Health &amp; Safety Person available?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_2" value="0"></td><td class="answer"><select name="answer_2"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">4.</td><td class="mobile-question-cell">Do you have valid adequate company public liability insurance?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_3" value="0"></td><td class="answer"><select name="answer_3"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr class=""><td class="sn">5.</td><td class="mobile-question-cell">Is there any training plan available for your staff for all activities that you perform?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_4" value="0"></td><td class="answer"><select name="answer_4"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">6.</td><td class="mobile-question-cell">Do you have procedures in place to handle emergencies on site?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_5" value="0"></td><td class="answer"><select name="answer_5"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">7.</td><td class="mobile-question-cell">Do you report and record incidents / accidents?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_6" value="0"></td><td class="answer"><select name="answer_6"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">8.</td><td class="mobile-question-cell">Will you provide all necessary PPEs and other welfare facilities on site?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_7" value="0"></td><td class="answer"><select name="answer_7"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">9.</td><td class="mobile-question-cell">Is there any work from our scope of work being subcontracted? If yes, are they competent to fulfill the health and safety requirements?</td><td class="rating">N/A</td><td class="score"><input type="number" readonly="" name="score_8" value="0"></td><td class="answer"><select name="answer_8"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">10.</td><td class="mobile-question-cell">Do you have third party inspection certificate / license for all equipment used in our site?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_9" value="0"></td><td class="answer"><select name="answer_9"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr></tbody>
+            <tbody id="requirementRows"><tr><td class="sn">1.</td><td class="mobile-question-cell">Do you have Approved Occupational Health and Safety Management System in place? (OSHAD / ISO 45001:2008).</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_0" value="0"></td><td class="answer"><select name="answer_0"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">2.</td><td class="mobile-question-cell">Has a Health &amp; Safety policy been developed?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_1" value="0"></td><td class="answer"><select name="answer_1"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">3.</td><td class="mobile-question-cell">Do you have a dedicated Health &amp; Safety Person available?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_2" value="0"></td><td class="answer"><select name="answer_2"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">4.</td><td class="mobile-question-cell">Do you have valid adequate company public liability insurance?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_3" value="0"></td><td class="answer"><select name="answer_3"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">5.</td><td class="mobile-question-cell">Is there any training plan available for your staff for all activities that you perform?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_4" value="0"></td><td class="answer"><select name="answer_4"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">6.</td><td class="mobile-question-cell">Do you have procedures in place to handle emergencies on site?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_5" value="0"></td><td class="answer"><select name="answer_5"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">7.</td><td class="mobile-question-cell">Do you report and record incidents / accidents?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_6" value="0"></td><td class="answer"><select name="answer_6"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">8.</td><td class="mobile-question-cell">Will you provide all necessary PPEs and other welfare facilities on site?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_7" value="0"></td><td class="answer"><select name="answer_7"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">9.</td><td class="mobile-question-cell">Is there any work from our scope of work being subcontracted? If yes, are they competent to fulfill the health and safety requirements?</td><td class="rating">N/A</td><td class="score"><input type="number" readonly="" name="score_8" value="0"></td><td class="answer"><select name="answer_8"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">10.</td><td class="mobile-question-cell">Do you have third party inspection certificate / license for all equipment used in our site?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_9" value="0"></td><td class="answer"><select name="answer_9"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr></tbody>
             <tfoot><tr><td colspan="2"><b>Total Score</b></td><td><b id="safetyMaxScoreCell">90</b></td><td><input id="totalScore" readonly=""></td><td><span id="assessmentBadge" class="pill bad">Not Ready</span></td></tr></tfoot>
           </table>
           <p class="hint">Score fields are locked. Select Yes / No / N/A and the report calculates the score automatically.</p>
@@ -675,9 +704,9 @@
           </div>
           <div class="work-panel">
             <div class="work-panel-head"><div><b>Safe Work Description / Task to Perform</b><br><span>Select all applicable work activities.</span></div></div>
-            <div class="check-grid" id="taskList"><label class="check-item "><input type="checkbox" name="task_0" data-other-task="false"> Working on the roof</label><label class="check-item "><input type="checkbox" name="task_1" data-other-task="false"> Spray painting</label><label class="check-item "><input type="checkbox" name="task_2" data-other-task="false"> Window cleaning</label><label class="check-item "><input type="checkbox" name="task_3" data-other-task="false"> Working in confined spaces</label><label class="check-item "><input type="checkbox" name="task_4" data-other-task="false"> Electrical Work</label><label class="check-item "><input type="checkbox" name="task_5" data-other-task="false"> Welding or abrasive cutting</label><label class="check-item "><input type="checkbox" name="task_6" data-other-task="false"> Demolishing</label><label class="check-item "><input type="checkbox" name="task_7" data-other-task="false"> Erecting scaffolding</label><label class="check-item "><input type="checkbox" name="task_8" data-other-task="false"> Using chemicals</label><label class="check-item "><input type="checkbox" name="task_9" data-other-task="false"> Working at heights</label><label class="check-item "><input type="checkbox" name="task_10" data-other-task="false"> Access to high voltage workstation</label><label class="check-item "><input type="checkbox" name="task_11" data-other-task="false"> Hot work</label><label class="check-item "><input type="checkbox" name="task_12" data-other-task="false"> Build a Stage</label><label class="check-item "><input type="checkbox" name="task_13" data-other-task="false"> Install Digital Screen</label><label class="check-item "><input type="checkbox" name="task_14" data-other-task="false"> Light installation</label><label class="check-item "><input type="checkbox" name="task_15" data-other-task="false"> Furniture Delivery / Placement</label><label class="check-item other-task-option"><input type="checkbox" name="task_16" data-other-task="true"> Others</label></div>
+            <div class="check-grid" id="taskList" data-mobile-tap-ready="true"><label class="check-item " data-task-card="true"><input type="checkbox" name="task_0" data-other-task="false"><span>Working on the roof</span></label><label class="check-item " data-task-card="true"><input type="checkbox" name="task_1" data-other-task="false"><span>Spray painting</span></label><label class="check-item " data-task-card="true"><input type="checkbox" name="task_2" data-other-task="false"><span>Window cleaning</span></label><label class="check-item " data-task-card="true"><input type="checkbox" name="task_3" data-other-task="false"><span>Working in confined spaces</span></label><label class="check-item " data-task-card="true"><input type="checkbox" name="task_4" data-other-task="false"><span>Electrical Work</span></label><label class="check-item " data-task-card="true"><input type="checkbox" name="task_5" data-other-task="false"><span>Welding or abrasive cutting</span></label><label class="check-item " data-task-card="true"><input type="checkbox" name="task_6" data-other-task="false"><span>Demolishing</span></label><label class="check-item " data-task-card="true"><input type="checkbox" name="task_7" data-other-task="false"><span>Erecting scaffolding</span></label><label class="check-item " data-task-card="true"><input type="checkbox" name="task_8" data-other-task="false"><span>Using chemicals</span></label><label class="check-item " data-task-card="true"><input type="checkbox" name="task_9" data-other-task="false"><span>Working at heights</span></label><label class="check-item " data-task-card="true"><input type="checkbox" name="task_10" data-other-task="false"><span>Access to high voltage workstation</span></label><label class="check-item " data-task-card="true"><input type="checkbox" name="task_11" data-other-task="false"><span>Hot work</span></label><label class="check-item " data-task-card="true"><input type="checkbox" name="task_12" data-other-task="false"><span>Build a Stage</span></label><label class="check-item " data-task-card="true"><input type="checkbox" name="task_13" data-other-task="false"><span>Install Digital Screen</span></label><label class="check-item " data-task-card="true"><input type="checkbox" name="task_14" data-other-task="false"><span>Light installation</span></label><label class="check-item " data-task-card="true"><input type="checkbox" name="task_15" data-other-task="false"><span>Furniture Delivery / Placement</span></label><label class="check-item other-task-option" data-task-card="true"><input type="checkbox" name="task_16" data-other-task="true"><span>Others</span></label></div>
             <div class="task-missing-note">Please select at least one Safe Work Description task.</div>
-            <div class="field full other-task-wrap disabled" id="otherTaskWrap"><label>Other Task Details</label><textarea name="otherTask" placeholder="Describe the other task" disabled=""></textarea><div class="other-task-note" data-other-task-note="" style="display: block;">
+            <div class="field full other-task-wrap disabled" id="otherTaskWrap" aria-disabled="true"><label>Other Task Details</label><textarea name="otherTask" placeholder="Describe the other task" tabindex="-1" aria-disabled="true" disabled=""></textarea><div class="other-task-note" data-other-task-note="" style="display: block;">
                 <span class="note-en">Note: If the contractor selects Others, fill Other Task Details only if extra clarification is necessary. This field is optional.</span>
                 <span class="note-ar">ملاحظة: إذا اختار المقاول أخرى، يرجى تعبئة تفاصيل المهمة الأخرى فقط إذا كانت هناك حاجة إلى توضيح إضافي. هذا الحقل اختياري.</span>
               </div></div>
@@ -765,7 +794,7 @@
 <script type="application/json" id="permitExportDataSeed">{
   "meta": {
     "reportType": "Contractors / Vendors Permit to Work - Events",
-    "savedAt": "2026-06-06T15:26:03.432Z",
+    "savedAt": "2026-06-06T15:45:40.336Z",
     "version": "Property corporate v11"
   },
   "fields": {
@@ -1365,17 +1394,38 @@ function updateOtherTaskState(){
  const wrap=document.getElementById('otherTaskWrap') || otherInput?.closest('.field');
  const enabled=isOtherTaskSelected();
  if(otherInput){
-   otherInput.disabled=!enabled;
    // Other Task Details is guidance-based only; it must never become mandatory.
    otherInput.required=false;
+   otherInput.disabled=!enabled;
+   otherInput.readOnly=false;
+   otherInput.tabIndex=enabled?0:-1;
+   otherInput.setAttribute('aria-disabled',enabled?'false':'true');
    if(!enabled){otherInput.value=''; otherInput.closest('.required-missing')?.classList.remove('required-missing');}
  }
- if(wrap)wrap.classList.toggle('disabled',!enabled);
+ if(wrap){
+   wrap.classList.toggle('disabled',!enabled);
+   wrap.setAttribute('aria-disabled',enabled?'false':'true');
+ }
+}
+function focusOtherTaskDetails(){
+ const otherInput=document.querySelector('[name="otherTask"]');
+ if(!otherInput || otherInput.disabled) return;
+ setTimeout(()=>{
+   try{
+     otherInput.focus({preventScroll:false});
+     otherInput.scrollIntoView({behavior:'smooth',block:'center'});
+   }catch(e){
+     otherInput.focus();
+   }
+ },80);
 }
 function handleTaskSelectionChange(el){
  restoreFieldState(el);
  document.getElementById('taskList')?.classList.remove('required-missing');
+ const isOther=el?.dataset?.otherTask==='true';
+ const shouldFocusOther=isOther && !!el.checked;
  updateOtherTaskState();
+ if(shouldFocusOther) focusOtherTaskDetails();
  updateStatus();
  autoSaveDraft();
 }
@@ -1402,7 +1452,7 @@ function renderDynamicPermitContent(){
  const maxCell=document.getElementById('safetyMaxScoreCell'); if(maxCell)maxCell.textContent=getMaxSafetyScore();
  const dl=document.getElementById('documentList'); if(dl)dl.innerHTML=documents.map(d=>`<li>${escapeHtmlText(d)}</li>`).join('');
  ensureOthersTask();
- const tl=document.getElementById('taskList'); if(tl)tl.innerHTML=tasks.map((t,i)=>{const other=isOthersTaskName(t); return `<label class="check-item ${other?'other-task-option':''}"><input type="checkbox" name="task_${i}" data-other-task="${other?'true':'false'}"> ${escapeHtmlText(t)}</label>`;}).join('');
+ const tl=document.getElementById('taskList'); if(tl)tl.innerHTML=tasks.map((t,i)=>{const other=isOthersTaskName(t); return `<label class="check-item ${other?'other-task-option':''}" data-task-card="true"><input type="checkbox" name="task_${i}" data-other-task="${other?'true':'false'}"><span>${escapeHtmlText(t)}</span></label>`;}).join('');
  updateOtherTaskState();
  const sd=document.getElementById('securityDepositText'); if(sd)sd.textContent=securityDepositText;
  const vi=document.getElementById('venueInspectionText'); if(vi)vi.textContent=venueInspectionText;
@@ -1561,6 +1611,9 @@ function hydrateDateTimeCombo(targetName){
 }
 function hydrateDateTimeCombos(){permitDateTimeFields.forEach(hydrateDateTimeCombo);}
 let englishOnlyModalTimer=null;
+const ARABIC_CHAR_PATTERN=/[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF]/g;
+function hasArabicCharacters(value){ARABIC_CHAR_PATTERN.lastIndex=0; return ARABIC_CHAR_PATTERN.test(String(value||''));}
+function stripArabicCharacters(value){return String(value||'').replace(ARABIC_CHAR_PATTERN,'');}
 function openEnglishOnlyModal(){
  syncEnglishOnlyModalLanguage();
  const modal=document.getElementById('englishOnlyModal');
@@ -1573,17 +1626,43 @@ function closeEnglishOnlyModal(){
  clearTimeout(englishOnlyModalTimer);
  document.getElementById('englishOnlyModal')?.classList.remove('show');
 }
-function keepRequestTypingEnglish(el){
- if(!el?.closest?.('#request')) return;
- if(!el.matches('input:not([type="hidden"]):not([type="number"]):not([type="tel"]):not([type="datetime-local"]),textarea')) return;
+function isEnglishOnlyEditableField(el){
+ if(!el?.matches?.('input,textarea')) return false;
+ if(!el.closest('#permitForm')) return false;
+ if(el.disabled || el.readOnly) return false;
+ const type=String(el.getAttribute('type')||'text').toLowerCase();
+ const blockedTypes=new Set(['hidden','number','tel','datetime-local','date','time','month','week','file','checkbox','radio','range','color','button','submit','reset']);
+ if(blockedTypes.has(type)) return false;
+ return el.matches('textarea,input[type="text"],input:not([type]),input[type="search"],input[type="email"],input[type="url"],input[type="password"]');
+}
+function removeArabicCharactersFromField(el,showModal=true){
+ if(!isEnglishOnlyEditableField(el)) return false;
  const before=el.value || '';
- const after=before.replace(/[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF]/g,'');
+ const after=stripArabicCharacters(before);
  if(after!==before){
    const pos=Math.max(0,(el.selectionStart || after.length) - (before.length - after.length));
    el.value=after;
    try{el.setSelectionRange(pos,pos);}catch(e){}
-   openEnglishOnlyModal();
+   if(showModal) openEnglishOnlyModal();
+   return true;
  }
+ return false;
+}
+function insertCleanTextAtCursor(el,text){
+ if(!isEnglishOnlyEditableField(el)) return;
+ const clean=stripArabicCharacters(text);
+ const start=typeof el.selectionStart==='number'?el.selectionStart:el.value.length;
+ const end=typeof el.selectionEnd==='number'?el.selectionEnd:start;
+ if(typeof el.setRangeText==='function'){
+   el.setRangeText(clean,start,end,'end');
+ }else{
+   el.value=(el.value||'').slice(0,start)+clean+(el.value||'').slice(end);
+ }
+ el.dispatchEvent(new Event('input',{bubbles:true}));
+}
+function keepRequestTypingEnglish(el){
+ // Keep the old function name for compatibility, but enforce English in every user-editable permit text field.
+ removeArabicCharactersFromField(el,true);
 }
 function handleFormValueChange(el){
  if(!el) return;
@@ -1604,6 +1683,28 @@ function wireFormEvents(){
  const form=document.getElementById('permitForm');
  if(!form || form.dataset.eventsReady==='true') return;
  form.dataset.eventsReady='true';
+ form.addEventListener('beforeinput',ev=>{
+   if(!isEnglishOnlyEditableField(ev.target)) return;
+   if(String(ev.inputType||'').startsWith('delete')) return;
+   if(ev.data && hasArabicCharacters(ev.data)){
+     ev.preventDefault();
+     openEnglishOnlyModal();
+   }
+ });
+ form.addEventListener('paste',ev=>{
+   if(!isEnglishOnlyEditableField(ev.target)) return;
+   const pasted=ev.clipboardData?.getData('text') || '';
+   if(hasArabicCharacters(pasted)){
+     ev.preventDefault();
+     insertCleanTextAtCursor(ev.target,pasted);
+     openEnglishOnlyModal();
+   }
+ });
+ form.addEventListener('compositionend',ev=>{
+   if(removeArabicCharactersFromField(ev.target,true)){
+     handleFormValueChange(ev.target);
+   }
+ });
  form.addEventListener('input',ev=>handleFormValueChange(ev.target));
  form.addEventListener('change',ev=>handleFormValueChange(ev.target));
  form.addEventListener('blur',ev=>{
@@ -1613,6 +1714,31 @@ function wireFormEvents(){
    updateStatus();
    autoSaveDraft();
  },true);
+ const taskList=document.getElementById('taskList');
+ if(taskList && taskList.dataset.mobileTapReady!=='true'){
+   taskList.dataset.mobileTapReady='true';
+   const cardToggleHandler=(ev)=>{
+     const item=ev.target?.closest?.('.check-item');
+     if(!item || !taskList.contains(item)) return;
+     const checkbox=item.querySelector('input[type="checkbox"]');
+     if(!checkbox || ev.target===checkbox) return;
+     const now=Date.now();
+     const last=Number(checkbox.dataset.lastCardToggle||0);
+     if(now-last<380){
+       ev.preventDefault();
+       ev.stopPropagation();
+       return;
+     }
+     if(ev.type==='pointerup' && ev.pointerType && !['touch','pen'].includes(ev.pointerType)) return;
+     ev.preventDefault();
+     ev.stopPropagation();
+     checkbox.dataset.lastCardToggle=String(now);
+     checkbox.checked=!checkbox.checked;
+     checkbox.dispatchEvent(new Event('change',{bubbles:true}));
+   };
+   taskList.addEventListener('pointerup',cardToggleHandler);
+   taskList.addEventListener('click',cardToggleHandler);
+ }
 }
 function wireNavigationEvents(){
  if(document.body?.dataset.navigationReady==='true') return;
