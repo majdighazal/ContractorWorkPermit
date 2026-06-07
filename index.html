@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr"><head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Property Contractors / Vendors Permit to Work - Events</title>
 <!-- Refactored clean build: responsive permit form, Arabic web view, English PDF output. -->
 <style>
@@ -576,7 +577,7 @@
       <b>Permit Dashboard</b>
       <div class="metric-grid">
         <div class="metric"><b id="heroScore">0</b><span>Safety Score</span></div>
-        <div class="metric"><b id="heroPercent">4%</b><span>Form Completion</span></div>
+        <div class="metric"><b id="heroPercent">0%</b><span>Form Completion</span></div>
         <div class="metric"><b id="heroTasks">0</b><span>Safe Tasks</span></div>
       </div>
     </div>
@@ -586,39 +587,42 @@
     <div class="tabs process-flow" aria-label="Permit process steps">
       <button class="tab-btn active" type="button" data-tab="request"><span class="step-no">1</span><span>Request</span></button>
       <button class="tab-btn" type="button" data-tab="safety"><span class="step-no">2</span><span>Scope Score</span></button>
-      <button class="tab-btn" type="button" data-tab="work"><span class="step-no">3</span><span>Documents &amp; Tasks</span></button>
+      <button class="tab-btn" type="button" data-tab="work"><span class="step-no">3</span><span>Documents & Tasks</span></button>
       <button class="tab-btn" type="button" data-tab="rules"><span class="step-no">4</span><span>Regulations</span></button>
       <button class="tab-btn" type="button" data-tab="approval"><span class="step-no">5</span><span>Agreement</span></button>
       <button class="tab-btn attachment-tab" type="button" onclick="triggerAttachmentUpload()"><span class="step-no">+</span><span>Add Attachment</span><span id="attachmentCountBadge" style="display:none">0</span></button>
-      <input id="attachmentFiles" class="no-print id-file-hidden" type="file" multiple="" onchange="loadPermitAttachments(event)">
+      <input id="attachmentFiles" class="no-print id-file-hidden" type="file" multiple onchange="loadPermitAttachments(event)">
     </div>
     <div class="actions editor-master-controls">
       <button class="btn primary" type="button" onclick="saveDraft()">Save Draft</button>
       <button class="btn primary" type="button" onclick="generatePDF()">Print Work Permit</button>
       <button class="btn secondary language-toggle-btn" id="languageToggleBtn" type="button" onclick="toggleLanguage()">العربية</button>
-      
-      
+      <button class="btn secondary editor-control-btn" data-editor-control="true" type="button" onclick="openContentEditor()">Edit Sections</button>
+      <button class="btn secondary editor-control-btn" data-editor-control="true" type="button" onclick="exportCurrentHTML()">Export HTML</button>
       <button class="btn danger" type="button" onclick="openClearModal()">Clear</button>
     </div>
   </div>
 
-  
+  <div class="editor-floating-toolbar no-print" data-editor-control="true">
+    <button class="btn secondary" type="button" onclick="openContentEditor()">Edit Sections</button>
+    <button class="btn secondary" type="button" onclick="exportCurrentHTML()">Export HTML</button>
+  </div>
 
   <div class="layout">
     <aside class="side-panel no-print">
       <div class="status-card">
         <label>Acceptance Score</label>
-        <div class="progress"><div class="bar" id="scoreBar" style="width: 0%;"></div></div>
-        <p id="scoreText" class="hint">Current score 0/90 (0%). Required guidance: above 60–70%.</p>
+        <div class="progress"><div class="bar" id="scoreBar"></div></div>
+        <p id="scoreText" class="hint">Minimum recommended acceptance: 60–70%.</p>
         <span class="pill bad" id="scorePill">Not Ready</span>
       </div>
       <div class="status-card">
         <label>Fast Navigation</label>
         <a href="#request" onclick="return openTab('request',{scroll:true})">Request Information</a>
         <a href="#safety" onclick="return openTab('safety',{scroll:true})">Safety Assessment</a>
-        <a href="#work" onclick="return openTab('work',{scroll:true})">Documents &amp; Tasks</a>
+        <a href="#work" onclick="return openTab('work',{scroll:true})">Documents & Tasks</a>
         <a href="#rules" onclick="return openTab('rules',{scroll:true})">Safety Regulations</a>
-        <a href="#approval" onclick="return openTab('approval',{scroll:true})">Agreement &amp; Signature</a>
+        <a href="#approval" onclick="return openTab('approval',{scroll:true})">Agreement & Signature</a>
         <button class="fast-attachment-btn" type="button" onclick="openFastAttachmentManager()">View Attachment <span id="fastAttachmentCountBadge">0</span></button>
       </div>
       <p class="hint">Internal Use is intentionally hidden on the web screen and appears only in the generated PDF report.</p>
@@ -626,7 +630,7 @@
 
     <form id="permitForm" autocomplete="on">
       <div class="print-only brand-print">
-        <div class="logo">CONRAD ABU DHABI ETIHAD TOWERS</div>
+        <div class="logo">PROPERTY NAME</div>
         <div class="sub">PERMIT TO WORK REQUEST</div>
         <div class="title">Contractors / Vendors Permit to Work - Events</div>
         <div class="report-meta"><span>CAD-OSHMS-015-F01</span><span>Date: 01/10/2020</span><span>REV 01</span></div>
@@ -636,16 +640,16 @@
         <div class="section-header"><h2>Permit Request Information</h2><small>CAD-OSHMS-015-F01 | REV 01</small></div>
         <div class="section-body">
           <div class="request-stack">
-            <div class="info-row"><label>Work Permit Request Date</label><div><input name="requestDate" class="date-input picker-readonly" placeholder="dd/mmm/yyyy" required="" readonly="" onclick="openDatePicker(this,'date')"><div class="date-hint">Tap to select from calendar — format: dd/mmm/yyyy</div><div class="missing-note">Required field</div></div></div>
-            <div class="info-row"><label>Property Name</label><div><input name="propertyName" required="" readonly="readonly" value="Conrad Abu Dhabi Etihad Towers" class="readonly-property"><div class="missing-note">Required field</div></div></div>
-            <div class="info-row"><label>Name of Applicant</label><div><input name="applicantName" required="" placeholder="Full name"><div class="missing-note">Required field</div></div></div>
-            <div class="info-row"><label>Company Name</label><div><input name="companyName" required=""><div class="missing-note">Required field</div></div></div>
-            <div class="info-row"><label>Contractor Supervisor on Site</label><div><input name="supervisor" required=""><div class="missing-note">Required field</div></div></div>
-            <div class="info-row"><label>Mobile Number</label><div><input name="mobile" type="tel" required=""><div class="missing-note">Required field</div></div></div>
-            <div class="info-row"><label>Number of Staff to do the Job</label><div><input name="staffCount" type="number" min="0" required=""><div class="missing-note">Required field</div></div></div>
-            <div class="info-row"><label>Setup Location</label><div><input name="location" placeholder="Ballroom / venue / floor" required=""><div class="missing-note">Required field</div></div></div>
-            <div class="info-row work-period-row"><label>Access / Exit Date &amp; Time</label><div><input type="hidden" name="accessDateTime" class="datetime-input" required="" value=""><input type="hidden" name="exitDateTime" class="datetime-input" required="" value=""><div class="work-period-shell"><div class="work-period-card"><div class="work-period-card-head"><b>Access starts</b></div><input type="datetime-local" class="smart-datetime-input" data-datetime-native="accessDateTime" aria-label="Access date and time"></div><div class="work-period-card"><div class="work-period-card-head"><b>Exit ends</b></div><input type="datetime-local" class="smart-datetime-input" data-datetime-native="exitDateTime" aria-label="Exit date and time"></div></div><div class="date-hint">Select access and exit date/time directly in one smart field for each item.</div><div class="missing-note">Required field</div></div></div>
-            <div class="info-row"><label>Scope / Work Description</label><div><textarea name="scope" required="" placeholder="Briefly describe the work, setup activity, equipment, and contractor scope."></textarea><div class="missing-note">Required field</div></div></div>
+            <div class="info-row"><label>Work Permit Request Date</label><div><input name="requestDate" class="date-input picker-readonly" placeholder="dd/mmm/yyyy" required readonly onclick="openDatePicker(this,'date')"><div class="date-hint">Tap to select from calendar — format: dd/mmm/yyyy</div><div class="missing-note">Required field</div></div></div>
+            <div class="info-row"><label>Property Name</label><div><input name="propertyName" required readonly value="Conrad Abu Dhabi Etihad Towers" class="readonly-property"><div class="missing-note">Required field</div></div></div>
+            <div class="info-row"><label>Name of Applicant</label><div><input name="applicantName" required placeholder="Full name"><div class="missing-note">Required field</div></div></div>
+            <div class="info-row"><label>Company Name</label><div><input name="companyName" required><div class="missing-note">Required field</div></div></div>
+            <div class="info-row"><label>Contractor Supervisor on Site</label><div><input name="supervisor" required><div class="missing-note">Required field</div></div></div>
+            <div class="info-row"><label>Mobile Number</label><div><input name="mobile" type="tel" required><div class="missing-note">Required field</div></div></div>
+            <div class="info-row"><label>Number of Staff to do the Job</label><div><input name="staffCount" type="number" min="0" required><div class="missing-note">Required field</div></div></div>
+            <div class="info-row"><label>Setup Location</label><div><input name="location" placeholder="Ballroom / venue / floor" required><div class="missing-note">Required field</div></div></div>
+            <div class="info-row work-period-row"><label>Access / Exit Date & Time</label><div><input type="hidden" name="accessDateTime" class="datetime-input" required><input type="hidden" name="exitDateTime" class="datetime-input" required><div class="work-period-shell"><div class="work-period-card"><div class="work-period-card-head"><b>Access starts</b></div><input type="datetime-local" class="smart-datetime-input" data-datetime-native="accessDateTime" aria-label="Access date and time"></div><div class="work-period-card"><div class="work-period-card-head"><b>Exit ends</b></div><input type="datetime-local" class="smart-datetime-input" data-datetime-native="exitDateTime" aria-label="Exit date and time"></div></div><div class="date-hint">Select access and exit date/time directly in one smart field for each item.</div><div class="missing-note">Required field</div></div></div>
+            <div class="info-row"><label>Scope / Work Description</label><div><textarea name="scope" required placeholder="Briefly describe the work, setup activity, equipment, and contractor scope."></textarea><div class="missing-note">Required field</div></div></div>
           </div>
         </div>
       </section>
@@ -655,26 +659,26 @@
         <div class="section-body table-wrap">
           <table class="score-table">
             <thead><tr><th>SN#</th><th>Requirements</th><th>Rating</th><th>Score</th><th>Applicant to Select</th></tr></thead>
-            <tbody id="requirementRows"><tr><td class="sn">1.</td><td class="mobile-question-cell">Do you have Approved Occupational Health and Safety Management System in place? (OSHAD / ISO 45001:2008).</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_0" value="0"></td><td class="answer"><select name="answer_0"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">2.</td><td class="mobile-question-cell">Has a Health &amp; Safety policy been developed?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_1" value="0"></td><td class="answer"><select name="answer_1"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">3.</td><td class="mobile-question-cell">Do you have a dedicated Health &amp; Safety Person available?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_2" value="0"></td><td class="answer"><select name="answer_2"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">4.</td><td class="mobile-question-cell">Do you have valid adequate company public liability insurance?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_3" value="0"></td><td class="answer"><select name="answer_3"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">5.</td><td class="mobile-question-cell">Is there any training plan available for your staff for all activities that you perform?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_4" value="0"></td><td class="answer"><select name="answer_4"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">6.</td><td class="mobile-question-cell">Do you have procedures in place to handle emergencies on site?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_5" value="0"></td><td class="answer"><select name="answer_5"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">7.</td><td class="mobile-question-cell">Do you report and record incidents / accidents?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_6" value="0"></td><td class="answer"><select name="answer_6"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">8.</td><td class="mobile-question-cell">Will you provide all necessary PPEs and other welfare facilities on site?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_7" value="0"></td><td class="answer"><select name="answer_7"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">9.</td><td class="mobile-question-cell">Is there any work from our scope of work being subcontracted? If yes, are they competent to fulfill the health and safety requirements?</td><td class="rating">N/A</td><td class="score"><input type="number" readonly="" name="score_8" value="0"></td><td class="answer"><select name="answer_8"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">10.</td><td class="mobile-question-cell">Do you have third party inspection certificate / license for all equipment used in our site?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_9" value="0"></td><td class="answer"><select name="answer_9"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr></tbody>
-            <tfoot><tr><td colspan="2"><b>Total Score</b></td><td><b id="safetyMaxScoreCell">90</b></td><td><input id="totalScore" readonly=""></td><td><span id="assessmentBadge" class="pill bad">Not Ready</span></td></tr></tfoot>
+            <tbody id="requirementRows"></tbody>
+            <tfoot><tr><td colspan="2"><b>Total Score</b></td><td><b id="safetyMaxScoreCell">90</b></td><td><input id="totalScore" readonly></td><td><span id="assessmentBadge" class="pill bad">Not Ready</span></td></tr></tfoot>
           </table>
           <p class="hint">Score fields are locked. Select Yes / No / N/A and the report calculates the score automatically.</p>
         </div>
       </section>
 
       <section class="section" id="work">
-        <div class="section-header"><h2>Required Documents &amp; Safe Work Description</h2><small>Documents required 7 business days before work</small></div>
+        <div class="section-header"><h2>Required Documents & Safe Work Description</h2><small>Documents required 7 business days before work</small></div>
         <div class="section-body">
           <p class="work-intro">Review the required documents, then select every task that will be performed. Use <b>Others</b> for any task not listed.</p>
           <div class="work-panel">
             <div class="work-panel-head"><div><b>Required Documents</b><br><span>Information only — prepare before permit submission.</span></div></div>
-            <ol class="doc-info" id="documentList"><li>A copy of the Company Trade License.</li><li>A copy of Method Statement / Safe Procedure of Work.</li><li>A copy of Site Specific Risk Assessment of Job.</li><li>A copy of training Certificates of all staff that will be using any site equipment, cherry picker, scissor lift, or forklift.</li></ol>
+            <ol class="doc-info" id="documentList"></ol>
           </div>
           <div class="work-panel">
             <div class="work-panel-head"><div><b>Safe Work Description / Task to Perform</b><br><span>Select all applicable work activities.</span></div></div>
-            <div class="check-grid" id="taskList"><label class="check-item "><input type="checkbox" name="task_0" data-other-task="false"> Working on the roof</label><label class="check-item "><input type="checkbox" name="task_1" data-other-task="false"> Spray painting</label><label class="check-item "><input type="checkbox" name="task_2" data-other-task="false"> Window cleaning</label><label class="check-item "><input type="checkbox" name="task_3" data-other-task="false"> Working in confined spaces</label><label class="check-item "><input type="checkbox" name="task_4" data-other-task="false"> Electrical Work</label><label class="check-item "><input type="checkbox" name="task_5" data-other-task="false"> Welding or abrasive cutting</label><label class="check-item "><input type="checkbox" name="task_6" data-other-task="false"> Demolishing</label><label class="check-item "><input type="checkbox" name="task_7" data-other-task="false"> Erecting scaffolding</label><label class="check-item "><input type="checkbox" name="task_8" data-other-task="false"> Using chemicals</label><label class="check-item "><input type="checkbox" name="task_9" data-other-task="false"> Working at heights</label><label class="check-item "><input type="checkbox" name="task_10" data-other-task="false"> Access to high voltage workstation</label><label class="check-item "><input type="checkbox" name="task_11" data-other-task="false"> Hot work</label><label class="check-item "><input type="checkbox" name="task_12" data-other-task="false"> Build a Stage</label><label class="check-item "><input type="checkbox" name="task_13" data-other-task="false"> Install Digital Screen</label><label class="check-item "><input type="checkbox" name="task_14" data-other-task="false"> Light installation</label><label class="check-item "><input type="checkbox" name="task_15" data-other-task="false"> Furniture Delivery / Placement</label><label class="check-item other-task-option"><input type="checkbox" name="task_16" data-other-task="true"> Others</label></div>
+            <div class="check-grid" id="taskList"></div>
             <div class="task-missing-note">Please select at least one Safe Work Description task.</div>
-            <div class="field full other-task-wrap disabled" id="otherTaskWrap"><label>Other Task Details</label><textarea name="otherTask" placeholder="Describe the other task" disabled=""></textarea><div class="other-task-note" data-other-task-note="" style="display: block;">
+            <div class="field full other-task-wrap disabled" id="otherTaskWrap"><label>Other Task Details</label><textarea name="otherTask" placeholder="Describe the other task" disabled></textarea><div class="other-task-note" data-other-task-note>
                 <span class="note-en">Note: If the contractor selects Others, fill Other Task Details only if extra clarification is necessary. This field is optional.</span>
                 <span class="note-ar">ملاحظة: إذا اختار المقاول أخرى، يرجى تعبئة تفاصيل المهمة الأخرى فقط إذا كانت هناك حاجة إلى توضيح إضافي. هذا الحقل اختياري.</span>
               </div></div>
@@ -683,49 +687,52 @@
       </section>
 
       <section class="section" id="rules">
-        <div class="section-header"><h2>Security Deposit, Venue Inspection &amp; Safety Regulations</h2><small>Contractor must comply with all listed rules</small></div>
+        <div class="section-header"><h2>Security Deposit, Venue Inspection & Safety Regulations</h2><small>Contractor must comply with all listed rules</small></div>
         <div class="section-body">
           <div class="info-box">
             <h3>Security Deposit</h3>
-            <p id="securityDepositText">The Contractor/Vendor shall deposit AED 10,000 as a security deposit upon signing the Work Permit. It protects against venue structure/equipment damage and is refundable within seven business days after the event ends, provided no damages occur.</p>
+            <p id="securityDepositText">The Contractor/Vendor shall deposit <b>AED 10,000</b> as a security deposit upon signing the Work Permit. It protects against venue structure/equipment damage and is refundable within seven business days after the event ends, provided no damages occur.</p>
           </div>
           <div class="info-box" style="margin-top:12px">
             <h3>Venue Inspection</h3>
             <p id="venueInspectionText">The Contractor shall inspect the event venue prior to commencing setup and report any unsatisfactory conditions in writing to Property Management. Failure to report makes the Contractor responsible for the venue condition.</p>
           </div>
           <h3>Safety Regulations Must Be Followed</h3>
-          <ul class="rules" id="safetyRegulationsList"><li class="">Valid photo ID is required to gain access from P1 security office.</li><li class="">All staff must enter and exit via the Security Entrance.</li><li class="">All personnel must have valid, job-specific experience.</li><li class="">Signed Work Permit must be brought to the premises as proof of access.</li><li class="">Required PPE must be worn.</li><li class="">Contractors must be reasonably dressed and meet property hygiene standards.</li><li class="">Certified helmet and harness must be worn above 1.8 meters.</li><li class="">Portable electrical equipment must use grounded approved plugs and sockets.</li><li class="">No work on live electrical distribution boards; power isolation must follow hotel lockout/tagout policy.</li><li class="">Cables must pass through cable ramps and avoid doorways.</li><li class="">Electrical loads must be within supply capacity and tested with the property engineer.</li><li class="">Marble floor and carpets must be protected during setup and breakdown.</li><li class="">Smoke/Haze machines are prohibited unless approved 48 hours prior.</li><li class="">Flammable materials must be fire-retardant treated with certificates submitted.</li><li class="">No excessively loud construction work unless permitted by Property Management.</li><li class="">Equipment must have up-to-date test certificates.</li><li class="">Contractors are responsible for their own equipment and tools.</li><li class="">No attachment to building fabric except designated venue hanging points.</li><li class="">Safe and environmentally friendly practices must be followed.</li><li class="">Smoking and alcohol consumption are forbidden except in designated areas.</li><li class="">Unsafe work may be suspended until corrected at contractor cost.</li><li class="">Work areas must be secured to protect guests and prevent unauthorized access.</li><li class="">Work areas must be clean and tidy.</li><li class="">Contractors and staff may not access public areas without written permission.</li><li class="critical">Emergency exit doors and escape routes must never be blocked or obstructed for any reason.</li><li class="">Proper protection is required if activities may damage hotel property.</li><li class="">Candles require Property Management approval in accordance with safety standards.</li><li class="">Loud or abusive language will not be tolerated.</li><li class="">After setup, garbage must be cleared off-site and the venue returned as received.</li><li class="">Non-compliance may result in work cessation, permit cancellation, cleaning fees, repair costs, and waste removal charges.</li></ul>
-          <label class="check-item mandatory-row" style="margin-top:14px"><input type="checkbox" name="rulesAccepted" required=""> I confirm that the contractor has reviewed and accepted the safety regulations.</label>
+          <ul class="rules" id="safetyRegulationsList">
+            <li>Valid photo ID is required to gain access from P1 security office.</li><li>All staff must enter and exit via the Security Entrance.</li><li>All personnel must have valid, job-specific experience.</li><li>Signed Work Permit must be brought to the premises as proof of access.</li><li>Required PPE must be worn.</li><li>Contractors must be reasonably dressed and meet property hygiene standards.</li><li>Certified helmet and harness must be worn above 1.8 meters.</li><li>Portable electrical equipment must use grounded approved plugs and sockets.</li><li>No work on live electrical distribution boards; power isolation must follow hotel lockout/tagout policy.</li><li>Cables must pass through cable ramps and avoid doorways.</li><li>Electrical loads must be within supply capacity and tested with the property engineer.</li><li>Marble floor and carpets must be protected during setup and breakdown.</li><li>Smoke/Haze machines are prohibited unless approved 48 hours prior.</li><li>Flammable materials must be fire-retardant treated with certificates submitted.</li><li>No excessively loud construction work unless permitted by Property Management.</li><li>Equipment must have up-to-date test certificates.</li><li>Contractors are responsible for their own equipment and tools.</li><li>No attachment to building fabric except designated venue hanging points.</li><li>Safe and environmentally friendly practices must be followed.</li><li>Smoking and alcohol consumption are forbidden except in designated areas.</li><li>Unsafe work may be suspended until corrected at contractor cost.</li><li>Work areas must be secured to protect guests and prevent unauthorized access.</li><li>Work areas must be clean and tidy.</li><li>Contractors and staff may not access public areas without written permission.</li><li class="critical">Emergency exit doors and escape routes must never be blocked or obstructed for any reason.</li><li>Proper protection is required if activities may damage hotel property.</li><li>Candles require Property Management approval in accordance with safety standards.</li><li>Loud or abusive language will not be tolerated.</li><li>After setup, garbage must be cleared off-site and the venue returned as received.</li><li>Non-compliance may result in work cessation, permit cancellation, cleaning fees, repair costs, and waste removal charges.</li>
+          </ul>
+          <label class="check-item mandatory-row" style="margin-top:14px"><input type="checkbox" name="rulesAccepted" required> I confirm that the contractor has reviewed and accepted the safety regulations.</label>
         </div>
       </section>
 
       <section class="section" id="approval">
-        <div class="section-header"><h2>Declaration, Agreement &amp; Acceptance</h2><small>Final review before PDF generation</small></div>
+        <div class="section-header"><h2>Declaration, Agreement & Acceptance</h2><small>Final review before PDF generation</small></div>
         <div class="section-body">
           <div class="declaration-card">
-            <h3>Legal Declaration, Agreement &amp; Acceptance</h3>
+            <h3>Legal Declaration, Agreement & Acceptance</h3>
             <ul class="declaration-list">
-              <li>I/We understand the obligations under <span class="property-name-ref" data-property-name="">Conrad Abu Dhabi Etihad Towers</span> OSHAD Standards that are applicable to the work being undertaken and to the circumstances in which the contract will be performed.</li>
+              <li>I/We understand the obligations under <span class="property-name-ref" data-property-name>the Property</span> OSHAD Standards that are applicable to the work being undertaken and to the circumstances in which the contract will be performed.</li>
               <li>I/We confirm that we have received a copy of, read, and understood the Contractors Induction training requirements, and will comply with the hotel safety rules and Contractor Management Procedure.</li>
               <li>I/We confirm that the contractor, subcontractor, authorised signatory, supervisors, and personnel hold all certifications, licenses, competencies, and qualifications required by applicable legislation, regulations, and the work scope.</li>
-              <li>I/We will immediately cease work, make the workplace safe, and contact the <span class="property-name-ref" data-property-name="">Conrad Abu Dhabi Etihad Towers</span> Event Manager if I/we become aware of any danger to myself/ourselves, others, guests, staff, contractors, subcontractors, the venue, or property assets during the contract period.</li>
-              <li>I/We acknowledge and agree that any injury, illness, death, loss, or damage involving contractors, subcontractors, personnel, equipment, or the venue arising from contractor/subcontractor acts, omissions, defects, negligence, unsafe work practices, or non-compliance shall remain the full responsibility and liability of the contractor/subcontractor. The management of <span class="property-name-ref" data-property-name="">Conrad Abu Dhabi Etihad Towers</span> shall not be liable for accidents, injuries, death, losses, or damages involving contractors or subcontractors to the fullest extent permitted by applicable law.</li>
-              <li>I/We agree that, in the event of any dispute between <span class="property-name-ref" data-property-name="">Conrad Abu Dhabi Etihad Towers</span> and the contractor/subcontractor, all necessary procedures shall be taken in accordance with the laws of the United Arab Emirates, with jurisdiction before the competent courts of Abu Dhabi, UAE.</li></ul>
+              <li>I/We will immediately cease work, make the workplace safe, and contact the <span class="property-name-ref" data-property-name>Property</span> Event Manager if I/we become aware of any danger to myself/ourselves, others, guests, staff, contractors, subcontractors, the venue, or property assets during the contract period.</li>
+              <li>I/We acknowledge and agree that any injury, illness, death, loss, or damage involving contractors, subcontractors, personnel, equipment, or the venue arising from contractor/subcontractor acts, omissions, defects, negligence, unsafe work practices, or non-compliance shall remain the full responsibility and liability of the contractor/subcontractor. The management of <span class="property-name-ref" data-property-name>the Property</span> shall not be liable for accidents, injuries, death, losses, or damages involving contractors or subcontractors to the fullest extent permitted by applicable law.</li>
+              <li>I/We agree that, in the event of any dispute between <span class="property-name-ref" data-property-name>the Property</span> and the contractor/subcontractor, all necessary procedures shall be taken in accordance with the laws of the United Arab Emirates, with jurisdiction before the competent courts of Abu Dhabi, UAE.</li>
+            </ul>
           </div>
-          <label class="check-item mandatory-row declaration-acceptance"><input type="checkbox" name="declarationAccepted" required=""> I/We confirm that I/we have read, understood, accepted, and agree to be legally bound by the Declaration, Agreement &amp; Acceptance terms above.</label>
+          <label class="check-item mandatory-row declaration-acceptance"><input type="checkbox" name="declarationAccepted" required> I/We confirm that I/we have read, understood, accepted, and agree to be legally bound by the Declaration, Agreement & Acceptance terms above.</label>
           <div class="grid" style="margin-top:16px">
-            <div class="field half"><label>Authorised Person Name</label><input name="authorizedName" required=""><div class="missing-note">Required field</div></div>
-            <div class="field half"><label>Date</label><input name="signatureDate" class="date-input picker-readonly" placeholder="dd/mmm/yyyy" required="" readonly="" onclick="openDatePicker(this,'date')"><div class="date-hint">Auto-filled when Declaration is ticked; tap to amend if needed</div><div class="missing-note">Required field</div></div>
+            <div class="field half"><label>Authorised Person Name</label><input name="authorizedName" required><div class="missing-note">Required field</div></div>
+            <div class="field half"><label>Date</label><input name="signatureDate" class="date-input picker-readonly" placeholder="dd/mmm/yyyy" required readonly onclick="openDatePicker(this,'date')"><div class="date-hint">Auto-filled when Declaration is ticked; tap to amend if needed</div><div class="missing-note">Required field</div></div>
             <div class="field full">
               <label>Authorized Signature</label>
               <div class="signature-frame signature-only-frame">
-                <div class="signature-canvas-wrap"><span>Draw authorised signature here or upload signature file</span><canvas id="signatureCanvas" width="1440" height="640" style="width: 100%; height: 320px;"></canvas></div><div class="missing-note">Authorised signature is required</div>
+                <div class="signature-canvas-wrap"><span>Draw authorised signature here or upload signature file</span><canvas id="signatureCanvas"></canvas></div><div class="missing-note">Authorised signature is required</div>
                 <div class="mini-actions signature-actions no-print">
                   <input id="signatureFile" class="no-print id-file-hidden" type="file" accept="image/*" onchange="loadSignatureFile(event)">
                   <label class="upload-btn signature-upload-btn no-print" for="signatureFile">Browse Signature</label>
                   <button class="mini-btn signature-clear-btn" type="button" onclick="clearSignature()">Clear Signature</button>
                 </div>
-                <input type="hidden" name="signatureData" id="signatureData" value="">
+                <input type="hidden" name="signatureData" id="signatureData">
               </div>
             </div>
           </div>
@@ -750,445 +757,48 @@
       </section>
 
       <div class="wizard-bottom-nav no-print">
-        <button class="btn primary" id="prevStepBtn" type="button" onclick="return openPreviousStep()" disabled="" aria-label="Previous">Previous</button>
+        <button class="btn primary" id="prevStepBtn" type="button" onclick="return openPreviousStep()">Previous</button>
         <div class="wizard-step-label" id="wizardStepLabel">Step 1 of 5 — Request</div>
-        <button class="btn primary" id="nextStepBtn" type="button" onclick="return openNextStep()" aria-label="Next">Next</button>
+        <button class="btn primary" id="nextStepBtn" type="button" onclick="return openNextStep()">Next</button>
       </div>
     </form>
   </div>
 </div>
 
 
-<script type="application/json" id="permitExportDataSeed">{
-  "meta": {
-    "reportType": "Contractors / Vendors Permit to Work - Events",
-    "savedAt": "2026-06-07T07:24:37.103Z",
-    "version": "Property corporate v11"
-  },
-  "fields": {
-    "requestDate": "",
-    "propertyName": "Conrad Abu Dhabi Etihad Towers",
-    "applicantName": "",
-    "companyName": "",
-    "supervisor": "",
-    "mobile": "",
-    "staffCount": "",
-    "location": "",
-    "accessDateTime": "",
-    "exitDateTime": "",
-    "scope": "",
-    "score_0": "0",
-    "answer_0": "",
-    "score_1": "0",
-    "answer_1": "",
-    "score_2": "0",
-    "answer_2": "",
-    "score_3": "0",
-    "answer_3": "",
-    "score_4": "0",
-    "answer_4": "",
-    "score_5": "0",
-    "answer_5": "",
-    "score_6": "0",
-    "answer_6": "",
-    "score_7": "0",
-    "answer_7": "",
-    "score_8": "0",
-    "answer_8": "",
-    "score_9": "0",
-    "answer_9": "",
-    "authorizedName": "",
-    "signatureDate": "07/Jun/2026",
-    "signatureData": "",
-    "task_0": false,
-    "task_1": false,
-    "task_2": false,
-    "task_3": false,
-    "task_4": false,
-    "task_5": false,
-    "task_6": false,
-    "task_7": false,
-    "task_8": false,
-    "task_9": false,
-    "task_10": false,
-    "task_11": false,
-    "task_12": false,
-    "task_13": false,
-    "task_14": false,
-    "task_15": false,
-    "task_16": false,
-    "rulesAccepted": false,
-    "declarationAccepted": false
-  },
-  "requirements": [
-    {
-      "sn": 1,
-      "requirement": "Do you have Approved Occupational Health and Safety Management System in place? (OSHAD / ISO 45001:2008).",
-      "rating": 10,
-      "score": 0,
-      "answer": ""
-    },
-    {
-      "sn": 2,
-      "requirement": "Has a Health & Safety policy been developed?",
-      "rating": 10,
-      "score": 0,
-      "answer": ""
-    },
-    {
-      "sn": 3,
-      "requirement": "Do you have a dedicated Health & Safety Person available?",
-      "rating": 10,
-      "score": 0,
-      "answer": ""
-    },
-    {
-      "sn": 4,
-      "requirement": "Do you have valid adequate company public liability insurance?",
-      "rating": 10,
-      "score": 0,
-      "answer": ""
-    },
-    {
-      "sn": 5,
-      "requirement": "Is there any training plan available for your staff for all activities that you perform?",
-      "rating": 10,
-      "score": 0,
-      "answer": ""
-    },
-    {
-      "sn": 6,
-      "requirement": "Do you have procedures in place to handle emergencies on site?",
-      "rating": 10,
-      "score": 0,
-      "answer": ""
-    },
-    {
-      "sn": 7,
-      "requirement": "Do you report and record incidents / accidents?",
-      "rating": 10,
-      "score": 0,
-      "answer": ""
-    },
-    {
-      "sn": 8,
-      "requirement": "Will you provide all necessary PPEs and other welfare facilities on site?",
-      "rating": 10,
-      "score": 0,
-      "answer": ""
-    },
-    {
-      "sn": 9,
-      "requirement": "Is there any work from our scope of work being subcontracted? If yes, are they competent to fulfill the health and safety requirements?",
-      "rating": 0,
-      "score": 0,
-      "answer": ""
-    },
-    {
-      "sn": 10,
-      "requirement": "Do you have third party inspection certificate / license for all equipment used in our site?",
-      "rating": 10,
-      "score": 0,
-      "answer": ""
-    }
-  ],
-  "documents": [
-    {
-      "sn": 1,
-      "name": "A copy of the Company Trade License."
-    },
-    {
-      "sn": 2,
-      "name": "A copy of Method Statement / Safe Procedure of Work."
-    },
-    {
-      "sn": 3,
-      "name": "A copy of Site Specific Risk Assessment of Job."
-    },
-    {
-      "sn": 4,
-      "name": "A copy of training Certificates of all staff that will be using any site equipment, cherry picker, scissor lift, or forklift."
-    }
-  ],
-  "tasks": [
-    {
-      "name": "Working on the roof",
-      "selected": false
-    },
-    {
-      "name": "Spray painting",
-      "selected": false
-    },
-    {
-      "name": "Window cleaning",
-      "selected": false
-    },
-    {
-      "name": "Working in confined spaces",
-      "selected": false
-    },
-    {
-      "name": "Electrical Work",
-      "selected": false
-    },
-    {
-      "name": "Welding or abrasive cutting",
-      "selected": false
-    },
-    {
-      "name": "Demolishing",
-      "selected": false
-    },
-    {
-      "name": "Erecting scaffolding",
-      "selected": false
-    },
-    {
-      "name": "Using chemicals",
-      "selected": false
-    },
-    {
-      "name": "Working at heights",
-      "selected": false
-    },
-    {
-      "name": "Access to high voltage workstation",
-      "selected": false
-    },
-    {
-      "name": "Hot work",
-      "selected": false
-    },
-    {
-      "name": "Build a Stage",
-      "selected": false
-    },
-    {
-      "name": "Install Digital Screen",
-      "selected": false
-    },
-    {
-      "name": "Light installation",
-      "selected": false
-    },
-    {
-      "name": "Furniture Delivery / Placement",
-      "selected": false
-    },
-    {
-      "name": "Others",
-      "selected": false
-    }
-  ],
-  "attachments": []
-}</script><script id="permitContentConfigSeed" type="application/json">{
-  "propertyName": "Conrad Abu Dhabi Etihad Towers",
-  "requirements": [
-    [
-      "Do you have Approved Occupational Health and Safety Management System in place? (OSHAD / ISO 45001:2008).",
-      10
-    ],
-    [
-      "Has a Health & Safety policy been developed?",
-      10
-    ],
-    [
-      "Do you have a dedicated Health & Safety Person available?",
-      10
-    ],
-    [
-      "Do you have valid adequate company public liability insurance?",
-      10
-    ],
-    [
-      "Is there any training plan available for your staff for all activities that you perform?",
-      10
-    ],
-    [
-      "Do you have procedures in place to handle emergencies on site?",
-      10
-    ],
-    [
-      "Do you report and record incidents / accidents?",
-      10
-    ],
-    [
-      "Will you provide all necessary PPEs and other welfare facilities on site?",
-      10
-    ],
-    [
-      "Is there any work from our scope of work being subcontracted? If yes, are they competent to fulfill the health and safety requirements?",
-      0
-    ],
-    [
-      "Do you have third party inspection certificate / license for all equipment used in our site?",
-      10
-    ]
-  ],
-  "documents": [
-    "A copy of the Company Trade License.",
-    "A copy of Method Statement / Safe Procedure of Work.",
-    "A copy of Site Specific Risk Assessment of Job.",
-    "A copy of training Certificates of all staff that will be using any site equipment, cherry picker, scissor lift, or forklift."
-  ],
-  "tasks": [
-    "Working on the roof",
-    "Spray painting",
-    "Window cleaning",
-    "Working in confined spaces",
-    "Electrical Work",
-    "Welding or abrasive cutting",
-    "Demolishing",
-    "Erecting scaffolding",
-    "Using chemicals",
-    "Working at heights",
-    "Access to high voltage workstation",
-    "Hot work",
-    "Build a Stage",
-    "Install Digital Screen",
-    "Light installation",
-    "Furniture Delivery / Placement",
-    "Others"
-  ],
-  "securityDepositText": "The Contractor/Vendor shall deposit AED 10,000 as a security deposit upon signing the Work Permit. It protects against venue structure/equipment damage and is refundable within seven business days after the event ends, provided no damages occur.",
-  "venueInspectionText": "The Contractor shall inspect the event venue prior to commencing setup and report any unsatisfactory conditions in writing to Property Management. Failure to report makes the Contractor responsible for the venue condition.",
-  "safetyRegulations": [
-    {
-      "text": "Valid photo ID is required to gain access from P1 security office.",
-      "critical": false
-    },
-    {
-      "text": "All staff must enter and exit via the Security Entrance.",
-      "critical": false
-    },
-    {
-      "text": "All personnel must have valid, job-specific experience.",
-      "critical": false
-    },
-    {
-      "text": "Signed Work Permit must be brought to the premises as proof of access.",
-      "critical": false
-    },
-    {
-      "text": "Required PPE must be worn.",
-      "critical": false
-    },
-    {
-      "text": "Contractors must be reasonably dressed and meet property hygiene standards.",
-      "critical": false
-    },
-    {
-      "text": "Certified helmet and harness must be worn above 1.8 meters.",
-      "critical": false
-    },
-    {
-      "text": "Portable electrical equipment must use grounded approved plugs and sockets.",
-      "critical": false
-    },
-    {
-      "text": "No work on live electrical distribution boards; power isolation must follow hotel lockout/tagout policy.",
-      "critical": false
-    },
-    {
-      "text": "Cables must pass through cable ramps and avoid doorways.",
-      "critical": false
-    },
-    {
-      "text": "Electrical loads must be within supply capacity and tested with the property engineer.",
-      "critical": false
-    },
-    {
-      "text": "Marble floor and carpets must be protected during setup and breakdown.",
-      "critical": false
-    },
-    {
-      "text": "Smoke/Haze machines are prohibited unless approved 48 hours prior.",
-      "critical": false
-    },
-    {
-      "text": "Flammable materials must be fire-retardant treated with certificates submitted.",
-      "critical": false
-    },
-    {
-      "text": "No excessively loud construction work unless permitted by Property Management.",
-      "critical": false
-    },
-    {
-      "text": "Equipment must have up-to-date test certificates.",
-      "critical": false
-    },
-    {
-      "text": "Contractors are responsible for their own equipment and tools.",
-      "critical": false
-    },
-    {
-      "text": "No attachment to building fabric except designated venue hanging points.",
-      "critical": false
-    },
-    {
-      "text": "Safe and environmentally friendly practices must be followed.",
-      "critical": false
-    },
-    {
-      "text": "Smoking and alcohol consumption are forbidden except in designated areas.",
-      "critical": false
-    },
-    {
-      "text": "Unsafe work may be suspended until corrected at contractor cost.",
-      "critical": false
-    },
-    {
-      "text": "Work areas must be secured to protect guests and prevent unauthorized access.",
-      "critical": false
-    },
-    {
-      "text": "Work areas must be clean and tidy.",
-      "critical": false
-    },
-    {
-      "text": "Contractors and staff may not access public areas without written permission.",
-      "critical": false
-    },
-    {
-      "text": "Emergency exit doors and escape routes must never be blocked or obstructed for any reason.",
-      "critical": true
-    },
-    {
-      "text": "Proper protection is required if activities may damage hotel property.",
-      "critical": false
-    },
-    {
-      "text": "Candles require Property Management approval in accordance with safety standards.",
-      "critical": false
-    },
-    {
-      "text": "Loud or abusive language will not be tolerated.",
-      "critical": false
-    },
-    {
-      "text": "After setup, garbage must be cleared off-site and the venue returned as received.",
-      "critical": false
-    },
-    {
-      "text": "Non-compliance may result in work cessation, permit cancellation, cleaning fees, repair costs, and waste removal charges.",
-      "critical": false
-    }
-  ]
-}</script>
+<script id="permitContentConfigSeed" type="application/json"></script>
 
 
 <div class="modal" id="datePickerModal"><div class="modal-card picker-modal-card"><h3 id="pickerTitle">Select Date</h3><input id="pickerNative" class="picker-control" type="date"><div class="hint-small" id="pickerHint">Selected value will be displayed as dd/mmm/yyyy.</div><div class="actions"><button class="btn primary" type="button" onclick="applyDatePicker()">Apply</button><button class="btn secondary" type="button" onclick="closeDatePicker()">Cancel</button></div></div></div>
 
 
+<div class="modal" id="contentEditorModal"><div class="modal-card content-editor-card">
+  <h3>Editable Permit Content Manager</h3>
+  <p class="content-editor-intro">Edit or add the permit content below, then save it into this browser or export a new standalone HTML file with the updated content embedded.</p>
+  <div class="editor-grid">
+    <div class="editor-field full"><label>Property Name</label><div class="editor-hint">This name will be used in the form, declaration text, PDF header, and exported final HTML.</div><input id="editPropertyName" class="editor-input" type="text" placeholder="Property name"></div>
+    <div class="editor-field full"><label>Contractor Safety Requirement Assessment</label><div class="editor-hint">One item per line using: <b>Rating | Question</b>. Example: <b>10 | Do you have PPE?</b></div><textarea id="editRequirements" class="editor-textarea tall"></textarea></div>
+    <div class="editor-field"><label>Required Documents</label><div class="editor-hint">One document per line.</div><textarea id="editDocuments" class="editor-textarea"></textarea></div>
+    <div class="editor-field"><label>Safe Work Description / Tasks</label><div class="editor-hint">One task per line.</div><textarea id="editTasks" class="editor-textarea"></textarea></div>
+    <div class="editor-field full"><label>Security Deposit</label><textarea id="editSecurityDeposit" class="editor-textarea small"></textarea></div>
+    <div class="editor-field full"><label>Venue Inspection</label><textarea id="editVenueInspection" class="editor-textarea small"></textarea></div>
+    <div class="editor-field full"><label>Safety Regulations</label><div class="editor-hint">One rule per line. Start a line with <b>!</b> to mark it critical/red in PDF and web view.</div><textarea id="editRegulations" class="editor-textarea tall"></textarea></div>
+  </div>
+  <div class="editor-actions">
+    <button class="btn secondary" type="button" onclick="restoreDefaultPermitContent()">Restore Default</button>
+    <button class="btn secondary" type="button" onclick="closeContentEditor()">Cancel</button>
+    <button class="btn primary" type="button" onclick="saveContentEditor(false)">Save Changes</button>
+    <button class="btn primary" type="button" onclick="saveContentEditor(true)">Save & Export HTML</button>
+  </div>
+</div></div>
 
-
-<div class="modal" id="fastAttachmentModal"><div class="modal-card fast-attachment-modal-card"><h3>View Attachments</h3><p class="hint">Open or manage uploaded attachments directly from Fast Navigation.</p><div class="fast-attachment-toolbar"><button class="btn primary" type="button" onclick="triggerAttachmentUpload()">Add Attachment</button><button class="btn secondary" type="button" onclick="closeFastAttachmentManager()">Close</button></div><div id="fastAttachmentList" class="attachment-list"><div class="attachment-empty">No attachments added. Click Add Attachment to upload files.</div></div></div></div>
+<div class="modal" id="fastAttachmentModal"><div class="modal-card fast-attachment-modal-card"><h3>View Attachments</h3><p class="hint">Open or manage uploaded attachments directly from Fast Navigation.</p><div class="fast-attachment-toolbar"><button class="btn primary" type="button" onclick="triggerAttachmentUpload()">Add Attachment</button><button class="btn secondary" type="button" onclick="closeFastAttachmentManager()">Close</button></div><div id="fastAttachmentList" class="attachment-list"><div class="attachment-empty">No attachments added.</div></div></div></div>
 <div class="modal" id="attachmentPreviewModal"><div class="modal-card attachment-preview-modal-card"><button class="attachment-preview-close-x" type="button" aria-label="Close preview" onclick="closeAttachmentPreview()">×</button><h3 id="attachmentPreviewTitle">Attachment Viewer</h3><div id="attachmentPreviewMeta" class="attachment-preview-meta">No attachment selected.</div><div id="attachmentPreviewBody" class="attachment-preview-body"><div class="attachment-preview-card"><div class="file-icon">?</div><b>No attachment selected</b><p>Select an uploaded file to preview it here.</p></div></div><div class="attachment-preview-actions"><button class="btn secondary" type="button" onclick="openActiveAttachmentInNewTab()">Open</button><button class="btn secondary" type="button" onclick="downloadActiveAttachment()">Download</button><button class="btn primary" type="button" onclick="closeAttachmentPreview()">Close</button></div></div></div>
 <div class="modal" id="validationModal"><div class="modal-card validation-modal-card"><h3>Missing Mandatory Information</h3><p>Please complete the following items before generating the PDF report.</p><ul class="missing-list" id="validationMissingList"></ul><div class="actions"><button class="btn primary" type="button" onclick="focusFirstMissing()">Review Missing Fields</button><button class="btn secondary" type="button" onclick="closeValidationModal()">Close</button></div></div></div>
 <div class="modal" id="browserDraftModal"><div class="modal-card browser-draft-modal-card"><h3>Draft Saved On Browser</h3><div class="browser-draft-message">All data entered here is processed entirely within your current browser and is never stored, transmitted, or saved to any external server or database. Nothing leaves your device.</div><div class="actions"><button class="btn green-confirm" type="button" onclick="closeBrowserDraftModal()">OK</button></div></div></div>
 <div class="modal" id="englishOnlyModal"><div class="modal-card english-only-modal-card"><h3 data-en="Typing in English only" data-ar="الكتابة باللغة الإنجليزية فقط">Typing in English only</h3><div class="english-only-message" data-en="Typing is allowed in English only. The Arabic menu is available to help you complete the permit request." data-ar="يُسمح بالكتابة باللغة الإنجليزية فقط. القائمة العربية متوفرة لمساعدتك في تعبئة طلب التصريح.">Typing is allowed in English only. The Arabic menu is available to help you complete the permit request.</div><div class="actions"><button class="btn primary" type="button" onclick="closeEnglishOnlyModal()">OK</button></div></div></div>
 <div class="modal" id="clearModal"><div class="modal-card clear-modal-card"><h3>Clear this permit form?</h3><p>Please confirm this action.</p><div class="actions"><button class="btn clear-warn" onclick="resetFormConfirmed()">Yes, Clear Form</button><button class="btn secondary" onclick="closeClearModal()">Cancel</button></div></div></div>
-<div class="toast show" id="toast">Recovered saved browser draft.</div>
+<div class="toast" id="toast"></div>
 
 <script>
 const requirements=[
@@ -1393,7 +1003,7 @@ function applyPermitContentConfig(cfg){
  if(Array.isArray(cfg.safetyRegulations))safetyRegulations=cfg.safetyRegulations.map(r=>({text:String(r.text||r||'').trim(),critical:!!r.critical})).filter(r=>r.text);
  syncPropertyNameReferences();
 }
-function applySavedPermitContent(){try{const seed=document.getElementById('permitContentConfigSeed')?.textContent?.trim(); if(seed)applyPermitContentConfig(JSON.parse(seed));}catch(e){console.warn('Permit content config ignored',e);}}
+function applySavedPermitContent(){try{const seed=document.getElementById('permitContentConfigSeed')?.textContent?.trim(); if(seed)applyPermitContentConfig(JSON.parse(seed)); const saved=localStorage.getItem('permitEditableContentV1'); if(saved)applyPermitContentConfig(JSON.parse(saved));}catch(e){console.warn('Permit content config ignored',e);}}
 function renderDynamicPermitContent(){
  const rows=document.getElementById('requirementRows'); if(rows){rows.innerHTML=requirements.map((r,i)=>`<tr><td class="sn">${i+1}.</td><td class="mobile-question-cell">${escapeHtmlText(r[0])}</td><td class="rating">${Number(r[1])||'N/A'}</td><td class="score"><input type="number" readonly name="score_${i}" value="0"></td><td class="answer"><select name="answer_${i}"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr>`).join('');}
  const maxCell=document.getElementById('safetyMaxScoreCell'); if(maxCell)maxCell.textContent=getMaxSafetyScore();
@@ -2837,6 +2447,5 @@ async function generatePDF(){
 })();
 </script>
 
-
-
-</body></html>
+</body>
+</html>
