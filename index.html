@@ -633,6 +633,12 @@ body.exported-permit-body .app-shell{
   filter:brightness(1.08) !important;
 }
 @media(max-width:760px){
+  .language-picker{width:100% !important;justify-content:space-between !important;padding:8px 10px !important;border-radius:16px !important;}
+  .language-picker-label{font-size:12px !important;}
+  .language-menu{flex:1 1 auto !important;min-width:0 !important;max-width:190px !important;}
+}
+
+@media(max-width:760px){
   body{padding-bottom:14px !important;}
   .wizard-bottom-nav{
     position:sticky !important;
@@ -689,9 +695,110 @@ body.exported-permit-body .app-shell{
   }
 }
 
+
+
+/* Language menu + Urdu view support */
+.language-picker{display:inline-flex;align-items:center;gap:9px;min-height:42px;padding:4px 6px 4px 12px;border:1px solid var(--line);border-radius:999px;background:#fff;box-shadow:0 6px 16px rgba(15,23,42,.055);}
+.language-picker-label{margin:0;color:var(--navy);font-size:12px;font-weight:950;letter-spacing:.045em;text-transform:uppercase;white-space:nowrap;}
+.language-menu{min-width:132px;height:42px;padding:0 14px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--navy);font-weight:950;}
+body.lang-ur{font-family:"Noto Nastaliq Urdu","Jameel Noori Nastaleeq","Tahoma","Arial","Segoe UI",sans-serif;font-size:16px;}
+.lang-ur .section-header h2,.lang-ur .work-panel-head b,.lang-ur .check-item,.lang-ur .doc-info li,.lang-ur .rules li,.lang-ur .declaration-list li{font-size:1.06em;}
+.lang-ur #request{direction:rtl;text-align:right;}
+.lang-ur #request label{text-align:right;}
+.lang-ur #request input,.lang-ur #request textarea{direction:ltr;text-align:left;font-family:Inter,"Segoe UI",Roboto,Arial,sans-serif;}
+.lang-ur #request input::placeholder,.lang-ur #request textarea::placeholder{text-align:right;}
+.lang-ur .side-panel,.lang-ur .toolbar,.lang-ur .wizard-bottom-nav{direction:rtl;}
+.lang-ur .tabs.process-flow{direction:rtl;}
+.lang-ur .actions{direction:rtl;}
+.lang-ur .side-panel a{font-size:16px;line-height:1.5;padding:10px 12px;}
+.lang-ur .fast-attachment-btn{font-size:15.5px;line-height:1.4;padding:12px 14px;}
+.lang-ur .fast-attachment-btn span{font-size:12px;}
+.lang-ur .side-panel .hint{font-size:13px;line-height:1.55;}
+.lang-ur .check-item{flex-direction:row-reverse;text-align:right;}
+.lang-ur .doc-info li{padding-right:48px;padding-left:12px;}
+.lang-ur .doc-info li:before{right:12px;left:auto;}
+.lang-ur .declaration-list li{padding-right:40px;padding-left:12px;text-align:right;}
+.lang-ur .declaration-list li:before{right:12px;left:auto;}
+.lang-ur .rules{text-align:right;}
+.lang-ur .other-task-note{text-align:right;}
+body.lang-ur .other-task-note .note-en{display:inline;}
+body.lang-ur .other-task-note .note-ar{display:none;}
+@media(max-width:760px){
+  body.lang-ur .toolbar,body.lang-ur .wizard-bottom-nav,body.lang-ur .tabs.process-flow{direction:rtl;width:100%;max-width:100%;overflow-x:hidden;}
+  body.lang-ur .tab-btn{justify-content:flex-start;min-width:0;}
+  body.lang-ur .wizard-bottom-nav{display:grid!important;grid-template-columns:1fr!important;}
+  .lang-ur #request{direction:rtl!important;text-align:right!important;}
+  .lang-ur #request input,.lang-ur #request textarea{direction:ltr!important;text-align:left!important;}
+  body.lang-ur #taskList .check-item{grid-template-columns:32px minmax(0,1fr)!important;text-align:right!important;}
+  body.lang-ur #taskList .check-item input[type="checkbox"]{grid-column:1!important;}
+  body.lang-ur .score-table tbody td{text-align:right!important;direction:rtl!important;}
+  body.lang-ur .score-table tbody td.rating,body.lang-ur .score-table tbody td.score,body.lang-ur .score-table tbody td.answer{grid-template-columns:minmax(0,1fr) 120px!important;direction:rtl!important;}
+  body.lang-ur .score-table tbody td.rating::before{content:"درجہ بندی";grid-column:2;color:#64748b;font-size:12px;font-weight:950;}
+  body.lang-ur .score-table tbody td.score::before{content:"اسکور";grid-column:2;color:#64748b;font-size:12px;font-weight:950;}
+  body.lang-ur .score-table tbody td.answer::before{content:"انتخاب";grid-column:2;color:#64748b;font-size:12px;font-weight:950;}
+  body.lang-ur #approval .declaration-list li{padding:10px 38px 10px 10px!important;text-align:right!important;}
+  body.lang-ur #approval .declaration-list li:before{right:10px!important;left:auto!important;}
+  body.lang-ur #approval .declaration-acceptance{grid-template-columns:minmax(0,1fr) 26px!important;text-align:right!important;}
+  body.lang-ur #approval .declaration-acceptance input{grid-column:2!important;}
+}
+@media(max-width:420px){body.lang-ur .score-table tbody td.rating,body.lang-ur .score-table tbody td.score,body.lang-ur .score-table tbody td.answer{grid-template-columns:minmax(0,1fr) 96px!important;}}
+
+
+/* PDF generation progress modal */
+.pdf-progress-modal-card{
+  max-width:520px;
+  border-top:8px solid var(--conrad-gold);
+  background:linear-gradient(180deg,#fffaf0,#fff);
+}
+.pdf-progress-title{
+  margin:0 0 8px;
+  color:var(--navy);
+  font-size:20px;
+  font-weight:950;
+}
+.pdf-progress-message{
+  margin:0 0 14px;
+  color:#334155;
+  font-size:14px;
+  font-weight:850;
+  line-height:1.45;
+}
+.pdf-progress-track{
+  width:100%;
+  height:16px;
+  overflow:hidden;
+  border-radius:999px;
+  background:#e5e7eb;
+  border:1px solid #d7dde7;
+}
+.pdf-progress-fill{
+  height:100%;
+  width:0%;
+  border-radius:999px;
+  background:linear-gradient(90deg,var(--navy),var(--conrad-gold));
+  transition:width .22s ease;
+}
+.pdf-progress-percent{
+  margin-top:10px;
+  color:#101b2f;
+  font-size:13px;
+  font-weight:950;
+  text-align:right;
+}
+.pdf-progress-detail{
+  margin-top:10px;
+  padding:10px 12px;
+  border:1px solid #eadfc8;
+  border-radius:14px;
+  background:#fffaf0;
+  color:#475569;
+  font-size:12px;
+  font-weight:800;
+}
+
 </style>
 </head>
-<body class="exported-permit-body" data-active-step="request">
+<body data-active-step="request" class="exported-permit-body">
 <div class="app-shell">
   <header class="hero">
     <div>
@@ -717,13 +824,20 @@ body.exported-permit-body .app-shell{
       <button class="tab-btn" type="button" data-tab="work"><span class="step-no">3</span><span>Documents &amp; Tasks</span></button>
       <button class="tab-btn" type="button" data-tab="rules"><span class="step-no">4</span><span>Regulations</span></button>
       <button class="tab-btn" type="button" data-tab="approval"><span class="step-no">5</span><span>Agreement</span></button>
-      <button class="tab-btn attachment-tab" type="button" onclick="triggerAttachmentUpload()"><span class="step-no">+</span><span>Add Attachment</span><span id="attachmentCountBadge" style="display:none">0</span></button>
+      <button class="tab-btn attachment-tab" type="button" onclick="triggerAttachmentUpload()"><span class="step-no">+</span><span>Add Attachment</span><span id="attachmentCountBadge" style="display: none;">0</span></button>
       <input id="attachmentFiles" class="no-print id-file-hidden" type="file" multiple="" onchange="loadPermitAttachments(event)">
     </div>
     <div class="actions editor-master-controls">
       <button class="btn primary" type="button" onclick="saveDraft()">Save Draft</button>
       <button class="btn primary" type="button" onclick="generatePDF()">Print Work Permit</button>
-      <button class="btn secondary language-toggle-btn" id="languageToggleBtn" type="button" onclick="toggleLanguage()">العربية</button>
+      <div class="language-picker">
+        <label class="language-picker-label" for="languageMenu">Select Language</label>
+        <select class="language-menu" id="languageMenu" aria-label="Select Language" onchange="applyLanguage(this.value)">
+          <option value="en">English</option>
+          <option value="ar">Arabic</option>
+          <option value="ur">Urdu</option>
+        </select>
+      </div>
       
       
       <button class="btn danger" type="button" onclick="openClearModal()">Clear</button>
@@ -754,7 +868,7 @@ body.exported-permit-body .app-shell{
 
     <form id="permitForm" autocomplete="on">
       <div class="print-only brand-print">
-        <div class="logo">CONRAD ABU DHABI ETIHAD TOWERS</div>
+        <div class="logo">CONRAD ABU DHABI ETIHAD TOWER</div>
         <div class="sub">PERMIT TO WORK REQUEST</div>
         <div class="title">Contractors / Vendors Permit to Work - Events</div>
         <div class="report-meta"><span>CAD-OSHMS-015-F01</span><span>Date: 01/10/2020</span><span>REV 01</span></div>
@@ -765,7 +879,7 @@ body.exported-permit-body .app-shell{
         <div class="section-body">
           <div class="request-stack">
             <div class="info-row"><label>Work Permit Request Date</label><div><input name="requestDate" class="date-input picker-readonly" placeholder="dd/mmm/yyyy" required="" readonly="" onclick="openDatePicker(this,'date')"><div class="date-hint">Tap to select from calendar — format: dd/mmm/yyyy</div><div class="missing-note">Required field</div></div></div>
-            <div class="info-row"><label>Property Name</label><div><input name="propertyName" required="" readonly="readonly" value="Conrad Abu Dhabi Etihad Towers" class="readonly-property"><div class="missing-note">Required field</div></div></div>
+            <div class="info-row"><label>Property Name</label><div><input name="propertyName" required="" readonly="readonly" value="Conrad Abu Dhabi Etihad Tower" class="readonly-property"><div class="missing-note">Required field</div></div></div>
             <div class="info-row"><label>Name of Applicant</label><div><input name="applicantName" required="" placeholder="Full name"><div class="missing-note">Required field</div></div></div>
             <div class="info-row"><label>Company Name</label><div><input name="companyName" required=""><div class="missing-note">Required field</div></div></div>
             <div class="info-row"><label>Contractor Supervisor on Site</label><div><input name="supervisor" required=""><div class="missing-note">Required field</div></div></div>
@@ -783,7 +897,7 @@ body.exported-permit-body .app-shell{
         <div class="section-body table-wrap">
           <table class="score-table">
             <thead><tr><th>SN#</th><th>Requirements</th><th>Rating</th><th>Score</th><th>Applicant to Select</th></tr></thead>
-            <tbody id="requirementRows"><tr><td class="sn">1.</td><td class="mobile-question-cell">Do you have Approved Occupational Health and Safety Management System in place? (OSHAD / ISO 45001:2008).</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_0" value="0"></td><td class="answer"><select name="answer_0"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">2.</td><td class="mobile-question-cell">Has a Health &amp; Safety policy been developed?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_1" value="0"></td><td class="answer"><select name="answer_1"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">3.</td><td class="mobile-question-cell">Do you have a dedicated Health &amp; Safety Person available?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_2" value="0"></td><td class="answer"><select name="answer_2"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">4.</td><td class="mobile-question-cell">Do you have valid adequate company public liability insurance?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_3" value="0"></td><td class="answer"><select name="answer_3"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">5.</td><td class="mobile-question-cell">Is there any training plan available for your staff for all activities that you perform?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_4" value="0"></td><td class="answer"><select name="answer_4"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">6.</td><td class="mobile-question-cell">Do you have procedures in place to handle emergencies on site?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_5" value="0"></td><td class="answer"><select name="answer_5"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">7.</td><td class="mobile-question-cell">Do you report and record incidents / accidents?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_6" value="0"></td><td class="answer"><select name="answer_6"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">8.</td><td class="mobile-question-cell">Will you provide all necessary PPEs and other welfare facilities on site?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_7" value="0"></td><td class="answer"><select name="answer_7"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">9.</td><td class="mobile-question-cell">Is there any work from our scope of work being subcontracted? If yes, are they competent to fulfill the health and safety requirements?</td><td class="rating">N/A</td><td class="score"><input type="number" readonly="" name="score_8" value="0"></td><td class="answer"><select name="answer_8"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">10.</td><td class="mobile-question-cell">Do you have third party inspection certificate / license for all equipment used in our site?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_9" value="0"></td><td class="answer"><select name="answer_9"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr></tbody>
+            <tbody id="requirementRows"><tr class=""><td class="sn">1.</td><td class="mobile-question-cell">Do you have Approved Occupational Health and Safety Management System in place? (OSHAD / ISO 45001:2008).</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_0" value="0"></td><td class="answer"><select name="answer_0"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr class=""><td class="sn">2.</td><td class="mobile-question-cell">Has a Health &amp; Safety policy been developed?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_1" value="0"></td><td class="answer"><select name="answer_1"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr class=""><td class="sn">3.</td><td class="mobile-question-cell">Do you have a dedicated Health &amp; Safety Person available?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_2" value="0"></td><td class="answer"><select name="answer_2"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">4.</td><td class="mobile-question-cell">Do you have valid adequate company public liability insurance?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_3" value="0"></td><td class="answer"><select name="answer_3"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr class=""><td class="sn">5.</td><td class="mobile-question-cell">Is there any training plan available for your staff for all activities that you perform?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_4" value="0"></td><td class="answer"><select name="answer_4"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr class=""><td class="sn">6.</td><td class="mobile-question-cell">Do you have procedures in place to handle emergencies on site?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_5" value="0"></td><td class="answer"><select name="answer_5"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr class=""><td class="sn">7.</td><td class="mobile-question-cell">Do you report and record incidents / accidents?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_6" value="0"></td><td class="answer"><select name="answer_6"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">8.</td><td class="mobile-question-cell">Will you provide all necessary PPEs and other welfare facilities on site?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_7" value="0"></td><td class="answer"><select name="answer_7"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">9.</td><td class="mobile-question-cell">Is there any work from our scope of work being subcontracted? If yes, are they competent to fulfill the health and safety requirements?</td><td class="rating">N/A</td><td class="score"><input type="number" readonly="" name="score_8" value="0"></td><td class="answer"><select name="answer_8"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">10.</td><td class="mobile-question-cell">Do you have third party inspection certificate / license for all equipment used in our site?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_9" value="0"></td><td class="answer"><select name="answer_9"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr></tbody>
             <tfoot><tr><td colspan="2"><b>Total Score</b></td><td><b id="safetyMaxScoreCell">90</b></td><td><input id="totalScore" readonly=""></td><td><span id="assessmentBadge" class="pill bad">Not Ready</span></td></tr></tfoot>
           </table>
           <p class="hint">Score fields are locked. Select Yes / No / N/A and the report calculates the score automatically.</p>
@@ -800,7 +914,7 @@ body.exported-permit-body .app-shell{
           </div>
           <div class="work-panel">
             <div class="work-panel-head"><div><b>Safe Work Description / Task to Perform</b><br><span>Select all applicable work activities.</span></div></div>
-            <div class="check-grid" id="taskList"><label class="check-item "><input type="checkbox" name="task_0" data-other-task="false"> Working on the roof</label><label class="check-item "><input type="checkbox" name="task_1" data-other-task="false"> Spray painting</label><label class="check-item "><input type="checkbox" name="task_2" data-other-task="false"> Window cleaning</label><label class="check-item "><input type="checkbox" name="task_3" data-other-task="false"> Working in confined spaces</label><label class="check-item "><input type="checkbox" name="task_4" data-other-task="false"> Electrical Work</label><label class="check-item "><input type="checkbox" name="task_5" data-other-task="false"> Welding or abrasive cutting</label><label class="check-item "><input type="checkbox" name="task_6" data-other-task="false"> Demolishing</label><label class="check-item "><input type="checkbox" name="task_7" data-other-task="false"> Erecting scaffolding</label><label class="check-item "><input type="checkbox" name="task_8" data-other-task="false"> Using chemicals</label><label class="check-item "><input type="checkbox" name="task_9" data-other-task="false"> Working at heights</label><label class="check-item "><input type="checkbox" name="task_10" data-other-task="false"> Access to high voltage workstation</label><label class="check-item "><input type="checkbox" name="task_11" data-other-task="false"> Hot work</label><label class="check-item "><input type="checkbox" name="task_12" data-other-task="false"> Build a Stage</label><label class="check-item "><input type="checkbox" name="task_13" data-other-task="false"> Install Digital Screen</label><label class="check-item "><input type="checkbox" name="task_14" data-other-task="false"> Light installation</label><label class="check-item "><input type="checkbox" name="task_15" data-other-task="false"> Furniture Delivery / Placement</label><label class="check-item other-task-option"><input type="checkbox" name="task_16" data-other-task="true"> Others</label></div>
+            <div class="check-grid" id="taskList"><label class="check-item"><input type="checkbox" name="task_0" data-other-task="false"> Working on the roof</label><label class="check-item "><input type="checkbox" name="task_1" data-other-task="false"> Spray painting</label><label class="check-item "><input type="checkbox" name="task_2" data-other-task="false"> Window cleaning</label><label class="check-item "><input type="checkbox" name="task_3" data-other-task="false"> Working in confined spaces</label><label class="check-item "><input type="checkbox" name="task_4" data-other-task="false"> Electrical Work</label><label class="check-item "><input type="checkbox" name="task_5" data-other-task="false"> Welding or abrasive cutting</label><label class="check-item "><input type="checkbox" name="task_6" data-other-task="false"> Demolishing</label><label class="check-item "><input type="checkbox" name="task_7" data-other-task="false"> Erecting scaffolding</label><label class="check-item "><input type="checkbox" name="task_8" data-other-task="false"> Using chemicals</label><label class="check-item "><input type="checkbox" name="task_9" data-other-task="false"> Working at heights</label><label class="check-item "><input type="checkbox" name="task_10" data-other-task="false"> Access to high voltage workstation</label><label class="check-item "><input type="checkbox" name="task_11" data-other-task="false"> Hot work</label><label class="check-item "><input type="checkbox" name="task_12" data-other-task="false"> Build a Stage</label><label class="check-item "><input type="checkbox" name="task_13" data-other-task="false"> Install Digital Screen</label><label class="check-item "><input type="checkbox" name="task_14" data-other-task="false"> Light installation</label><label class="check-item"><input type="checkbox" name="task_15" data-other-task="false"> Furniture Delivery / Placement</label><label class="check-item other-task-option"><input type="checkbox" name="task_16" data-other-task="true"> Others</label></div>
             <div class="task-missing-note">Please select at least one Safe Work Description task.</div>
             <div class="field full other-task-wrap disabled" id="otherTaskWrap"><label>Other Task Details</label><textarea name="otherTask" placeholder="Describe the other task" disabled=""></textarea><div class="other-task-note" data-other-task-note="" style="display: block;">
                 <span class="note-en">Note: If the contractor selects Others, fill Other Task Details only if extra clarification is necessary. This field is optional.</span>
@@ -833,12 +947,12 @@ body.exported-permit-body .app-shell{
           <div class="declaration-card">
             <h3>Legal Declaration, Agreement &amp; Acceptance</h3>
             <ul class="declaration-list">
-              <li>I/We understand the obligations under <span class="property-name-ref" data-property-name="">Conrad Abu Dhabi Etihad Towers</span> OSHAD Standards that are applicable to the work being undertaken and to the circumstances in which the contract will be performed.</li>
+              <li>I/We understand the obligations under <span class="property-name-ref" data-property-name="">Conrad Abu Dhabi Etihad Tower</span> OSHAD Standards that are applicable to the work being undertaken and to the circumstances in which the contract will be performed.</li>
               <li>I/We confirm that we have received a copy of, read, and understood the Contractors Induction training requirements, and will comply with the hotel safety rules and Contractor Management Procedure.</li>
               <li>I/We confirm that the contractor, subcontractor, authorised signatory, supervisors, and personnel hold all certifications, licenses, competencies, and qualifications required by applicable legislation, regulations, and the work scope.</li>
-              <li>I/We will immediately cease work, make the workplace safe, and contact the <span class="property-name-ref" data-property-name="">Conrad Abu Dhabi Etihad Towers</span> Event Manager if I/we become aware of any danger to myself/ourselves, others, guests, staff, contractors, subcontractors, the venue, or property assets during the contract period.</li>
-              <li>I/We acknowledge and agree that any injury, illness, death, loss, or damage involving contractors, subcontractors, personnel, equipment, or the venue arising from contractor/subcontractor acts, omissions, defects, negligence, unsafe work practices, or non-compliance shall remain the full responsibility and liability of the contractor/subcontractor. The management of <span class="property-name-ref" data-property-name="">Conrad Abu Dhabi Etihad Towers</span> shall not be liable for accidents, injuries, death, losses, or damages involving contractors or subcontractors to the fullest extent permitted by applicable law.</li>
-              <li>I/We agree that, in the event of any dispute between <span class="property-name-ref" data-property-name="">Conrad Abu Dhabi Etihad Towers</span> and the contractor/subcontractor, all necessary procedures shall be taken in accordance with the laws of the United Arab Emirates, with jurisdiction before the competent courts of Abu Dhabi, UAE.</li></ul>
+              <li>I/We will immediately cease work, make the workplace safe, and contact the <span class="property-name-ref" data-property-name="">Conrad Abu Dhabi Etihad Tower</span> Event Manager if I/we become aware of any danger to myself/ourselves, others, guests, staff, contractors, subcontractors, the venue, or property assets during the contract period.</li>
+              <li>I/We acknowledge and agree that any injury, illness, death, loss, or damage involving contractors, subcontractors, personnel, equipment, or the venue arising from contractor/subcontractor acts, omissions, defects, negligence, unsafe work practices, or non-compliance shall remain the full responsibility and liability of the contractor/subcontractor. The management of <span class="property-name-ref" data-property-name="">Conrad Abu Dhabi Etihad Tower</span> shall not be liable for accidents, injuries, death, losses, or damages involving contractors or subcontractors to the fullest extent permitted by applicable law.</li>
+              <li>I/We agree that, in the event of any dispute between <span class="property-name-ref" data-property-name="">Conrad Abu Dhabi Etihad Tower</span> and the contractor/subcontractor, all necessary procedures shall be taken in accordance with the laws of the United Arab Emirates, with jurisdiction before the competent courts of Abu Dhabi, UAE.</li></ul>
           </div>
           <label class="check-item mandatory-row declaration-acceptance"><input type="checkbox" name="declarationAccepted" required=""> I/We confirm that I/we have read, understood, accepted, and agree to be legally bound by the Declaration, Agreement &amp; Acceptance terms above.</label>
           <div class="grid" style="margin-top:16px">
@@ -869,10 +983,16 @@ body.exported-permit-body .app-shell{
             <h3 style="text-align:center;margin:10px 0 5px">FOR HOTEL INTERNAL USE</h3>
             <h3 style="text-align:center;margin:0 0 6px">VENUE APPROVAL OF WORK PERMIT / ACCESS PROVIDED BY</h3>
             <table class="approval-table">
-              <thead><tr><th>Event Manager Name</th><th>Date</th></tr></thead>
-              <tbody><tr><td class="approval-cell"></td><td class="approval-cell"></td></tr></tbody>
+              <thead><tr><th>REVIEWED BY EHS / SECURITY</th><th>DATE</th></tr></thead>
+              <tbody>
+                <tr><td class="approval-cell"></td><td class="approval-cell"></td></tr>
+                <tr><th colspan="2">APPROVAL STATUS</th></tr>
+                <tr><td class="approval-cell">APPROVED ☐</td><td class="approval-cell">REJECTED ☐</td></tr>
+                <tr><th colspan="2">COMMENT</th></tr>
+                <tr><td class="approval-cell" colspan="2" style="height:95px"></td></tr>
+              </tbody>
             </table>
-            <p class="internal-fill-note">Name and Date are fillable in the generated PDF. Date field uses dd/mmm/yyyy format.</p>
+            <p class="internal-fill-note">Reviewed by, Date, APPROVED / REJECTED single-choice selection, and Comment are fillable in the generated PDF. Date field uses dd/mmm/yyyy format.</p>
           </div>
         </div>
       </section>
@@ -890,12 +1010,12 @@ body.exported-permit-body .app-shell{
 <script type="application/json" id="permitExportDataSeed">{
   "meta": {
     "reportType": "Contractors / Vendors Permit to Work - Events",
-    "savedAt": "2026-06-07T08:07:02.833Z",
+    "savedAt": "2026-06-12T13:14:41.987Z",
     "version": "Property corporate v11"
   },
   "fields": {
     "requestDate": "",
-    "propertyName": "Conrad Abu Dhabi Etihad Towers",
+    "propertyName": "Conrad Abu Dhabi Etihad Tower",
     "applicantName": "",
     "companyName": "",
     "supervisor": "",
@@ -1110,7 +1230,7 @@ body.exported-permit-body .app-shell{
   ],
   "attachments": []
 }</script><script id="permitContentConfigSeed" type="application/json">{
-  "propertyName": "Conrad Abu Dhabi Etihad Towers",
+  "propertyName": "Conrad Abu Dhabi Etihad Tower",
   "requirements": [
     [
       "Do you have Approved Occupational Health and Safety Management System in place? (OSHAD / ISO 45001:2008).",
@@ -1314,8 +1434,18 @@ body.exported-permit-body .app-shell{
 <div class="modal" id="attachmentPreviewModal"><div class="modal-card attachment-preview-modal-card"><button class="attachment-preview-close-x" type="button" aria-label="Close preview" onclick="closeAttachmentPreview()">×</button><h3 id="attachmentPreviewTitle">Attachment Viewer</h3><div id="attachmentPreviewMeta" class="attachment-preview-meta">No attachment selected.</div><div id="attachmentPreviewBody" class="attachment-preview-body"><div class="attachment-preview-card"><div class="file-icon">?</div><b>No attachment selected</b><p>Select an uploaded file to preview it here.</p></div></div><div class="attachment-preview-actions"><button class="btn secondary" type="button" onclick="openActiveAttachmentInNewTab()">Open</button><button class="btn secondary" type="button" onclick="downloadActiveAttachment()">Download</button><button class="btn primary" type="button" onclick="closeAttachmentPreview()">Close</button></div></div></div>
 <div class="modal" id="validationModal"><div class="modal-card validation-modal-card"><h3>Missing Mandatory Information</h3><p>Please complete the following items before generating the PDF report.</p><ul class="missing-list" id="validationMissingList"></ul><div class="actions"><button class="btn primary" type="button" onclick="focusFirstMissing()">Review Missing Fields</button><button class="btn secondary" type="button" onclick="closeValidationModal()">Close</button></div></div></div>
 <div class="modal" id="browserDraftModal"><div class="modal-card browser-draft-modal-card"><h3>Draft Saved On Browser</h3><div class="browser-draft-message">All data entered here is processed entirely within your current browser and is never stored, transmitted, or saved to any external server or database. Nothing leaves your device.</div><div class="actions"><button class="btn green-confirm" type="button" onclick="closeBrowserDraftModal()">OK</button></div></div></div>
-<div class="modal" id="englishOnlyModal"><div class="modal-card english-only-modal-card"><h3 data-en="Typing in English only" data-ar="الكتابة باللغة الإنجليزية فقط">Typing in English only</h3><div class="english-only-message" data-en="Typing is allowed in English only. The Arabic menu is available to help you complete the permit request." data-ar="يُسمح بالكتابة باللغة الإنجليزية فقط. القائمة العربية متوفرة لمساعدتك في تعبئة طلب التصريح.">Typing is allowed in English only. The Arabic menu is available to help you complete the permit request.</div><div class="actions"><button class="btn primary" type="button" onclick="closeEnglishOnlyModal()">OK</button></div></div></div>
+<div class="modal" id="englishOnlyModal"><div class="modal-card english-only-modal-card"><h3 data-en="Typing in English only" data-ar="الكتابة باللغة الإنجليزية فقط" data-ur="صرف انگریزی میں ٹائپ کریں">Typing in English only</h3><div class="english-only-message" data-en="Typing is allowed in English only. The Arabic menu is available to help you complete the permit request." data-ar="يُسمح بالكتابة باللغة الإنجليزية فقط. القائمة العربية متوفرة لمساعدتك في تعبئة طلب التصريح." data-ur="ٹائپنگ صرف انگریزی میں allowed ہے۔ Urdu menu صرف فارم سمجھنے میں مدد کے لیے ہے۔">Typing is allowed in English only. The Arabic menu is available to help you complete the permit request.</div><div class="actions"><button class="btn primary" type="button" onclick="closeEnglishOnlyModal()">OK</button></div></div></div>
 <div class="modal" id="clearModal"><div class="modal-card clear-modal-card"><h3>Clear this permit form?</h3><p>Please confirm this action.</p><div class="actions"><button class="btn clear-warn" onclick="resetFormConfirmed()">Yes, Clear Form</button><button class="btn secondary" onclick="closeClearModal()">Cancel</button></div></div></div>
+<div class="modal" id="pdfProgressModal" aria-live="polite" aria-modal="true">
+  <div class="modal-card pdf-progress-modal-card">
+    <h3 class="pdf-progress-title">Generating PDF Report</h3>
+    <p class="pdf-progress-message" id="pdfProgressMessage">Preparing report...</p>
+    <div class="pdf-progress-track"><div class="pdf-progress-fill" id="pdfProgressBar"></div></div>
+    <div class="pdf-progress-percent" id="pdfProgressPercent">0%</div>
+    <div class="pdf-progress-detail" id="pdfProgressDetail">Please keep this page open until the PDF download starts.</div>
+  </div>
+</div>
+
 <div class="toast show" id="toast">Confirmed.</div>
 
 <script>
@@ -1344,10 +1474,10 @@ let safetyRegulations=[
 ];
 const defaultPermitContent=JSON.parse(JSON.stringify({propertyName:editablePropertyName,requirements,documents,tasks,securityDepositText,venueInspectionText,safetyRegulations}));
 
-let currentLanguage=(localStorage.getItem('permitLanguage')==='ar')?'ar':'en';
+let currentLanguage=['ar','ur'].includes(localStorage.getItem('permitLanguage'))?localStorage.getItem('permitLanguage'):'en';
 const AR_TEXT={
  'PROPERTY':'المنشأة','Permit to Work Form':'نموذج تصريح العمل','Contractors Permit to Work':'تصريح عمل المقاولين','Interactive permit form with browser draft saving.':'نموذج تصريح عمل تفاعلي مع حفظ المسودة داخل المتصفح.','Permit Dashboard':'لوحة التصريح','Safety Score':'درجة السلامة','Form Completion':'اكتمال النموذج','Safe Tasks':'مهام العمل الآمنة',
- 'Request':'الطلب','Scope Score':'تقييم السلامة','Documents & Tasks':'المستندات والمهام','Regulations':'التعليمات','Agreement':'الإقرار','Add Attachment':'إضافة مرفق','Save Draft':'حفظ المسودة','Print Work Permit':'طباعة تصريح العمل','Edit Sections':'تعديل الأقسام','Export HTML':'تصدير HTML','Clear':'مسح',
+ 'Request':'الطلب','Scope Score':'تقييم السلامة','Documents & Tasks':'المستندات والمهام','Regulations':'التعليمات','Agreement':'الإقرار','Add Attachment':'إضافة مرفق','Save Draft':'حفظ المسودة','Print Work Permit':'طباعة تصريح العمل','Edit Sections':'تعديل الأقسام','Export HTML':'تصدير HTML','Clear':'مسح','Select Language':'اختر اللغة',
  'Acceptance Score':'درجة القبول','Minimum recommended acceptance: 60–70%.':'الحد الأدنى الموصى به للقبول: 60–70%.','Not Ready':'غير جاهز','Accepted':'مقبول','Conditional':'قبول مشروط','Fast Navigation':'التنقل السريع','Request Information':'معلومات الطلب','Safety Assessment':'تقييم السلامة','Safety Regulations':'تعليمات السلامة','Agreement & Signature':'الإقرار والتوقيع','View Attachment':'عرض المرفقات','Internal Use is intentionally hidden on the web screen and appears only in the generated PDF report.':'قسم الاستخدام الداخلي مخفي من صفحة الويب ويظهر فقط في تقرير PDF.',
  'Permit Request Information':'معلومات طلب التصريح','CAD-OSHMS-015-F01 | REV 01':'CAD-OSHMS-015-F01 | REV 01','Work Permit Request Date':'تاريخ طلب تصريح العمل','Property Name':'اسم المنشأة','Name of Applicant':'اسم مقدم الطلب','Company Name':'اسم الشركة','Contractor Supervisor on Site':'مشرف المقاول في الموقع','Mobile Number':'رقم الهاتف المتحرك','Number of Staff to do the Job':'عدد العاملين لتنفيذ العمل','Setup Location':'موقع التجهيز','Access / Exit Date & Time':'تاريخ ووقت الدخول والخروج','Access starts':'بداية الدخول','Exit ends':'نهاية الخروج','Scope / Work Description':'نطاق / وصف العمل','Tap to select from calendar — format: dd/mmm/yyyy':'اضغط لاختيار التاريخ من التقويم — الصيغة: dd/mmm/yyyy','Select access and exit date/time directly in one smart field for each item.':'اختر تاريخ ووقت الدخول والخروج مباشرة من حقل ذكي واحد لكل بند.','Required field':'حقل إلزامي',
  'Contractor Safety Requirement Assessment':'تقييم متطلبات سلامة المقاول','Score is calculated automatically and read only':'يتم احتساب الدرجة تلقائياً ولا يمكن تعديلها','SN#':'م','Requirements':'المتطلبات','Rating':'التقييم','Score':'الدرجة','Applicant to Select':'اختيار مقدم الطلب','Total Score':'إجمالي الدرجة','Score fields are locked. Select Yes / No / N/A and the report calculates the score automatically.':'حقول الدرجة مقفلة. اختر نعم / لا / غير منطبق وسيتم احتساب الدرجة تلقائياً.','Select':'اختر','Yes':'نعم','No':'لا','N/A':'غير منطبق',
@@ -1379,6 +1509,34 @@ const AR_PLACEHOLDERS={
 };
 const AR_STEP_NAMES={request:'الطلب',safety:'تقييم السلامة',work:'المستندات والمهام',rules:'التعليمات',approval:'الإقرار'};
 const AR_STATUS={Accepted:'مقبول',Conditional:'قبول مشروط','Not Ready':'غير جاهز'};
+const UR_TEXT={
+ 'PROPERTY':'پراپرٹی','Permit to Work Form':'ورک پرمٹ فارم','Contractors Permit to Work':'کنٹریکٹرز ورک پرمٹ','Interactive permit form with browser draft saving.':'براؤزر ڈرافٹ سیونگ کے ساتھ انٹرایکٹو ورک پرمٹ فارم۔','Permit Dashboard':'پرمٹ ڈیش بورڈ','Safety Score':'سیفٹی اسکور','Form Completion':'فارم مکمل','Safe Tasks':'محفوظ کام',
+ 'Request':'درخواست','Scope Score':'سیفٹی اسکور','Documents & Tasks':'دستاویزات اور کام','Regulations':'ضوابط','Agreement':'اقرار','Add Attachment':'اٹیچمنٹ شامل کریں','Save Draft':'ڈرافٹ محفوظ کریں','Print Work Permit':'ورک پرمٹ پرنٹ کریں','Edit Sections':'سیکشنز ترمیم کریں','Export HTML':'HTML ایکسپورٹ','Clear':'صاف کریں','Select Language':'زبان منتخب کریں',
+ 'Acceptance Score':'قبولیت اسکور','Minimum recommended acceptance: 60–70%.':'تجویز کردہ کم سے کم قبولیت: 60–70%.','Not Ready':'تیار نہیں','Accepted':'قبول','Conditional':'مشروط قبول','Fast Navigation':'فاسٹ نیویگیشن','Request Information':'درخواست کی معلومات','Safety Assessment':'سیفٹی اسیسمنٹ','Safety Regulations':'سیفٹی ضوابط','Agreement & Signature':'اقرار اور دستخط','View Attachment':'اٹیچمنٹ دیکھیں','Internal Use is intentionally hidden on the web screen and appears only in the generated PDF report.':'اندرونی استعمال ویب اسکرین پر مخفی ہے اور صرف PDF رپورٹ میں ظاہر ہوگا۔',
+ 'Permit Request Information':'پرمٹ درخواست کی معلومات','Work Permit Request Date':'ورک پرمٹ درخواست کی تاریخ','Property Name':'پراپرٹی کا نام','Name of Applicant':'درخواست دہندہ کا نام','Company Name':'کمپنی کا نام','Contractor Supervisor on Site':'سائٹ پر کنٹریکٹر سپروائزر','Mobile Number':'موبائل نمبر','Number of Staff to do the Job':'کام کرنے والے اسٹاف کی تعداد','Setup Location':'سیٹ اپ مقام','Access / Exit Date & Time':'داخلہ / خروج تاریخ اور وقت','Access starts':'داخلہ شروع','Exit ends':'خروج ختم','Scope / Work Description':'کام کا دائرہ / تفصیل','Tap to select from calendar — format: dd/mmm/yyyy':'کیلنڈر سے تاریخ منتخب کریں — فارمیٹ: dd/mmm/yyyy','Select access and exit date/time directly in one smart field for each item.':'داخلہ اور خروج کی تاریخ/وقت براہ راست سمارٹ فیلڈ میں منتخب کریں۔','Required field':'لازمی فیلڈ',
+ 'Contractor Safety Requirement Assessment':'کنٹریکٹر سیفٹی ضرورت اسیسمنٹ','Score is calculated automatically and read only':'اسکور خودکار حساب ہوگا اور صرف پڑھنے کے لیے ہے','SN#':'نمبر','Requirements':'تقاضے','Rating':'درجہ بندی','Score':'اسکور','Applicant to Select':'درخواست دہندہ انتخاب کرے','Total Score':'کل اسکور','Score fields are locked. Select Yes / No / N/A and the report calculates the score automatically.':'اسکور فیلڈز لاک ہیں۔ Yes / No / N/A منتخب کریں؛ رپورٹ خود اسکور نکالے گی۔','Select':'منتخب کریں','Yes':'ہاں','No':'نہیں','N/A':'لاگو نہیں',
+ 'Required Documents & Safe Work Description':'ضروری دستاویزات اور محفوظ کام کی تفصیل','Documents required 7 business days before work':'کام سے 7 کاروباری دن پہلے دستاویزات درکار ہیں','Review the required documents, then select every task that will be performed. Use':'ضروری دستاویزات چیک کریں، پھر ہر کام منتخب کریں۔ استعمال کریں','Others':'دیگر','for any task not listed.':'ایسے کام کے لیے جو فہرست میں نہیں۔','Required Documents':'ضروری دستاویزات','Information only — prepare before permit submission.':'صرف معلومات — پرمٹ جمع کرانے سے پہلے تیار کریں۔','Safe Work Description / Task to Perform':'محفوظ کام کی تفصیل / کام','Select all applicable work activities.':'تمام متعلقہ کام منتخب کریں۔','Please select at least one Safe Work Description task.':'براہ کرم کم از کم ایک محفوظ کام منتخب کریں۔','Other Task Details':'دیگر کام کی تفصیل',
+ 'A copy of the Company Trade License.':'کمپنی ٹریڈ لائسنس کی کاپی۔','A copy of Method Statement / Safe Procedure of Work.':'میتھڈ اسٹیٹمنٹ / محفوظ طریقہ کار کی کاپی۔','A copy of Site Specific Risk Assessment of Job.':'کام کے سائٹ مخصوص رسک اسیسمنٹ کی کاپی۔','A copy of training Certificates of all staff that will be using any site equipment, cherry picker, scissor lift, or forklift.':'سائٹ آلات استعمال کرنے والے تمام اسٹاف کے ٹریننگ سرٹیفکیٹس کی کاپی۔',
+ 'Working on the roof':'چھت پر کام','Spray painting':'اسپرے پینٹنگ','Window cleaning':'کھڑکیوں کی صفائی','Working in confined spaces':'محدود جگہ میں کام','Electrical Work':'الیکٹریکل کام','Welding or abrasive cutting':'ویلڈنگ یا کٹنگ','Demolishing':'ڈیمولیشن','Erecting scaffolding':'اسکافولڈنگ لگانا','Using chemicals':'کیمیکل استعمال','Working at heights':'بلندی پر کام','Access to high voltage workstation':'ہائی وولٹیج ایریا تک رسائی','Hot work':'ہاٹ ورک','Build a Stage':'اسٹیج بنانا','Install Digital Screen':'ڈیجیٹل اسکرین لگانا','Light installation':'لائٹ انسٹالیشن','Furniture Delivery / Placement':'فرنیچر ڈیلیوری / پلیسمنٹ',
+ 'Security Deposit, Venue Inspection & Safety Regulations':'سکیورٹی ڈپازٹ، وینیو انسپیکشن اور سیفٹی ضوابط','Contractor must comply with all listed rules':'کنٹریکٹر کو تمام درج ضوابط پر عمل کرنا ہوگا','Security Deposit':'سکیورٹی ڈپازٹ','Venue Inspection':'وینیو انسپیکشن','Safety Regulations Must Be Followed':'سیفٹی ضوابط پر عمل لازمی ہے','I confirm that the contractor has reviewed and accepted the safety regulations.':'میں تصدیق کرتا ہوں کہ کنٹریکٹر نے سیفٹی ضوابط پڑھ کر قبول کر لیے ہیں۔',
+ 'Declaration, Agreement & Acceptance':'اقرار، معاہدہ اور قبولیت','Final review before PDF generation':'PDF بنانے سے پہلے آخری جائزہ','Legal Declaration, Agreement & Acceptance':'قانونی اقرار، معاہدہ اور قبولیت','Authorised Person Name':'مجاز شخص کا نام','Date':'تاریخ','Auto-filled when Declaration is ticked; tap to amend if needed':'اقرار ٹک کرنے پر خود بھر جائے گا؛ ضرورت ہو تو تبدیل کریں','Upload Signature':'دستخط اپ لوڈ','Clear Signature':'دستخط صاف کریں','Draw signature here':'یہاں دستخط کریں',
+ 'Missing Mandatory Information':'لازمی معلومات غائب ہیں','Please complete the following items before generating the PDF report.':'PDF رپورٹ بنانے سے پہلے درج ذیل معلومات مکمل کریں۔','Review Missing Fields':'غائب فیلڈز دیکھیں','Close':'بند کریں','Draft Saved On Browser':'ڈرافٹ براؤزر میں محفوظ ہوگیا','OK':'OK','Clear this permit form?':'کیا یہ پرمٹ فارم صاف کرنا ہے؟','Please confirm this action.':'براہ کرم اس عمل کی تصدیق کریں۔','Yes, Clear Form':'ہاں، فارم صاف کریں','Cancel':'منسوخ','Typing in English only':'صرف انگریزی میں ٹائپ کریں','Please type this section in English.':'براہ کرم یہ سیکشن English میں ٹائپ کریں۔',
+ 'Do you have Approved Occupational Health and Safety Management System in place? (OSHAD / ISO 45001:2008).':'کیا آپ کے پاس منظور شدہ Occupational Health and Safety Management System موجود ہے؟ (OSHAD / ISO 45001:2008).','Has a Health & Safety policy been developed?':'کیا Health & Safety پالیسی تیار کی گئی ہے؟','Do you have a dedicated Health & Safety Person available?':'کیا dedicated Health & Safety Person موجود ہے؟','Do you have valid adequate company public liability insurance?':'کیا کمپنی کا valid public liability insurance موجود ہے؟','Is there any training plan available for your staff for all activities that you perform?':'کیا تمام سرگرمیوں کے لیے اسٹاف ٹریننگ پلان موجود ہے؟','Do you have procedures in place to handle emergencies on site?':'کیا سائٹ پر ایمرجنسی سے نمٹنے کے procedures موجود ہیں؟','Do you report and record incidents / accidents?':'کیا آپ incidents / accidents رپورٹ اور ریکارڈ کرتے ہیں؟','Will you provide all necessary PPEs and other welfare facilities on site?':'کیا آپ سائٹ پر ضروری PPEs اور welfare facilities فراہم کریں گے؟','Is there any work from our scope of work being subcontracted? If yes, are they competent to fulfill the health and safety requirements?':'کیا کام کا کوئی حصہ subcontract ہوگا؟ اگر ہاں، کیا وہ health and safety requirements پوری کرنے کے اہل ہیں؟','Do you have third party inspection certificate / license for all equipment used in our site?':'کیا سائٹ پر استعمال ہونے والے تمام آلات کے لیے third party inspection certificate / license موجود ہے؟'
+};
+const UR_PLACEHOLDERS={'Full name':'Full name in English','Ballroom / venue / floor':'Ballroom / venue / floor','Briefly describe the work, setup activity, equipment, and contractor scope.':'Type work description in English','Describe the other task':'Describe the other task in English','dd/mmm/yyyy':'dd/mmm/yyyy','Property name':'Property name'};
+const UR_STEP_NAMES={request:'درخواست',safety:'سیفٹی اسکور',work:'دستاویزات اور کام',rules:'ضوابط',approval:'اقرار'};
+const UR_STATUS={Accepted:'قبول',Conditional:'مشروط قبول','Not Ready':'تیار نہیں'};
+const LANGUAGE_TEXT={ar:AR_TEXT,ur:UR_TEXT};
+const LANGUAGE_PLACEHOLDERS={ar:AR_PLACEHOLDERS,ur:UR_PLACEHOLDERS};
+const LANGUAGE_STEP_NAMES={ar:AR_STEP_NAMES,ur:UR_STEP_NAMES};
+const LANGUAGE_STATUS={ar:AR_STATUS,ur:UR_STATUS};
+function isRtlLanguage(lang){return lang==='ar'||lang==='ur';}
+function getLanguageMap(lang=currentLanguage){return LANGUAGE_TEXT[lang]||{};}
+Object.assign(UR_TEXT,{
+ 'Previous':'پچھلا','Next':'اگلا','Back to Request':'درخواست پر واپس','Generating corporate PDF...':'PDF تیار ہو رہی ہے...','PDF generated successfully.':'PDF کامیابی سے بن گئی۔','Form cleared.':'فارم صاف ہوگیا۔','Signature cleared.':'دستخط صاف ہوگئے۔','Confirmed.':'تصدیق ہوگئی۔','Signature file uploaded.':'دستخط فائل اپ لوڈ ہوگئی۔','Final HTML exported with current form data and embedded attachments.':'موجودہ فارم ڈیٹا اور اٹیچمنٹ کے ساتھ HTML ایکسپورٹ ہوگیا۔','Editable sections updated. Property name saved.':'سیکشنز اپڈیٹ ہوگئے۔ پراپرٹی نام محفوظ ہوگیا۔','Default content restored.':'ڈیفالٹ مواد بحال ہوگیا۔','Recovered saved browser draft.':'محفوظ براؤزر ڈرافٹ بحال ہوگیا۔'
+});
+
+
 function setTextNodeLanguage(node,lang){
  if(!node || !node.nodeValue) return;
  const raw=node.nodeValue;
@@ -1387,7 +1545,7 @@ function setTextNodeLanguage(node,lang){
  if(node.__enText===undefined) node.__enText=raw;
  if(lang==='en'){node.nodeValue=node.__enText; return;}
  const base=(node.__enText||raw).trim();
- const translated=AR_TEXT[base];
+ const translated=getLanguageMap(lang)[base];
  if(!translated) return;
  const lead=(node.__enText||raw).match(/^\s*/)?.[0]||'';
  const tail=(node.__enText||raw).match(/\s*$/)?.[0]||'';
@@ -1397,7 +1555,7 @@ function setPlaceholdersLanguage(lang){
  document.querySelectorAll('input[placeholder],textarea[placeholder]').forEach(el=>{
    if(el.__enPlaceholder===undefined) el.__enPlaceholder=el.getAttribute('placeholder')||'';
    if(lang==='en') el.setAttribute('placeholder',el.__enPlaceholder);
-   else el.setAttribute('placeholder',AR_PLACEHOLDERS[el.__enPlaceholder]||el.__enPlaceholder);
+   else el.setAttribute('placeholder',(LANGUAGE_PLACEHOLDERS[lang]||{})[el.__enPlaceholder]||el.__enPlaceholder);
  });
 }
 function setDeclarationLanguage(lang){
@@ -1411,6 +1569,14 @@ function setDeclarationLanguage(lang){
               <li>أتعهد / نتعهد بإيقاف العمل فوراً، وجعل مكان العمل آمناً، والتواصل مع مدير الفعاليات في <span class="property-name-ref" data-property-name>المنشأة</span> إذا علمت / علمنا بأي خطر على نفسي / أنفسنا أو الآخرين أو الضيوف أو العاملين أو المقاولين أو المقاولين من الباطن أو الموقع أو أصول المنشأة خلال مدة العقد.</li>
               <li>أقر / نقر وأوافق / نوافق أن أي إصابة أو مرض أو وفاة أو فقدان أو ضرر يتعلق بالمقاولين أو المقاولين من الباطن أو العاملين أو المعدات أو الموقع وينشأ عن أفعال أو إهمال أو عيوب أو ممارسات عمل غير آمنة أو عدم التزام من المقاول / المقاول من الباطن، تبقى مسؤولية والتزاماً كاملاً على المقاول / المقاول من الباطن. ولا تتحمل إدارة <span class="property-name-ref" data-property-name>المنشأة</span> أي مسؤولية عن الحوادث أو الإصابات أو الوفاة أو الخسائر أو الأضرار المتعلقة بالمقاولين أو المقاولين من الباطن إلى أقصى حد يسمح به القانون.</li>
               <li>أوافق / نوافق أنه في حال وجود أي نزاع بين <span class="property-name-ref" data-property-name>المنشأة</span> والمقاول / المقاول من الباطن، سيتم اتخاذ جميع الإجراءات اللازمة وفق قوانين دولة الإمارات العربية المتحدة، ويكون الاختصاص للمحاكم المختصة في أبوظبي، الإمارات العربية المتحدة.</li>`;
+ }else if(lang==='ur'){
+   list.innerHTML=`
+              <li>میں / ہم سمجھتے ہیں کہ <span class="property-name-ref" data-property-name>Property</span> OSHAD Standards کے تحت وہ ذمہ داریاں لاگو ہوتی ہیں جو اس کام اور کنٹریکٹ کی شرائط سے متعلق ہیں۔</li>
+              <li>میں / ہم تصدیق کرتے ہیں کہ ہم نے Contractors Induction training requirements کی کاپی حاصل، پڑھی اور سمجھی ہے، اور hotel safety rules اور Contractor Management Procedure پر عمل کریں گے۔</li>
+              <li>میں / ہم تصدیق کرتے ہیں کہ contractor، subcontractor، authorised signatory، supervisors اور personnel کے پاس تمام required certifications، licenses، competencies اور qualifications موجود ہیں۔</li>
+              <li>اگر کام کے دوران اپنے آپ، دوسروں، guests، staff، contractors، subcontractors، venue یا property assets کے لیے کوئی خطرہ معلوم ہو تو میں / ہم فوراً کام روکیں گے، workplace کو safe کریں گے، اور <span class="property-name-ref" data-property-name>Property</span> Event Manager سے رابطہ کریں گے۔</li>
+              <li>میں / ہم تسلیم کرتے ہیں کہ contractor/subcontractor کے acts، omissions، negligence، unsafe work practices یا non-compliance سے ہونے والی injury، illness، death، loss یا damage کی مکمل ذمہ داری contractor/subcontractor پر ہوگی۔</li>
+              <li>کسی dispute کی صورت میں <span class="property-name-ref" data-property-name>Property</span> اور contractor/subcontractor کے درمیان تمام ضروری procedures UAE laws کے مطابق ہوں گے، jurisdiction Abu Dhabi, UAE کی competent courts میں ہوگا۔</li>`;
  }else{
    list.innerHTML=`
               <li>I/We understand the obligations under <span class="property-name-ref" data-property-name>the Property</span> OSHAD Standards that are applicable to the work being undertaken and to the circumstances in which the contract will be performed.</li>
@@ -1423,17 +1589,19 @@ function setDeclarationLanguage(lang){
  if(typeof syncPropertyNameReferences==='function') syncPropertyNameReferences();
 }
 function syncEnglishOnlyModalLanguage(){
- const lang=currentLanguage==='ar'?'ar':'en';
- document.querySelectorAll('#englishOnlyModal [data-en][data-ar]').forEach(el=>{
+ const lang=['ar','ur'].includes(currentLanguage)?currentLanguage:'en';
+ document.querySelectorAll('#englishOnlyModal [data-en]').forEach(el=>{
    el.textContent=el.dataset[lang] || el.dataset.en || el.textContent;
  });
 }
 function applyLanguage(lang=currentLanguage,opts={}){
- currentLanguage=(lang==='ar')?'ar':'en';
+ currentLanguage=['ar','ur'].includes(lang)?lang:'en';
  if(opts.remember!==false) localStorage.setItem('permitLanguage',currentLanguage);
- document.documentElement.lang=currentLanguage==='ar'?'ar':'en';
- document.documentElement.dir=currentLanguage==='ar'?'rtl':'ltr';
+ const rtl=isRtlLanguage(currentLanguage);
+ document.documentElement.lang=currentLanguage;
+ document.documentElement.dir=rtl?'rtl':'ltr';
  document.body?.classList.toggle('lang-ar',currentLanguage==='ar');
+ document.body?.classList.toggle('lang-ur',currentLanguage==='ur');
  const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode(node){
    const p=node.parentElement;
    if(!p) return NodeFilter.FILTER_REJECT;
@@ -1445,15 +1613,17 @@ function applyLanguage(lang=currentLanguage,opts={}){
  setPlaceholdersLanguage(currentLanguage);
  setDeclarationLanguage(currentLanguage);
  syncEnglishOnlyModalLanguage();
- const btn=document.getElementById('languageToggleBtn');
- if(btn) btn.textContent=currentLanguage==='ar'?'English':'العربية';
+ const menu=document.getElementById('languageMenu');
+ if(menu) menu.value=currentLanguage;
+ const legacyBtn=document.getElementById('languageToggleBtn');
+ if(legacyBtn) legacyBtn.textContent=currentLanguage==='ar'?'English':'العربية';
  if(typeof updateWizardNavigation==='function') updateWizardNavigation();
  if(typeof updateStatus==='function') updateStatus();
 }
 function toggleLanguage(){applyLanguage(currentLanguage==='ar'?'en':'ar');}
-function langText(en){return currentLanguage==='ar'?(AR_TEXT[en]||en):en;}
-function langStatus(en){return currentLanguage==='ar'?(AR_STATUS[en]||en):en;}
-function langStepName(id){return currentLanguage==='ar'?(AR_STEP_NAMES[id]||permitStepNames[id]||''):(permitStepNames[id]||'');}
+function langText(en){return currentLanguage==='en'?en:(getLanguageMap(currentLanguage)[en]||en);}
+function langStatus(en){return currentLanguage==='en'?en:((LANGUAGE_STATUS[currentLanguage]||{})[en]||en);}
+function langStepName(id){return currentLanguage==='en'?(permitStepNames[id]||''):((LANGUAGE_STEP_NAMES[currentLanguage]||{})[id]||permitStepNames[id]||'');}
 
 function escapeHtmlText(v){return String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
 const $=(selector,scope=document)=>scope.querySelector(selector);
@@ -1560,9 +1730,9 @@ function exportCurrentHTML(){
   const cfg=getPermitContentConfig();
   const exportedData=collect();
   const langBeforeExport=currentLanguage;
-  if(langBeforeExport==='ar') applyLanguage('en',{remember:false,toast:false});
+  if(langBeforeExport!=='en') applyLanguage('en',{remember:false,toast:false});
   const clone=document.documentElement.cloneNode(true);
-  if(langBeforeExport==='ar') applyLanguage('ar',{remember:false,toast:false});
+  if(langBeforeExport!=='en') applyLanguage(langBeforeExport,{remember:false,toast:false});
 
   // Exported file must remain a working standalone permit form,
   // without the master editor/export controls.
@@ -1877,7 +2047,7 @@ function updateWizardNavigation(id){
  if(prev){
    prev.disabled=idx===0;
    prev.textContent=langText('Previous');
-   prev.setAttribute('aria-label',currentLanguage==='ar'?'السابق':'Previous');
+   prev.setAttribute('aria-label',langText('Previous'));
  }
  if(next){
    const nextText=idx===permitSteps.length-1?'Back to Request':'Next';
@@ -1885,7 +2055,7 @@ function updateWizardNavigation(id){
    next.setAttribute('aria-label',langText(nextText));
  }
  if(label){
-   label.textContent=currentLanguage==='ar'?`الخطوة ${idx+1} من ${permitSteps.length} — ${langStepName(activeId)}`:`Step ${idx+1} of ${permitSteps.length} — ${permitStepNames[activeId] || 'Request'}`;
+   label.textContent=isRtlLanguage(currentLanguage)?`${currentLanguage==='ar'?'الخطوة':'مرحلہ'} ${idx+1} ${currentLanguage==='ar'?'من':'از'} ${permitSteps.length} — ${langStepName(activeId)}`:`Step ${idx+1} of ${permitSteps.length} — ${permitStepNames[activeId] || 'Request'}`;
  }
 }
 function openNextStep(){
@@ -1960,7 +2130,7 @@ function updateStatus(){
  if(pct>=70){cls='ok';txt='Accepted'} else if(pct>=60){cls='warn';txt='Conditional'}
  [pill,badge].forEach(x=>{x.className='pill '+cls;x.textContent=langStatus(txt)});
  const scoreText=document.getElementById('scoreText');
- if(scoreText) scoreText.textContent=currentLanguage==='ar'?`الدرجة الحالية ${total}/${max} (${pct}%). التوجيه المطلوب: أعلى من 60–70%.`:`Current score ${total}/${max} (${pct}%). Required guidance: above 60–70%.`;
+ if(scoreText) scoreText.textContent=currentLanguage==='ar'?`الدرجة الحالية ${total}/${max} (${pct}%). التوجيه المطلوب: أعلى من 60–70%.`:currentLanguage==='ur'?`موجودہ اسکور ${total}/${max} (${pct}%). مطلوبہ رہنمائی: 60–70% سے زیادہ۔`:`Current score ${total}/${max} (${pct}%). Required guidance: above 60–70%.`;
 }
 function saveDraft(){
  localStorage.setItem('eventPermitDraftV3',JSON.stringify(collect()));
@@ -1971,7 +2141,7 @@ function closeBrowserDraftModal(){document.getElementById('browserDraftModal')?.
 let autoSaveTimer=null;
 function autoSaveDraft(){clearTimeout(autoSaveTimer);autoSaveTimer=setTimeout(()=>localStorage.setItem('eventPermitDraftV3',JSON.stringify(collect())),450);}
 function normaliseToastMessage(msg){const text=String(msg??''); return /(?:photo|attachment|signature|form).*(?:removed|cleared|deleted)|(?:removed|cleared|deleted).*(?:photo|attachment|signature|form)/i.test(text)?'Confirmed.':text;}
-function showToast(msg){msg=normaliseToastMessage(msg); const t=document.getElementById('toast'); const translated=currentLanguage==='ar'?(AR_TEXT[msg]||({'Generating corporate PDF...':'جاري تجهيز تصريح العمل...','PDF generated successfully.':'تم إنشاء تصريح العمل بنجاح.','Form cleared.':'تم مسح النموذج.','Signature cleared.':'تم مسح التوقيع.','Confirmed.':'تم التأكيد.','Signature file uploaded.':'تم رفع ملف التوقيع.','Final HTML exported with current form data and embedded attachments.':'تم تصدير ملف HTML النهائي مع بيانات النموذج والمرفقات.','Editable sections updated. Property name saved.':'تم تحديث الأقسام وحفظ اسم المنشأة.','Default content restored.':'تمت استعادة المحتوى الافتراضي.','Recovered saved browser draft.':'تم استرجاع مسودة محفوظة من المتصفح.'}[msg]||msg)):msg; t.textContent=translated; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2600)}
+function showToast(msg){msg=normaliseToastMessage(msg); const t=document.getElementById('toast'); const fallbackAr={'Generating corporate PDF...':'جاري تجهيز تصريح العمل...','PDF generated successfully.':'تم إنشاء تصريح العمل بنجاح.','Form cleared.':'تم مسح النموذج.','Signature cleared.':'تم مسح التوقيع.','Confirmed.':'تم التأكيد.','Signature file uploaded.':'تم رفع ملف التوقيع.','Final HTML exported with current form data and embedded attachments.':'تم تصدير ملف HTML النهائي مع بيانات النموذج والمرفقات.','Editable sections updated. Property name saved.':'تم تحديث الأقسام وحفظ اسم المنشأة.','Default content restored.':'تمت استعادة المحتوى الافتراضي.','Recovered saved browser draft.':'تم استرجاع مسودة محفوظة من المتصفح.'}; const translated=currentLanguage==='en'?msg:(getLanguageMap(currentLanguage)[msg] || (currentLanguage==='ar'?fallbackAr[msg]:null) || msg); t.textContent=translated; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2600)}
 
 
 function pad2(n){return String(n).padStart(2,'0')}
@@ -2531,6 +2701,15 @@ init();
 
 /* v8 offline PDF generator: no CDN, no internet dependency, direct PDF download */
 function pdfEscapeText(v){return String(v??'').replace(/[\\()]/g,'\\$&').replace(/[\r\n]+/g,' ')}
+
+function pdfName(v){
+  // Safely encode a value for a PDF /Name object, used by radio buttons.
+  // PDF name objects cannot contain spaces or special delimiter characters unless hex-escaped.
+  const raw=String(v ?? 'Off') || 'Off';
+  return raw.replace(/[^A-Za-z0-9_.-]/g,function(ch){
+    return '#'+ch.charCodeAt(0).toString(16).toUpperCase().padStart(2,'0');
+  });
+}
 function pdfSafeFile(v){return String(v||'Event_Work_Permit').replace(/[^a-z0-9]+/gi,'_').replace(/^_+|_+$/g,'').slice(0,70)||'Event_Work_Permit'}
 function pdfWrapText(text,maxWidth,fontSize){
   text=String(text??'').replace(/\s+/g,' ').trim();
@@ -2777,7 +2956,15 @@ class CorporatePDF{
   }
   addTextField(name,x,y,w,h,value='',opts={}){
     const pageIndex=Math.max(0,this.pages.length-1);
-    this.fields.push({name,x,y,w,h,value:value||'',pageIndex,fontSize:opts.fontSize||13,date:!!opts.date,align:opts.align||''});
+    this.fields.push({type:'text',name,x,y,w,h,value:value||'',pageIndex,fontSize:opts.fontSize||13,date:!!opts.date,align:opts.align||'',multiline:!!opts.multiline});
+  }
+  addCheckbox(name,x,y,size=16,checked=false){
+    const pageIndex=Math.max(0,this.pages.length-1);
+    this.fields.push({type:'checkbox',name,x,y,w:size,h:size,value:checked?'Yes':'Off',pageIndex,fontSize:size});
+  }
+  addRadioButton(name,exportValue,x,y,size=16,checked=false){
+    const pageIndex=Math.max(0,this.pages.length-1);
+    this.fields.push({type:'radio',name,exportValue:String(exportValue||'Choice'),x,y,w:size,h:size,value:checked?String(exportValue||'Choice'):'Off',pageIndex,fontSize:size});
   }
   finish(){
     const enc=new TextEncoder();
@@ -2822,12 +3009,40 @@ class CorporatePDF{
         fieldRefs.push(buttonWidgetRef);
       }
     });
+    const radioGroups={};
     for(const f of this.fields){
+      if(f.type==='radio'){
+        (radioGroups[f.name] ||= []).push(f);
+        continue;
+      }
       const rect=`[${f.x} ${this.H-f.y-f.h} ${f.x+f.w} ${this.H-f.y}]`;
-      const js=f.date ? ` /AA << /K << /S /JavaScript /JS (AFDate_KeystrokeEx\\("dd/mmm/yyyy"\\);) >> /F << /S /JavaScript /JS (AFDate_FormatEx\\("dd/mmm/yyyy"\\);) >> >>` : '';
-      const ref=this.obj(`<< /Type /Annot /Subtype /Widget /FT /Tx /T (${pdfEscapeText(f.name)}) /TU (${f.date?'Date field - dd/mmm/yyyy':'Fillable text field'}) /Rect ${rect} /V (${pdfEscapeText(f.value)}) /DA (/F1 ${f.fontSize} Tf 0 0 0 rg)${f.align==='center'?' /Q 1':''} /MK << /BG [1 1 1] /BC [0.72 0.72 0.72] >> /BS << /W 1 /S /S >> /F 4${js} >>`);
+      if(f.type==='checkbox'){
+        const state=f.value==='Yes' ? 'Yes' : 'Off';
+        const ref=this.obj(`<< /Type /Annot /Subtype /Widget /FT /Btn /T (${pdfEscapeText(f.name)}) /TU (Tick option) /Rect ${rect} /V /${state} /AS /${state} /MK << /BG [1 1 1] /BC [0.45 0.45 0.45] /CA (4) >> /BS << /W 1 /S /S >> /F 4 >>`);
+        fieldRefs.push(ref);
+        if(annotRefsByPage[f.pageIndex]) annotRefsByPage[f.pageIndex].push(ref);
+        continue;
+      }
+      const js=f.date ? ` /AA << /K << /S /JavaScript /JS (AFDate_KeystrokeEx\("dd/mmm/yyyy"\);) >> /F << /S /JavaScript /JS (AFDate_FormatEx\("dd/mmm/yyyy"\);) >> >>` : '';
+      const flags=f.multiline ? ' /Ff 4096' : '';
+      const ref=this.obj(`<< /Type /Annot /Subtype /Widget /FT /Tx /T (${pdfEscapeText(f.name)}) /TU (${f.date?'Date field - dd/mmm/yyyy':f.multiline?'Fillable comment box':'Fillable text field'}) /Rect ${rect} /V (${pdfEscapeText(f.value)}) /DA (/F1 ${f.fontSize} Tf 0 0 0 rg)${f.align==='center'?' /Q 1':''}${flags} /MK << /BG [1 1 1] /BC [0.72 0.72 0.72] >> /BS << /W 1 /S /S >> /F 4${js} >>`);
       fieldRefs.push(ref);
       if(annotRefsByPage[f.pageIndex]) annotRefsByPage[f.pageIndex].push(ref);
+    }
+    for(const [groupName,items] of Object.entries(radioGroups)){
+      const selected=items.find(item=>item.value && item.value!=='Off');
+      const selectedValue=selected ? selected.exportValue : 'Off';
+      const parentRefNumber=this.objects.length + items.length + 1;
+      const kids=[];
+      for(const item of items){
+        const state=selectedValue===item.exportValue ? pdfName(item.exportValue) : 'Off';
+        const rect=`[${item.x} ${this.H-item.y-item.h} ${item.x+item.w} ${this.H-item.y}]`;
+        const ref=this.obj(`<< /Type /Annot /Subtype /Widget /Parent ${parentRefNumber} 0 R /Rect ${rect} /AS /${state} /MK << /BG [1 1 1] /BC [0.45 0.45 0.45] /CA (l) >> /BS << /W 1 /S /S >> /F 4 >>`);
+        kids.push(ref);
+        if(annotRefsByPage[item.pageIndex]) annotRefsByPage[item.pageIndex].push(ref);
+      }
+      const parentRef=this.obj(`<< /FT /Btn /T (${pdfEscapeText(groupName)}) /TU (Select one option only) /Ff 49152 /V /${pdfName(selectedValue)} /Kids [${kids.map(r=>r+' 0 R').join(' ')}] >>`);
+      fieldRefs.push(parentRef);
     }
     const pageRefs=[];
     const pagesObjIndex=this.objects.length+1;
@@ -2868,70 +3083,141 @@ class CorporatePDF{
   }
 }
 function pdfDownload(blob,filename){const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=filename;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove();},1200)}
+
+function waitForPdfProgressPaint(){return new Promise(resolve=>setTimeout(resolve,70));}
+function setPdfProgress(percent,message,detail){
+  const safePercent=Math.max(0,Math.min(100,Number(percent)||0));
+  const modal=document.getElementById('pdfProgressModal');
+  const bar=document.getElementById('pdfProgressBar');
+  const pct=document.getElementById('pdfProgressPercent');
+  const msg=document.getElementById('pdfProgressMessage');
+  const det=document.getElementById('pdfProgressDetail');
+  if(modal) modal.classList.add('show');
+  if(bar) bar.style.width=safePercent+'%';
+  if(pct) pct.textContent=Math.round(safePercent)+'%';
+  if(msg && message) msg.textContent=message;
+  if(det && detail) det.textContent=detail;
+}
+function openPdfProgressModal(message){
+  setPdfProgress(3,message || 'Preparing report...','Please keep this page open until the PDF download starts.');
+}
+function closePdfProgressModal(){
+  const modal=document.getElementById('pdfProgressModal');
+  if(modal) modal.classList.remove('show');
+}
+
 async function generatePDF(){
   if(!validateBeforePDF()) return;
-  showToast('Preparing Work Permit PDF...');
-  const data=collect();
-  const images={
-    ImSig: await dataUrlToImageInfo(data.fields.signatureData,1600,640)
-  };
-  const pdf=new CorporatePDF();
-  pdf.propertyName=data.fields.propertyName || getPermitPropertyName();
-  Object.entries(images).forEach(([k,v])=>pdf.addImageResource(k,v));
-  const total=data.requirements.reduce((a,b)=>a+(+b.score||0),0);
-  const accepted=getAcceptanceStatus(total);
+  openPdfProgressModal('Starting PDF report generation...');
+  await waitForPdfProgressPaint();
+  try{
+    setPdfProgress(8,'Collecting permit information...','Reading request details, safety answers, tasks, declaration, signature, and attachments.');
+    await waitForPdfProgressPaint();
+    const data=collect();
 
-  pdf.startPage();
-  let y=165; y=pdf.section(y,'Permit Request Information');
-  y=pdf.infoRows(y,[['Work Permit Request Date',data.fields.requestDate],['Property Name',data.fields.propertyName],['Name of Applicant',data.fields.applicantName],['Company Name',data.fields.companyName],['Contractor Supervisor on Site',data.fields.supervisor],['Mobile Number',data.fields.mobile],['Number of Staff to do the Job',data.fields.staffCount],['Setup Location',data.fields.location],['Access Date & Time',data.fields.accessDateTime],['Exit Date & Time',data.fields.exitDateTime],['Scope / Work Description',data.fields.scope]]);
-  y=pdf.section(y,'Contractor Safety Requirement Assessment'); y=pdf.tableRequirements(y,data.requirements);
-  pdf.fill('#f8fafc'); pdf.stroke('#d7dde7'); pdf.rect(38,y,718,28,'B'); pdf.text(48,y+18,`${total}/${getMaxSafetyScore()} Total Score`,11,true,'#101b2f'); pdf.text(620,y+18,accepted,11,true,total>=63?'#166534':total>=54?'#92400e':'#991b1b'); y+=42;
+    setPdfProgress(16,'Preparing signature and report assets...','Converting the authorised signature and preparing PDF resources.');
+    await waitForPdfProgressPaint();
+    const images={
+      ImSig: await dataUrlToImageInfo(data.fields.signatureData,1600,640)
+    };
+    const pdf=new CorporatePDF();
+    pdf.propertyName=data.fields.propertyName || getPermitPropertyName();
+    Object.entries(images).forEach(([k,v])=>pdf.addImageResource(k,v));
+    const total=data.requirements.reduce((a,b)=>a+(+b.score||0),0);
+    const accepted=getAcceptanceStatus(total);
 
-  pdf.startPage(); y=165;
-  y=pdf.section(y,'Required Documents'); y=pdf.bulletList(y,data.documents.map(d=>({text:d.name})),54,660,9.6);
-  y=pdf.section(y+5,'Task to Perform');
-  y=pdf.taskTable(y,data.tasks);
-  y=pdf.infoRows(y,[['Other Task Details',data.fields.otherTask || 'N/A']]);
+    setPdfProgress(28,'Building request information page...','Adding contractor details, access time, scope description, and safety score table.');
+    await waitForPdfProgressPaint();
+    pdf.startPage();
+    let y=165; y=pdf.section(y,'Permit Request Information');
+    y=pdf.infoRows(y,[['Work Permit Request Date',data.fields.requestDate],['Property Name',data.fields.propertyName],['Name of Applicant',data.fields.applicantName],['Company Name',data.fields.companyName],['Contractor Supervisor on Site',data.fields.supervisor],['Mobile Number',data.fields.mobile],['Number of Staff to do the Job',data.fields.staffCount],['Setup Location',data.fields.location],['Access Date & Time',data.fields.accessDateTime],['Exit Date & Time',data.fields.exitDateTime],['Scope / Work Description',data.fields.scope]]);
+    y=pdf.section(y,'Contractor Safety Requirement Assessment'); y=pdf.tableRequirements(y,data.requirements);
+    pdf.fill('#f8fafc'); pdf.stroke('#d7dde7'); pdf.rect(38,y,718,28,'B'); pdf.text(48,y+18,`${total}/${getMaxSafetyScore()} Total Score`,11,true,'#101b2f'); pdf.text(620,y+18,accepted,11,true,total>=63?'#166534':total>=54?'#92400e':'#991b1b'); y+=42;
 
-  pdf.startPage(); y=165; y=pdf.section(y,'Security Deposit');
-  y=pdf.multiline(48,y,securityDepositText,690,9.2,13,false,'#111827',9)+12;
-  y=pdf.section(y,'Venue Inspection');
-  y=pdf.multiline(48,y,venueInspectionText,690,9.2,13,false,'#111827',5)+12;
-  y=pdf.section(y,'Safety Regulations Must Be Followed');
-  y=pdf.regulationList(y,safetyRegulations);
+    setPdfProgress(42,'Building required documents and tasks page...','Adding required documents, selected task list, and other task details.');
+    await waitForPdfProgressPaint();
+    pdf.startPage(); y=165;
+    y=pdf.section(y,'Required Documents'); y=pdf.bulletList(y,data.documents.map(d=>({text:d.name})),54,660,9.6);
+    y=pdf.section(y+5,'Task to Perform');
+    y=pdf.taskTable(y,data.tasks);
+    y=pdf.infoRows(y,[['Other Task Details',data.fields.otherTask || 'N/A']]);
 
-  pdf.startPage(); y=165; y=pdf.section(y,'Declaration, Agreement & Acceptance');
-  pdf.text(48,y,'Confirm Safety Regulations: YES',9.5,true,'#166534'); pdf.text(290,y,'Agree Declaration: YES',9.5,true,'#166534'); y+=24;
-  const propertyNameForDeclaration=data.fields.propertyName || getPermitPropertyName();
-  y=pdf.bulletList(y,[
-    {text:`I/We understand the obligations under ${propertyNameForDeclaration} OSHAD Standards that are applicable to the work being undertaken and to the circumstances in which the contract will be performed.`},
-    {text:'I/We confirm that we have received a copy of, read, and understood the Contractors Induction training requirements, and will comply with the hotel safety rules and Contractor Management Procedure.'},
-    {text:'I/We confirm that the contractor, subcontractor, authorised signatory, supervisors, and personnel hold all certifications, licenses, competencies, and qualifications required by applicable legislation, regulations, and the work scope.'},
-    {text:`I/We will immediately cease work, make the workplace safe, and contact the ${propertyNameForDeclaration} Event Manager if I/we become aware of any danger to myself/ourselves, others, guests, staff, contractors, subcontractors, the venue, or property assets during the contract period.`},
-    {text:`I/We acknowledge and agree that any injury, illness, death, loss, or damage involving contractors, subcontractors, personnel, equipment, or the venue arising from contractor/subcontractor acts, omissions, defects, negligence, unsafe work practices, or non-compliance shall remain the full responsibility and liability of the contractor/subcontractor. The management of ${propertyNameForDeclaration} shall not be liable for accidents, injuries, death, losses, or damages involving contractors or subcontractors to the fullest extent permitted by applicable law.`},
-    {text:`I/We agree that, in the event of any dispute between ${propertyNameForDeclaration} and the contractor/subcontractor, all necessary procedures shall be taken in accordance with the laws of the United Arab Emirates, with jurisdiction before the competent courts of Abu Dhabi, UAE.`}
-  ],54,670,9);
-  y=pdf.section(y+6,'Agreed and Accepted');
-  y=pdf.infoRows(y,[['Authorised Person Name',data.fields.authorizedName],['Date',data.fields.signatureDate]]);
-  y=pdf.evidenceGrid(y);
-  if(y>930){pdf.startPage(); y=165;}
-  y=pdf.section(y,'For Hotel Internal Use','navy');
-  pdf.fill('#101b2f'); pdf.rect(38,y,718,28,'f');
-  pdf.centerText(y+19,'EVENT MANAGER NAME',10.5,true,'#ffffff',38,359);
-  pdf.centerText(y+19,'DATE',10.5,true,'#ffffff',397,359);
-  pdf.stroke('#d7dde7');
-  pdf.rect(38,y+28,359,72,'S');
-  pdf.rect(397,y+28,359,72,'S');
-  pdf.addTextField('Internal Use - Event Manager Name',52,y+43,317,36,'',{fontSize:13,align:'center'});
-  pdf.addTextField('Internal Use - Date',411,y+43,317,36,'',{fontSize:13,date:true,align:'center'});
+    setPdfProgress(56,'Building safety regulations pages...','Adding security deposit, venue inspection, and safety regulations.');
+    await waitForPdfProgressPaint();
+    pdf.startPage(); y=165; y=pdf.section(y,'Security Deposit');
+    y=pdf.multiline(48,y,securityDepositText,690,9.2,13,false,'#111827',9)+12;
+    y=pdf.section(y,'Venue Inspection');
+    y=pdf.multiline(48,y,venueInspectionText,690,9.2,13,false,'#111827',5)+12;
+    y=pdf.section(y,'Safety Regulations Must Be Followed');
+    y=pdf.regulationList(y,safetyRegulations);
 
-  await addPdfAttachmentPages(pdf,data.attachments || []);
+    setPdfProgress(70,'Building declaration and internal-use approval page...','Adding authorised signature, reviewed by EHS / Security, single-choice approval status, and comment box.');
+    await waitForPdfProgressPaint();
+    pdf.startPage(); y=165; y=pdf.section(y,'Declaration, Agreement & Acceptance');
+    pdf.text(48,y,'Confirm Safety Regulations: YES',9.5,true,'#166534'); pdf.text(290,y,'Agree Declaration: YES',9.5,true,'#166534'); y+=24;
+    const propertyNameForDeclaration=data.fields.propertyName || getPermitPropertyName();
+    y=pdf.bulletList(y,[
+      {text:`I/We understand the obligations under ${propertyNameForDeclaration} OSHAD Standards that are applicable to the work being undertaken and to the circumstances in which the contract will be performed.`},
+      {text:'I/We confirm that we have received a copy of, read, and understood the Contractors Induction training requirements, and will comply with the hotel safety rules and Contractor Management Procedure.'},
+      {text:'I/We confirm that the contractor, subcontractor, authorised signatory, supervisors, and personnel hold all certifications, licenses, competencies, and qualifications required by applicable legislation, regulations, and the work scope.'},
+      {text:`I/We will immediately cease work, make the workplace safe, and contact the ${propertyNameForDeclaration} Event Manager if I/we become aware of any danger to myself/ourselves, others, guests, staff, contractors, subcontractors, the venue, or property assets during the contract period.`},
+      {text:`I/We acknowledge and agree that any injury, illness, death, loss, or damage involving contractors, subcontractors, personnel, equipment, or the venue arising from contractor/subcontractor acts, omissions, defects, negligence, unsafe work practices, or non-compliance shall remain the full responsibility and liability of the contractor/subcontractor. The management of ${propertyNameForDeclaration} shall not be liable for accidents, injuries, death, losses, or damages involving contractors or subcontractors to the fullest extent permitted by applicable law.`},
+      {text:`I/We agree that, in the event of any dispute between ${propertyNameForDeclaration} and the contractor/subcontractor, all necessary procedures shall be taken in accordance with the laws of the United Arab Emirates, with jurisdiction before the competent courts of Abu Dhabi, UAE.`}
+    ],54,670,9);
+    y=pdf.section(y+6,'Agreed and Accepted');
+    y=pdf.infoRows(y,[['Authorised Person Name',data.fields.authorizedName],['Date',data.fields.signatureDate]]);
+    y=pdf.evidenceGrid(y);
+    if(y>835){pdf.startPage(); y=165;}
+    y=pdf.section(y,'FOR HOTEL INTERNAL USE','navy');
 
-  const blob=pdf.finish();
-  const filename=`Event_Work_Permit_${pdfSafeFile(data.fields.companyName)}_${pdfSafeFile(data.fields.requestDate)}.pdf`;
-  pdfDownload(blob,filename);
-  showToast('Work Permit PDF generated successfully.');
+    const iuX=38, iuW=718, iuNameW=359, iuDateW=359;
+    pdf.fill('#101b2f'); pdf.rect(iuX,y,iuW,28,'f');
+    pdf.centerText(y+19,'REVIEWED BY EHS / SECURITY',10.5,true,'#ffffff',iuX,iuNameW);
+    pdf.centerText(y+19,'DATE',10.5,true,'#ffffff',iuX+iuNameW,iuDateW);
+
+    pdf.stroke('#d7dde7');
+    pdf.rect(iuX,y+28,iuNameW,62,'S');
+    pdf.rect(iuX+iuNameW,y+28,iuDateW,62,'S');
+    pdf.addTextField('Internal Use - Reviewed by EHS / Security',iuX+14,y+43,iuNameW-28,32,'',{fontSize:13,align:'center'});
+    pdf.addTextField('Internal Use - Date',iuX+iuNameW+14,y+43,iuDateW-28,32,'',{fontSize:13,date:true,align:'center'});
+
+    let iuY=y+90;
+    pdf.fill('#f8fafc'); pdf.stroke('#d7dde7'); pdf.rect(iuX,iuY,180,42,'B');
+    pdf.text(iuX+12,iuY+26,'APPROVAL STATUS',9.8,true,'#334155');
+    pdf.rect(iuX+180,iuY,269,42,'S');
+    pdf.rect(iuX+449,iuY,269,42,'S');
+    pdf.addRadioButton('Internal Use - Approval Status','APPROVED',iuX+205,iuY+12,18,false);
+    pdf.text(iuX+232,iuY+26,'APPROVED',10.6,true,'#111827');
+    pdf.addRadioButton('Internal Use - Approval Status','REJECTED',iuX+474,iuY+12,18,false);
+    pdf.text(iuX+501,iuY+26,'REJECTED',10.6,true,'#111827');
+
+    iuY += 42;
+    pdf.fill('#101b2f'); pdf.rect(iuX,iuY,iuW,26,'f');
+    pdf.centerText(iuY+18,'COMMENT',10.2,true,'#ffffff',iuX,iuW);
+    pdf.stroke('#d7dde7'); pdf.rect(iuX,iuY+26,iuW,92,'S');
+    pdf.addTextField('Internal Use - Comment',iuX+14,iuY+36,iuW-28,70,'',{fontSize:11,multiline:true});
+
+    setPdfProgress(84,'Adding supporting attachments...','Embedding uploaded files and adding visible attachment pages where supported.');
+    await waitForPdfProgressPaint();
+    await addPdfAttachmentPages(pdf,data.attachments || []);
+
+    setPdfProgress(94,'Finalising PDF file...','Creating fillable fields and preparing the download.');
+    await waitForPdfProgressPaint();
+    const blob=pdf.finish();
+    const filename=`Event_Work_Permit_${pdfSafeFile(data.fields.companyName)}_${pdfSafeFile(data.fields.requestDate)}.pdf`;
+
+    setPdfProgress(100,'PDF report generated successfully.','The download should start automatically now.');
+    await waitForPdfProgressPaint();
+    pdfDownload(blob,filename);
+    showToast('Work Permit PDF generated successfully.');
+    setTimeout(closePdfProgressModal,900);
+  }catch(err){
+    console.error('PDF generation failed:',err);
+    setPdfProgress(100,'PDF generation failed.', err && err.message ? ('Error: '+err.message) : 'Please try again. If it still fails, open the browser console and share the error message.');
+    showToast('PDF generation failed. Please check the browser console for details.');
+  }
 }
+
 
 </script>
 
