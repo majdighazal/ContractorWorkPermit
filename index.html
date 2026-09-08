@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" class="exported-permit-html"><head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Property Contractors / Vendors Permit to Work - Events</title>
 <!-- Refactored clean build: responsive permit form, Arabic web view, English PDF output. -->
 <style>
@@ -103,7 +104,7 @@
 
   .wizard-bottom-nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:18px 0 4px;padding:14px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(180deg,#fff,#f8fafc);box-shadow:0 14px 32px rgba(16,27,47,.08)}.wizard-bottom-nav .btn{min-width:132px;background:#101b2f!important;color:#fff!important;border:1px solid #101b2f!important}.wizard-bottom-nav .btn:disabled{border-color:#d1d5db!important;background:#e5e7eb!important;color:#64748b!important;cursor:not-allowed;transform:none!important;box-shadow:none!important}.wizard-step-label{color:#334155;font-size:13px;font-weight:950;text-align:center}
 
-  .modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(15,23,42,.52)}.modal.show{display:flex}.modal-card{position:relative;width:100%;max-width:720px;max-height:92vh;overflow:auto;padding:22px;border-radius:22px;background:#fff;box-shadow:0 28px 80px rgba(0,0,0,.35)}.modal-card h3{margin-top:0}.validation-modal-card{border-top:8px solid #ef4444;background:linear-gradient(180deg,#fff7f7,#fff)}.validation-modal-card h3{color:#991b1b}.missing-list{max-height:310px;overflow:auto;margin:10px 0 0;padding:0;list-style:none;border:1px solid #fecaca;border-radius:16px;background:#fff}.missing-list li{display:flex;gap:8px;padding:10px 12px;border-bottom:1px solid #fee2e2;color:#7f1d1d;font-weight:850}.missing-list li:last-child{border-bottom:0}.browser-draft-modal-card{border-top:8px solid #22c55e;background:linear-gradient(180deg,#ecfdf3,#fff)}.browser-draft-message,.english-only-message,.feedback-message{padding:16px;border:1px solid #86efac;border-radius:18px;background:#dcfce7;color:#14532d;font-size:15px;font-weight:850}.feedback-modal-card{max-width:560px;border-top:8px solid var(--conrad-gold);background:linear-gradient(180deg,#fffaf0,#fff)}.feedback-modal-card h3{color:var(--navy)}.english-only-modal-card{max-width:520px;border-top:8px solid var(--conrad-gold);background:linear-gradient(180deg,#fffaf0,#fff)}.english-only-modal-card h3{color:var(--navy)}.clear-modal-card{border-top:8px solid #fca5a5;background:linear-gradient(180deg,#fff7f7,#fff)}.btn.clear-warn{border:1px solid #fecaca;background:#fee2e2;color:#991b1b}.picker-modal-card{max-width:440px;border-top:8px solid var(--conrad-gold);background:linear-gradient(180deg,#fffaf0,#fff)}.picker-control{width:100%;padding:14px;border:1px solid var(--line);border-radius:16px;background:#fff;font-size:16px;font-weight:850}.hint-small{margin-top:8px;color:var(--muted);font-size:12px;font-weight:750}.toast,.toast.show{display:none!important;opacity:0!important;pointer-events:none!important}
+  .modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(15,23,42,.52)}.modal.show{display:flex}.modal-card{position:relative;width:100%;max-width:720px;max-height:92vh;overflow:auto;padding:22px;border-radius:22px;background:#fff;box-shadow:0 28px 80px rgba(0,0,0,.35)}.modal-card h3{margin-top:0}.validation-modal-card{border-top:8px solid #ef4444;background:linear-gradient(180deg,#fff7f7,#fff)}.validation-modal-card h3{color:#991b1b}.missing-list{max-height:310px;overflow:auto;margin:10px 0 0;padding:0;list-style:none;border:1px solid #fecaca;border-radius:16px;background:#fff}.missing-list li{display:flex;gap:8px;padding:10px 12px;border-bottom:1px solid #fee2e2;color:#7f1d1d;font-weight:850}.missing-list li:last-child{border-bottom:0}.browser-draft-modal-card{border-top:8px solid #22c55e;background:linear-gradient(180deg,#ecfdf3,#fff)}.browser-draft-message,.english-only-message{padding:16px;border:1px solid #86efac;border-radius:18px;background:#dcfce7;color:#14532d;font-size:15px;font-weight:850}.english-only-modal-card{max-width:520px;border-top:8px solid var(--conrad-gold);background:linear-gradient(180deg,#fffaf0,#fff)}.english-only-modal-card h3{color:var(--navy)}.clear-modal-card{border-top:8px solid #fca5a5;background:linear-gradient(180deg,#fff7f7,#fff)}.btn.clear-warn{border:1px solid #fecaca;background:#fee2e2;color:#991b1b}.picker-modal-card{max-width:440px;border-top:8px solid var(--conrad-gold);background:linear-gradient(180deg,#fffaf0,#fff)}.picker-control{width:100%;padding:14px;border:1px solid var(--line);border-radius:16px;background:#fff;font-size:16px;font-weight:850}.hint-small{margin-top:8px;color:var(--muted);font-size:12px;font-weight:750}.toast{position:fixed;right:22px;bottom:22px;z-index:120;max-width:min(440px,calc(100vw - 28px));padding:13px 16px;border-radius:14px;background:#111827;color:#fff;box-shadow:var(--shadow);opacity:0;transform:translateY(14px);transition:.25s}.toast.show{opacity:1;transform:none}
   .attachment-preview-modal-card{width:96vw;max-width:1040px;max-height:92vh;border-top:8px solid var(--conrad-gold);background:linear-gradient(180deg,#fffaf0,#fff)}.attachment-preview-close-x{position:absolute;top:10px;right:12px;z-index:3;display:grid;place-items:center;width:38px;height:38px;border:0;border-radius:50%;background:#101b2f;color:#fff;font-size:26px;font-weight:900}.attachment-preview-meta{margin:10px 0 12px;padding:10px 12px;border:1px solid #eadfc8;border-radius:16px;background:#fffaf0;color:#334155;font-size:12px;font-weight:850}.attachment-preview-body{display:grid;place-items:center;min-height:420px;max-height:64vh;overflow:auto;padding:12px;border:1px solid #d7dde7;border-radius:18px;background:#fff}.attachment-preview-body img{max-width:100%;max-height:62vh;object-fit:contain;border-radius:12px;box-shadow:0 10px 28px rgba(15,23,42,.12)}.attachment-preview-body iframe,.attachment-preview-body object,.attachment-preview-body embed{width:100%;height:62vh;border:0;border-radius:12px;background:#fff}.attachment-preview-text{width:100%;min-height:58vh;margin:0;padding:14px;border-radius:14px;background:#0f172a;color:#e5e7eb;white-space:pre-wrap;word-break:break-word;font-family:Consolas,Monaco,monospace;font-size:12px}.attachment-preview-card{width:min(620px,100%);padding:24px;border:1px solid #d7c49a;border-radius:22px;background:linear-gradient(180deg,#fffaf0,#fff);text-align:center;box-shadow:0 18px 38px rgba(16,27,47,.1)}.attachment-preview-card .file-icon{display:grid;place-items:center;width:72px;height:72px;margin:0 auto 14px;border-radius:20px;background:#101b2f;color:#fff;font-size:26px;font-weight:950}.attachment-preview-actions{display:flex;justify-content:flex-end;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px}
 
   .content-editor-card{max-width:980px}.content-editor-intro{color:#475569;font-weight:800}.editor-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.editor-field{padding:12px;border:1px solid var(--line);border-radius:18px;background:#f8fafc}.editor-field.full{grid-column:1/-1}.editor-hint{margin-bottom:6px;color:#64748b;font-size:12px;font-weight:800}.editor-textarea{min-height:150px}.editor-textarea.tall{min-height:220px}.editor-textarea.small{min-height:90px}.editor-actions{display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap;margin-top:14px}.editor-floating-toolbar{display:none}.id-file-hidden{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}.print-only{display:none}.no-print{}
@@ -117,24 +118,6 @@
   }
   @media(max-width:520px){.hero h1{font-size:28px}.brand-mark{font-size:22px;letter-spacing:4px}.actions,.attachment-preview-actions,.editor-actions{grid-template-columns:1fr}.score-table{font-size:12px;min-width:680px}.table-wrap{overflow-x:auto}.rules{padding-left:18px}.toast{right:10px;bottom:10px}}
   @media print{.no-print,.hero,.toolbar,.side-panel,.modal,.toast,.wizard-bottom-nav,.attachment-panel{display:none!important}.print-only,.hotel-internal{display:block!important}.app-shell{max-width:none;padding:0}.layout{display:block}.section{display:block!important;box-shadow:none;border:1px solid #111;border-radius:0;margin-bottom:6mm}.section-header{display:block;text-align:center;background:#eee6d8!important}.section-body{padding:7px;background:#fff}.field,.info-row,.work-panel{box-shadow:none!important;border:0!important;background:#fff!important}.check-grid{grid-template-columns:repeat(3,1fr)}}
-
-  body.lang-rtl .section,
-  body.lang-rtl .side-panel,
-  body.lang-rtl .modal-card{
-    direction:rtl;
-    text-align:right;
-  }
-  body.lang-rtl input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),
-  body.lang-rtl textarea{
-    direction:ltr;
-    text-align:left;
-  }
-  body.lang-rtl .score-table,
-  body.lang-rtl .attachment-preview-body,
-  body.lang-rtl .editor-textarea{
-    direction:ltr;
-    text-align:left;
-  }
 
 
 /* Mobile view repair: prevents horizontal overflow and turns large desktop sections into phone-friendly cards */
@@ -281,11 +264,11 @@
     margin:0 !important;
   }
   body.lang-ar #taskList .check-item{
-    grid-template-columns:26px minmax(0,1fr) !important;
+    grid-template-columns:minmax(0,1fr) 26px !important;
     text-align:right !important;
   }
   body.lang-ar #taskList .check-item input[type="checkbox"]{
-    grid-column:1 !important;
+    grid-column:2 !important;
   }
   .other-task-wrap{
     margin-top:12px !important;
@@ -689,7 +672,7 @@ body.exported-permit-body .app-shell{
     padding:14px !important;
   }
   body.lang-ar #taskList .check-item{
-    grid-template-columns:32px minmax(0,1fr) !important;
+    grid-template-columns:minmax(0,1fr) 32px !important;
   }
   .check-item input[type="checkbox"],
   .mandatory-row input[type="checkbox"],
@@ -814,9 +797,157 @@ body.lang-ur .other-task-note .note-ar{display:none;}
   font-weight:800;
 }
 
+
+
+/* Authorised ID upload and ORIGINAL general PDF attachments are both available. */
+.id-file-hidden{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.id-panel-frame{border:1px solid rgba(185,152,90,.45);border-radius:24px;background:linear-gradient(180deg,#fffaf0 0%,#ffffff 78%);padding:18px;box-shadow:0 16px 38px rgba(16,27,47,.08);display:flex;flex-direction:column;gap:18px}
+.id-upload-card{border:1px solid rgba(185,152,90,.38)!important;border-radius:22px!important;background:linear-gradient(180deg,#fffaf0 0%,#ffffff 72%)!important;padding:14px!important;box-shadow:0 16px 38px rgba(16,27,47,.10)!important}
+.id-title{font-size:13px!important;letter-spacing:.05em;text-transform:uppercase;color:#101b2f;font-weight:950;margin-bottom:10px}
+.id-frame{height:255px!important;border:1.8px dashed #b9985a!important;border-radius:18px!important;background:linear-gradient(135deg,#f8fafc,#fff)!important;display:grid!important;place-items:center!important;overflow:hidden!important;color:#84622a!important;font-weight:900!important;text-align:center!important;padding:18px!important;position:relative}
+.id-frame:before{content:"ID IMAGE";position:absolute;top:10px;right:12px;font-size:10px;letter-spacing:.08em;color:#84622a;background:#fffaf0;border:1px solid #eadfc8;border-radius:999px;padding:3px 7px}
+.id-frame img{
+  width:auto!important;
+  height:auto!important;
+  max-width:88%!important;
+  max-height:88%!important;
+  object-fit:contain!important;
+  background:#fff!important;
+  border-radius:12px;
+  display:block!important;
+  margin:auto!important;
+}
+.id-panel-frame .upload-btn,.id-panel-frame .remove-media-btn{min-width:156px;min-height:42px;padding:10px 18px!important;font-size:12px!important;margin-right:8px}
+.remove-media-btn{display:inline-flex;align-items:center;justify-content:center;margin-top:8px;border:1px solid #f2b8b5!important;background:#fde8e7!important;color:#991b1b!important;border-radius:999px;padding:8px 12px;font-size:11px;font-weight:950;cursor:pointer;box-shadow:0 6px 14px rgba(153,27,27,.08)}
+.optional-note{margin-top:7px;color:#64748b;font-size:11px;font-weight:800;text-align:center}
+.signature-frame.required-missing,.id-upload-card.required-missing{border-color:#ef4444!important;background:linear-gradient(180deg,#fff7f7,#fff)!important;box-shadow:0 0 0 4px rgba(239,68,68,.13)!important}
+.signature-frame.required-missing .missing-note,.id-upload-card.required-missing .missing-note{display:block}
+.crop-modal-card{max-width:920px;max-height:94vh;overflow:auto;-webkit-overflow-scrolling:touch;border-top:8px solid #b9985a;background:linear-gradient(180deg,#fffaf0,#ffffff)}
+.crop-modal-card h3{margin:0 0 8px;color:#101b2f}.crop-help{margin:0 0 12px;color:#64748b;font-size:13px;font-weight:850;line-height:1.45}
+.crop-stage{position:relative;width:100%;height:min(64vh,620px);min-height:360px;border:1px solid #d7dde7;border-radius:20px;background:#111827;overflow:hidden;display:grid;place-items:center;touch-action:none;user-select:none}
+.crop-stage img{max-width:100%;max-height:100%;object-fit:contain;display:block;pointer-events:none;-webkit-user-drag:none;user-select:none}
+.crop-box{position:absolute;border:3px solid #b9985a;box-shadow:0 0 0 9999px rgba(0,0,0,.48),0 12px 28px rgba(0,0,0,.25);border-radius:14px;cursor:move;touch-action:none;display:block!important;z-index:5!important;pointer-events:auto!important;user-select:none}
+.crop-box:before,.crop-box:after{content:"";position:absolute;inset:33.333% 0 auto 0;border-top:1px dashed rgba(255,255,255,.72)}.crop-box:after{inset:66.666% 0 auto 0}
+.crop-grid-v1,.crop-grid-v2{position:absolute;top:0;bottom:0;border-left:1px dashed rgba(255,255,255,.72);pointer-events:none}.crop-grid-v1{left:33.333%}.crop-grid-v2{left:66.666%}
+.crop-handle{position:absolute;width:20px;height:20px;border-radius:50%;background:#ffffff;border:3px solid #b9985a;box-shadow:0 3px 10px rgba(0,0,0,.25);z-index:8!important;touch-action:none!important;pointer-events:auto!important}.crop-handle.nw{left:-11px;top:-11px;cursor:nwse-resize}.crop-handle.ne{right:-11px;top:-11px;cursor:nesw-resize}.crop-handle.sw{left:-11px;bottom:-11px;cursor:nesw-resize}.crop-handle.se{right:-11px;bottom:-11px;cursor:nwse-resize}
+.crop-toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-top:12px}.crop-toolbar .left,.crop-toolbar .right{display:flex;gap:8px;flex-wrap:wrap}.crop-small-btn{border:1px solid #d7dde7;background:#fff;color:#101b2f;border-radius:999px;padding:9px 12px;font-size:12px;font-weight:950;cursor:pointer}.crop-primary-btn{background:#101b2f!important;color:#fff!important;border-color:#101b2f!important}
+@media(max-width:760px){.id-panel-frame{padding:12px}.id-panel-frame .upload-btn,.id-panel-frame .remove-media-btn{width:100%;margin-right:0}.crop-modal-card{padding:14px}.crop-stage{height:48vh;min-height:280px}.crop-toolbar,.crop-toolbar .left,.crop-toolbar .right{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%}.crop-small-btn,.crop-toolbar .btn{width:100%;min-height:44px;margin:0!important;padding:0 10px!important;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;text-align:center}}
+
+
+/* ID upload button reliability fix */
+button.upload-btn{font-family:inherit;line-height:1;appearance:none;-webkit-appearance:none;}
+
+
+/* FINAL BALANCED FIX: ID front/back preview is clear, medium-large, and fully visible in web + PDF */
+.id-frame{
+  height:330px!important;
+  min-height:330px!important;
+  padding:24px!important;
+  overflow:hidden!important;
+  display:grid!important;
+  place-items:center!important;
+}
+.id-frame.has-id-image{
+  background:linear-gradient(135deg,#ffffff,#f8fafc)!important;
+}
+.id-frame .id-preview-bg{
+  width:100%!important;
+  height:100%!important;
+  display:block!important;
+  background-repeat:no-repeat!important;
+  background-position:center center!important;
+  background-size:contain!important;
+  background-color:#ffffff!important;
+  border-radius:16px!important;
+  transform:scale(.96)!important;
+  transform-origin:center center!important;
+}
+.id-frame img{
+  max-width:96%!important;
+  max-height:96%!important;
+  width:auto!important;
+  height:auto!important;
+  object-fit:contain!important;
+  object-position:center center!important;
+}
+@media(max-width:760px){
+  .id-frame{height:285px!important;min-height:285px!important;padding:18px!important}
+  .id-frame .id-preview-bg{transform:scale(.96)!important}
+}
+@media(max-width:420px){
+  .id-frame{height:245px!important;min-height:245px!important;padding:16px!important}
+  .id-frame .id-preview-bg{transform:scale(.96)!important}
+}
+
+
+
+/* Stable PDF progress modal: prevents bouncing/jumping during PDF generation */
+body.pdf-generating-progress{
+  overflow:hidden !important;
+}
+#pdfProgressModal.modal{
+  position:fixed !important;
+  inset:0 !important;
+  display:none;
+  align-items:center !important;
+  justify-content:center !important;
+  padding:20px !important;
+  overflow:hidden !important;
+}
+#pdfProgressModal.modal.show{
+  display:flex !important;
+}
+#pdfProgressModal .pdf-progress-modal-card{
+  width:min(520px, calc(100vw - 40px)) !important;
+  max-width:min(520px, calc(100vw - 40px)) !important;
+  min-height:246px !important;
+  max-height:246px !important;
+  overflow:hidden !important;
+  margin:0 !important;
+  transform:none !important;
+  animation:none !important;
+  flex:0 0 auto !important;
+}
+#pdfProgressModal .pdf-progress-title{
+  min-height:26px !important;
+  line-height:26px !important;
+}
+#pdfProgressModal .pdf-progress-message{
+  min-height:42px !important;
+  max-height:42px !important;
+  overflow:hidden !important;
+}
+#pdfProgressModal .pdf-progress-track{
+  height:16px !important;
+  flex:0 0 16px !important;
+}
+#pdfProgressModal .pdf-progress-fill{
+  transition:width .18s linear !important;
+}
+#pdfProgressModal .pdf-progress-percent{
+  min-height:18px !important;
+  line-height:18px !important;
+}
+#pdfProgressModal .pdf-progress-detail{
+  min-height:56px !important;
+  max-height:56px !important;
+  overflow:auto !important;
+}
+@media(max-width:560px){
+  #pdfProgressModal.modal{padding:12px !important;}
+  #pdfProgressModal .pdf-progress-modal-card{
+    width:calc(100vw - 24px) !important;
+    max-width:calc(100vw - 24px) !important;
+    min-height:252px !important;
+    max-height:252px !important;
+    padding:18px !important;
+    border-radius:22px !important;
+  }
+}
+
 </style>
 </head>
-<body dir="ltr" data-active-step="request" class="exported-permit-body">
+<body>
 <div class="app-shell">
   <header class="hero">
     <div>
@@ -829,7 +960,7 @@ body.lang-ur .other-task-note .note-ar{display:none;}
       <b>Permit Dashboard</b>
       <div class="metric-grid">
         <div class="metric"><b id="heroScore">0</b><span>Safety Score</span></div>
-        <div class="metric"><b id="heroPercent">8%</b><span>Form Completion</span></div>
+        <div class="metric"><b id="heroPercent">0%</b><span>Form Completion</span></div>
         <div class="metric"><b id="heroTasks">0</b><span>Safe Tasks</span></div>
       </div>
     </div>
@@ -839,11 +970,11 @@ body.lang-ur .other-task-note .note-ar{display:none;}
     <div class="tabs process-flow" aria-label="Permit process steps">
       <button class="tab-btn active" type="button" data-tab="request"><span class="step-no">1</span><span>Request</span></button>
       <button class="tab-btn" type="button" data-tab="safety"><span class="step-no">2</span><span>Scope Score</span></button>
-      <button class="tab-btn" type="button" data-tab="work"><span class="step-no">3</span><span>Documents &amp; Tasks</span></button>
+      <button class="tab-btn" type="button" data-tab="work"><span class="step-no">3</span><span>Documents & Tasks</span></button>
       <button class="tab-btn" type="button" data-tab="rules"><span class="step-no">4</span><span>Regulations</span></button>
       <button class="tab-btn" type="button" data-tab="approval"><span class="step-no">5</span><span>Agreement</span></button>
       <button class="tab-btn attachment-tab" type="button" onclick="triggerAttachmentUpload()"><span class="step-no">+</span><span>Add Attachment</span><span id="attachmentCountBadge" style="display:none">0</span></button>
-      <input id="attachmentFiles" class="no-print id-file-hidden" type="file" multiple="" onchange="loadPermitAttachments(event)">
+      <input id="attachmentFiles" class="no-print id-file-hidden" type="file" multiple onchange="loadPermitAttachments(event)">
     </div>
     <div class="actions editor-master-controls">
       <button class="btn primary" type="button" onclick="saveDraft()">Save Draft</button>
@@ -856,29 +987,32 @@ body.lang-ur .other-task-note .note-ar{display:none;}
           <option value="ur">Urdu</option>
         </select>
       </div>
-      
-      
+      <button class="btn secondary editor-control-btn" data-editor-control="true" type="button" onclick="openContentEditor()">Edit Sections</button>
+      <button class="btn secondary editor-control-btn" data-editor-control="true" type="button" onclick="exportCurrentHTML()">Export HTML</button>
       <button class="btn danger" type="button" onclick="openClearModal()">Clear</button>
     </div>
   </div>
 
-  
+  <div class="editor-floating-toolbar no-print" data-editor-control="true">
+    <button class="btn secondary" type="button" onclick="openContentEditor()">Edit Sections</button>
+    <button class="btn secondary" type="button" onclick="exportCurrentHTML()">Export HTML</button>
+  </div>
 
   <div class="layout">
     <aside class="side-panel no-print">
       <div class="status-card">
         <label>Acceptance Score</label>
-        <div class="progress"><div class="bar" id="scoreBar" style="width: 0%;"></div></div>
-        <p id="scoreText" class="hint">Current score 0/90 (0%). Required guidance: above 60–70%.</p>
+        <div class="progress"><div class="bar" id="scoreBar"></div></div>
+        <p id="scoreText" class="hint">Minimum recommended acceptance: 60–70%.</p>
         <span class="pill bad" id="scorePill">Not Ready</span>
       </div>
       <div class="status-card">
         <label>Fast Navigation</label>
         <a href="#request" onclick="return openTab('request',{scroll:true})">Request Information</a>
         <a href="#safety" onclick="return openTab('safety',{scroll:true})">Safety Assessment</a>
-        <a href="#work" onclick="return openTab('work',{scroll:true})">Documents &amp; Tasks</a>
+        <a href="#work" onclick="return openTab('work',{scroll:true})">Documents & Tasks</a>
         <a href="#rules" onclick="return openTab('rules',{scroll:true})">Safety Regulations</a>
-        <a href="#approval" onclick="return openTab('approval',{scroll:true})">Agreement &amp; Signature</a>
+        <a href="#approval" onclick="return openTab('approval',{scroll:true})">Agreement & Signature</a>
         <button class="fast-attachment-btn" type="button" onclick="openFastAttachmentManager()">View Attachment <span id="fastAttachmentCountBadge">0</span></button>
       </div>
       <p class="hint">Internal Use is intentionally hidden on the web screen and appears only in the generated PDF report.</p>
@@ -886,55 +1020,55 @@ body.lang-ur .other-task-note .note-ar{display:none;}
 
     <form id="permitForm" autocomplete="on">
       <div class="print-only brand-print">
-        <div class="logo">CONRAD ABU DHABI ETIHAD TOWER</div>
+        <div class="logo">PROPERTY NAME</div>
         <div class="sub">PERMIT TO WORK REQUEST</div>
         <div class="title">Contractors / Vendors Permit to Work - Events</div>
-        <div class="report-meta"><span data-document-control="">CAD-OSHMS-015-F01 | REV 01</span><span>Date: 01/10/2020</span></div>
+        <div class="report-meta"><span data-form-reference="code">CAD-OSHMS-015-F01</span><span>Date: 01/10/2020</span><span data-form-reference="rev">REV 01</span></div>
       </div>
 
-      <section class="section active" id="request" aria-hidden="false">
-        <div class="section-header"><h2>Permit Request Information</h2><small data-document-control="">CAD-OSHMS-015-F01 | REV 01</small></div>
+      <section class="section active" id="request">
+        <div class="section-header"><h2>Permit Request Information</h2><small data-form-reference="full">CAD-OSHMS-015-F01 | REV 01</small></div>
         <div class="section-body">
           <div class="request-stack">
-            <div class="info-row"><label>Work Permit Request Date</label><div><input name="requestDate" class="date-input picker-readonly" placeholder="dd/mmm/yyyy" required="" readonly="" onclick="openDatePicker(this,'date')"><div class="date-hint">Tap to select from calendar — format: dd/mmm/yyyy</div><div class="missing-note">Required field</div></div></div>
-            <div class="info-row"><label>Property Name</label><div><input name="propertyName" required="" readonly="readonly" value="Conrad Abu Dhabi Etihad Tower" class="readonly-property"><div class="missing-note">Required field</div></div></div>
-            <div class="info-row"><label>Name of Applicant</label><div><input name="applicantName" required="" placeholder="Full name"><div class="missing-note">Required field</div></div></div>
-            <div class="info-row"><label>Company Name</label><div><input name="companyName" required=""><div class="missing-note">Required field</div></div></div>
-            <div class="info-row"><label>Contractor Supervisor on Site</label><div><input name="supervisor" required=""><div class="missing-note">Required field</div></div></div>
-            <div class="info-row"><label>Mobile Number</label><div><input name="mobile" type="tel" required=""><div class="missing-note">Required field</div></div></div>
-            <div class="info-row"><label>Number of Staff to do the Job</label><div><input name="staffCount" type="number" min="0" required=""><div class="missing-note">Required field</div></div></div>
-            <div class="info-row"><label>Setup Location</label><div><input name="location" placeholder="Ballroom / venue / floor" required=""><div class="missing-note">Required field</div></div></div>
-            <div class="info-row work-period-row"><label>Access / Exit Date &amp; Time</label><div><input type="hidden" name="accessDateTime" class="datetime-input" required="" value="12/Jun/2026 05:50 PM"><input type="hidden" name="exitDateTime" class="datetime-input" required="" value="13/Jun/2026 05:50 PM"><div class="work-period-shell"><div class="work-period-card"><div class="work-period-card-head"><b>Access starts</b></div><input type="datetime-local" class="smart-datetime-input" data-datetime-native="accessDateTime" aria-label="Access date and time"></div><div class="work-period-card"><div class="work-period-card-head"><b>Exit ends</b></div><input type="datetime-local" class="smart-datetime-input" data-datetime-native="exitDateTime" aria-label="Exit date and time"></div></div><div class="date-hint">Select access and exit date/time directly in one smart field for each item.</div><div class="missing-note">Required field</div></div></div>
-            <div class="info-row"><label>Scope / Work Description</label><div><textarea name="scope" required="" placeholder="Briefly describe the work, setup activity, equipment, and contractor scope."></textarea><div class="missing-note">Required field</div></div></div>
+            <div class="info-row"><label>Work Permit Request Date</label><div><input name="requestDate" class="date-input picker-readonly" placeholder="dd/mmm/yyyy" required readonly onclick="openDatePicker(this,'date')"><div class="date-hint">Tap to select from calendar — format: dd/mmm/yyyy</div><div class="missing-note">Required field</div></div></div>
+            <div class="info-row"><label>Property Name</label><div><input name="propertyName" required readonly value="Conrad Abu Dhabi Etihad Towers" class="readonly-property"><div class="missing-note">Required field</div></div></div>
+            <div class="info-row"><label>Name of Applicant</label><div><input name="applicantName" required placeholder="Full name"><div class="missing-note">Required field</div></div></div>
+            <div class="info-row"><label>Company Name</label><div><input name="companyName" required><div class="missing-note">Required field</div></div></div>
+            <div class="info-row"><label>Contractor Supervisor on Site</label><div><input name="supervisor" required><div class="missing-note">Required field</div></div></div>
+            <div class="info-row"><label>Mobile Number</label><div><input name="mobile" type="tel" required><div class="missing-note">Required field</div></div></div>
+            <div class="info-row"><label>Number of Staff to do the Job</label><div><input name="staffCount" type="number" min="0" required><div class="missing-note">Required field</div></div></div>
+            <div class="info-row"><label>Setup Location</label><div><input name="location" placeholder="Ballroom / venue / floor" required><div class="missing-note">Required field</div></div></div>
+            <div class="info-row work-period-row"><label>Access / Exit Date & Time</label><div><input type="hidden" name="accessDateTime" class="datetime-input" required><input type="hidden" name="exitDateTime" class="datetime-input" required><div class="work-period-shell"><div class="work-period-card"><div class="work-period-card-head"><b>Access starts</b></div><input type="datetime-local" class="smart-datetime-input" data-datetime-native="accessDateTime" aria-label="Access date and time"></div><div class="work-period-card"><div class="work-period-card-head"><b>Exit ends</b></div><input type="datetime-local" class="smart-datetime-input" data-datetime-native="exitDateTime" aria-label="Exit date and time"></div></div><div class="date-hint">Select access and exit date/time directly in one smart field for each item.</div><div class="missing-note">Required field</div></div></div>
+            <div class="info-row"><label>Scope / Work Description</label><div><textarea name="scope" required placeholder="Briefly describe the work, setup activity, equipment, and contractor scope."></textarea><div class="missing-note">Required field</div></div></div>
           </div>
         </div>
       </section>
 
-      <section class="section" id="safety" aria-hidden="true">
+      <section class="section" id="safety">
         <div class="section-header"><h2>Contractor Safety Requirement Assessment</h2><small>Score is calculated automatically and read only</small></div>
         <div class="section-body table-wrap">
           <table class="score-table">
             <thead><tr><th>SN#</th><th>Requirements</th><th>Rating</th><th>Score</th><th>Applicant to Select</th></tr></thead>
-            <tbody id="requirementRows"><tr><td class="sn">1.</td><td class="mobile-question-cell">Do you have Approved Occupational Health and Safety Management System in place? (OSHAD / ISO 45001:2008).</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_0" value="0"></td><td class="answer"><select name="answer_0"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">2.</td><td class="mobile-question-cell">Has a Health &amp; Safety policy been developed?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_1" value="0"></td><td class="answer"><select name="answer_1"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">3.</td><td class="mobile-question-cell">Do you have a dedicated Health &amp; Safety Person available?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_2" value="0"></td><td class="answer"><select name="answer_2"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">4.</td><td class="mobile-question-cell">Do you have valid adequate company public liability insurance?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_3" value="0"></td><td class="answer"><select name="answer_3"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">5.</td><td class="mobile-question-cell">Is there any training plan available for your staff for all activities that you perform?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_4" value="0"></td><td class="answer"><select name="answer_4"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">6.</td><td class="mobile-question-cell">Do you have procedures in place to handle emergencies on site?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_5" value="0"></td><td class="answer"><select name="answer_5"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">7.</td><td class="mobile-question-cell">Do you report and record incidents / accidents?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_6" value="0"></td><td class="answer"><select name="answer_6"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">8.</td><td class="mobile-question-cell">Will you provide all necessary PPEs and other welfare facilities on site?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_7" value="0"></td><td class="answer"><select name="answer_7"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">9.</td><td class="mobile-question-cell">Is there any work from our scope of work being subcontracted? If yes, are they competent to fulfill the health and safety requirements?</td><td class="rating">N/A</td><td class="score"><input type="number" readonly="" name="score_8" value="0"></td><td class="answer"><select name="answer_8"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr><tr><td class="sn">10.</td><td class="mobile-question-cell">Do you have third party inspection certificate / license for all equipment used in our site?</td><td class="rating">10</td><td class="score"><input type="number" readonly="" name="score_9" value="0"></td><td class="answer"><select name="answer_9"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr></tbody>
-            <tfoot><tr><td colspan="2"><b>Total Score</b></td><td><b id="safetyMaxScoreCell">90</b></td><td><input id="totalScore" readonly=""></td><td><span id="assessmentBadge" class="pill bad">Not Ready</span></td></tr></tfoot>
+            <tbody id="requirementRows"></tbody>
+            <tfoot><tr><td colspan="2"><b>Total Score</b></td><td><b id="safetyMaxScoreCell">90</b></td><td><input id="totalScore" readonly></td><td><span id="assessmentBadge" class="pill bad">Not Ready</span></td></tr></tfoot>
           </table>
           <p class="hint">Score fields are locked. Select Yes / No / N/A and the report calculates the score automatically.</p>
         </div>
       </section>
 
-      <section class="section" id="work" aria-hidden="true">
-        <div class="section-header"><h2>Required Documents &amp; Safe Work Description</h2><small>Documents required 7 business days before work</small></div>
+      <section class="section" id="work">
+        <div class="section-header"><h2>Required Documents & Safe Work Description</h2><small>Documents required 7 business days before work</small></div>
         <div class="section-body">
           <p class="work-intro">Review the required documents, then select every task that will be performed. Use <b>Others</b> for any task not listed.</p>
           <div class="work-panel">
             <div class="work-panel-head"><div><b>Required Documents</b><br><span>Information only — prepare before permit submission.</span></div></div>
-            <ol class="doc-info" id="documentList"><li>A copy of the Company Trade License.</li><li>A copy of Method Statement / Safe Procedure of Work.</li><li>A copy of Site Specific Risk Assessment of Job.</li><li>A copy of training Certificates of all staff that will be using any site equipment, cherry picker, scissor lift, or forklift.</li></ol>
+            <ol class="doc-info" id="documentList"></ol>
           </div>
           <div class="work-panel">
             <div class="work-panel-head"><div><b>Safe Work Description / Task to Perform</b><br><span>Select all applicable work activities.</span></div></div>
-            <div class="check-grid" id="taskList"><label class="check-item "><input type="checkbox" name="task_0" data-other-task="false"> Working on the roof</label><label class="check-item "><input type="checkbox" name="task_1" data-other-task="false"> Spray painting</label><label class="check-item "><input type="checkbox" name="task_2" data-other-task="false"> Window cleaning</label><label class="check-item "><input type="checkbox" name="task_3" data-other-task="false"> Working in confined spaces</label><label class="check-item "><input type="checkbox" name="task_4" data-other-task="false"> Electrical Work</label><label class="check-item "><input type="checkbox" name="task_5" data-other-task="false"> Welding or abrasive cutting</label><label class="check-item "><input type="checkbox" name="task_6" data-other-task="false"> Demolishing</label><label class="check-item "><input type="checkbox" name="task_7" data-other-task="false"> Erecting scaffolding</label><label class="check-item "><input type="checkbox" name="task_8" data-other-task="false"> Using chemicals</label><label class="check-item "><input type="checkbox" name="task_9" data-other-task="false"> Working at heights</label><label class="check-item "><input type="checkbox" name="task_10" data-other-task="false"> Access to high voltage workstation</label><label class="check-item "><input type="checkbox" name="task_11" data-other-task="false"> Hot work</label><label class="check-item "><input type="checkbox" name="task_12" data-other-task="false"> Build a Stage</label><label class="check-item "><input type="checkbox" name="task_13" data-other-task="false"> Install Digital Screen</label><label class="check-item "><input type="checkbox" name="task_14" data-other-task="false"> Light installation</label><label class="check-item "><input type="checkbox" name="task_15" data-other-task="false"> Furniture Delivery / Placement</label><label class="check-item other-task-option"><input type="checkbox" name="task_16" data-other-task="true"> Others</label></div>
+            <div class="check-grid" id="taskList"></div>
             <div class="task-missing-note">Please select at least one Safe Work Description task.</div>
-            <div class="field full other-task-wrap disabled" id="otherTaskWrap"><label>Other Task Details</label><textarea name="otherTask" placeholder="Describe the other task" disabled=""></textarea><div class="other-task-note" data-other-task-note="" style="display: block;">
+            <div class="field full other-task-wrap disabled" id="otherTaskWrap"><label>Other Task Details</label><textarea name="otherTask" placeholder="Describe the other task" disabled></textarea><div class="other-task-note" data-other-task-note>
                 <span class="note-en">Note: If the contractor selects Others, fill Other Task Details only if extra clarification is necessary. This field is optional.</span>
                 <span class="note-ar">ملاحظة: إذا اختار المقاول أخرى، يرجى تعبئة تفاصيل المهمة الأخرى فقط إذا كانت هناك حاجة إلى توضيح إضافي. هذا الحقل اختياري.</span>
               </div></div>
@@ -942,52 +1076,75 @@ body.lang-ur .other-task-note .note-ar{display:none;}
         </div>
       </section>
 
-      <section class="section" id="rules" aria-hidden="true">
-        <div class="section-header"><h2>Security Deposit, Venue Inspection &amp; Safety Regulations</h2><small>Contractor must comply with all listed rules</small></div>
+      <section class="section" id="rules">
+        <div class="section-header"><h2>Security Deposit, Venue Inspection & Safety Regulations</h2><small>Contractor must comply with all listed rules</small></div>
         <div class="section-body">
           <div class="info-box">
             <h3>Security Deposit</h3>
-            <p id="securityDepositText">The Contractor/Vendor shall deposit AED 10,000 as a security deposit upon signing the Work Permit. It protects against venue structure/equipment damage and is refundable within seven business days after the event ends, provided no damages occur.</p>
+            <p id="securityDepositText">The Contractor/Vendor shall deposit <b>AED 10,000</b> as a security deposit upon signing the Work Permit. It protects against venue structure/equipment damage and is refundable within seven business days after the event ends, provided no damages occur.</p>
           </div>
           <div class="info-box" style="margin-top:12px">
             <h3>Venue Inspection</h3>
             <p id="venueInspectionText">The Contractor shall inspect the event venue prior to commencing setup and report any unsatisfactory conditions in writing to Property Management. Failure to report makes the Contractor responsible for the venue condition.</p>
           </div>
           <h3>Safety Regulations Must Be Followed</h3>
-          <ul class="rules" id="safetyRegulationsList"><li class="">Valid photo ID is required to gain access from P1 security office.</li><li class="">All staff must enter and exit via the Security Entrance.</li><li class="">All personnel must have valid, job-specific experience.</li><li class="">Signed Work Permit must be brought to the premises as proof of access.</li><li class="">Required PPE must be worn.</li><li class="">Contractors must be reasonably dressed and meet property hygiene standards.</li><li class="">Certified helmet and harness must be worn above 1.8 meters.</li><li class="">Portable electrical equipment must use grounded approved plugs and sockets.</li><li class="">No work on live electrical distribution boards; power isolation must follow hotel lockout/tagout policy.</li><li class="">Cables must pass through cable ramps and avoid doorways.</li><li class="">Electrical loads must be within supply capacity and tested with the property engineer.</li><li class="">Marble floor and carpets must be protected during setup and breakdown.</li><li class="">Smoke/Haze machines are prohibited unless approved 48 hours prior.</li><li class="">Flammable materials must be fire-retardant treated with certificates submitted.</li><li class="">No excessively loud construction work unless permitted by Property Management.</li><li class="">Equipment must have up-to-date test certificates.</li><li class="">Contractors are responsible for their own equipment and tools.</li><li class="">No attachment to building fabric except designated venue hanging points.</li><li class="">Safe and environmentally friendly practices must be followed.</li><li class="">Smoking and alcohol consumption are forbidden except in designated areas.</li><li class="">Unsafe work may be suspended until corrected at contractor cost.</li><li class="">Work areas must be secured to protect guests and prevent unauthorized access.</li><li class="">Work areas must be clean and tidy.</li><li class="">Contractors and staff may not access public areas without written permission.</li><li class="critical">Emergency exit doors and escape routes must never be blocked or obstructed for any reason.</li><li class="">Proper protection is required if activities may damage hotel property.</li><li class="">Candles require Property Management approval in accordance with safety standards.</li><li class="">Loud or abusive language will not be tolerated.</li><li class="">After setup, garbage must be cleared off-site and the venue returned as received.</li><li class="">Non-compliance may result in work cessation, permit cancellation, cleaning fees, repair costs, and waste removal charges.</li></ul>
-          <label class="check-item mandatory-row" style="margin-top:14px"><input type="checkbox" name="rulesAccepted" required=""> I confirm that the contractor has reviewed and accepted the safety regulations.</label>
+          <ul class="rules" id="safetyRegulationsList">
+            <li>Valid photo ID is required to gain access from P1 security office.</li><li>All staff must enter and exit via the Security Entrance.</li><li>All personnel must have valid, job-specific experience.</li><li>Signed Work Permit must be brought to the premises as proof of access.</li><li>Required PPE must be worn.</li><li>Contractors must be reasonably dressed and meet property hygiene standards.</li><li>Certified helmet and harness must be worn above 1.8 meters.</li><li>Portable electrical equipment must use grounded approved plugs and sockets.</li><li>No work on live electrical distribution boards; power isolation must follow hotel lockout/tagout policy.</li><li>Cables must pass through cable ramps and avoid doorways.</li><li>Electrical loads must be within supply capacity and tested with the property engineer.</li><li>Marble floor and carpets must be protected during setup and breakdown.</li><li>Smoke/Haze machines are prohibited unless approved 48 hours prior.</li><li>Flammable materials must be fire-retardant treated with certificates submitted.</li><li>No excessively loud construction work unless permitted by Property Management.</li><li>Equipment must have up-to-date test certificates.</li><li>Contractors are responsible for their own equipment and tools.</li><li>No attachment to building fabric except designated venue hanging points.</li><li>Safe and environmentally friendly practices must be followed.</li><li>Smoking and alcohol consumption are forbidden except in designated areas.</li><li>Unsafe work may be suspended until corrected at contractor cost.</li><li>Work areas must be secured to protect guests and prevent unauthorized access.</li><li>Work areas must be clean and tidy.</li><li>Contractors and staff may not access public areas without written permission.</li><li class="critical">Emergency exit doors and escape routes must never be blocked or obstructed for any reason.</li><li>Proper protection is required if activities may damage hotel property.</li><li>Candles require Property Management approval in accordance with safety standards.</li><li>Loud or abusive language will not be tolerated.</li><li>After setup, garbage must be cleared off-site and the venue returned as received.</li><li>Non-compliance may result in work cessation, permit cancellation, cleaning fees, repair costs, and waste removal charges.</li>
+          </ul>
+          <label class="check-item mandatory-row" style="margin-top:14px"><input type="checkbox" name="rulesAccepted" required> I confirm that the contractor has reviewed and accepted the safety regulations.</label>
         </div>
       </section>
 
-      <section class="section" id="approval" aria-hidden="true">
-        <div class="section-header"><h2>Declaration, Agreement &amp; Acceptance</h2><small>Final review before PDF generation</small></div>
+      <section class="section" id="approval">
+        <div class="section-header"><h2>Declaration, Agreement & Acceptance</h2><small>Final review before PDF generation</small></div>
         <div class="section-body">
           <div class="declaration-card">
-            <h3>Legal Declaration, Agreement &amp; Acceptance</h3>
+            <h3>Legal Declaration, Agreement & Acceptance</h3>
             <ul class="declaration-list">
-              <li>I/We understand the obligations under <span class="property-name-ref" data-property-name="">Conrad Abu Dhabi Etihad Tower</span> OSHAD Standards that are applicable to the work being undertaken and to the circumstances in which the contract will be performed.</li>
+              <li>I/We understand the obligations under <span class="property-name-ref" data-property-name>the Property</span> OSHAD Standards that are applicable to the work being undertaken and to the circumstances in which the contract will be performed.</li>
               <li>I/We confirm that we have received a copy of, read, and understood the Contractors Induction training requirements, and will comply with the hotel safety rules and Contractor Management Procedure.</li>
               <li>I/We confirm that the contractor, subcontractor, authorised signatory, supervisors, and personnel hold all certifications, licenses, competencies, and qualifications required by applicable legislation, regulations, and the work scope.</li>
-              <li>I/We will immediately cease work, make the workplace safe, and contact the <span class="property-name-ref" data-property-name="">Conrad Abu Dhabi Etihad Tower</span> Event Manager if I/we become aware of any danger to myself/ourselves, others, guests, staff, contractors, subcontractors, the venue, or property assets during the contract period.</li>
-              <li>I/We acknowledge and agree that any injury, illness, death, loss, or damage involving contractors, subcontractors, personnel, equipment, or the venue arising from contractor/subcontractor acts, omissions, defects, negligence, unsafe work practices, or non-compliance shall remain the full responsibility and liability of the contractor/subcontractor. The management of <span class="property-name-ref" data-property-name="">Conrad Abu Dhabi Etihad Tower</span> shall not be liable for accidents, injuries, death, losses, or damages involving contractors or subcontractors to the fullest extent permitted by applicable law.</li>
-              <li>I/We agree that, in the event of any dispute between <span class="property-name-ref" data-property-name="">Conrad Abu Dhabi Etihad Tower</span> and the contractor/subcontractor, all necessary procedures shall be taken in accordance with the laws of the United Arab Emirates, with jurisdiction before the competent courts of Abu Dhabi, UAE.</li></ul>
+              <li>I/We will immediately cease work, make the workplace safe, and contact the <span class="property-name-ref" data-property-name>Property</span> Event Manager if I/we become aware of any danger to myself/ourselves, others, guests, staff, contractors, subcontractors, the venue, or property assets during the contract period.</li>
+              <li>I/We acknowledge and agree that any injury, illness, death, loss, or damage involving contractors, subcontractors, personnel, equipment, or the venue arising from contractor/subcontractor acts, omissions, defects, negligence, unsafe work practices, or non-compliance shall remain the full responsibility and liability of the contractor/subcontractor. The management of <span class="property-name-ref" data-property-name>the Property</span> shall not be liable for accidents, injuries, death, losses, or damages involving contractors or subcontractors to the fullest extent permitted by applicable law.</li>
+              <li>I/We agree that, in the event of any dispute between <span class="property-name-ref" data-property-name>the Property</span> and the contractor/subcontractor, all necessary procedures shall be taken in accordance with the laws of the United Arab Emirates, with jurisdiction before the competent courts of Abu Dhabi, UAE.</li>
+            </ul>
           </div>
-          <label class="check-item mandatory-row declaration-acceptance"><input type="checkbox" name="declarationAccepted" required=""> I/We confirm that I/we have read, understood, accepted, and agree to be legally bound by the Declaration, Agreement &amp; Acceptance terms above.</label>
+          <label class="check-item mandatory-row declaration-acceptance"><input type="checkbox" name="declarationAccepted" required> I/We confirm that I/we have read, understood, accepted, and agree to be legally bound by the Declaration, Agreement & Acceptance terms above.</label>
           <div class="grid" style="margin-top:16px">
-            <div class="field half"><label>Authorised Person Name</label><input name="authorizedName" required=""><div class="missing-note">Required field</div></div>
-            <div class="field half"><label>Date</label><input name="signatureDate" class="date-input picker-readonly" placeholder="dd/mmm/yyyy" required="" readonly="" onclick="openDatePicker(this,'date')"><div class="date-hint">Auto-filled when Declaration is ticked; tap to amend if needed</div><div class="missing-note">Required field</div></div>
+            <div class="field half"><label>Authorised Person Name</label><input name="authorizedName" required><div class="missing-note">Required field</div></div>
+            <div class="field half"><label>Date</label><input name="signatureDate" class="date-input picker-readonly" placeholder="dd/mmm/yyyy" required readonly onclick="openDatePicker(this,'date')"><div class="date-hint">Auto-filled when Declaration is ticked; tap to amend if needed</div><div class="missing-note">Required field</div></div>
             <div class="field full">
               <label>Authorized Signature</label>
               <div class="signature-frame signature-only-frame">
-                <div class="signature-canvas-wrap"><span>Draw authorised signature here or upload signature file</span><canvas id="signatureCanvas" width="1440" height="640" style="width: 100%; height: 320px;"></canvas></div><div class="missing-note">Authorised signature is required</div>
+                <div class="signature-canvas-wrap"><span>Draw authorised signature here or upload signature file</span><canvas id="signatureCanvas"></canvas></div><div class="missing-note">Authorised signature is required</div>
                 <div class="mini-actions signature-actions no-print">
                   <input id="signatureFile" class="no-print id-file-hidden" type="file" accept="image/*" onchange="loadSignatureFile(event)">
                   <label class="upload-btn signature-upload-btn no-print" for="signatureFile">Browse Signature</label>
                   <button class="mini-btn signature-clear-btn" type="button" onclick="clearSignature()">Clear Signature</button>
                 </div>
-                <input type="hidden" name="signatureData" id="signatureData" value="">
+                <input type="hidden" name="signatureData" id="signatureData">
               </div>
             </div>
+            <div class="field full">
+              <label>Authorised Signature ID</label>
+              <div class="id-panel-frame">
+                <div class="id-upload-card" id="idFrontCard">
+                  <div class="id-title">Authorised Signature ID - Front Side</div>
+                  <div class="id-frame" id="idFrontPreview">Upload ID front side</div>
+                  <input id="idFrontFile" class="no-print id-file-hidden" type="file" accept="image/*" onchange="loadIdImage(event,'idFrontData','idFrontPreview')"><button class="upload-btn no-print" type="button" onclick="triggerIdUpload('idFrontFile')">Upload Front ID</button>
+                  <button class="remove-media-btn no-print" type="button" onclick="removeIdImage('idFrontData','idFrontPreview')">Remove</button>
+                  <input type="hidden" name="idFrontData" id="idFrontData"><div class="missing-note">ID front side is required</div>
+                </div>
+                <div class="id-upload-card" id="idBackCard">
+                  <div class="id-title">Authorised Signature ID - Back Side</div>
+                  <div class="id-frame" id="idBackPreview">Upload ID back side</div>
+                  <input id="idBackFile" class="no-print id-file-hidden" type="file" accept="image/*" onchange="loadIdImage(event,'idBackData','idBackPreview')"><button class="upload-btn no-print" type="button" onclick="triggerIdUpload('idBackFile')">Upload Back ID</button>
+                  <button class="remove-media-btn no-print" type="button" onclick="removeIdImage('idBackData','idBackPreview')">Remove</button>
+                  <input type="hidden" name="idBackData" id="idBackData"><div class="optional-note">Optional</div>
+                </div>
+              </div>
+            </div>
+
           </div>
           <div class="attachment-panel no-print">
             <div class="attachment-panel-title">
@@ -997,6 +1154,7 @@ body.lang-ur .other-task-note .note-ar{display:none;}
             <div class="hint">Each uploaded attachment will be inserted as an attachment page in the PDF and also embedded as the original raw file. Image files show a visual preview; other formats show a clean file card with the original file embedded in the PDF.</div>
             <div id="attachmentList" class="attachment-list"><div class="attachment-empty">No attachments added.</div></div>
           </div>
+
           <div class="hotel-internal">
             <h3 style="text-align:center;margin:10px 0 5px">FOR HOTEL INTERNAL USE</h3>
             <h3 style="text-align:center;margin:0 0 6px">VENUE APPROVAL OF WORK PERMIT / ACCESS PROVIDED BY</h3>
@@ -1016,444 +1174,49 @@ body.lang-ur .other-task-note .note-ar{display:none;}
       </section>
 
       <div class="wizard-bottom-nav no-print">
-        <button class="btn primary" id="prevStepBtn" type="button" onclick="return openPreviousStep()" disabled="" aria-label="Previous">Previous</button>
+        <button class="btn primary" id="prevStepBtn" type="button" onclick="return openPreviousStep()">Previous</button>
         <div class="wizard-step-label" id="wizardStepLabel">Step 1 of 5 — Request</div>
-        <button class="btn primary" id="nextStepBtn" type="button" onclick="return openNextStep()" aria-label="Next">Next</button>
+        <button class="btn primary" id="nextStepBtn" type="button" onclick="return openNextStep()">Next</button>
       </div>
     </form>
   </div>
 </div>
 
 
-<script type="application/json" id="permitExportDataSeed">{
-  "meta": {
-    "reportType": "Contractors / Vendors Permit to Work - Events",
-    "savedAt": "2026-06-12T14:00:18.767Z",
-    "version": "Property corporate v11"
-  },
-  "fields": {
-    "requestDate": "",
-    "propertyName": "Conrad Abu Dhabi Etihad Tower",
-    "applicantName": "",
-    "companyName": "",
-    "supervisor": "",
-    "mobile": "",
-    "staffCount": "",
-    "location": "",
-    "accessDateTime": "12/Jun/2026 05:50 PM",
-    "exitDateTime": "13/Jun/2026 05:50 PM",
-    "scope": "",
-    "score_0": "0",
-    "answer_0": "",
-    "score_1": "0",
-    "answer_1": "",
-    "score_2": "0",
-    "answer_2": "",
-    "score_3": "0",
-    "answer_3": "",
-    "score_4": "0",
-    "answer_4": "",
-    "score_5": "0",
-    "answer_5": "",
-    "score_6": "0",
-    "answer_6": "",
-    "score_7": "0",
-    "answer_7": "",
-    "score_8": "0",
-    "answer_8": "",
-    "score_9": "0",
-    "answer_9": "",
-    "authorizedName": "",
-    "signatureDate": "",
-    "signatureData": "",
-    "task_0": false,
-    "task_1": false,
-    "task_2": false,
-    "task_3": false,
-    "task_4": false,
-    "task_5": false,
-    "task_6": false,
-    "task_7": false,
-    "task_8": false,
-    "task_9": false,
-    "task_10": false,
-    "task_11": false,
-    "task_12": false,
-    "task_13": false,
-    "task_14": false,
-    "task_15": false,
-    "task_16": false,
-    "rulesAccepted": false,
-    "declarationAccepted": false
-  },
-  "requirements": [
-    {
-      "sn": 1,
-      "requirement": "Do you have Approved Occupational Health and Safety Management System in place? (OSHAD / ISO 45001:2008).",
-      "rating": 10,
-      "score": 0,
-      "answer": ""
-    },
-    {
-      "sn": 2,
-      "requirement": "Has a Health & Safety policy been developed?",
-      "rating": 10,
-      "score": 0,
-      "answer": ""
-    },
-    {
-      "sn": 3,
-      "requirement": "Do you have a dedicated Health & Safety Person available?",
-      "rating": 10,
-      "score": 0,
-      "answer": ""
-    },
-    {
-      "sn": 4,
-      "requirement": "Do you have valid adequate company public liability insurance?",
-      "rating": 10,
-      "score": 0,
-      "answer": ""
-    },
-    {
-      "sn": 5,
-      "requirement": "Is there any training plan available for your staff for all activities that you perform?",
-      "rating": 10,
-      "score": 0,
-      "answer": ""
-    },
-    {
-      "sn": 6,
-      "requirement": "Do you have procedures in place to handle emergencies on site?",
-      "rating": 10,
-      "score": 0,
-      "answer": ""
-    },
-    {
-      "sn": 7,
-      "requirement": "Do you report and record incidents / accidents?",
-      "rating": 10,
-      "score": 0,
-      "answer": ""
-    },
-    {
-      "sn": 8,
-      "requirement": "Will you provide all necessary PPEs and other welfare facilities on site?",
-      "rating": 10,
-      "score": 0,
-      "answer": ""
-    },
-    {
-      "sn": 9,
-      "requirement": "Is there any work from our scope of work being subcontracted? If yes, are they competent to fulfill the health and safety requirements?",
-      "rating": 0,
-      "score": 0,
-      "answer": ""
-    },
-    {
-      "sn": 10,
-      "requirement": "Do you have third party inspection certificate / license for all equipment used in our site?",
-      "rating": 10,
-      "score": 0,
-      "answer": ""
-    }
-  ],
-  "documents": [
-    {
-      "sn": 1,
-      "name": "A copy of the Company Trade License."
-    },
-    {
-      "sn": 2,
-      "name": "A copy of Method Statement / Safe Procedure of Work."
-    },
-    {
-      "sn": 3,
-      "name": "A copy of Site Specific Risk Assessment of Job."
-    },
-    {
-      "sn": 4,
-      "name": "A copy of training Certificates of all staff that will be using any site equipment, cherry picker, scissor lift, or forklift."
-    }
-  ],
-  "tasks": [
-    {
-      "name": "Working on the roof",
-      "selected": false
-    },
-    {
-      "name": "Spray painting",
-      "selected": false
-    },
-    {
-      "name": "Window cleaning",
-      "selected": false
-    },
-    {
-      "name": "Working in confined spaces",
-      "selected": false
-    },
-    {
-      "name": "Electrical Work",
-      "selected": false
-    },
-    {
-      "name": "Welding or abrasive cutting",
-      "selected": false
-    },
-    {
-      "name": "Demolishing",
-      "selected": false
-    },
-    {
-      "name": "Erecting scaffolding",
-      "selected": false
-    },
-    {
-      "name": "Using chemicals",
-      "selected": false
-    },
-    {
-      "name": "Working at heights",
-      "selected": false
-    },
-    {
-      "name": "Access to high voltage workstation",
-      "selected": false
-    },
-    {
-      "name": "Hot work",
-      "selected": false
-    },
-    {
-      "name": "Build a Stage",
-      "selected": false
-    },
-    {
-      "name": "Install Digital Screen",
-      "selected": false
-    },
-    {
-      "name": "Light installation",
-      "selected": false
-    },
-    {
-      "name": "Furniture Delivery / Placement",
-      "selected": false
-    },
-    {
-      "name": "Others",
-      "selected": false
-    }
-  ],
-  "attachments": []
-}</script><script id="permitContentConfigSeed" type="application/json">{
-  "propertyName": "Conrad Abu Dhabi Etihad Tower",
-  "documentControl": "CAD-OSHMS-015-F01 | REV 01",
-  "requirements": [
-    [
-      "Do you have Approved Occupational Health and Safety Management System in place? (OSHAD / ISO 45001:2008).",
-      10
-    ],
-    [
-      "Has a Health & Safety policy been developed?",
-      10
-    ],
-    [
-      "Do you have a dedicated Health & Safety Person available?",
-      10
-    ],
-    [
-      "Do you have valid adequate company public liability insurance?",
-      10
-    ],
-    [
-      "Is there any training plan available for your staff for all activities that you perform?",
-      10
-    ],
-    [
-      "Do you have procedures in place to handle emergencies on site?",
-      10
-    ],
-    [
-      "Do you report and record incidents / accidents?",
-      10
-    ],
-    [
-      "Will you provide all necessary PPEs and other welfare facilities on site?",
-      10
-    ],
-    [
-      "Is there any work from our scope of work being subcontracted? If yes, are they competent to fulfill the health and safety requirements?",
-      0
-    ],
-    [
-      "Do you have third party inspection certificate / license for all equipment used in our site?",
-      10
-    ]
-  ],
-  "documents": [
-    "A copy of the Company Trade License.",
-    "A copy of Method Statement / Safe Procedure of Work.",
-    "A copy of Site Specific Risk Assessment of Job.",
-    "A copy of training Certificates of all staff that will be using any site equipment, cherry picker, scissor lift, or forklift."
-  ],
-  "tasks": [
-    "Working on the roof",
-    "Spray painting",
-    "Window cleaning",
-    "Working in confined spaces",
-    "Electrical Work",
-    "Welding or abrasive cutting",
-    "Demolishing",
-    "Erecting scaffolding",
-    "Using chemicals",
-    "Working at heights",
-    "Access to high voltage workstation",
-    "Hot work",
-    "Build a Stage",
-    "Install Digital Screen",
-    "Light installation",
-    "Furniture Delivery / Placement",
-    "Others"
-  ],
-  "securityDepositText": "The Contractor/Vendor shall deposit AED 10,000 as a security deposit upon signing the Work Permit. It protects against venue structure/equipment damage and is refundable within seven business days after the event ends, provided no damages occur.",
-  "venueInspectionText": "The Contractor shall inspect the event venue prior to commencing setup and report any unsatisfactory conditions in writing to Property Management. Failure to report makes the Contractor responsible for the venue condition.",
-  "safetyRegulations": [
-    {
-      "text": "Valid photo ID is required to gain access from P1 security office.",
-      "critical": false
-    },
-    {
-      "text": "All staff must enter and exit via the Security Entrance.",
-      "critical": false
-    },
-    {
-      "text": "All personnel must have valid, job-specific experience.",
-      "critical": false
-    },
-    {
-      "text": "Signed Work Permit must be brought to the premises as proof of access.",
-      "critical": false
-    },
-    {
-      "text": "Required PPE must be worn.",
-      "critical": false
-    },
-    {
-      "text": "Contractors must be reasonably dressed and meet property hygiene standards.",
-      "critical": false
-    },
-    {
-      "text": "Certified helmet and harness must be worn above 1.8 meters.",
-      "critical": false
-    },
-    {
-      "text": "Portable electrical equipment must use grounded approved plugs and sockets.",
-      "critical": false
-    },
-    {
-      "text": "No work on live electrical distribution boards; power isolation must follow hotel lockout/tagout policy.",
-      "critical": false
-    },
-    {
-      "text": "Cables must pass through cable ramps and avoid doorways.",
-      "critical": false
-    },
-    {
-      "text": "Electrical loads must be within supply capacity and tested with the property engineer.",
-      "critical": false
-    },
-    {
-      "text": "Marble floor and carpets must be protected during setup and breakdown.",
-      "critical": false
-    },
-    {
-      "text": "Smoke/Haze machines are prohibited unless approved 48 hours prior.",
-      "critical": false
-    },
-    {
-      "text": "Flammable materials must be fire-retardant treated with certificates submitted.",
-      "critical": false
-    },
-    {
-      "text": "No excessively loud construction work unless permitted by Property Management.",
-      "critical": false
-    },
-    {
-      "text": "Equipment must have up-to-date test certificates.",
-      "critical": false
-    },
-    {
-      "text": "Contractors are responsible for their own equipment and tools.",
-      "critical": false
-    },
-    {
-      "text": "No attachment to building fabric except designated venue hanging points.",
-      "critical": false
-    },
-    {
-      "text": "Safe and environmentally friendly practices must be followed.",
-      "critical": false
-    },
-    {
-      "text": "Smoking and alcohol consumption are forbidden except in designated areas.",
-      "critical": false
-    },
-    {
-      "text": "Unsafe work may be suspended until corrected at contractor cost.",
-      "critical": false
-    },
-    {
-      "text": "Work areas must be secured to protect guests and prevent unauthorized access.",
-      "critical": false
-    },
-    {
-      "text": "Work areas must be clean and tidy.",
-      "critical": false
-    },
-    {
-      "text": "Contractors and staff may not access public areas without written permission.",
-      "critical": false
-    },
-    {
-      "text": "Emergency exit doors and escape routes must never be blocked or obstructed for any reason.",
-      "critical": true
-    },
-    {
-      "text": "Proper protection is required if activities may damage hotel property.",
-      "critical": false
-    },
-    {
-      "text": "Candles require Property Management approval in accordance with safety standards.",
-      "critical": false
-    },
-    {
-      "text": "Loud or abusive language will not be tolerated.",
-      "critical": false
-    },
-    {
-      "text": "After setup, garbage must be cleared off-site and the venue returned as received.",
-      "critical": false
-    },
-    {
-      "text": "Non-compliance may result in work cessation, permit cancellation, cleaning fees, repair costs, and waste removal charges.",
-      "critical": false
-    }
-  ]
-}</script>
+<script id="permitContentConfigSeed" type="application/json"></script>
 
+
+<div class="modal" id="idCropModal"><div class="modal-card crop-modal-card"><h3>Crop ID Image</h3><p class="crop-help">Move and resize the highlighted frame to cover the ID card only, then apply the crop. This works for photos taken directly by camera or selected from the gallery.</p><div class="crop-stage" id="idCropStage"><img id="idCropImage" alt="ID image crop preview"><div class="crop-box" id="idCropBox"><span class="crop-grid-v1"></span><span class="crop-grid-v2"></span><span class="crop-handle nw" data-handle="nw"></span><span class="crop-handle ne" data-handle="ne"></span><span class="crop-handle sw" data-handle="sw"></span><span class="crop-handle se" data-handle="se"></span></div></div><div class="crop-toolbar"><div class="left"><button class="crop-small-btn" type="button" onclick="resetIdCropBox()">Reset Crop</button><button class="crop-small-btn" type="button" onclick="rotateIdCropImage()">Rotate 90°</button></div><div class="right"><button class="btn secondary" type="button" onclick="cancelIdCrop()">Cancel</button><button class="btn primary crop-primary-btn" id="applyIdCropBtn" type="button" onclick="applyIdCrop(event)">Apply Crop</button></div></div></div></div>
 
 <div class="modal" id="datePickerModal"><div class="modal-card picker-modal-card"><h3 id="pickerTitle">Select Date</h3><input id="pickerNative" class="picker-control" type="date"><div class="hint-small" id="pickerHint">Selected value will be displayed as dd/mmm/yyyy.</div><div class="actions"><button class="btn primary" type="button" onclick="applyDatePicker()">Apply</button><button class="btn secondary" type="button" onclick="closeDatePicker()">Cancel</button></div></div></div>
 
 
+<div class="modal" id="contentEditorModal"><div class="modal-card content-editor-card">
+  <h3>Editable Permit Content Manager</h3>
+  <p class="content-editor-intro">Edit or add the permit content below, then save it into this browser or export a new standalone HTML file with the updated content embedded.</p>
+  <div class="editor-grid">
+    <div class="editor-field full"><label>Property Name</label><div class="editor-hint">This name will be used in the form, declaration text, PDF header, and exported final HTML.</div><input id="editPropertyName" class="editor-input" type="text" placeholder="Property name"></div>
+    <div class="editor-field full"><label>Form Reference / Revision</label><div class="editor-hint">Shown in the request section, print view, exported HTML, and generated PDF report.</div><input id="editFormReference" class="editor-input" type="text" placeholder="CAD-OSHMS-015-F01 | REV 01"></div>
+    <div class="editor-field full"><label>Contractor Safety Requirement Assessment</label><div class="editor-hint">One item per line using: <b>Rating | Question</b>. Example: <b>10 | Do you have PPE?</b></div><textarea id="editRequirements" class="editor-textarea tall"></textarea></div>
+    <div class="editor-field"><label>Required Documents</label><div class="editor-hint">One document per line.</div><textarea id="editDocuments" class="editor-textarea"></textarea></div>
+    <div class="editor-field"><label>Safe Work Description / Tasks</label><div class="editor-hint">One task per line.</div><textarea id="editTasks" class="editor-textarea"></textarea></div>
+    <div class="editor-field full"><label>Security Deposit</label><textarea id="editSecurityDeposit" class="editor-textarea small"></textarea></div>
+    <div class="editor-field full"><label>Venue Inspection</label><textarea id="editVenueInspection" class="editor-textarea small"></textarea></div>
+    <div class="editor-field full"><label>Safety Regulations</label><div class="editor-hint">One rule per line. Start a line with <b>!</b> to mark it critical/red in PDF and web view.</div><textarea id="editRegulations" class="editor-textarea tall"></textarea></div>
+  </div>
+  <div class="editor-actions">
+    <button class="btn secondary" type="button" onclick="restoreDefaultPermitContent()">Restore Default</button>
+    <button class="btn secondary" type="button" onclick="closeContentEditor()">Cancel</button>
+    <button class="btn primary" type="button" onclick="saveContentEditor(false)">Save Changes</button>
+    <button class="btn primary" type="button" onclick="saveContentEditor(true)">Save & Export HTML</button>
+  </div>
+</div></div>
 
 
-<div class="modal" id="fastAttachmentModal"><div class="modal-card fast-attachment-modal-card"><h3>View Attachments</h3><p class="hint">Open or manage uploaded attachments directly from Fast Navigation.</p><div class="fast-attachment-toolbar"><button class="btn primary" type="button" onclick="triggerAttachmentUpload()">Add Attachment</button><button class="btn secondary" type="button" onclick="closeFastAttachmentManager()">Close</button></div><div id="fastAttachmentList" class="attachment-list"><div class="attachment-empty">No attachments added. Click Add Attachment to upload files.</div></div></div></div>
-<div class="modal" id="attachmentPreviewModal"><div class="modal-card attachment-preview-modal-card"><button class="attachment-preview-close-x" type="button" aria-label="Close preview" onclick="closeAttachmentPreview()">×</button><h3 id="attachmentPreviewTitle">Attachment Viewer</h3><div id="attachmentPreviewMeta" class="attachment-preview-meta">No attachment selected.</div><div id="attachmentPreviewBody" class="attachment-preview-body"><div class="attachment-preview-card"><div class="file-icon">?</div><b>No attachment selected</b><p>Select an uploaded file to preview it here.</p></div></div><div class="attachment-preview-actions"><button class="btn secondary" type="button" onclick="openActiveAttachmentInNewTab()">Open</button><button class="btn secondary" type="button" onclick="downloadActiveAttachment()">Download</button><button class="btn primary" type="button" onclick="closeAttachmentPreview()">Close</button></div></div></div>
+<div class="modal" id="fastAttachmentModal"><div class="modal-card fast-attachment-modal-card"><h3>View Attachments</h3><p class="hint">Open or remove uploaded attachments directly from Fast Navigation. Deleted files are removed from the web form, browser draft, and the generated PDF report.</p><div class="fast-attachment-toolbar"><button class="btn primary" type="button" onclick="triggerAttachmentUpload()">Add Attachment</button><button class="btn secondary" type="button" onclick="closeFastAttachmentManager()">Close</button></div><div id="fastAttachmentList" class="attachment-list"><div class="attachment-empty">No attachments added.</div></div></div></div>
+<div class="modal" id="attachmentPreviewModal"><div class="modal-card attachment-preview-modal-card"><button class="attachment-preview-close-x" type="button" onclick="closeAttachmentPreview()">×</button><h3 id="attachmentPreviewTitle">Attachment Viewer</h3><div id="attachmentPreviewMeta" class="attachment-preview-meta">No attachment selected.</div><div id="attachmentPreviewBody" class="attachment-preview-body"><div class="attachment-preview-card"><div class="file-icon">?</div><b>No attachment selected</b><p>Select an uploaded file to preview it here.</p></div></div><div class="attachment-preview-actions"><button class="btn secondary" type="button" onclick="openActiveAttachmentInNewTab()">Open</button><button class="btn secondary" type="button" onclick="downloadActiveAttachment()">Download</button><button class="btn primary" type="button" onclick="closeAttachmentPreview()">Close</button></div></div></div>
 <div class="modal" id="validationModal"><div class="modal-card validation-modal-card"><h3>Missing Mandatory Information</h3><p>Please complete the following items before generating the PDF report.</p><ul class="missing-list" id="validationMissingList"></ul><div class="actions"><button class="btn primary" type="button" onclick="focusFirstMissing()">Review Missing Fields</button><button class="btn secondary" type="button" onclick="closeValidationModal()">Close</button></div></div></div>
 <div class="modal" id="browserDraftModal"><div class="modal-card browser-draft-modal-card"><h3>Draft Saved On Browser</h3><div class="browser-draft-message">All data entered here is processed entirely within your current browser and is never stored, transmitted, or saved to any external server or database. Nothing leaves your device.</div><div class="actions"><button class="btn green-confirm" type="button" onclick="closeBrowserDraftModal()">OK</button></div></div></div>
-<div class="modal" id="feedbackModal"><div class="modal-card feedback-modal-card"><h3 id="feedbackTitle">Notice</h3><div class="feedback-message" id="feedbackMessage">Please review this message.</div><div class="actions"><button class="btn primary" type="button" onclick="closeFeedbackModal()">OK</button></div></div></div>
 <div class="modal" id="englishOnlyModal"><div class="modal-card english-only-modal-card"><h3 data-en="Typing in English only" data-ar="الكتابة باللغة الإنجليزية فقط" data-ur="صرف انگریزی میں ٹائپ کریں">Typing in English only</h3><div class="english-only-message" data-en="Typing is allowed in English only. The Arabic menu is available to help you complete the permit request." data-ar="يُسمح بالكتابة باللغة الإنجليزية فقط. القائمة العربية متوفرة لمساعدتك في تعبئة طلب التصريح." data-ur="ٹائپنگ صرف انگریزی میں allowed ہے۔ Urdu menu صرف فارم سمجھنے میں مدد کے لیے ہے۔">Typing is allowed in English only. The Arabic menu is available to help you complete the permit request.</div><div class="actions"><button class="btn primary" type="button" onclick="closeEnglishOnlyModal()">OK</button></div></div></div>
 <div class="modal" id="clearModal"><div class="modal-card clear-modal-card"><h3>Clear this permit form?</h3><p>Please confirm this action.</p><div class="actions"><button class="btn clear-warn" onclick="resetFormConfirmed()">Yes, Clear Form</button><button class="btn secondary" onclick="closeClearModal()">Cancel</button></div></div></div>
 <div class="modal" id="pdfProgressModal" aria-live="polite" aria-modal="true">
@@ -1485,28 +1248,15 @@ const documents=['A copy of the Company Trade License.','A copy of Method Statem
 const tasks=['Working on the roof','Spray painting','Window cleaning','Working in confined spaces','Electrical Work','Welding or abrasive cutting','Demolishing','Erecting scaffolding','Using chemicals','Working at heights','Access to high voltage workstation','Hot work','Build a Stage','Install Digital Screen','Light installation','Furniture Delivery / Placement','Others'];
 let signaturePad={drawing:false,canvas:null,ctx:null};
 let permitAttachments=[];
-const ATTACHMENT_LIMITS={
-  maxFiles:10,
-  maxFileBytes:8*1024*1024,
-  maxTotalBytes:24*1024*1024,
-  maxDraftBytes:4.5*1024*1024
-};
-const PDF_COMPACT_MODE={
-  imageMaxW:900,
-  imageMaxH:1100,
-  imageQuality:0.62,
-  signatureQuality:0.82
-};
-let lastDraftSavedWithoutAttachments=false;
 let editablePropertyName='Conrad Abu Dhabi Etihad Towers';
-let documentControlValue='CAD-OSHMS-015-F01 | REV 01';
+let editableFormReference='CAD-OSHMS-015-F01 | REV 01';
 
 let securityDepositText='The Contractor/Vendor shall deposit AED 10,000 as a security deposit upon signing the Work Permit. It protects against venue structure/equipment damage and is refundable within seven business days after the event ends, provided no damages occur.';
 let venueInspectionText='The Contractor shall inspect the event venue prior to commencing setup and report any unsatisfactory conditions in writing to Property Management. Failure to report makes the Contractor responsible for the venue condition.';
 let safetyRegulations=[
   {text:'Valid photo ID is required to gain access from P1 security office.'},{text:'All staff must enter and exit via the Security Entrance.'},{text:'All personnel must have valid, job-specific experience.'},{text:'Signed Work Permit must be brought to the premises as proof of access.'},{text:'Required PPE must be worn.'},{text:'Contractors must be reasonably dressed and meet property hygiene standards.'},{text:'Certified helmet and harness must be worn above 1.8 meters.'},{text:'Portable electrical equipment must use grounded approved plugs and sockets.'},{text:'No work on live electrical distribution boards; power isolation must follow hotel lockout/tagout policy.'},{text:'Cables must pass through cable ramps and avoid doorways.'},{text:'Electrical loads must be within supply capacity and tested with the property engineer.'},{text:'Marble floor and carpets must be protected during setup and breakdown.'},{text:'Smoke/Haze machines are prohibited unless approved 48 hours prior.'},{text:'Flammable materials must be fire-retardant treated with certificates submitted.'},{text:'No excessively loud construction work unless permitted by Property Management.'},{text:'Equipment must have up-to-date test certificates.'},{text:'Contractors are responsible for their own equipment and tools.'},{text:'No attachment to building fabric except designated venue hanging points.'},{text:'Safe and environmentally friendly practices must be followed.'},{text:'Smoking and alcohol consumption are forbidden except in designated areas.'},{text:'Unsafe work may be suspended until corrected at contractor cost.'},{text:'Work areas must be secured to protect guests and prevent unauthorized access.'},{text:'Work areas must be clean and tidy.'},{text:'Contractors and staff may not access public areas without written permission.'},{text:'Emergency exit doors and escape routes must never be blocked or obstructed for any reason.',critical:true},{text:'Proper protection is required if activities may damage hotel property.'},{text:'Candles require Property Management approval in accordance with safety standards.'},{text:'Loud or abusive language will not be tolerated.'},{text:'After setup, garbage must be cleared off-site and the venue returned as received.'},{text:'Non-compliance may result in work cessation, permit cancellation, cleaning fees, repair costs, and waste removal charges.'}
 ];
-const defaultPermitContent=JSON.parse(JSON.stringify({propertyName:editablePropertyName,documentControl:documentControlValue,requirements,documents,tasks,securityDepositText,venueInspectionText,safetyRegulations}));
+const defaultPermitContent=JSON.parse(JSON.stringify({propertyName:editablePropertyName,formReference:editableFormReference,requirements,documents,tasks,securityDepositText,venueInspectionText,safetyRegulations}));
 
 let currentLanguage=['ar','ur'].includes(localStorage.getItem('permitLanguage'))?localStorage.getItem('permitLanguage'):'en';
 const AR_TEXT={
@@ -1633,9 +1383,7 @@ function applyLanguage(lang=currentLanguage,opts={}){
  if(opts.remember!==false) localStorage.setItem('permitLanguage',currentLanguage);
  const rtl=isRtlLanguage(currentLanguage);
  document.documentElement.lang=currentLanguage;
- document.documentElement.dir='ltr';
- document.body?.setAttribute('dir','ltr');
- document.body?.classList.toggle('lang-rtl',rtl);
+ document.documentElement.dir=rtl?'rtl':'ltr';
  document.body?.classList.toggle('lang-ar',currentLanguage==='ar');
  document.body?.classList.toggle('lang-ur',currentLanguage==='ur');
  const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode(node){
@@ -1649,6 +1397,7 @@ function applyLanguage(lang=currentLanguage,opts={}){
  setPlaceholdersLanguage(currentLanguage);
  setDeclarationLanguage(currentLanguage);
  syncEnglishOnlyModalLanguage();
+ if(typeof syncFormReferenceDisplays==='function') syncFormReferenceDisplays();
  const menu=document.getElementById('languageMenu');
  if(menu) menu.value=currentLanguage;
  const legacyBtn=document.getElementById('languageToggleBtn');
@@ -1668,7 +1417,7 @@ function isRemovedPermitDocument(v){return /\bphoto\s*id\b/i.test(String(v||''))
 function isRemovedPermitTask(v){return /^(asbestos\s+work|abrasive\s+blasting|trenching)$/i.test(String(v||'').trim());}
 function getMaxSafetyScore(){return requirements.reduce((sum,r)=>sum+(Number(r[1])>0?Number(r[1]):0),0)||90;}
 function getAcceptanceStatus(total){const max=getMaxSafetyScore(); const pct=max?total/max:0; return pct>=.70?'Accepted':pct>=.60?'Conditional':'Not Ready';}
-function getPermitContentConfig(){return {propertyName:getPermitPropertyName(),documentControl:getDocumentControlValue(),requirements:requirements.map(r=>[String(r[0]||''),Number(r[1])||0]),documents:[...documents],tasks:tasks.filter(t=>!isRemovedPermitTask(t)),securityDepositText,venueInspectionText,safetyRegulations:safetyRegulations.map(r=>({text:String(r.text||''),critical:!!r.critical}))};}
+function getPermitContentConfig(){return {propertyName:getPermitPropertyName(),formReference:getPermitFormReference(),requirements:requirements.map(r=>[String(r[0]||''),Number(r[1])||0]),documents:[...documents],tasks:tasks.filter(t=>!isRemovedPermitTask(t)),securityDepositText,venueInspectionText,safetyRegulations:safetyRegulations.map(r=>({text:String(r.text||''),critical:!!r.critical}))};}
 function setArrayContents(arr,next){arr.splice(0,arr.length,...next);}
 function isOthersTaskName(name){return /^others?$/i.test(String(name||'').trim());}
 function hasTaskByName(name){return tasks.some(t=>String(t||'').trim().toLowerCase()===String(name||'').trim().toLowerCase());}
@@ -1712,13 +1461,15 @@ function handleTaskSelectionChange(el){
 }
 function applyPermitContentConfig(cfg){
  if(!cfg)return;
- if(typeof cfg.documentControl==='string'){documentControlValue=cfg.documentControl.trim()||'CAD-OSHMS-015-F01 | REV 01'; syncDocumentControlReferences();}
  if(typeof cfg.propertyName==='string'){
-   const nextName=cfg.propertyName.trim()||editablePropertyName;
-   editablePropertyName=nextName;
+    const nextName=cfg.propertyName.trim()||editablePropertyName;
+    editablePropertyName=nextName;
    const prop=document.querySelector('[name="propertyName"]');
-   if(prop){prop.value=nextName;prop.setAttribute('value',nextName);prop.readOnly=true;}
- }
+    if(prop){prop.value=nextName;prop.setAttribute('value',nextName);prop.readOnly=true;}
+  }
+  if(typeof cfg.formReference==='string'){
+    editableFormReference=cfg.formReference.trim()||editableFormReference;
+  }
  if(Array.isArray(cfg.requirements))setArrayContents(requirements,cfg.requirements.map(r=>Array.isArray(r)?[String(r[0]||''),Number(r[1])||0]:[String(r.requirement||r.text||''),Number(r.rating)||0]).filter(r=>r[0].trim()));
  if(Array.isArray(cfg.documents))setArrayContents(documents,cfg.documents.map(d=>String(d.name||d||'').trim()).filter(d=>d && !isRemovedPermitDocument(d)));
  if(Array.isArray(cfg.tasks))setArrayContents(tasks,cfg.tasks.map(t=>String(t.name||t||'').trim()).filter(t=>t && !isRemovedPermitTask(t)));
@@ -1726,22 +1477,10 @@ function applyPermitContentConfig(cfg){
  if(typeof cfg.securityDepositText==='string')securityDepositText=cfg.securityDepositText.trim()||securityDepositText;
  if(typeof cfg.venueInspectionText==='string')venueInspectionText=cfg.venueInspectionText.trim()||venueInspectionText;
  if(Array.isArray(cfg.safetyRegulations))safetyRegulations=cfg.safetyRegulations.map(r=>({text:String(r.text||r||'').trim(),critical:!!r.critical})).filter(r=>r.text);
- syncPropertyNameReferences();
+  syncPropertyNameReferences();
+  syncFormReferenceDisplays();
 }
-function isExportedPermitHTML(){
- return document.documentElement.classList.contains('exported-permit-html') ||
-        document.body?.classList.contains('exported-permit-body') ||
-        !!document.getElementById('permitExportDataSeed')?.textContent?.trim();
-}
-function applySavedPermitContent(){
- try{
-  const seed=document.getElementById('permitContentConfigSeed')?.textContent?.trim();
-  if(seed) applyPermitContentConfig(JSON.parse(seed));
-  if(isExportedPermitHTML()) return;
-  const saved=localStorage.getItem('permitEditableContentV1');
-  if(saved) applyPermitContentConfig(JSON.parse(saved));
- }catch(e){console.warn('Permit content config ignored',e);}
-}
+function applySavedPermitContent(){try{const seed=document.getElementById('permitContentConfigSeed')?.textContent?.trim(); if(seed)applyPermitContentConfig(JSON.parse(seed)); const saved=localStorage.getItem('permitEditableContentV1'); if(saved)applyPermitContentConfig(JSON.parse(saved));}catch(e){console.warn('Permit content config ignored',e);}}
 function renderDynamicPermitContent(){
  const rows=document.getElementById('requirementRows'); if(rows){rows.innerHTML=requirements.map((r,i)=>`<tr><td class="sn">${i+1}.</td><td class="mobile-question-cell">${escapeHtmlText(r[0])}</td><td class="rating">${Number(r[1])||'N/A'}</td><td class="score"><input type="number" readonly name="score_${i}" value="0"></td><td class="answer"><select name="answer_${i}"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="N/A">N/A</option></select></td></tr>`).join('');}
  const maxCell=document.getElementById('safetyMaxScoreCell'); if(maxCell)maxCell.textContent=getMaxSafetyScore();
@@ -1753,12 +1492,11 @@ function renderDynamicPermitContent(){
  const vi=document.getElementById('venueInspectionText'); if(vi)vi.textContent=venueInspectionText;
  const rl=document.getElementById('safetyRegulationsList'); if(rl)rl.innerHTML=safetyRegulations.map(r=>`<li class="${r.critical?'critical':''}">${escapeHtmlText(r.text)}</li>`).join('');
  syncPropertyNameReferences();
- syncDocumentControlReferences();
  if(typeof applyLanguage==='function') applyLanguage(currentLanguage,{remember:false,toast:false});
 }
-function openContentEditor(){const cfg=getPermitContentConfig(); document.getElementById('editPropertyName').value=cfg.propertyName||getPermitPropertyName(); document.getElementById('editDocumentControl').value=cfg.documentControl||getDocumentControlValue(); document.getElementById('editRequirements').value=cfg.requirements.map(r=>`${r[1]} | ${r[0]}`).join('\n'); document.getElementById('editDocuments').value=cfg.documents.join('\n'); document.getElementById('editTasks').value=cfg.tasks.join('\n'); document.getElementById('editSecurityDeposit').value=cfg.securityDepositText; document.getElementById('editVenueInspection').value=cfg.venueInspectionText; document.getElementById('editRegulations').value=cfg.safetyRegulations.map(r=>(r.critical?'! ':'')+r.text).join('\n'); document.getElementById('contentEditorModal').classList.add('show');}
+function openContentEditor(){const cfg=getPermitContentConfig(); document.getElementById('editPropertyName').value=cfg.propertyName||getPermitPropertyName(); document.getElementById('editFormReference').value=cfg.formReference||getPermitFormReference(); document.getElementById('editRequirements').value=cfg.requirements.map(r=>`${r[1]} | ${r[0]}`).join('\n'); document.getElementById('editDocuments').value=cfg.documents.join('\n'); document.getElementById('editTasks').value=cfg.tasks.join('\n'); document.getElementById('editSecurityDeposit').value=cfg.securityDepositText; document.getElementById('editVenueInspection').value=cfg.venueInspectionText; document.getElementById('editRegulations').value=cfg.safetyRegulations.map(r=>(r.critical?'! ':'')+r.text).join('\n'); document.getElementById('contentEditorModal').classList.add('show');}
 function closeContentEditor(){document.getElementById('contentEditorModal').classList.remove('show');}
-function parseContentEditor(){const req=document.getElementById('editRequirements').value.split(/\n+/).map(line=>line.trim()).filter(Boolean).map(line=>{const parts=line.split('|'); if(parts.length>1){const rating=parseFloat(parts.shift().trim())||0; return [parts.join('|').trim(),rating];} return [line,10];}).filter(r=>r[0]); const regs=document.getElementById('editRegulations').value.split(/\n+/).map(line=>line.trim()).filter(Boolean).map(line=>{const critical=/^!/.test(line); return {text:line.replace(/^!\s*/,'').trim(),critical};}).filter(r=>r.text); return {propertyName:(document.getElementById('editPropertyName').value||'').trim()||editablePropertyName,documentControl:(document.getElementById('editDocumentControl').value||'').trim()||'CAD-OSHMS-015-F01 | REV 01',requirements:req,documents:document.getElementById('editDocuments').value.split(/\n+/).map(x=>x.trim()).filter(x=>x && !isRemovedPermitDocument(x)),tasks:document.getElementById('editTasks').value.split(/\n+/).map(x=>x.trim()).filter(x=>x && !isRemovedPermitTask(x)),securityDepositText:document.getElementById('editSecurityDeposit').value.trim(),venueInspectionText:document.getElementById('editVenueInspection').value.trim(),safetyRegulations:regs};}
+function parseContentEditor(){const req=document.getElementById('editRequirements').value.split(/\n+/).map(line=>line.trim()).filter(Boolean).map(line=>{const parts=line.split('|'); if(parts.length>1){const rating=parseFloat(parts.shift().trim())||0; return [parts.join('|').trim(),rating];} return [line,10];}).filter(r=>r[0]); const regs=document.getElementById('editRegulations').value.split(/\n+/).map(line=>line.trim()).filter(Boolean).map(line=>{const critical=/^!/.test(line); return {text:line.replace(/^!\s*/,'').trim(),critical};}).filter(r=>r.text); return {propertyName:(document.getElementById('editPropertyName').value||'').trim()||editablePropertyName,formReference:(document.getElementById('editFormReference').value||'').trim()||editableFormReference,requirements:req,documents:document.getElementById('editDocuments').value.split(/\n+/).map(x=>x.trim()).filter(x=>x && !isRemovedPermitDocument(x)),tasks:document.getElementById('editTasks').value.split(/\n+/).map(x=>x.trim()).filter(x=>x && !isRemovedPermitTask(x)),securityDepositText:document.getElementById('editSecurityDeposit').value.trim(),venueInspectionText:document.getElementById('editVenueInspection').value.trim(),safetyRegulations:regs};}
 function saveContentEditor(exportAfter){
  const existing=collect();
  const cfg=parseContentEditor();
@@ -1772,7 +1510,7 @@ function saveContentEditor(exportAfter){
  updateStatus();
  autoSaveDraft();
  closeContentEditor();
- showToast('Editable sections updated. Property name and document control saved.');
+ showToast('Editable sections updated. Property name saved.');
  if(exportAfter)exportCurrentHTML();
 }
 function restoreDefaultPermitContent(){applyPermitContentConfig(defaultPermitContent); localStorage.setItem('permitEditableContentV1',JSON.stringify(getPermitContentConfig())); renderDynamicPermitContent(); openContentEditor(); updateStatus(); showToast('Default content restored.');}
@@ -1803,7 +1541,6 @@ function exportCurrentHTML(){
   const propInput=clone.querySelector('[name="propertyName"]');
   if(propInput){propInput.value=cfg.propertyName||getPermitPropertyName();propInput.setAttribute('value',propInput.value);propInput.setAttribute('readonly','readonly');}
   clone.querySelectorAll('[data-property-name]').forEach(el=>{el.textContent=cfg.propertyName||getPermitPropertyName();});
-  clone.querySelectorAll('[data-document-control]').forEach(el=>{el.textContent=cfg.documentControl||getDocumentControlValue();});
   const printLogo=clone.querySelector('.brand-print .logo');
   if(printLogo)printLogo.textContent=String(cfg.propertyName||getPermitPropertyName()).toUpperCase();
   const seed=clone.querySelector('#permitContentConfigSeed');
@@ -1825,6 +1562,13 @@ function exportCurrentHTML(){
 
   let html='<!DOCTYPE html>\n'+clone.outerHTML;
 
+  // In the exported standalone form, use only the embedded exported content.
+  // Do not allow old browser editor drafts/localStorage to override it.
+  html=html.replace(
+   /function applySavedPermitContent\(\)\{[\s\S]*?\}\s*function renderDynamicPermitContent/,
+   "function applySavedPermitContent(){try{const seed=document.getElementById('permitContentConfigSeed')?.textContent?.trim(); if(seed)applyPermitContentConfig(JSON.parse(seed));}catch(e){console.warn('Permit content config ignored',e);}}\nfunction renderDynamicPermitContent"
+  );
+
   const blob=new Blob([html],{type:'text/html;charset=utf-8'});
   const a=document.createElement('a');
   a.href=URL.createObjectURL(blob);
@@ -1839,21 +1583,27 @@ function getPermitPropertyName(){
  const el=document.querySelector('[name="propertyName"]');
  return String(el?.value || 'the Property').trim() || 'the Property';
 }
+function getPermitFormReference(){
+ return String(editableFormReference || 'CAD-OSHMS-015-F01 | REV 01').trim() || 'CAD-OSHMS-015-F01 | REV 01';
+}
+function splitPermitFormReference(ref=getPermitFormReference()){
+ const parts=String(ref||'').split('|').map(x=>x.trim()).filter(Boolean);
+ return {code:parts[0]||getPermitFormReference(),rev:parts.slice(1).join(' | ')};
+}
+function syncFormReferenceDisplays(){
+ const ref=getPermitFormReference();
+ const parts=splitPermitFormReference(ref);
+ document.querySelectorAll('[data-form-reference="full"]').forEach(el=>{el.textContent=ref;});
+ document.querySelectorAll('[data-form-reference="code"]').forEach(el=>{el.textContent=parts.code;});
+ document.querySelectorAll('[data-form-reference="rev"]').forEach(el=>{el.textContent=parts.rev || '';});
+ window.__pdfFormReference=ref;
+}
 function syncPropertyNameReferences(){
  const propertyName=getPermitPropertyName();
  document.querySelectorAll('[data-property-name]').forEach(el=>{el.textContent=propertyName;});
  const printLogo=document.querySelector('.brand-print .logo');
  if(printLogo) printLogo.textContent=propertyName.toUpperCase();
  window.__pdfPropertyName=propertyName;
-}
-
-function getDocumentControlValue(){
- return String(documentControlValue || 'CAD-OSHMS-015-F01 | REV 01').trim() || 'CAD-OSHMS-015-F01 | REV 01';
-}
-function syncDocumentControlReferences(){
- const docControl=getDocumentControlValue();
- document.querySelectorAll('[data-document-control]').forEach(el=>{el.textContent=docControl;});
- window.__pdfDocumentControl=docControl;
 }
 
 function loadExportedFormSeed(){
@@ -2021,7 +1771,7 @@ function init(){
  const loadedExportedSeed=loadExportedFormSeed();
  if(!loadedExportedSeed){
    const saved=localStorage.getItem('eventPermitDraftV3');
-   if(saved){try{populate(JSON.parse(saved));}catch(e){}}
+   if(saved){try{populate(JSON.parse(saved));showToast('Recovered saved browser draft.')}catch(e){}}
  }
  const prop=document.querySelector('[name="propertyName"]');
  if(prop){prop.readOnly=true; prop.classList.add('readonly-property'); prop.addEventListener('input',syncPropertyNameReferences);}
@@ -2122,38 +1872,37 @@ function openPreviousStep(){
  const idx=Math.max(0,permitSteps.indexOf(activeId));
  return openTab(permitSteps[Math.max(0,idx-1)] || 'request',{scroll:true});
 }
-function prepareFormForStateRead(){syncAllDateTimeCombos(); updateOtherTaskState(); const propEl=document.querySelector('[name="propertyName"]'); if(propEl){propEl.readOnly=true;} syncPropertyNameReferences();}
-function collect(options={}){
- const includeAttachments=options.includeAttachments!==false;
- if(options.prepare!==false) prepareFormForStateRead();
- const data={meta:{reportType:'Contractors / Vendors Permit to Work - Events',savedAt:new Date().toISOString(),version:'Property corporate v11'},fields:{},requirements:[],documents:documents.map((d,i)=>({sn:i+1,name:d})),tasks:[]};
+function collect(){syncAllDateTimeCombos(); updateOtherTaskState(); const propEl=document.querySelector('[name="propertyName"]'); if(propEl){propEl.readOnly=true;} syncPropertyNameReferences(); const data={meta:{reportType:'Contractors / Vendors Permit to Work - Events',savedAt:new Date().toISOString(),version:'Property corporate v11'},fields:{},requirements:[],documents:documents.map((d,i)=>({sn:i+1,name:d})),tasks:[]};
  new FormData(document.getElementById('permitForm')).forEach((v,k)=>data.fields[k]=v);
  document.querySelectorAll('#permitForm input[type="checkbox"]').forEach(c=>data.fields[c.name]=c.checked);
  data.fields.signatureData=document.getElementById('signatureData')?.value || '';
  delete data.fields.stampData;
- delete data.fields.idFrontData;
- delete data.fields.idBackData;
  requirements.forEach((r,i)=>data.requirements.push({sn:i+1,requirement:r[0],rating:r[1],score:+(document.querySelector(`[name="score_${i}"]`)?.value||0),answer:document.querySelector(`[name="answer_${i}"]`)?.value||''}));
  tasks.forEach((t,i)=>data.tasks.push({name:t,selected:!!document.querySelector(`[name="task_${i}"]`).checked}));
- data.attachments=(permitAttachments||[]).map(a=>includeAttachments?{name:a.name,type:a.type,size:a.size,dataUrl:a.dataUrl,addedAt:a.addedAt}:{name:a.name,type:a.type,size:a.size,addedAt:a.addedAt,omittedFromBrowserDraft:true});
+ data.attachments=(Array.isArray(permitAttachments) ? permitAttachments : []).filter(a=>a && a.dataUrl).map(a=>({
+   name:a.name || 'Attachment',
+   type:a.type || 'application/octet-stream',
+   size:Number(a.size || 0),
+   dataUrl:a.dataUrl,
+   addedAt:a.addedAt || new Date().toISOString()
+ }));
  return data;
 }
-function readFormState(options={}){return collect({...options,prepare:false,includeAttachments:options.includeAttachments===true});}
-function populate(data){if(!data)return; const fields=data.fields||{}; delete fields.stampData; delete fields.idFrontData; delete fields.idBackData; Object.entries(fields).forEach(([k,v])=>{const el=document.querySelector(`[name="${CSS.escape(k)}"]`); if(!el)return; if(el.type==='checkbox')el.checked=!!v; else el.value=v;});
+function populate(data){if(!data)return; const fields=data.fields||{}; delete fields.stampData; Object.entries(fields).forEach(([k,v])=>{const el=document.querySelector(`[name="${CSS.escape(k)}"]`); if(!el)return; if(el.type==='checkbox')el.checked=!!v; else el.value=v;});
  hydrateDateTimeCombos();
  updateOtherTaskState();
  (data.requirements||[]).forEach((r,i)=>{const s=document.querySelector(`[name="score_${i}"]`), a=document.querySelector(`[name="answer_${i}"]`); if(s)s.value=r.score??0; if(a)a.value=r.answer||'';});
  if(fields.signatureData){document.getElementById('signatureData').value=fields.signatureData; drawImageToSignature(fields.signatureData)}
- if(Array.isArray(data.attachments)){
-   permitAttachments=data.attachments.filter(a=>a && a.dataUrl).map(a=>({
-     name:a.name || 'attachment',
-     type:a.type || 'application/octet-stream',
-     size:Number(a.size)||0,
-     dataUrl:a.dataUrl,
-     addedAt:a.addedAt || new Date().toISOString()
-   }));
-   renderAttachmentList();
- }
+ if(fields.idFrontData){document.getElementById('idFrontData').value=fields.idFrontData; renderIdImage(fields.idFrontData,'idFrontPreview')}
+ if(fields.idBackData){document.getElementById('idBackData').value=fields.idBackData; renderIdImage(fields.idBackData,'idBackPreview')}
+ permitAttachments=(Array.isArray(data.attachments) ? data.attachments : []).filter(a=>a && a.dataUrl).map(a=>({
+   name:a.name || 'Attachment',
+   type:a.type || 'application/octet-stream',
+   size:Number(a.size || 0),
+   dataUrl:a.dataUrl,
+   addedAt:a.addedAt || new Date().toISOString()
+ }));
+ renderAttachmentList();
  syncPropertyNameReferences();
  fillSignatureDateFromDeclaration(false);
  updateStatus();
@@ -2161,7 +1910,7 @@ function populate(data){if(!data)return; const fields=data.fields||{}; delete fi
 function calculateFormCompletion(data){
  const requiredUserFields=[
    'requestDate','applicantName','companyName','supervisor','mobile','staffCount','location','accessDateTime','exitDateTime','scope',
-   'rulesAccepted','declarationAccepted','authorizedName','signatureDate','signatureData'
+   'rulesAccepted','declarationAccepted','authorizedName','signatureDate','signatureData','idFrontData'
  ];
  const hasValue=value=>value===true || (typeof value==='string' && value.trim()!=='') || (typeof value==='number' && Number.isFinite(value));
  const completedFields=requiredUserFields.filter(name=>hasValue(data.fields[name])).length;
@@ -2173,7 +1922,7 @@ function calculateFormCompletion(data){
 }
 function updateStatus(){
  refreshSelectedStates();
- const data=readFormState();
+ const data=collect();
  const total=data.requirements.reduce((a,b)=>a+(+b.score||0),0);
  const max=getMaxSafetyScore();
  const pct=max?Math.round((total/max)*100):0;
@@ -2192,48 +1941,18 @@ function updateStatus(){
  if(scoreText) scoreText.textContent=currentLanguage==='ar'?`الدرجة الحالية ${total}/${max} (${pct}%). التوجيه المطلوب: أعلى من 60–70%.`:currentLanguage==='ur'?`موجودہ اسکور ${total}/${max} (${pct}%). مطلوبہ رہنمائی: 60–70% سے زیادہ۔`:`Current score ${total}/${max} (${pct}%). Required guidance: above 60–70%.`;
 }
 function saveDraft(){
- if(saveDraftToBrowser(true)) openBrowserDraftModal();
+ localStorage.setItem('eventPermitDraftV3',JSON.stringify(collect()));
+ openBrowserDraftModal();
 }
-function openBrowserDraftModal(){
- const modal=document.getElementById('browserDraftModal');
- const msg=modal?.querySelector('.browser-draft-message');
- if(msg){
-  msg.textContent=lastDraftSavedWithoutAttachments
-   ? 'Main permit data was saved in this browser. Attachment file contents were too large for browser draft storage, so export HTML or generate the PDF to keep attachments embedded.'
-   : 'All data entered here is processed entirely within your current browser and is never stored, transmitted, or saved to any external server or database. Nothing leaves your device.';
- }
- modal?.classList.add('show');
-}
+function openBrowserDraftModal(){document.getElementById('browserDraftModal')?.classList.add('show');}
 function closeBrowserDraftModal(){document.getElementById('browserDraftModal')?.classList.remove('show');}
 let autoSaveTimer=null;
-function autoSaveDraft(){clearTimeout(autoSaveTimer);autoSaveTimer=setTimeout(()=>saveDraftToBrowser(false),450);}
+function autoSaveDraft(){clearTimeout(autoSaveTimer);autoSaveTimer=setTimeout(()=>localStorage.setItem('eventPermitDraftV3',JSON.stringify(collect())),450);}
 function normaliseToastMessage(msg){const text=String(msg??''); return /(?:photo|attachment|signature|form).*(?:removed|cleared|deleted)|(?:removed|cleared|deleted).*(?:photo|attachment|signature|form)/i.test(text)?'Confirmed.':text;}
-function closeFeedbackModal(){document.getElementById('feedbackModal')?.classList.remove('show');}
-function openFeedbackModal(title,message){
- const modal=document.getElementById('feedbackModal');
- if(!modal) return;
- const titleEl=document.getElementById('feedbackTitle');
- const msgEl=document.getElementById('feedbackMessage');
- if(titleEl) titleEl.textContent=title || 'Notice';
- if(msgEl) msgEl.textContent=message || 'Please review this message.';
- modal.classList.add('show');
-}
-function shouldShowFeedbackModal(msg){
- const text=String(msg||'');
- if(!text || /^Confirmed\.$/i.test(text)) return false;
- if(/complete the highlighted mandatory/i.test(text)) return false;
- if(/updated|restored|exported|uploaded|added for PDF|generated successfully|saved on browser/i.test(text)) return false;
- return /failed|could not|unable|not available|larger|exceed|maximum|skipped|too large|not saved|try again/i.test(text);
-}
-function showToast(msg){
- const text=normaliseToastMessage(msg);
- if(shouldShowFeedbackModal(text)) openFeedbackModal('Notice',text);
-}
+function showToast(msg){msg=normaliseToastMessage(msg); const t=document.getElementById('toast'); const fallbackAr={'Generating corporate PDF...':'جاري تجهيز تصريح العمل...','PDF generated successfully.':'تم إنشاء تصريح العمل بنجاح.','Form cleared.':'تم مسح النموذج.','Signature cleared.':'تم مسح التوقيع.','Confirmed.':'تم التأكيد.','Signature file uploaded.':'تم رفع ملف التوقيع.','Final HTML exported with current form data and embedded attachments.':'تم تصدير ملف HTML النهائي مع بيانات النموذج والمرفقات.','Editable sections updated. Property name saved.':'تم تحديث الأقسام وحفظ اسم المنشأة.','Default content restored.':'تمت استعادة المحتوى الافتراضي.','Recovered saved browser draft.':'تم استرجاع مسودة محفوظة من المتصفح.'}; const translated=currentLanguage==='en'?msg:(getLanguageMap(currentLanguage)[msg] || (currentLanguage==='ar'?fallbackAr[msg]:null) || msg); t.textContent=translated; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2600)}
 
 
 function pad2(n){return String(n).padStart(2,'0')}
-function nativeDateFromLocal(date=new Date()){return `${date.getFullYear()}-${pad2(date.getMonth()+1)}-${pad2(date.getDate())}`}
-function nativeDateTimeFromLocal(date=new Date()){return `${nativeDateFromLocal(date)}T${pad2(date.getHours())}:${pad2(date.getMinutes())}`}
 function monthShort(m){return ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][m]}
 function formatDateObj(d){return `${pad2(d.getDate())}/${monthShort(d.getMonth())}/${d.getFullYear()}`}
 function fillSignatureDateFromDeclaration(force=false){
@@ -2301,13 +2020,13 @@ function openDatePicker(el,mode){
  document.getElementById('pickerTitle').textContent=mode==='datetime'?'Select Date & Time':'Select Date';
  document.getElementById('pickerHint').textContent=mode==='datetime'?'Selected value will be displayed as dd/mmm/yyyy hh:mm AM/PM.':'Selected value will be displayed as dd/mmm/yyyy.';
  input.type=mode==='datetime'?'datetime-local':'date';
- input.value=toNativeValueFromDisplay(el.value,mode) || (mode==='datetime'?nativeDateTimeFromLocal():nativeDateFromLocal());
+ input.value=toNativeValueFromDisplay(el.value,mode) || (mode==='datetime'?new Date().toISOString().slice(0,16):new Date().toISOString().slice(0,10));
  modal.classList.add('show'); setTimeout(()=>{input.focus(); if(input.showPicker) input.showPicker();},120);
 }
 function openNativeDateOnlyPicker(el){
  const native=document.createElement('input');
  native.type='date';
- native.value=toNativeValueFromDisplay(el.value,'date') || nativeDateFromLocal();
+ native.value=toNativeValueFromDisplay(el.value,'date') || new Date().toISOString().slice(0,10);
  native.setAttribute('aria-label','Select date');
  native.style.cssText='position:fixed;left:50%;top:50%;width:2px;height:2px;opacity:.01;z-index:999999;background:#fff;border:0;padding:0;margin:0;';
  document.body.appendChild(native);
@@ -2390,6 +2109,8 @@ function validateBeforePDF(){
  if(!dec?.checked){missing.push('Agree Declaration'); markMissing(dec)}
  const sigData=document.getElementById('signatureData')?.value || '';
  if(!sigData){missing.push('Authorised Signature'); markMissingBlock('.signature-frame')}
+ const idFrontData=document.getElementById('idFrontData')?.value || '';
+ if(!idFrontData){missing.push('Authorised Signature ID - Front Side'); markMissingBlock('#idFrontCard')}
  if(missing.length){
    openValidationModal(missing);
    const first=document.querySelector('.required-missing input:not([type="hidden"]),.required-missing textarea,.required-missing select,.required-missing canvas,.required-missing .id-frame,.check-grid.required-missing');
@@ -2402,7 +2123,7 @@ function validateBeforePDF(){
 function esc(v){return String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
 function openClearModal(){document.getElementById('clearModal').classList.add('show')}
 function closeClearModal(){document.getElementById('clearModal').classList.remove('show')}
-function resetFormConfirmed(){closeClearModal(); document.getElementById('permitForm').reset(); localStorage.removeItem('eventPermitDraftV3'); permitAttachments=[]; clearSignature(false); renderAttachmentList(); setDefaultDates(); syncPropertyNameReferences(); updateStatus(); openTab('request'); showToast('Confirmed.');}
+function resetFormConfirmed(){closeClearModal(); document.getElementById('permitForm').reset(); localStorage.removeItem('eventPermitDraftV3'); permitAttachments=[]; clearSignature(false); removeIdImage('idFrontData','idFrontPreview'); removeIdImage('idBackData','idBackPreview'); renderAttachmentList(); setDefaultDates(); syncPropertyNameReferences(); updateStatus(); openTab('request'); showToast('Confirmed.');}
 function setDefaultDates(){hydrateDateTimeCombos(); updateOtherTaskState(); /* Keep empty by default so completion starts at 0% until the user enters data. */}
 
 function setupSignatureCanvas(){
@@ -2449,76 +2170,593 @@ function loadSignatureFile(event){
  };
  reader.readAsDataURL(file);
 }
+let idCropState={hiddenId:null,previewId:null,fileInput:null,src:'',rotation:0,imgNaturalWidth:0,imgNaturalHeight:0,drag:null,applying:false};
+function triggerIdUpload(inputId){
+ const input=document.getElementById(inputId);
+ if(!input){ if(typeof showToast==='function') showToast('ID upload control is not ready.'); return; }
+ input.click();
+}
+function setupIdCropToolEvents(){
+ const box=document.getElementById('idCropBox');
+ const stage=document.getElementById('idCropStage');
+ if(!box || !stage || box.dataset.cropEventsReady==='true') return;
+ box.dataset.cropEventsReady='true';
+ const start=function(ev){ startCropPointer(ev); };
+ const move=function(ev){ moveCropPointer(ev); };
+ const end=function(ev){ endCropPointer(ev); };
+ box.addEventListener('pointerdown',start,{passive:false});
+ window.addEventListener('pointermove',move,{passive:false});
+ window.addEventListener('pointerup',end,{passive:false});
+ window.addEventListener('pointercancel',end,{passive:false});
+ window.addEventListener('resize',function(){ if(document.getElementById('idCropModal')?.classList.contains('show')) resetIdCropBox(); });
+}
+
+async function loadIdImage(e,hiddenId,previewId){
+ const file=e.target.files[0]; if(!file)return;
+ const reader=new FileReader();
+ reader.onload=()=>openIdCropTool(reader.result,hiddenId,previewId,e.target);
+ reader.readAsDataURL(file);
+}
+function openIdCropTool(src,hiddenId,previewId,fileInput){
+ setupIdCropToolEvents();
+ idCropState={hiddenId,previewId,fileInput,src,rotation:0,imgNaturalWidth:0,imgNaturalHeight:0,drag:null,applying:false};
+ const modal=document.getElementById('idCropModal');
+ const img=document.getElementById('idCropImage');
+ const box=document.getElementById('idCropBox');
+ if(box){box.style.display='block';}
+ if(!modal || !img){showToast('ID crop tool is not ready.'); return;}
+ img.onload=()=>{
+   idCropState.imgNaturalWidth=img.naturalWidth;
+   idCropState.imgNaturalHeight=img.naturalHeight;
+   requestAnimationFrame(()=>requestAnimationFrame(resetIdCropBox));
+ };
+ img.onerror=()=>showToast('Unable to read this image. Please try another photo.');
+ img.src=src;
+ modal.classList.add('show');
+ setTimeout(()=>{if(document.getElementById('idCropModal')?.classList.contains('show')) resetIdCropBox();},180);
+ showToast('Move or resize the crop frame around the ID card, then apply.');
+}
+function getDisplayedCropImageRect(){
+ const img=document.getElementById('idCropImage');
+ const stage=document.getElementById('idCropStage');
+ if(!img||!stage)return null;
+ const ir=img.getBoundingClientRect();
+ const sr=stage.getBoundingClientRect();
+ if(!ir.width || !ir.height) return null;
+ return {left:ir.left-sr.left,top:ir.top-sr.top,width:ir.width,height:ir.height};
+}
+function setCropBoxRect(rect){
+ const box=document.getElementById('idCropBox'); if(!box)return;
+ const safe=clampCropRect({...rect});
+ box.style.left=safe.left+'px'; box.style.top=safe.top+'px'; box.style.width=safe.width+'px'; box.style.height=safe.height+'px';
+}
+function getCropBoxRect(){
+ const box=document.getElementById('idCropBox');
+ return {left:parseFloat(box?.style.left)||0,top:parseFloat(box?.style.top)||0,width:parseFloat(box?.style.width)||0,height:parseFloat(box?.style.height)||0};
+}
+function resetIdCropBox(){
+ const r=getDisplayedCropImageRect(); if(!r)return;
+ const target=1.586;
+ let w=r.width*.82, h=w/target;
+ if(h>r.height*.82){h=r.height*.82; w=h*target;}
+ setCropBoxRect({left:r.left+(r.width-w)/2,top:r.top+(r.height-h)/2,width:w,height:h});
+}
+function clampCropRect(rect){
+ const r=getDisplayedCropImageRect(); if(!r)return rect;
+ const target=1.586;
+ const minW=Math.max(70,Math.min(150,r.width*.35));
+ const maxW=r.width;
+ rect.width=Math.max(minW,Math.min(rect.width,maxW));
+ rect.height=rect.width/target;
+ if(rect.height>r.height){rect.height=r.height; rect.width=rect.height*target;}
+ rect.left=Math.max(r.left,Math.min(rect.left,r.left+r.width-rect.width));
+ rect.top=Math.max(r.top,Math.min(rect.top,r.top+r.height-rect.height));
+ return rect;
+}
+function pointerPosInStage(ev){
+ const stage=document.getElementById('idCropStage'); const sr=stage.getBoundingClientRect();
+ const p=(ev.touches&&ev.touches[0])||(ev.changedTouches&&ev.changedTouches[0])||ev;
+ return {x:p.clientX-sr.left,y:p.clientY-sr.top};
+}
+function startCropPointer(ev){
+ const box=document.getElementById('idCropBox');
+ const inside=ev.target?.closest?.('#idCropBox');
+ if(!box || !inside || idCropState.applying)return;
+ ev.preventDefault?.();
+ ev.stopPropagation?.();
+ const p=pointerPosInStage(ev);
+ const handle=ev.target?.dataset?.handle || ev.target?.closest?.('.crop-handle')?.dataset?.handle || 'move';
+ idCropState.drag={mode:handle,start:p,rect:getCropBoxRect(),pointerId:ev.pointerId};
+ try{if(ev.pointerId!==undefined && box.setPointerCapture) box.setPointerCapture(ev.pointerId);}catch(_){}
+}
+function moveCropPointer(ev){
+ if(!idCropState.drag || idCropState.applying)return;
+ ev.preventDefault?.();
+ const targetRatio=1.586;
+ const p=pointerPosInStage(ev);
+ const dx=p.x-idCropState.drag.start.x;
+ const base=idCropState.drag.rect;
+ let rect={...base};
+ if(idCropState.drag.mode==='move'){
+   const dy=p.y-idCropState.drag.start.y;
+   rect.left=base.left+dx;
+   rect.top=base.top+dy;
+ }else{
+   let newW=base.width;
+   if(idCropState.drag.mode.includes('e')) newW=base.width+dx;
+   if(idCropState.drag.mode.includes('w')) newW=base.width-dx;
+   let newH=newW/targetRatio;
+   if(idCropState.drag.mode.includes('w')) rect.left=base.left+(base.width-newW);
+   if(idCropState.drag.mode.includes('n')) rect.top=base.top+(base.height-newH);
+   rect.width=newW;
+   rect.height=newH;
+ }
+ setCropBoxRect(rect);
+}
+function endCropPointer(ev){
+ const box=document.getElementById('idCropBox');
+ try{if(ev?.pointerId!==undefined && box?.releasePointerCapture) box.releasePointerCapture(ev.pointerId);}catch(_){}
+ idCropState.drag=null;
+}
+function closeIdCropModal(){document.getElementById('idCropModal')?.classList.remove('show');}
+function cancelIdCrop(){
+ if(idCropState.fileInput) idCropState.fileInput.value='';
+ closeIdCropModal();
+ showToast('ID crop cancelled.');
+}
+function rotateIdCropImage(){
+ const img=document.getElementById('idCropImage'); if(!img||!idCropState.src)return;
+ const source=new Image();
+ source.onload=()=>{
+   const c=document.createElement('canvas');
+   c.width=source.height; c.height=source.width;
+   const ctx=c.getContext('2d');
+   ctx.translate(c.width/2,c.height/2); ctx.rotate(Math.PI/2); ctx.drawImage(source,-source.width/2,-source.height/2);
+   idCropState.src=c.toDataURL('image/jpeg',0.95);
+   img.onload=()=>requestAnimationFrame(resetIdCropBox);
+   img.src=idCropState.src;
+ };
+ source.src=idCropState.src;
+}
+async function applyIdCrop(ev){
+ if(ev){ev.preventDefault?.();ev.stopPropagation?.();}
+ if(idCropState.applying) return;
+ idCropState.applying=true;
+ const applyBtn=document.getElementById('applyIdCropBtn');
+ if(applyBtn){applyBtn.disabled=true;applyBtn.textContent='Applying...';}
+ try{
+   const display=getDisplayedCropImageRect(); const box=getCropBoxRect();
+   if(!display||!idCropState.hiddenId||!idCropState.src) throw new Error('Crop image is not ready. Please select the ID image again.');
+   const source=await loadImage(idCropState.src);
+   const sourceW=source.naturalWidth||source.width;
+   const sourceH=source.naturalHeight||source.height;
+   const sx=clamp((box.left-display.left)/display.width*sourceW,0,sourceW-1);
+   const sy=clamp((box.top-display.top)/display.height*sourceH,0,sourceH-1);
+   const sw=clamp(box.width/display.width*sourceW,1,sourceW-sx);
+   const sh=clamp(box.height/display.height*sourceH,1,sourceH-sy);
+   const outW=Math.min(1200,Math.max(700,Math.round(sw)));
+   const outH=Math.max(320,Math.round(outW*(sh/sw)));
+   const canvas=document.createElement('canvas'); canvas.width=outW; canvas.height=outH;
+   const ctx=canvas.getContext('2d',{willReadFrequently:false});
+   ctx.fillStyle='#fff'; ctx.fillRect(0,0,outW,outH);
+   const marginX=Math.round(outW*0.05);
+   const marginY=Math.round(outH*0.05);
+   ctx.drawImage(source,sx,sy,sw,sh,marginX,marginY,outW-(marginX*2),outH-(marginY*2));
+   const cropped=canvas.toDataURL('image/jpeg',0.92);
+   document.getElementById(idCropState.hiddenId).value=cropped;
+   renderIdImage(cropped,idCropState.previewId);
+   if(idCropState.fileInput) idCropState.fileInput.value='';
+   closeIdCropModal();
+   updateStatus(); autoSaveDraft();
+   showToast('ID image cropped and loaded.');
+ }catch(err){
+   console.error('ID crop failed:',err);
+   showToast(err?.message || 'Unable to apply crop. Please try another photo.');
+ }finally{
+   idCropState.applying=false;
+   if(applyBtn){applyBtn.disabled=false;applyBtn.textContent='Apply Crop';}
+ }
+}
+function loadImage(src){return new Promise((resolve,reject)=>{const img=new Image();img.onload=()=>resolve(img);img.onerror=reject;img.src=src;});}
+function clamp(v,min,max){return Math.max(min,Math.min(max,v));}
+async function autoCropIdCard(dataUrl){
+ try{
+   const img=await loadImage(dataUrl);
+   const maxSide=1200;
+   const scale=Math.min(1,maxSide/Math.max(img.width,img.height));
+   const w=Math.round(img.width*scale), h=Math.round(img.height*scale);
+   const c=document.createElement('canvas'); c.width=w; c.height=h;
+   const ctx=c.getContext('2d',{willReadFrequently:true}); ctx.drawImage(img,0,0,w,h);
+   const im=ctx.getImageData(0,0,w,h); const d=im.data;
+   const sample=(x,y)=>{const i=(y*w+x)*4; return [d[i],d[i+1],d[i+2]]};
+   const corners=[]; const m=Math.max(8,Math.floor(Math.min(w,h)*.06));
+   for(let y=0;y<m;y+=3){for(let x=0;x<m;x+=3){corners.push(sample(x,y),sample(w-1-x,y),sample(x,h-1-y),sample(w-1-x,h-1-y));}}
+   const bg=[0,1,2].map(k=>corners.reduce((a,b)=>a+b[k],0)/corners.length);
+   let xs=[], ys=[];
+   const step=Math.max(2,Math.floor(Math.min(w,h)/420));
+   for(let y=0;y<h;y+=step){
+     for(let x=0;x<w;x+=step){
+       const i=(y*w+x)*4; const r=d[i],g=d[i+1],b=d[i+2];
+       const dist=Math.hypot(r-bg[0],g-bg[1],b-bg[2]);
+       const sat=Math.max(r,g,b)-Math.min(r,g,b);
+       if(dist>34 || sat>42){xs.push(x); ys.push(y);}
+     }
+   }
+   if(xs.length<80) return centerIdCrop(img);
+   xs.sort((a,b)=>a-b); ys.sort((a,b)=>a-b);
+   let x1=xs[Math.floor(xs.length*.04)], x2=xs[Math.floor(xs.length*.96)], y1=ys[Math.floor(ys.length*.04)], y2=ys[Math.floor(ys.length*.96)];
+   const pad=Math.round(Math.min(w,h)*.025); x1=clamp(x1-pad,0,w-1); x2=clamp(x2+pad,1,w); y1=clamp(y1-pad,0,h-1); y2=clamp(y2+pad,1,h);
+   // Force standard ID-card ratio while keeping the detected center. This removes table/hand/background around the ID.
+   const target=1.586; let bw=x2-x1, bh=y2-y1; const cx=(x1+x2)/2, cy=(y1+y2)/2;
+   if(bw/bh>target){ bw=bh*target; } else { bh=bw/target; }
+   x1=clamp(Math.round(cx-bw/2),0,w-1); y1=clamp(Math.round(cy-bh/2),0,h-1); x2=clamp(Math.round(x1+bw),1,w); y2=clamp(Math.round(y1+bh),1,h);
+   const outW=1000, outH=Math.round(outW/target); const out=document.createElement('canvas'); out.width=outW; out.height=outH;
+   const o=out.getContext('2d'); o.fillStyle='#fff'; o.fillRect(0,0,outW,outH);
+   const marginX=Math.round(outW*0.05), marginY=Math.round(outH*0.05);
+   o.drawImage(c,x1,y1,x2-x1,y2-y1,marginX,marginY,outW-(marginX*2),outH-(marginY*2));
+   return out.toDataURL('image/jpeg',0.94);
+ }catch(err){console.warn(err); return dataUrl;}
+}
+function centerIdCrop(img){
+ const target=1.586; let sw=img.width, sh=img.height;
+ if(sw/sh>target) sw=sh*target; else sh=sw/target;
+ const sx=(img.width-sw)/2, sy=(img.height-sh)/2;
+ const outW=1000,outH=Math.round(outW/target); const c=document.createElement('canvas'); c.width=outW;c.height=outH;
+ const ctx=c.getContext('2d'); ctx.fillStyle='#fff';ctx.fillRect(0,0,outW,outH);
+ const marginX=Math.round(outW*0.05), marginY=Math.round(outH*0.05);
+ ctx.drawImage(img,sx,sy,sw,sh,marginX,marginY,outW-(marginX*2),outH-(marginY*2));
+ return c.toDataURL('image/jpeg',0.94);
+}
+function renderIdImage(src,previewId){
+ const box=document.getElementById(previewId);
+ if(!box)return;
+ const label=previewId==='idFrontPreview'?'Upload ID front side':'Upload ID back side';
+ if(src){
+   box.classList.add('has-id-image');
+   box.innerHTML=`<div class="id-preview-bg" role="img" aria-label="${label}" style="background-image:url('${src}')"></div>`;
+   box.closest('.id-upload-card')?.classList.remove('required-missing');
+ }else{
+   box.classList.remove('has-id-image');
+   box.innerHTML=label;
+ }
+}
+function removeIdImage(dataId,previewId){const el=document.getElementById(dataId); if(el) el.value=''; const file=document.getElementById(dataId==='idFrontData'?'idFrontFile':'idBackFile'); if(file) file.value=''; renderIdImage('',previewId); updateStatus();}
+
+
+/* ===== ID UPLOAD CROP RELIABILITY PATCH - ONLY ID FRONT/BACK CROP HANDLING =====
+   Fixes: repeated upload selection, crop modal timing, mobile pointer drag/resize,
+   accurate crop mapping from visible image to the original image, and stable preview. */
+idCropState={hiddenId:null,previewId:null,fileInput:null,src:'',drag:null,applying:false};
+
+function triggerIdUpload(inputId){
+  const input=document.getElementById(inputId);
+  if(!input){ if(typeof showToast==='function') showToast('ID upload control is not ready.'); return; }
+  input.value='';
+  input.click();
+}
+
+function loadIdImage(e,hiddenId,previewId){
+  const file=e?.target?.files?.[0];
+  if(!file) return;
+  if(!/^image\//i.test(file.type||'')){
+    if(typeof showToast==='function') showToast('Please upload an image file for the ID.');
+    e.target.value='';
+    return;
+  }
+  const reader=new FileReader();
+  reader.onload=()=>openIdCropTool(String(reader.result||''),hiddenId,previewId,e.target);
+  reader.onerror=()=>{ if(typeof showToast==='function') showToast('Unable to read this ID image. Please try again.'); };
+  reader.readAsDataURL(file);
+}
+
+function setupIdCropToolEvents(){
+  const box=document.getElementById('idCropBox');
+  const stage=document.getElementById('idCropStage');
+  if(!box || !stage || box.dataset.cropEventsReady==='true') return;
+  box.dataset.cropEventsReady='true';
+
+  const start=(ev)=>startCropPointer(ev);
+  const move=(ev)=>moveCropPointer(ev);
+  const end=(ev)=>endCropPointer(ev);
+
+  box.addEventListener('pointerdown',start,{passive:false});
+  window.addEventListener('pointermove',move,{passive:false});
+  window.addEventListener('pointerup',end,{passive:false});
+  window.addEventListener('pointercancel',end,{passive:false});
+
+  // Fallback for older mobile browsers that do not fully support pointer capture.
+  box.addEventListener('touchstart',start,{passive:false});
+  window.addEventListener('touchmove',move,{passive:false});
+  window.addEventListener('touchend',end,{passive:false});
+  box.addEventListener('mousedown',start,{passive:false});
+  window.addEventListener('mousemove',move,{passive:false});
+  window.addEventListener('mouseup',end,{passive:false});
+
+  window.addEventListener('resize',()=>{
+    if(document.getElementById('idCropModal')?.classList.contains('show')) resetIdCropBox();
+  });
+}
+
+function openIdCropTool(src,hiddenId,previewId,fileInput){
+  setupIdCropToolEvents();
+  const modal=document.getElementById('idCropModal');
+  const img=document.getElementById('idCropImage');
+  const box=document.getElementById('idCropBox');
+  if(!modal || !img || !box){ if(typeof showToast==='function') showToast('ID crop tool is not ready.'); return; }
+
+  idCropState={hiddenId,previewId,fileInput,src,drag:null,applying:false};
+  box.style.display='block';
+  box.style.left='0px';
+  box.style.top='0px';
+  box.style.width='0px';
+  box.style.height='0px';
+
+  img.onload=()=>{
+    modal.classList.add('show');
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      fitCropImageToStage();
+      resetIdCropBox();
+    }));
+  };
+  img.onerror=()=>{
+    if(fileInput) fileInput.value='';
+    if(typeof showToast==='function') showToast('Unable to read this ID image. Please try another photo.');
+  };
+  img.removeAttribute('style');
+  img.src=src;
+}
+
+function closeIdCropModal(){
+  document.getElementById('idCropModal')?.classList.remove('show');
+  endCropPointer();
+}
+
+function cancelIdCrop(){
+  if(idCropState.fileInput) idCropState.fileInput.value='';
+  closeIdCropModal();
+  if(typeof showToast==='function') showToast('ID crop cancelled.');
+}
+
+function fitCropImageToStage(){
+  const img=document.getElementById('idCropImage');
+  const stage=document.getElementById('idCropStage');
+  if(!img || !stage || !img.naturalWidth || !img.naturalHeight) return null;
+  const sr=stage.getBoundingClientRect();
+  if(!sr.width || !sr.height) return null;
+  const scale=Math.min(sr.width/img.naturalWidth, sr.height/img.naturalHeight);
+  const w=Math.max(1,img.naturalWidth*scale);
+  const h=Math.max(1,img.naturalHeight*scale);
+  const left=(sr.width-w)/2;
+  const top=(sr.height-h)/2;
+  img.style.position='absolute';
+  img.style.left=left+'px';
+  img.style.top=top+'px';
+  img.style.width=w+'px';
+  img.style.height=h+'px';
+  img.style.maxWidth='none';
+  img.style.maxHeight='none';
+  img.style.objectFit='fill';
+  return {left,top,width:w,height:h};
+}
+
+function getDisplayedCropImageRect(){
+  return fitCropImageToStage();
+}
+
+function setCropBoxRect(rect){
+  const box=document.getElementById('idCropBox');
+  if(!box) return;
+  const safe=clampCropRect({...rect});
+  box.style.left=safe.left+'px';
+  box.style.top=safe.top+'px';
+  box.style.width=safe.width+'px';
+  box.style.height=safe.height+'px';
+}
+
+function getCropBoxRect(){
+  const box=document.getElementById('idCropBox');
+  return {
+    left:parseFloat(box?.style.left)||0,
+    top:parseFloat(box?.style.top)||0,
+    width:parseFloat(box?.style.width)||0,
+    height:parseFloat(box?.style.height)||0
+  };
+}
+
+function resetIdCropBox(){
+  const r=getDisplayedCropImageRect();
+  if(!r) return;
+  const target=1.586; // standard ID-card ratio
+  let w=r.width*.86;
+  let h=w/target;
+  if(h>r.height*.86){ h=r.height*.86; w=h*target; }
+  setCropBoxRect({left:r.left+(r.width-w)/2, top:r.top+(r.height-h)/2, width:w, height:h});
+}
+
+function clampCropRect(rect){
+  const r=getDisplayedCropImageRect();
+  if(!r) return rect;
+  const target=1.586;
+  const minW=Math.max(90,Math.min(180,r.width*.28));
+  rect.width=Math.max(minW,Math.min(rect.width,r.width));
+  rect.height=rect.width/target;
+  if(rect.height>r.height){ rect.height=r.height; rect.width=rect.height*target; }
+  rect.left=Math.max(r.left,Math.min(rect.left,r.left+r.width-rect.width));
+  rect.top=Math.max(r.top,Math.min(rect.top,r.top+r.height-rect.height));
+  return rect;
+}
+
+function pointerPosInStage(ev){
+  const stage=document.getElementById('idCropStage');
+  const sr=stage.getBoundingClientRect();
+  const p=(ev?.touches&&ev.touches[0])||(ev?.changedTouches&&ev.changedTouches[0])||ev;
+  return {x:(p?.clientX||0)-sr.left,y:(p?.clientY||0)-sr.top};
+}
+
+function startCropPointer(ev){
+  const box=document.getElementById('idCropBox');
+  const inside=ev?.target?.closest?.('#idCropBox');
+  if(!box || !inside || idCropState.applying) return;
+  ev.preventDefault?.();
+  ev.stopPropagation?.();
+  const p=pointerPosInStage(ev);
+  const handle=ev?.target?.dataset?.handle || ev?.target?.closest?.('.crop-handle')?.dataset?.handle || 'move';
+  idCropState.drag={mode:handle,start:p,rect:getCropBoxRect(),pointerId:ev?.pointerId};
+  try{ if(ev?.pointerId!==undefined && box.setPointerCapture) box.setPointerCapture(ev.pointerId); }catch(_){ }
+}
+
+function moveCropPointer(ev){
+  if(!idCropState.drag || idCropState.applying) return;
+  ev.preventDefault?.();
+  const target=1.586;
+  const p=pointerPosInStage(ev);
+  const dx=p.x-idCropState.drag.start.x;
+  const dy=p.y-idCropState.drag.start.y;
+  const base=idCropState.drag.rect;
+  const rect={...base};
+
+  if(idCropState.drag.mode==='move'){
+    rect.left=base.left+dx;
+    rect.top=base.top+dy;
+  }else{
+    let newW=base.width;
+    if(idCropState.drag.mode.includes('e')) newW=base.width+dx;
+    if(idCropState.drag.mode.includes('w')) newW=base.width-dx;
+    const newH=newW/target;
+    if(idCropState.drag.mode.includes('w')) rect.left=base.left+(base.width-newW);
+    if(idCropState.drag.mode.includes('n')) rect.top=base.top+(base.height-newH);
+    rect.width=newW;
+    rect.height=newH;
+  }
+  setCropBoxRect(rect);
+}
+
+function endCropPointer(ev){
+  const box=document.getElementById('idCropBox');
+  try{ if(ev?.pointerId!==undefined && box?.releasePointerCapture) box.releasePointerCapture(ev.pointerId); }catch(_){ }
+  idCropState.drag=null;
+}
+
+function rotateIdCropImage(){
+  const img=document.getElementById('idCropImage');
+  if(!img || !idCropState.src) return;
+  const source=new Image();
+  source.onload=()=>{
+    const c=document.createElement('canvas');
+    c.width=source.height;
+    c.height=source.width;
+    const ctx=c.getContext('2d');
+    ctx.fillStyle='#fff'; ctx.fillRect(0,0,c.width,c.height);
+    ctx.translate(c.width/2,c.height/2);
+    ctx.rotate(Math.PI/2);
+    ctx.drawImage(source,-source.width/2,-source.height/2);
+    idCropState.src=c.toDataURL('image/jpeg',0.95);
+    img.onload=()=>requestAnimationFrame(()=>requestAnimationFrame(()=>{fitCropImageToStage();resetIdCropBox();}));
+    img.src=idCropState.src;
+  };
+  source.src=idCropState.src;
+}
+
+async function applyIdCrop(ev){
+  ev?.preventDefault?.();
+  ev?.stopPropagation?.();
+  if(idCropState.applying) return;
+  idCropState.applying=true;
+  const applyBtn=document.getElementById('applyIdCropBtn');
+  if(applyBtn){ applyBtn.disabled=true; applyBtn.textContent='Applying...'; }
+  try{
+    const display=getDisplayedCropImageRect();
+    const box=getCropBoxRect();
+    if(!display || !idCropState.hiddenId || !idCropState.previewId || !idCropState.src){
+      throw new Error('Crop image is not ready. Please select the ID image again.');
+    }
+    const source=await loadImage(idCropState.src);
+    const sourceW=source.naturalWidth||source.width;
+    const sourceH=source.naturalHeight||source.height;
+    const sx=clamp((box.left-display.left)/display.width*sourceW,0,sourceW-1);
+    const sy=clamp((box.top-display.top)/display.height*sourceH,0,sourceH-1);
+    const sw=clamp(box.width/display.width*sourceW,1,sourceW-sx);
+    const sh=clamp(box.height/display.height*sourceH,1,sourceH-sy);
+    const outW=1100;
+    const outH=Math.round(outW*(sh/sw));
+    const canvas=document.createElement('canvas');
+    canvas.width=outW;
+    canvas.height=outH;
+    const ctx=canvas.getContext('2d',{willReadFrequently:false});
+    ctx.fillStyle='#ffffff';
+    ctx.fillRect(0,0,outW,outH);
+    ctx.imageSmoothingEnabled=true;
+    ctx.imageSmoothingQuality='high';
+    ctx.drawImage(source,sx,sy,sw,sh,0,0,outW,outH);
+    const cropped=canvas.toDataURL('image/jpeg',0.93);
+    const hidden=document.getElementById(idCropState.hiddenId);
+    if(hidden) hidden.value=cropped;
+    renderIdImage(cropped,idCropState.previewId);
+    if(idCropState.fileInput) idCropState.fileInput.value='';
+    closeIdCropModal();
+    updateStatus?.();
+    autoSaveDraft?.();
+    if(typeof showToast==='function') showToast('ID image cropped and loaded.');
+  }catch(err){
+    console.error('ID crop failed:',err);
+    if(typeof showToast==='function') showToast(err?.message || 'Unable to apply crop. Please try another photo.');
+  }finally{
+    idCropState.applying=false;
+    if(applyBtn){ applyBtn.disabled=false; applyBtn.textContent='Apply Crop'; }
+  }
+}
+
+function loadImage(src){
+  return new Promise((resolve,reject)=>{
+    const img=new Image();
+    img.onload=()=>resolve(img);
+    img.onerror=reject;
+    img.src=src;
+  });
+}
+
+function clamp(v,min,max){ return Math.max(min,Math.min(max,v)); }
+
+function renderIdImage(src,previewId){
+  const box=document.getElementById(previewId);
+  if(!box) return;
+  const label=previewId==='idFrontPreview'?'Upload ID front side':'Upload ID back side';
+  if(src){
+    box.classList.add('has-id-image');
+    box.innerHTML=`<div class="id-preview-bg" role="img" aria-label="${label}" style="background-image:url('${src}')"></div>`;
+    box.closest('.id-upload-card')?.classList.remove('required-missing');
+  }else{
+    box.classList.remove('has-id-image');
+    box.innerHTML=label;
+  }
+}
+
+function removeIdImage(dataId,previewId){
+  const el=document.getElementById(dataId); if(el) el.value='';
+  const file=document.getElementById(dataId==='idFrontData'?'idFrontFile':'idBackFile'); if(file) file.value='';
+  renderIdImage('',previewId);
+  updateStatus?.();
+  autoSaveDraft?.();
+}
+
+
 function triggerAttachmentUpload(){document.getElementById('attachmentFiles')?.click();}
 function formatFileSize(bytes){bytes=Number(bytes||0); if(bytes<1024)return bytes+' B'; if(bytes<1024*1024)return (bytes/1024).toFixed(1)+' KB'; return (bytes/1024/1024).toFixed(2)+' MB';}
-function getAttachmentTotalBytes(list=permitAttachments){return (list||[]).reduce((sum,a)=>sum+(Number(a?.size)||0),0);}
-function getTextBytes(value){return new Blob([String(value??'')]).size;}
-function validateAttachmentFiles(files){
- const accepted=[], rejected=[];
- let total=getAttachmentTotalBytes();
- let count=permitAttachments.length;
- files.forEach(file=>{
-  if(count>=ATTACHMENT_LIMITS.maxFiles){rejected.push(`${file.name} - maximum ${ATTACHMENT_LIMITS.maxFiles} files allowed`);return;}
-  if((file.size||0)>ATTACHMENT_LIMITS.maxFileBytes){rejected.push(`${file.name} - file is larger than ${formatFileSize(ATTACHMENT_LIMITS.maxFileBytes)}`);return;}
-  if(total+(file.size||0)>ATTACHMENT_LIMITS.maxTotalBytes){rejected.push(`${file.name} - total attachments would exceed ${formatFileSize(ATTACHMENT_LIMITS.maxTotalBytes)}`);return;}
-  accepted.push(file);
-  total+=file.size||0;
-  count++;
- });
- return {accepted,rejected};
-}
-function buildBrowserDraftPayload(){
- let json='';
- if(getAttachmentTotalBytes()<=ATTACHMENT_LIMITS.maxDraftBytes*.65){
-  const full=collect({includeAttachments:true});
-  json=JSON.stringify(full);
-  if(getTextBytes(json)<=ATTACHMENT_LIMITS.maxDraftBytes){
-   return {json,attachmentsStored:true};
-  }
- }
- const light=collect({includeAttachments:false});
- light.meta.attachmentsStoredInBrowserDraft=false;
- light.meta.attachmentDraftNote='Attachment file contents were not stored in the browser draft because the draft is too large. Export HTML or generate the PDF to keep attachments embedded.';
- json=JSON.stringify(light);
- return {json,attachmentsStored:false};
-}
-function saveDraftToBrowser(showWarning=false){
- try{
-  const result=buildBrowserDraftPayload();
-  localStorage.setItem('eventPermitDraftV3',result.json);
-  lastDraftSavedWithoutAttachments=!result.attachmentsStored;
-  if(showWarning && !result.attachmentsStored){
-   showToast('Draft saved without attachment files because they are too large. Export HTML or generate the PDF to keep attachments embedded.');
-  }
-  return true;
- }catch(err){
-  console.warn('Browser draft could not be saved',err);
-  lastDraftSavedWithoutAttachments=true;
-  if(showWarning) showToast('Browser draft could not be saved. Export HTML or generate the PDF to keep your work.');
-  return false;
- }
-}
 function loadPermitAttachments(event){
  const files=[...(event?.target?.files||[])];
  if(!files.length) return;
- const {accepted,rejected}=validateAttachmentFiles(files);
- if(!accepted.length){
-   showToast(rejected[0] || 'Attachment was not added.');
-   if(event?.target) event.target.value='';
-   return;
- }
  let loaded=0;
- accepted.forEach(file=>{
+ files.forEach(file=>{
    const reader=new FileReader();
    reader.onload=()=>{
      permitAttachments.push({name:file.name,type:file.type||'application/octet-stream',size:file.size||0,dataUrl:reader.result,addedAt:new Date().toISOString()});
      loaded++;
-     if(loaded===accepted.length){renderAttachmentList(); updateStatus(); autoSaveDraft(); showToast(`${accepted.length} attachment${accepted.length>1?'s':''} added for PDF report.${rejected.length?` ${rejected.length} skipped due to size/count limits.`:''}`);}
+     if(loaded===files.length){renderAttachmentList(); updateStatus(); autoSaveDraft(); showToast(`${files.length} attachment${files.length>1?'s':''} added for PDF report.`);}
    };
-   reader.onerror=()=>{loaded++; if(loaded===accepted.length){renderAttachmentList(); updateStatus(); if(rejected.length)showToast(`${rejected.length} attachment${rejected.length>1?'s':''} skipped due to size/count limits.`);}};
+   reader.onerror=()=>{loaded++; if(loaded===files.length){renderAttachmentList(); updateStatus();}};
    reader.readAsDataURL(file);
  });
- if(event?.target) event.target.value='';
+ event.target.value='';
 }
 function removePermitAttachment(index){
  permitAttachments.splice(index,1);
@@ -2690,7 +2928,12 @@ function loadExternalScript(src){
 }
 async function ensurePdfJs(){
  if(window.pdfjsLib) return window.pdfjsLib;
- throw new Error('PDF visual rendering is offline-only in this form. The original PDF file will still be embedded in the report.');
+ await loadExternalScript('https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js');
+ if(window.pdfjsLib){
+   window.pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+   return window.pdfjsLib;
+ }
+ throw new Error('PDF renderer could not be loaded.');
 }
 async function renderPdfAttachmentToImages(dataUrl){
  const pdfjs=await ensurePdfJs();
@@ -2710,28 +2953,32 @@ async function renderPdfAttachmentToImages(dataUrl){
    await page.render({canvasContext:ctx,viewport}).promise;
    const jpg=canvas.toDataURL('image/jpeg',0.92);
    images.push(await dataUrlToImageInfo(jpg,1350,1700));
- }
- return images.filter(Boolean);
+  }
+  return images.filter(Boolean);
+}
+const PDF_ATTACHMENT_SECTION_TITLE='Supporting Documents Shared by the Contractor / Vendor';
+function isPdfAttachmentPage(pdf){
+ return String(pdf?.currentHeaderTitle || '').trim().toLowerCase() === PDF_ATTACHMENT_SECTION_TITLE.toLowerCase();
 }
 function addAttachmentInfoTable(pdf,y,att,pageNoText){
  const x=38, w=718, labelW=178, rowH=32;
-const rows=[
-  ['File Name', att.name || 'Attachment'],
-  ['File Type', att.type || 'Unknown format'],
-  ['File Size', formatFileSize(att.size)],
-  ['File Access', '']
-];
-rows.forEach(([label,value],idx)=>{
+ const rows=[
+   ['File Name', att.name || 'Attachment'],
+   ['File Type', att.type || 'Unknown format'],
+   ['File Size', formatFileSize(att.size)],
+   ['File Access', '']
+ ];
+ rows.forEach(([label,value],idx)=>{
    pdf.fill('#f8fafc'); pdf.stroke('#d7dde7'); pdf.rect(x,y,labelW,rowH,'B');
    pdf.stroke('#d7dde7'); pdf.rect(x+labelW,y,w-labelW,rowH,'S');
    pdf.text(x+10,y+20,label,8.8,true,'#334155');
-  if(label==='File Access'){
-    pdf.attachmentButton(x+labelW+12,y+5,118,22,att,'View File');
-    const note = pageNoText ? pageNoText : 'Click View File or the paperclip to open the embedded original file.';
-    pdf.text(x+labelW+144,y+20,note,8.2,false,'#64748b');
-  }else{
-    pdf.multiline(x+labelW+12,y+13,value,w-labelW-24,8.9,10,false,'#111827',2);
-  }
+   if(label==='File Access'){
+     pdf.attachmentButton(x+labelW+12,y+5,118,22,att,'View File');
+     const note = pageNoText ? pageNoText : 'Click View File or the paperclip to open the embedded original file.';
+     pdf.text(x+labelW+144,y+20,note,8.2,false,'#64748b');
+   }else{
+     pdf.multiline(x+labelW+12,y+13,value,w-labelW-24,8.9,10,false,'#111827',2);
+   }
    y += rowH;
  });
  return y+12;
@@ -2739,14 +2986,21 @@ rows.forEach(([label,value],idx)=>{
 async function addVisibleAttachmentImagePage(pdf, title, att, imgInfo, resName, pageNoText, options={}){
  pdf.addImageResource(resName,imgInfo);
  const showAttachmentHeader = options.showAttachmentHeader !== false;
+ const headerMode = options.headerMode || (showAttachmentHeader ? 'details' : 'none');
+ const headerDescription = options.headerDescription || pageNoText || '';
  const pageLabel = options.pageLabel || '';
- let y = (String(pdf.currentHeaderTitle || '').trim().toLowerCase() === 'supporting documents shared by the authorised person'.toLowerCase()) ? 112 : 176;
- if(showAttachmentHeader){
+ let y = isPdfAttachmentPage(pdf) ? 112 : 176;
+ if(headerMode==='title'){
+   y = pdf.section(y,title,'navy');
+   if(headerDescription){
+     y = pdf.multiline(48,y,headerDescription,690,9,12,false,'#64748b',2)+8;
+   }
+ }else if(headerMode==='details'){
    y = pdf.section(y,title,'navy');
    y = addAttachmentInfoTable(pdf,y,att,pageNoText);
  }else if(pageLabel){
-   // Keep continuation pages clean: no repeated attachment header, only a tiny page reference.
-   const refY = (String(pdf.currentHeaderTitle || '').trim().toLowerCase() === 'supporting documents shared by the authorised person'.toLowerCase()) ? 118 : 184;
+    // Keep continuation pages clean: no repeated attachment header, only a tiny page reference.
+    const refY = isPdfAttachmentPage(pdf) ? 118 : 184;
    pdf.centerText(refY,pageLabel,8.2,true,'#64748b',38,718);
    y = refY + 12;
  }
@@ -2764,7 +3018,9 @@ async function addVisibleAttachmentImagePage(pdf, title, att, imgInfo, resName, 
  }
 }
 async function addPdfAttachmentPages(pdf,attachments){
- if(!attachments || !attachments.length) return;
+ attachments=(Array.isArray(attachments)?attachments:[]).filter(a=>a && a.dataUrl && String(a.dataUrl).trim());
+ // Keep the PDF attachment area direct: no separate details/index page before the uploaded files.
+ if(!attachments.length) return false;
  for(let i=0;i<attachments.length;i++){
    const att=attachments[i];
    const type=String(att.type||'').toLowerCase();
@@ -2773,34 +3029,33 @@ async function addPdfAttachmentPages(pdf,attachments){
    const isPdf=type==='application/pdf' || name.endsWith('.pdf');
 
    if(isImage){
-    const info=await dataUrlToImageInfo(att.dataUrl,PDF_COMPACT_MODE.imageMaxW,PDF_COMPACT_MODE.imageMaxH,PDF_COMPACT_MODE.imageQuality);
-    pdf.startPage('Supporting Documentation Provided by Contractor / Vendor');
-    if(info){
-      await addVisibleAttachmentImagePage(pdf,`Attachment ${i+1} - ${att.name || 'Image'}`,att,info,`AttImg${i+1}`,'Compressed image preview inserted; original file embedded for View File.',{showAttachmentHeader:true});
-    }else{
-      let y=(String(pdf.currentHeaderTitle || '').trim().toLowerCase() === 'supporting documents shared by the authorised person'.toLowerCase()) ? 112 : 176;
-      y=pdf.section(y,`Attachment ${i+1} - ${att.name || 'Image'}`,'navy');
-      pdf.addEmbeddedAttachment(att,Math.max(0,pdf.pages.length-1));
-      y=pdf.infoRows(y,[['File Name',att.name],['File Type',att.type || 'Image file'],['File Size',formatFileSize(att.size)],['Status','Image could not be previewed, but the original file is embedded in this PDF.']]);
+     const info=await dataUrlToImageInfo(att.dataUrl,1200,1600);
+     pdf.startPage(PDF_ATTACHMENT_SECTION_TITLE);
+     const firstPageIndex=Math.max(0,pdf.pages.length-1);
+     pdf.addEmbeddedAttachment(att,firstPageIndex);
+     if(info){
+       await addVisibleAttachmentImagePage(pdf,`Attachment ${i+1} - ${att.name || 'Image'}`,att,info,`AttImg${i+1}`,'Visible image inserted; original file embedded.',{headerMode:'title'});
+     }else{
+       let y=isPdfAttachmentPage(pdf) ? 112 : 176;
+       y=pdf.section(y,`Attachment ${i+1} - ${att.name || 'Image'}`,'navy');
+       y=pdf.multiline(48,y,'Image attachment preview could not be rendered, but the original file is embedded in this PDF.',690,9,12,false,'#64748b',2)+8;
+       pdf.fill('#fbf8f1'); pdf.stroke('#d7c49a'); pdf.rect(58,y,678,190,'B');
+       pdf.centerText(y+54,'Image Attachment',18,true,'#101b2f',58,678);
+       pdf.centerText(y+88,att.name || `Attachment ${i+1}`,12,true,'#84622a',58,678);
+       pdf.centerText(y+124,'This image could not be previewed, but the original file is embedded in this PDF.',10,false,'#334155',58,678);
      }
      continue;
    }
 
-  if(isPdf){
-    pdf.startPage('Supporting Documentation Provided by Contractor / Vendor');
-    let y=(String(pdf.currentHeaderTitle || '').trim().toLowerCase() === 'supporting documents shared by the authorised person'.toLowerCase()) ? 112 : 176;
-    y=pdf.section(y,`Attachment ${i+1} - ${att.name || 'PDF File'}`,'navy');
-    y=addAttachmentInfoTable(pdf,y,att,'Opens the embedded original PDF file.');
-    y=pdf.infoRows(y,[
-      ['PDF Evidence Handling','The original PDF is embedded in this work permit. Use the View File button or the PDF attachments panel to open it.']
-    ]);
-    continue;
-    try{
-      const renderedPages=await renderPdfAttachmentToImages(att.dataUrl);
+   if(isPdf){
+     try{
+       const renderedPages=await renderPdfAttachmentToImages(att.dataUrl);
        if(renderedPages.length){
          for(let p=0;p<renderedPages.length;p++){
-           pdf.startPage('Supporting Documentation Provided by Contractor / Vendor');
-          await addVisibleAttachmentImagePage(
+           pdf.startPage(PDF_ATTACHMENT_SECTION_TITLE);
+           const pageIndex=Math.max(0,pdf.pages.length-1);
+           if(p===0) pdf.addEmbeddedAttachment(att,pageIndex);
+           await addVisibleAttachmentImagePage(
              pdf,
              `Attachment ${i+1} - ${att.name || 'PDF File'}`,
              att,
@@ -2808,8 +3063,8 @@ async function addPdfAttachmentPages(pdf,attachments){
              `AttPdf${i+1}P${p+1}`,
              `PDF page ${p+1} of ${renderedPages.length}`,
              {
-               showAttachmentHeader:p===0,
-               pageLabel:p>0 ? `Attachment ${i+1} continued — page ${p+1} of ${renderedPages.length}` : ''
+               headerMode:'title',
+               pageLabel:''
              }
            );
          }
@@ -2818,23 +3073,21 @@ async function addPdfAttachmentPages(pdf,attachments){
      }catch(err){
        console.warn('PDF attachment visual rendering failed:',err);
      }
-  }
+   }
 
-  pdf.startPage('Supporting Documentation Provided by Contractor / Vendor');
-  let y=(String(pdf.currentHeaderTitle || '').trim().toLowerCase() === 'supporting documents shared by the authorised person'.toLowerCase()) ? 112 : 176;
-  y=pdf.section(y,`Attachment ${i+1} - ${att.name || 'Raw File'}`,'navy');
-  y=addAttachmentInfoTable(pdf,y,att,'Opens the embedded original file.');
-  y=pdf.infoRows(y,[
-    ['Evidence Handling','The original file is embedded in this work permit. Use the View File button or the PDF attachments panel to open it.']
-  ]);
-  y=pdf.section(y+4,'Embedded Raw File');
-  pdf.fill('#fbf8f1'); pdf.stroke('#d7c49a'); pdf.rect(58,y,678,210,'B');
-  pdf.centerText(y+54,'Embedded Raw File Attachment',18,true,'#101b2f',58,678);
-  pdf.centerText(y+88,att.name || `Attachment ${i+1}`,12,true,'#84622a',58,678);
-  pdf.centerText(y+124,'The original file is embedded inside this PDF.',10,false,'#334155',58,678);
-  pdf.centerText(y+150,'Click View File/paperclip above, or use the PDF Attachments panel if your viewer blocks direct opening.',10,false,'#334155',58,678);
-   pdf.centerText(y+176,`${att.type || 'Unknown format'} · ${formatFileSize(att.size)}`,9.5,true,'#64748b',58,678);
- }
+   pdf.startPage(PDF_ATTACHMENT_SECTION_TITLE);
+   const attachmentPageIndex=Math.max(0,pdf.pages.length-1);
+   pdf.addEmbeddedAttachment(att,attachmentPageIndex);
+   let y=isPdfAttachmentPage(pdf) ? 112 : 176;
+   y=pdf.section(y,`Attachment ${i+1} - ${att.name || 'Raw File'}`,'navy');
+   y=pdf.multiline(48,y,'Original file embedded in this PDF. Use View File to open it from a compatible PDF viewer.',690,9,12,false,'#64748b',2)+8;
+   pdf.fill('#fbf8f1'); pdf.stroke('#d7c49a'); pdf.rect(58,y,678,210,'B');
+   pdf.centerText(y+54,'Embedded Raw File Attachment',18,true,'#101b2f',58,678);
+   pdf.centerText(y+88,att.name || `Attachment ${i+1}`,12,true,'#84622a',58,678);
+   pdf.centerText(y+124,'The original file is embedded inside this PDF.',10,false,'#334155',58,678);
+    pdf.attachmentButton(338,y+146,118,24,att,'View File');
+  }
+ return true;
 }
 window.addEventListener('beforeprint',updateStatus);
 init();
@@ -2872,7 +3125,7 @@ function jpegSizeFromBytes(bytes){
   }
   return {w:1,h:1};
 }
-function dataUrlToImageInfo(dataUrl,maxW=900,maxH=650,quality=0.74){
+function dataUrlToImageInfo(dataUrl,maxW=900,maxH=650){
   return new Promise(resolve=>{
     if(!dataUrl){resolve(null);return;}
     const im=new Image();
@@ -2881,7 +3134,7 @@ function dataUrlToImageInfo(dataUrl,maxW=900,maxH=650,quality=0.74){
       const w=Math.max(1,Math.round(im.width*ratio)), h=Math.max(1,Math.round(im.height*ratio));
       const c=document.createElement('canvas'); c.width=w; c.height=h;
       const ctx=c.getContext('2d'); ctx.fillStyle='#ffffff'; ctx.fillRect(0,0,w,h); ctx.drawImage(im,0,0,w,h);
-      const jpg=c.toDataURL('image/jpeg',Math.max(0.45,Math.min(0.9,Number(quality)||0.74)));
+      const jpg=c.toDataURL('image/jpeg',0.98);
       const bin=atob(jpg.split(',')[1]); const bytes=new Uint8Array(bin.length);
       for(let i=0;i<bin.length;i++) bytes[i]=bin.charCodeAt(i);
       const sz=jpegSizeFromBytes(bytes);
@@ -2931,7 +3184,7 @@ class CorporatePDF{
       // Do not repeat Permit to Work title, document control row, or contractor title here.
       this.fill('#fffaf0'); this.stroke('#d7c49a'); this.rect(38,36,718,58,'B');
       this.centerText(72,prop,15.2,true,'#101b2f');
-      this.text(716,1088,`Page ${pageNo}`,8.5,true,'#64748b');
+      this.text(704,1088,`Page ${pageNo}-{{TOTAL_PAGES}}`,8.5,true,'#64748b');
       return;
     }
     this.fill('#fffaf0'); this.stroke('#d7c49a'); this.rect(38,36,718,100,'B');
@@ -2940,8 +3193,8 @@ class CorporatePDF{
     this.fill('#101b2f'); this.rect(38,102,718,34,'f');
     this.centerText(124,'CONTRACTORS / VENDORS PERMIT TO WORK - EVENTS',14,true,'#ffffff');
     this.fill('#f8fafc'); this.stroke('#d7dde7'); this.rect(38,144,718,24,'B');
-    this.centerText(160,`${getDocumentControlValue()}  |  Date: 01/10/2020`,9.2,true,'#172033');
-    this.text(716,1088,`Page ${pageNo}`,8.5,true,'#64748b');
+    this.centerText(160,String(this.formReference || window.__pdfFormReference || getPermitFormReference()),9.2,true,'#172033');
+    this.text(704,1088,`Page ${pageNo}-{{TOTAL_PAGES}}`,8.5,true,'#64748b');
   }
   section(y,title,style='champagne'){
     if(style==='navy'){
@@ -3044,16 +3297,19 @@ class CorporatePDF{
     this.text(x+10,y+15,title,8.9,true,'#101b2f');
     this.fill('#ffffff'); this.stroke('#d7c49a'); this.rect(x,y+22,w,h,'B');
     if(this.images[imgName]){
-      // Normal photo view: keep full image visible, centered, padded, and never enlarged beyond its stored preview size.
-      this.imageContain(imgName,x,y+22,w,h,{padding:20,fillRatio:0.90,allowUpscale:false});
+      // Normal photo view: keep full image visible and centered. ID front/back are intentionally zoomed out.
+      const isIdEvidence = String(title || '').toLowerCase().includes('id');
+      this.imageContain(imgName,x,y+22,w,h,{padding:isIdEvidence?10:20,fillRatio:isIdEvidence?0.96:0.90,allowUpscale:true});
     }
     else{this.text(x+18,y+22+h/2,'No image provided',9,false,'#94a3b8');}
   }
   evidenceGrid(y){
-    const x=38,w=718;
-    this.stroke('#d7c49a'); this.fill('#ffffff'); this.rect(x,y,w,220,'B');
-    this.imageBox(x+12,y+14,w-24,175,'Authorised Signature','ImSig');
-    return y+237;
+    const x=38,w=718,gap=12,col=(w-gap)/2;
+    this.stroke('#d7c49a'); this.fill('#ffffff'); this.rect(x,y,w,393,'B');
+    this.imageBox(x+12,y+14,w-24,145,'Authorised Signature','ImSig');
+    this.imageBox(x+12,y+190,col-18,175,'Authorised Signature ID - Front Side','ImIDFront');
+    this.imageBox(x+12+col+gap,y+190,col-18,175,'Authorised Signature ID - Back Side','ImIDBack');
+    return y+410;
   }
   attachmentButton(x,y,w,h,att,label='View File'){
     // Draw a visibly active PDF button. The actual one-click action is a push-button
@@ -3062,8 +3318,8 @@ class CorporatePDF{
     this.stroke('#b9985a'); this.rect(x+1.5,y+1.5,w-3,h-3,'S');
     this.fill('#b9985a'); this.rect(x+w-20,y+3,14,h-6,'B');
     this.centerText(y+Math.min(15,h-6),label,8.8,true,'#ffffff',x,w-18);
-    this.addEmbeddedAttachment(att,Math.max(0,this.pages.length-1),{x,y,w,h,buttonLabel:label});
     this.text(x+w-16,y+Math.min(15,h-6),'↗',8.2,true,'#101b2f');
+    this.addEmbeddedAttachment(att,Math.max(0,this.pages.length-1),{x,y,w,h,buttonLabel:label});
   }
   addEmbeddedAttachment(att,pageIndex=null,options={}){
     if(!att || !att.dataUrl) return;
@@ -3184,6 +3440,8 @@ class CorporatePDF{
       const parentRef=this.obj(`<< /FT /Btn /T (${pdfEscapeText(groupName)}) /TU (Select one option only) /Ff 49152 /V /${pdfName(selectedValue)} /Kids [${kids.map(r=>r+' 0 R').join(' ')}] >>`);
       fieldRefs.push(parentRef);
     }
+    const totalPages=this.pages.length;
+    this.pages=this.pages.map(pageCmds => pageCmds.map(cmd => String(cmd).replace(/\{\{TOTAL_PAGES\}\}/g,String(totalPages))));
     const pageRefs=[];
     const pagesObjIndex=this.objects.length+1;
     this.objects.push('__PAGES_PLACEHOLDER__');
@@ -3239,11 +3497,13 @@ function setPdfProgress(percent,message,detail){
   if(det && detail) det.textContent=detail;
 }
 function openPdfProgressModal(message){
+  document.body.classList.add('pdf-generating-progress');
   setPdfProgress(3,message || 'Preparing report...','Please keep this page open until the PDF download starts.');
 }
 function closePdfProgressModal(){
   const modal=document.getElementById('pdfProgressModal');
   if(modal) modal.classList.remove('show');
+  document.body.classList.remove('pdf-generating-progress');
 }
 
 async function generatePDF(){
@@ -3258,10 +3518,13 @@ async function generatePDF(){
     setPdfProgress(16,'Preparing signature and report assets...','Converting the authorised signature and preparing PDF resources.');
     await waitForPdfProgressPaint();
     const images={
-      ImSig: await dataUrlToImageInfo(data.fields.signatureData,1200,480,PDF_COMPACT_MODE.signatureQuality)
+      ImSig: await dataUrlToImageInfo(data.fields.signatureData,1600,640),
+      ImIDFront: await dataUrlToImageInfo(data.fields.idFrontData,900,620),
+      ImIDBack: await dataUrlToImageInfo(data.fields.idBackData,900,620)
     };
     const pdf=new CorporatePDF();
     pdf.propertyName=data.fields.propertyName || getPermitPropertyName();
+    pdf.formReference=getPermitFormReference();
     Object.entries(images).forEach(([k,v])=>pdf.addImageResource(k,v));
     const total=data.requirements.reduce((a,b)=>a+(+b.score||0),0);
     const accepted=getAcceptanceStatus(total);
@@ -3337,11 +3600,20 @@ async function generatePDF(){
     pdf.stroke('#d7dde7'); pdf.rect(iuX,iuY+26,iuW,92,'S');
     pdf.addTextField('Internal Use - Comment',iuX+14,iuY+36,iuW-28,70,'',{fontSize:11,multiline:true});
 
-    setPdfProgress(84,'Adding supporting evidence...','Adding compressed photo previews and embedding the original uploaded files for View File access.');
+    setPdfProgress(84,'Adding supporting attachments...','Embedding uploaded files and adding visible attachment pages where supported.');
     await waitForPdfProgressPaint();
-    await addPdfAttachmentPages(pdf,data.attachments || []);
+    const pdfAttachments = ((Array.isArray(data.attachments) && data.attachments.length)
+      ? data.attachments
+      : (Array.isArray(permitAttachments) ? permitAttachments : []))
+      .filter(a=>a && a.dataUrl && String(a.dataUrl).trim());
+    if(pdfAttachments.length){
+      await addPdfAttachmentPages(pdf,pdfAttachments);
+    }else{
+      setPdfProgress(88,'No supporting attachments uploaded.','Skipping the attachment section so no empty attachment page is added.');
+      await waitForPdfProgressPaint();
+    }
 
-    setPdfProgress(94,'Finalising PDF file...','Creating fillable fields and preparing the download.');
+    setPdfProgress(94,'Finalising PDF file...','Creating fillable fields, page numbering, and preparing the download.');
     await waitForPdfProgressPaint();
     const blob=pdf.finish();
     const filename=`Event_Work_Permit_${pdfSafeFile(data.fields.companyName)}_${pdfSafeFile(data.fields.requestDate)}.pdf`;
@@ -3349,7 +3621,7 @@ async function generatePDF(){
     setPdfProgress(100,'PDF report generated successfully.','The download should start automatically now.');
     await waitForPdfProgressPaint();
     pdfDownload(blob,filename);
-    
+    showToast('Work Permit PDF generated successfully.');
     setTimeout(closePdfProgressModal,900);
   }catch(err){
     console.error('PDF generation failed:',err);
@@ -3359,8 +3631,6 @@ async function generatePDF(){
 }
 
 
-
-window.addEventListener('DOMContentLoaded',()=>{try{syncDocumentControlReferences();}catch(e){}});
 </script>
 
 
@@ -3397,8 +3667,8 @@ window.addEventListener('DOMContentLoaded',()=>{try{syncDocumentControlReference
   else wireResponsiveStepButtons();
   window.addEventListener('load',wireResponsiveStepButtons);
 })();
+
 </script>
 
-</body></html>
-
-</body></html>
+</body>
+</html>
