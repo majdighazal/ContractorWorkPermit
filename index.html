@@ -361,6 +361,20 @@ textarea{min-height:165px!important;line-height:1.6!important;resize:vertical!im
 .form-message-ok:focus-visible{outline:3px solid rgba(21,63,104,.20);outline-offset:2px}
 @media(max-width:520px){.form-message-overlay{padding:12px}.form-message-card{border-radius:16px}.form-message-top{padding:16px}.form-message-body{padding:16px 16px 4px}.form-message-actions{padding:12px 16px 16px}.form-message-ok{width:100%;height:46px}}
 /* ===== END v22 MESSAGE SYSTEM ===== */
+
+/* None Team Member ID cards: realistic ID-card proportions, compact and side-by-side */
+.id-photo-panel .panel-body{padding:16px 18px!important}
+.id-photo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:start;max-width:720px;margin:0 auto}
+.id-photo-card{min-width:0}
+.id-photo-delete{display:block;margin:9px 0 0 auto;min-width:88px;height:34px;padding:0 14px;border:1px solid #e3a5a5;border-radius:8px;background:#fde8e8;color:#8e2525;font:800 12px 'Segoe UI',Tahoma,Arial,sans-serif;cursor:pointer;transition:.18s}
+.id-photo-delete:hover:not(:disabled){background:#f8d1d1;border-color:#d78383}
+.id-photo-delete:disabled{opacity:.45;cursor:not-allowed;background:#f4f6f8;color:#8291a0;border-color:#d8e0e8}
+.id-photo-card>label{margin-bottom:7px;font-size:13px!important;font-weight:800!important;text-transform:none!important;letter-spacing:0!important}
+.id-card-upload{width:100%;aspect-ratio:85.6/53.98;min-height:0!important;max-height:none!important;padding:10px!important;border:1.5px dashed #c5d2df!important;border-radius:14px!important;background:#f8fbfd!important}
+.id-card-upload .photo-preview{width:100%!important;height:100%!important;max-height:none!important;object-fit:contain!important;border-radius:9px!important}
+.id-card-upload .photo-icon{font-size:24px!important}
+.id-card-upload .photo-label-text{font-size:12px!important}
+@media(max-width:760px){.id-photo-grid{grid-template-columns:1fr!important;gap:16px!important;max-width:360px!important}.id-photo-panel .panel-body{padding:14px!important}.id-card-upload{width:100%!important;aspect-ratio:85.6/53.98!important}}
 </style>
 <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
 
@@ -444,11 +458,11 @@ textarea{min-height:165px!important;line-height:1.6!important;resize:vertical!im
   <div class="field full"><label class="req" for="neSubject">Select Subject</label><select id="neSubject" data-required="1"></select></div>
   <div class="field full custom-subject-field" id="neCustomSubjectWrap" hidden><label class="req" for="neCustomSubject">Other Subject</label><input id="neCustomSubject" autocomplete="off" placeholder="Type subject"></div>
 </div></div></div>
-<div class="panel"><div class="panel-hdr">ID Document Photos</div><div class="panel-body"><table class="form-table"><tbody>
-<tr><th><label for="frontPhotoInput">ID Front Page <span style="font-weight:600;color:var(--text3)">(Optional)</span></label></th><td><div class="photo-upload-box"><input type="file" id="frontPhotoInput" accept="image/*" capture="environment"><span class="photo-icon" id="frontIcon">🪪</span><span class="photo-label-text" id="frontHint">Tap to upload ID front page</span><img id="frontPreview" class="photo-preview" alt="ID Front"></div><input type="hidden" id="frontData"></td></tr>
-<tr><th><label for="backPhotoInput">ID Back Page <span style="font-weight:600;color:var(--text3)">(Optional)</span></label></th><td><div class="photo-upload-box"><input type="file" id="backPhotoInput" accept="image/*" capture="environment"><span class="photo-icon" id="backIcon">🔄</span><span class="photo-label-text" id="backHint">Tap to upload ID back page</span><img id="backPreview" class="photo-preview" alt="ID Back"></div><input type="hidden" id="backData"></td></tr>
-</tbody></table></div></div>
 <div class="panel"><div class="panel-hdr">Statement Details</div><div class="panel-body"><div class="char-row"><label class="req" for="neDetails">Full Details</label><span id="neCount" style="font-size:.72rem;color:var(--text3)">0 characters</span></div><textarea id="neDetails" class="auto-grow-statement" data-required="1" placeholder="Describe the incident with full detail, timeline, persons involved, actions taken..."></textarea><div class="statement-actions"><button class="btn-sm statement-clear-btn" type="button" data-clear-statement="ne">Clear</button></div></div></div>
+<div class="panel id-photo-panel"><div class="panel-hdr">ID Document Photos</div><div class="panel-body"><div class="id-photo-grid">
+<div class="id-photo-card"><label for="frontPhotoInput">ID Front Page <span style="font-weight:600;color:var(--text3)">(Optional)</span></label><div class="photo-upload-box id-card-upload"><input type="file" id="frontPhotoInput" accept="image/*" capture="environment"><span class="photo-icon" id="frontIcon">🪪</span><span class="photo-label-text" id="frontHint">Tap to upload ID front page</span><img id="frontPreview" class="photo-preview" alt="ID Front"></div><button type="button" class="id-photo-delete" id="frontPhotoDelete">Delete</button><input type="hidden" id="frontData"></div>
+<div class="id-photo-card"><label for="backPhotoInput">ID Back Page <span style="font-weight:600;color:var(--text3)">(Optional)</span></label><div class="photo-upload-box id-card-upload"><input type="file" id="backPhotoInput" accept="image/*" capture="environment"><span class="photo-icon" id="backIcon">🔄</span><span class="photo-label-text" id="backHint">Tap to upload ID back page</span><img id="backPreview" class="photo-preview" alt="ID Back"></div><button type="button" class="id-photo-delete" id="backPhotoDelete">Delete</button><input type="hidden" id="backData"></div>
+</div></div></div>
 <div class="panel evidence-panel"><div class="panel-hdr">Supporting Documents / Evidence Photos (If Any)</div><div class="panel-body"><div class="evidence-grid" data-evidence-prefix="ne">
 <div class="evidence-tile"><button type="button" class="evidence-remove" id="neEvRemove1" aria-label="Remove evidence photo 1" hidden>&times;</button><input type="file" id="neEvInput1" accept="image/*" capture="environment"><div class="evidence-placeholder" id="neEvHint1"><span class="evidence-upload-icon">⇧</span><strong>Add Evidence Photo</strong><small>Photo 1</small></div><img id="neEvPreview1" class="evidence-preview" alt="Evidence Photo 1"><input type="hidden" id="neEvData1"></div>
 <div class="evidence-tile"><button type="button" class="evidence-remove" id="neEvRemove2" aria-label="Remove evidence photo 2" hidden>&times;</button><input type="file" id="neEvInput2" accept="image/*" capture="environment"><div class="evidence-placeholder" id="neEvHint2"><span class="evidence-upload-icon">⇧</span><strong>Add Evidence Photo</strong><small>Photo 2</small></div><img id="neEvPreview2" class="evidence-preview" alt="Evidence Photo 2"><input type="hidden" id="neEvData2"></div>
@@ -583,7 +597,7 @@ function restoreDraft(){
   $('neSigName').value=$('neName').value;$('tmSigName').value=$('tmName').value;
   syncCustomSubject('ne');syncCustomSubject('tm');
   $('neCount').textContent=$('neDetails').value.length+' characters';$('tmCount').textContent=$('tmDetails').value.length+' characters';setTimeout(()=>{autoGrowStatement($('neDetails'));autoGrowStatement($('tmDetails'))},0);
-  ['front','back'].forEach(k=>{const data=$(k+'Data').value;if(data){$(k+'Preview').src=data;$(k+'Preview').style.display='block';$(k+'Hint').style.display='none';$(k+'Icon').style.display='none'}else{$(k+'Preview').src='';$(k+'Preview').style.display='none';$(k+'Hint').style.display='';$(k+'Icon').style.display=''}});
+  ['front','back'].forEach(k=>renderIdPhoto(k));
   ['ne','tm'].forEach(prefix=>{for(let i=1;i<=4;i++){const data=$(prefix+'EvData'+i)?.value||'';renderEvidenceSlot(prefix,i,data)}});
   sig.ne.restore(d.signatures?.ne||[]);sig.tm.restore(d.signatures?.tm||[]);
   const openedAt=nowDisplay();$('neDateTime').value=openedAt;$('tmDateTime').value=openedAt;
@@ -608,7 +622,9 @@ $('tmSubject').addEventListener('change',()=>{syncCustomSubject('tm');saveDraft(
 $('neCustomSubject').addEventListener('input',saveDraft);
 $('tmCustomSubject').addEventListener('input',saveDraft);
 function compressImageFile(file,maxW=850,maxH=850,quality=.58){return new Promise((resolve,reject)=>{const reader=new FileReader();reader.onerror=reject;reader.onload=e=>{const img=new Image();img.onerror=reject;img.onload=()=>{let w=img.naturalWidth||img.width,h=img.naturalHeight||img.height;const r=Math.min(1,maxW/w,maxH/h);w=Math.max(1,Math.round(w*r));h=Math.max(1,Math.round(h*r));const c=document.createElement('canvas');c.width=w;c.height=h;const x=c.getContext('2d',{alpha:false});x.fillStyle='#fff';x.fillRect(0,0,w,h);x.drawImage(img,0,0,w,h);resolve(c.toDataURL('image/jpeg',quality))};img.src=e.target.result};reader.readAsDataURL(file)})}
-function setupPhoto(inputId,previewId,dataId,hintId,iconId){$(inputId).addEventListener('change',async function(){const f=this.files&&this.files[0];if(!f)return;try{const data=await compressImageFile(f);$(dataId).value=data;$(previewId).src=data;$(previewId).style.display='block';$(hintId).style.display='none';$(iconId).style.display='none';saveDraft()}catch(e){console.error(e);showFormMessage('Unable to process this image. Please select another image.','Image Upload Error','error') }})}setupPhoto('frontPhotoInput','frontPreview','frontData','frontHint','frontIcon');setupPhoto('backPhotoInput','backPreview','backData','backHint','backIcon');
+function renderIdPhoto(prefix){const data=$(prefix+'Data').value||'',preview=$(prefix+'Preview'),hint=$(prefix+'Hint'),icon=$(prefix+'Icon'),del=$(prefix+'PhotoDelete');if(data){preview.src=data;preview.style.display='block';hint.style.display='none';icon.style.display='none';if(del)del.disabled=false}else{preview.removeAttribute('src');preview.style.display='none';hint.style.display='';icon.style.display='';if(del)del.disabled=true}}
+function setupPhoto(inputId,previewId,dataId,hintId,iconId,prefix){$(inputId).addEventListener('change',async function(){const f=this.files&&this.files[0];if(!f)return;try{const data=await compressImageFile(f);$(dataId).value=data;renderIdPhoto(prefix);saveDraft()}catch(e){console.error(e);showFormMessage('Unable to process this image. Please select another image.','Image Upload Error','error') }});const del=$(prefix+'PhotoDelete');if(del)del.addEventListener('click',()=>{if(del.disabled)return;$(inputId).value='';$(dataId).value='';renderIdPhoto(prefix);saveDraft()});renderIdPhoto(prefix)}
+setupPhoto('frontPhotoInput','frontPreview','frontData','frontHint','frontIcon','front');setupPhoto('backPhotoInput','backPreview','backData','backHint','backIcon','back');
 function renderEvidenceSlot(prefix,i,data){const preview=$(prefix+'EvPreview'+i),hint=$(prefix+'EvHint'+i),remove=$(prefix+'EvRemove'+i);if(!preview||!hint||!remove)return;if(data){preview.src=data;preview.style.display='block';hint.style.display='none';remove.hidden=false}else{preview.removeAttribute('src');preview.style.display='none';hint.style.display='flex';remove.hidden=true}}
 function setupEvidencePhoto(prefix,i){const input=$(prefix+'EvInput'+i),dataEl=$(prefix+'EvData'+i),remove=$(prefix+'EvRemove'+i);input.addEventListener('change',async function(){const f=this.files&&this.files[0];if(!f)return;try{const data=await compressImageFile(f,640,640,.48);dataEl.value=data;renderEvidenceSlot(prefix,i,data);saveDraft()}catch(e){console.error(e);showFormMessage('Unable to process this evidence photo. Please select another image.','Evidence Photo Error','error')}});remove.addEventListener('click',()=>{input.value='';dataEl.value='';renderEvidenceSlot(prefix,i,'');saveDraft()})}
 ['ne','tm'].forEach(prefix=>{for(let i=1;i<=4;i++)setupEvidencePhoto(prefix,i)});
@@ -703,6 +719,11 @@ function addPdfHeader(pdf,subTitle){
  pdf.setTextColor(13,41,71);pdf.setFont('helvetica','bold');pdf.setFontSize(14.5);pdf.text('Security Department',12,15);
  pdf.setFontSize(17.5);pdf.text('Investigation Written Statement',12,23);
  pdf.setFontSize(10.5);pdf.setFont('helvetica','normal');pdf.text(subTitle,12,29);
+ // Private & Confidential badge - restored at top-right on every PDF page.
+ pdf.setFillColor(254,242,242);pdf.setDrawColor(239,68,68);pdf.setLineWidth(.35);
+ pdf.roundedRect(151,10,47,8.5,2.2,2.2,'FD');
+ pdf.setTextColor(185,28,28);pdf.setFont('helvetica','bold');pdf.setFontSize(8.2);
+ pdf.text('PRIVATE & CONFIDENTIAL',174.5,15.45,{align:'center'});
  pdf.setDrawColor(199,164,74);pdf.setLineWidth(.7);pdf.line(12,33,198,33);
  return 39
 }
@@ -854,7 +875,29 @@ function evidenceBlockPdf(pdf,y,photos,subTitle){
  photos.forEach((data,i)=>{const x=12+i*(cellW+gap);pdf.setDrawColor(207,218,228);pdf.setFillColor(255,255,255);pdf.roundedRect(x,y,cellW,boxH,2,2,'FD');if(data)addImageContain(pdf,data,x+2,y+2,cellW-4,boxH-4);else{pdf.setTextColor(148,163,184);pdf.setFont('helvetica','normal');pdf.setFontSize(7);pdf.text('No photo',x+cellW/2,y+20,{align:'center'})}pdf.setTextColor(49,70,91);pdf.setFont('helvetica','bold');pdf.setFontSize(7.5);pdf.text('Photo '+(i+1),x+cellW/2,y+boxH+4,{align:'center'})});
  return y+totalH+3
 }
-function photosBlockPdf(pdf,y,front,back,subTitle){if(!front&&!back)return y;y=sectionTitle(pdf,y,'ID Document Photos',subTitle);y=ensurePage(pdf,y,66,subTitle);pdf.setDrawColor(221,230,240);pdf.rect(12,y,92,62);pdf.rect(106,y,92,62);pdf.setTextColor(71,85,105);pdf.setFont('helvetica','bold');pdf.setFontSize(7.5);pdf.text('ID FRONT PAGE',58,y+5,{align:'center'});pdf.text('ID BACK PAGE',152,y+5,{align:'center'});if(!addImageContain(pdf,front,16,y+8,84,50)){pdf.setFont('helvetica','normal');pdf.setTextColor(148,163,184);pdf.text('No photo provided',58,y+34,{align:'center'})}if(!addImageContain(pdf,back,110,y+8,84,50)){pdf.setFont('helvetica','normal');pdf.setTextColor(148,163,184);pdf.text('No photo provided',152,y+34,{align:'center'})}return y+66}
+function photosBlockPdf(pdf,y,front,back,subTitle){
+ if(!front&&!back)return y;
+ y=sectionTitle(pdf,y,'ID Document Photos',subTitle);
+ // ISO/credit-card ID aspect ratio ≈ 85.60 × 53.98 mm (1.586:1).
+ // Keep the report images compact and close to real ID-card proportions.
+ const cardW=72, cardH=45.4, gap=8, totalW=cardW*2+gap, startX=12+(186-totalW)/2;
+ const labelH=6, blockH=labelH+cardH+4;
+ y=ensurePage(pdf,y,blockH+2,subTitle);
+ const drawCard=(x,label,data)=>{
+  pdf.setTextColor(49,70,91);pdf.setFont('helvetica','bold');pdf.setFontSize(7.5);
+  pdf.text(label,x+cardW/2,y+4,{align:'center'});
+  const iy=y+labelH;
+  pdf.setDrawColor(201,214,226);pdf.setFillColor(248,251,253);pdf.setLineWidth(.22);
+  pdf.roundedRect(x,iy,cardW,cardH,2.5,2.5,'FD');
+  if(!addImageContain(pdf,data,x+2,iy+2,cardW-4,cardH-4)){
+   pdf.setFont('helvetica','normal');pdf.setTextColor(148,163,184);pdf.setFontSize(7.2);
+   pdf.text('No photo provided',x+cardW/2,iy+cardH/2+1,{align:'center'});
+  }
+ };
+ drawCard(startX,'ID FRONT PAGE',front);
+ drawCard(startX+cardW+gap,'ID BACK PAGE',back);
+ return y+blockH+3;
+}
 function addFooter(pdf){const n=pdf.getNumberOfPages();for(let i=1;i<=n;i++){pdf.setPage(i);pdf.setDrawColor(226,232,240);pdf.line(12,287,198,287);pdf.setFont('helvetica','normal');pdf.setTextColor(148,163,184);pdf.setFontSize(7);pdf.text('Generated from the digital Investigation Written Statement form.',12,292);pdf.text(`Page ${i} of ${n}`,198,292,{align:'right'})}}
 function buildVectorPdf(){const {jsPDF}=window.jspdf;const pdf=new jsPDF({orientation:'p',unit:'mm',format:'a4',compress:true,putOnlyUsedFonts:true});const isNe=mode==='nonEmployee',subTitle=isNe?'None Team Member':'Team Member';let y=addPdfHeader(pdf,subTitle);if(isNe){y=infoSection(pdf,y,'Person Information',[['Date & Time Written',$('neDateTime').value,'Person Name',$('neName').value],['Photo ID Number',$('nePhotoId').value,'Phone Number',$('nePhone').value],['Company Name',$('neCompany').value,'Host Department',neDepartment()],['Incident Location',$('neLocation').value,'Subject',selectedSubject('ne')]],subTitle);y=narrativeBlock(pdf,y,$('neDetails').value,subTitle);y=evidenceBlockPdf(pdf,y,[1,2,3,4].map(i=>$('neEvData'+i).value),subTitle);y=photosBlockPdf(pdf,y,$('frontData').value,$('backData').value,subTitle);y=signatureBlockPdf(pdf,y,$('neSigName').value,$('neSigAt').value,sig.ne.data(),subTitle)}else{y=infoSection(pdf,y,'Team Member Information',[['Date & Time Written',$('tmDateTime').value,'Team Member Name',$('tmName').value],['ID Number',$('tmId').value,'Department',tmDepartment()],['Designation',$('tmDesignation').value,'Incident Location',$('tmLocation').value],['Subject',selectedSubject('tm'),'','']],subTitle);y=narrativeBlock(pdf,y,$('tmDetails').value,subTitle);y=evidenceBlockPdf(pdf,y,[1,2,3,4].map(i=>$('tmEvData'+i).value),subTitle);y=signatureBlockPdf(pdf,y,$('tmSigName').value,$('tmSigAt').value,sig.tm.data(),subTitle)}addFooter(pdf);return pdf}
 async function generatePdf(){if(!validate())return;if(!window.jspdf?.jsPDF){showFormMessage('The PDF library is unavailable. Please reload the page and try again.','PDF Unavailable','error');return}const LIMIT=1024*1024;try{$('progressOverlay').classList.add('show');$('progressFill').style.width='25%';setStatus('Preparing crystal-clear PDF...');await new Promise(r=>setTimeout(r,20));$('progressFill').style.width='55%';const pdf=buildVectorPdf();$('progressFill').style.width='85%';const size=pdf.output('arraybuffer').byteLength;if(size>LIMIT)throw new Error('PDF exceeds 1 MB. Please use smaller ID photos and try again.');const name=(mode==='nonEmployee'?$('neName').value:$('tmName').value).trim().replace(/[\\/:*?"<>|]+/g,'').replace(/\s+/g,'_')||'Statement';const prefix=mode==='nonEmployee'?'None_Team_Member':'Team_Member';pdf.save(`${prefix}_Investigation_Written_Statement_${name}.pdf`);$('progressFill').style.width='100%';setStatus('')}catch(e){console.error(e);setStatus('PDF generation failed.',true);showFormMessage((e?.message||String(e)),'PDF Generation Error','error')}finally{setTimeout(()=>{$('progressOverlay').classList.remove('show');$('progressFill').style.width='0%'},120)}}
